@@ -1,0 +1,70 @@
+{
+    attributes = (
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OBJE_ORDRE"; 
+            externalType = NUMBER; 
+            name = objeOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_ANNEE"; 
+            externalType = NUMBER; 
+            name = resaAnnee; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RESA_ETAT"; 
+            externalType = VARCHAR2; 
+            name = resaEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "RESA_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = resaMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            columnName = "RESA_ORDRE"; 
+            externalType = NUMBER; 
+            name = resaOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu, objeOrdre, resaAnnee, resaEtat, resaMotif, resaOrdre); 
+    className = "org.cocktail.dt.server.metier.EOResaPlanningHarp"; 
+    classProperties = (noIndividu, objeOrdre, resaAnnee, resaEtat, resaMotif, resaOrdre, toResaObjet); 
+    externalName = "RESERVATION.RESA_PLANNING_HARP"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (noIndividu, objeOrdre, resaAnnee, resaEtat, resaMotif, resaOrdre, toResaObjet); 
+        "_nameInObjectStore" = "RESA_PLANNING_HARP"; 
+    }; 
+    name = ResaPlanning; 
+    primaryKeyAttributes = (resaOrdre); 
+    relationships = (
+        {
+            destination = ResaObjet; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = objeOrdre; sourceAttribute = objeOrdre; }); 
+            name = toResaObjet; 
+        }
+    ); 
+}

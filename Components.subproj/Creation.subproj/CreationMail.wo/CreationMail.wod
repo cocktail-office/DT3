@@ -1,0 +1,48 @@
+CktlMailTo1: CktlMailTo {
+	mail = lienPbConnexion;
+	mailLabel = "cliquez ici pour le signaler par e-mail";
+	mailTip = "Cliquez pour envoyer un e-mail";
+}
+
+linkAccueil: WOHyperlink {
+	href = urlRetourAccueil;
+}
+
+mailToActivite: CktlMailTo {
+	mail = activiteMailRef;
+	mailLabel = activitesMailLibelle;
+	mailTip = "Cliquez pour envoyer un email pour cette activit&eacute;";
+	showMailIcon = false;
+}
+
+mainPage: CktlDefaultPage {
+	pageTitle = "Creation des demandes par email";
+	hideFooter = false;
+}
+
+noteBox: CktlNote {
+	padding = "5";
+}
+
+repetActivites: WORepetition {
+	item = uneActivite;
+	list = activitesForService;
+}
+
+repetServices: WORepetition {
+	item = unService;
+	list = services;
+}
+
+siActivitesMailYES: WOConditional {
+	condition = hasActivitesMail;
+}
+
+siHasActivitesMailNO: WOConditional {
+	condition = hasActivitesMail;
+	negate = true;
+}
+
+strService: WOString {
+	value = unService.llStructure;//VALID
+}

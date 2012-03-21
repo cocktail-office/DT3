@@ -1,0 +1,54 @@
+<WEBOBJECT NAME="mainPage">
+<div align="center">
+<span class="mainTitle">Demande de Travaux</span><br>
+<span class="title">Cr&eacute;ation des demandes par email</span>
+</div>
+<hr class="line"/>
+
+<div align="center">
+<WEBOBJECT NAME=noteBox><div align="center"><I>Si la liste des adresses email est vide ou<BR>
+	si vous ne pouvez pas cr&eacute;er une demande par email ou<BR>
+	si vous rencontrez d'autres probl&egrave;mes lors d'utilisation de l'application<BR>
+	<BR>
+	</I><WEBOBJECT NAME=CktlMailTo1></WEBOBJECT></div>
+</WEBOBJECT>
+</div>
+
+<p>&nbsp;</p>
+
+<WEBOBJECT NAME=siHasActivitesMailNO>
+<div align="center" class="textError">
+Aucune adresse email n'est d&eacute;clar&eacute;e pour la cr&eacute;ation des demandes.
+</div>
+</WEBOBJECT>
+
+<WEBOBJECT NAME=siActivitesMailYES>
+<p class="title" align="center">Services et activit&eacute;s</p>
+<div align="center">
+<table border=0 cellspacing=0 cellpadding=1 class="listboxBorder">
+<tr><td>
+<table width="100%" border=0 cellspacing=1 cellpadding=2>
+<WEBOBJECT NAME=repetServices>
+<tr class="listboxHeader">
+<td>&nbsp;&nbsp;&nbsp;<FONT class="textEntry"><WEBOBJECT NAME=strService></WEBOBJECT></FONT>&nbsp;&nbsp;&nbsp;</td>
+</tr>
+<tr class="listboxLine"><td>
+  <WEBOBJECT NAME=repetActivites>
+<table width="100%" cellspacing="0" cellpadding="2" border="0">
+<tr valign="top">
+<td width="1%">&nbsp;&nbsp;&nbsp;<b>&raquo;</b></td><td align="left"><WEBOBJECT NAME=mailToActivite></WEBOBJECT></td>
+</tr>
+</table>
+  </WEBOBJECT>
+</td></tr>
+</WEBOBJECT>
+</table>
+</td></tr></table>
+</div>
+
+<BR>
+</WEBOBJECT>
+
+<p><strong>&raquo;</strong>&nbsp;<WEBOBJECT NAME=linkAccueil>Retour &agrave; la page d'accueil</WEBOBJECT></p>
+
+</WEBOBJECT>

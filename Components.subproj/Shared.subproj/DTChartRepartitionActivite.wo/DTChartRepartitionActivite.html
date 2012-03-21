@@ -1,0 +1,31 @@
+<webobject name = "DTFormErrorBox1">
+	<webobject name = "StrErrMessage"/>
+</webobject>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Activite');
+        data.addColumn('number', 'Nbre de DT creees');
+        data.addRows(<webobject name = "StrRowCount"/>);
+        
+        <webobject name = "RepActivite">
+	        data.setValue(<webobject name = "StrIndex"/>, 0, <webobject name = "StrLibelle"/>);
+  	      data.setValue(<webobject name = "StrIndex"/>, 1, <webobject name = "StrCount"/>);
+ 	      </webobject>
+        
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 500, height: 400, title: '<webobject name = "StrTitre"/>'});
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>

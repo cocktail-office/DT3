@@ -1,0 +1,35 @@
+PopUpButton1: WOPopUpButton {
+	displayString = serviceItem.lcStructure;//VALID
+	item = serviceItem;
+	list = serviceList;
+	onChange = "this.form.submit();";
+	selection = serviceSelected;
+}
+
+Browser1: WOBrowser {
+	displayString = individuItem.toIndividuUlr.nomEtPrenom;//VALID
+	item = individuItem;
+	list = individuDG.displayedObjects;
+	multiple = true;
+	onChange = "this.form.submit();";
+	selections = individuSelecteds;
+	size = 10;
+}
+
+BtnTous: WOSubmitButton {
+	action = selectTous;
+	class = "bouton";
+	value = "Tous";
+}
+
+BtnAucun: WOSubmitButton {
+	class = "bouton";
+	value = "Aucun";
+	action = selectAucun;
+}
+
+BtnMoi: WOSubmitButton {
+	class = "bouton";
+	value = "Moi";
+	action = selectMoi;
+}

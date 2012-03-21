@@ -1,0 +1,81 @@
+<webobject name = "FormVentilation">
+	<webobject name = "ErrorVentilation"></webobject>
+	<!-- L'aide -->
+	<b><em>Survolez l'ic&ocirc;ne d'aide pour en savoir plus sur l'utilisation de cet &eacute;cran ...</em></b>
+	<webobject name = "ToolTipAide"><webobject name = "ImgAide"></webobject></webobject>
+	<!-- L'ecran de ventilation -->
+	<table align="center">
+		<tr>
+			<td>
+				<div style="border:1px solid #bbb">
+					<table>
+						<tr>
+							<td valign="top" width="1%">
+								<font class="mainTitle">[A]</font>
+								<webobject name = "ComboService"></webobject>
+								<font class="subTitle">(<webobject name = "StrIndividuTotal"></webobject>)</font><br/>
+								<webobject name = "BrwsrIndividu"></webobject>
+							</td>
+							<td width="1%" align="center" style="border-left:1px solid #bbb; border-right:1px solid #bbb; ">
+								<font class="mainTitle">[B]</font>
+								<webobject name = "ToolTipBtnFiltrer"><webobject name = "BtnFiltrer"></webobject></webobject>
+							</td>
+							<td valign="top" width="1%">
+								<font class="mainTitle">[C1]</font>
+								<font class="subTitle">DT en cours / en attente (<webobject name = "StrTotalIntervention"></webobject>)</font><br/>
+								<div class="dtVentilationInterventionContainer"><webobject name = "BrwsrIntervention"></webobject></div>
+							</td>
+							<td valign="top">
+								<font class="mainTitle">[C2]</font>
+								<webobject name = "BtnDetailSingleDt"></webobject><br/>
+								<webobject name = "TxtDetailSingleDt"></webobject><br/>
+								Affect&eacute;s<br/>
+								<webobject name = "BrwsrDetailSingleDtIntervenant"></webobject>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<font class="mainTitle">[D1]</font>
+					<webobject name = "BtnRemoveIndividuPanier"></webobject><webobject name = "BtnAddIndividuPanier"></webobject>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<font class="mainTitle">[D2]</font>
+					<webobject name = "BtnRemoveInterventionPanier"></webobject><webobject name = "BtnAddInterventionPanier"></webobject>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div style="border:1px solid #bbb">
+					<table>
+						<tr>
+							<td valign="top">
+								<font class="mainTitle">[E1]</font>
+								<font class="subTitle">Panier d'agents (<webobject name = "StrTotalIndividuPanier"></webobject>)</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name = "BtnSelectAllIndividuPanier"></webobject><br/>
+								<webobject name = "BrwsrIndividuPanier"></webobject>
+							</td>
+							<td align="center" style="border-left:1px solid #bbb; border-right:1px solid #bbb; ">
+								<font class="mainTitle">[F]</font><br/>
+								<webobject name = "BtnDoVentiler"></webobject>
+							</td>
+							<td valign="top">
+								<font class="mainTitle">[E2]</font>
+								<font class="subTitle">Panier de DT (<webobject name = "StrTotalInterventionPanier"></webobject>)</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name = "BtnSelectAllInterventionPanier"></webobject><br/>
+								<div class="dtVentilationPanierInterventionContainer"><webobject name = "BrwsrInterventionPanier"></webobject></div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+	</table>
+</webobject>

@@ -1,0 +1,195 @@
+{
+    attributes = (
+        {
+            columnName = ANNEE; 
+            externalType = NUMBER; 
+            name = annee; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DST_CODE"; 
+            externalType = VARCHAR2; 
+            name = dstCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ORG_COMP"; 
+            externalType = VARCHAR2; 
+            name = orgComp; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "ORG_DATE"; 
+            externalType = DATE; 
+            name = orgDate; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "ORG_ORDRE"; 
+            externalType = NUMBER; 
+            name = orgId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ORG_LBUD"; 
+            externalType = VARCHAR2; 
+            name = orgLbud; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "ORG_LIB"; 
+            externalType = VARCHAR2; 
+            name = orgLib; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = "ORG_NIV"; 
+            externalType = NUMBER; 
+            name = orgNiv; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ORG_ORDRE"; 
+            externalType = NUMBER; 
+            name = orgOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ORG_RAT"; 
+            externalType = NUMBER; 
+            name = orgRat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ORG_STAT"; 
+            externalType = NUMBER; 
+            name = orgStat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ORG_TVA"; 
+            externalType = NUMBER; 
+            name = orgTva; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ORG_UC"; 
+            externalType = VARCHAR2; 
+            name = orgUc; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ORG_UNIT"; 
+            externalType = VARCHAR2; 
+            name = orgUnit; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SCT_CODE"; 
+            externalType = VARCHAR2; 
+            name = sctCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 7; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        annee, 
+        dstCode, 
+        orgComp, 
+        orgDate, 
+        orgId, 
+        orgLbud, 
+        orgLib, 
+        orgNiv, 
+        orgOrdre, 
+        orgRat, 
+        orgStat, 
+        orgTva, 
+        orgUc, 
+        orgUnit, 
+        sctCode
+    ); 
+    className = "org.cocktail.dt.server.metier.EOVOrgan"; 
+    classProperties = (
+        annee, 
+        dstCode, 
+        orgComp, 
+        orgDate, 
+        orgId, 
+        orgLbud, 
+        orgLib, 
+        orgNiv, 
+        orgOrdre, 
+        orgRat, 
+        orgStat, 
+        orgTva, 
+        orgUc, 
+        orgUnit, 
+        sctCode, 
+        tosVJefyBudgetExecCredit
+    ); 
+    externalName = "GRHUM.V_ORGAN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            dstCode, 
+            orgComp, 
+            orgDate, 
+            orgLbud, 
+            orgLib, 
+            orgNiv, 
+            orgOrdre, 
+            orgRat, 
+            orgStat, 
+            orgTva, 
+            orgUc, 
+            orgUnit, 
+            sctCode, 
+            tosVJefyBudgetExecCredit
+        ); 
+        "_nameInObjectStore" = "V_ORGAN"; 
+    }; 
+    isReadOnly = Y; 
+    name = VJefyOrgan; 
+    primaryKeyAttributes = (orgOrdre); 
+    relationships = (
+        {
+            destination = VJefyBudgetExecCredit; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = annee; sourceAttribute = annee; }, 
+                {destinationAttribute = orgOrdre; sourceAttribute = orgOrdre; }
+            ); 
+            name = tosVJefyBudgetExecCredit; 
+        }
+    ); 
+}

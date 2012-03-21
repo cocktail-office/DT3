@@ -1,0 +1,2 @@
+-- se connecter en GRHUM
+GRANT SELECT ON DB_VERSION TO DT3;

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="DTExitLink" wocomponentcontent="false">
+
+		<binding name="forceSSOLogout" defaults="Boolean"/>
+		<binding name="linkURL"/>
+		<binding name="target"/>
+		<binding name="linkToolTip"/>
+		<binding name="linkText"/>
+		<binding name="linkStyleClass"/>
+	</wo>
+</wodefinitions>

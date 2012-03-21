@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="TraitementPrestation" wocomponentcontent="false">
+
+		<binding name="traitementListener"/>
+
+		<validation message="&apos;traitementListener&apos; is a required binding">
+			<unbound name="traitementListener"/>
+		</validation>
+	</wo>
+</wodefinitions>

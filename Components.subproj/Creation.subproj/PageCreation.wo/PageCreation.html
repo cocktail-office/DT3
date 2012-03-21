@@ -1,0 +1,158 @@
+<WEBOBJECT NAME="pageCreation">
+
+	<WEBOBJECT NAME="siHasExitLink">
+		<div align="right">
+			<WEBOBJECT NAME="exitLinkBox"><WEBOBJECT NAME="dtExitLink"/></WEBOBJECT><br>
+		</div>
+	</WEBOBJECT>
+
+<webobject name="FormBrowser">
+
+<webobject name="ContNotIsOnlyFactService"><!--Contact complet-->
+	<table cellpadding="1" cellspacing="0" border="0" width="100%" class="boxTitle">
+		<tr>
+			<td><font class="subTitleInverse">&nbsp;Demandeur</font></td>
+		</tr>
+		<tr>
+			<td class="boxBorder">
+				<table cellpadding="10" cellspacing="0" border="0" width="100%" class="boxContents">
+					<tr>
+						<td>
+							<webobject name = "AjaxExpansionContainerDemandeur">
+							<webobject name = "AjaxExpansionDemandeur">
+							<table border="0" cellpadding="0" cellspacing="5" width="100%">
+								<tr>
+									<td><font class="textEntry">Pour&nbsp;le&nbsp;compte&nbsp;de&nbsp;:&nbsp;</font><webobject name="strDemandeurNomMail"/></td>
+									<td align="right" width="10%"><webobject name="siChangerDemandeurYES"><webobject name="btChangerDemandeur"></webobject></webobject></td>
+								</tr>
+							</table>
+							<table border="0" cellpadding="0" cellspacing="5" width="100%">
+								<tr valign="middle">
+									<td>
+										<font class="textEntry">Service et localisation&nbsp;:</font><br/>
+										<webobject name="strContactInfo"/>
+									</td>
+									<td align="right"><webobject name="btContact"></webobject></td>
+								</tr>
+							</table>
+							</webobject>
+							</webobject>
+							
+							<!-- les eventuelles erreurs liees aux information de contact -->
+							<webobject name="formErrorContact">
+								Les informations pour contacter la	personne sont incompl&egrave;tes	ou incorrectes.<br/>
+								Veuillez les	renseigner (bouton &quot;Choisir	le	contact&quot;).
+							</webobject>
+							<webobject name="formErrorSyncContact">
+								Les informations pour contacter la	personne sont ne sont pas en accord avec l'annuaire.<br/>
+								Veuillez les corriger (bouton &quot;Choisir	le	contact&quot;).
+							</webobject>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</webobject>
+
+
+<webobject name="CondIsOnlyFactService"><!--Contact "rapide" pour la creation de devis Repro par exemple-->
+	<table cellpadding="1" cellspacing="0" border="0" width="100%" class="boxTitle">
+		<tr><td><font class="subTitleInverse">&nbsp;Contact	de facturation</font></td></tr>
+		<tr>
+			<td class="boxBorder">
+				<table cellpadding=1"0" cellspacing="0" border="0" width="100%" class="boxContents">
+					<tr>
+						<td>
+							<table border="0" cellpadding="0" cellspacing="5" width="100%">
+								<tr>
+									<td colspan="2">
+										<font class="textEntry">Service payeur&nbsp;:&nbsp;</font>
+										:&nbsp;<webobject name="popServices"/><br>
+										<webobject name="StrFactServiceResponsablesLibelle"/>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</webobject>
+<br>
+
+<webobject name = "CondShowSelectActivite">
+<!-- le browser des activités -->
+<table cellpadding="1" cellspacing="0" border="0" width="100%" class="boxTitle">
+	<tr>
+		<td><font class="subTitleInverse">&nbsp;Service destinataire et d&eacute;tails de la demande</font></td>
+	</tr>
+	<tr>
+		<td class="boxBorder">
+			<table cellpadding="10" cellspacing="0" border="0" width="100%" class="boxContents">
+				<tr>
+					<td>
+				
+					<WEBOBJECT NAME="CondNotServiceConcerneChoisisYN">
+						<br>
+						<table border="0" width="100%"><tr>
+							<td valign="middle" align="RIGHT"><WEBOBJECT NAME="ImgFleshUp"/></td>
+							<td WIDTH="1%" VALIGN="middle" CLASS="dtAttentionText" ALIGN="left" NOWRAP>S&eacute;lectionnez	le service destinataire parmi les onglets</td>
+							<td align="left" valign="middle" class="dtAttentionText"><webobject name="ImgFleshUp"/></td></tr></table>
+						<BR clear="all">
+					</WEBOBJECT>
+				
+				
+					<WEBOBJECT NAME="CondServiceConcerneChoisisYN">
+						<WEBOBJECT NAME="SelectActivite1"/>
+						<WEBOBJECT NAME="CondEnterAllDataYN">
+							<p align="center" class="dtAttentionText">S&eacute;lection obligatoire de l'arborescence compl&egrave;te dans les d&eacute;tails de la demande</p>
+						</WEBOBJECT>
+						
+						
+						
+					</WEBOBJECT>
+
+					
+
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</webobject>
+
+<webobject name = "CondNotShowSelectActivite">
+<!-- selection de l'activité non disponible -->
+<table cellpadding="1" cellspacing="0" border="0" width="100%" class="boxTitle">
+	<tr>
+		<td>
+			<font class="subTitleInverse">
+				<webobject name = "StrServiceLibelle"/> <webobject name = "StrSelectionPath"/>
+			</font>
+		</td>
+	</tr>
+</table>
+</webobject>
+
+<webobject name="Ancre"><!-- --></webobject>
+<webobject name="CondSwapDefaultYN"><webobject name="SwapDefault1"/></webobject>
+<WEBOBJECT NAME="CondSwapCarteYN"><WEBOBJECT NAME="SwapCompte1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSwapReproYN"><WEBOBJECT NAME="SwapRepro1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSwapMessageYN"><WEBOBJECT NAME="swapMessage"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSwapInstallComposant"><WEBOBJECT NAME="SwapInstallComposant1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSwapInstallMAteriel"><WEBOBJECT NAME="SwapInstallMateriel1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSwapInstallPosteComplet"><WEBOBJECT NAME="SwapInstallPosteComplet"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSwapInstallPosteComplet2"><WEBOBJECT NAME="SwapInstallPosteComplet2"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSwapIndicateur"><WEBOBJECT NAME="SwapIndicateur1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSwapReferentFonctionnel"><WEBOBJECT NAME="SwapReferentFonctionnel1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondAutorisationRecrutementEtudiant"><WEBOBJECT NAME="SwapAutorisationRecrutementEtudiant1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondSupportHandicap"><WEBOBJECT NAME="SwapSupportHandicap1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondCelluleGeomatique"><WEBOBJECT NAME="SwapCelluleGeomatique1"/></WEBOBJECT>
+<WEBOBJECT NAME="CondLogiciel"><WEBOBJECT NAME="SwapLogiciel1"/></WEBOBJECT>
+
+</WEBOBJECT>
+
+</WEBOBJECT>

@@ -1,0 +1,10 @@
+imgAlert: WOImage {
+  filename = "img/alert-exclam.gif";
+  framework = "FwkCktlWebApp";
+  border = "0";
+}
+
+strMessage: WOString {
+	value = viewMessage;
+	escapeHTML = false;
+}

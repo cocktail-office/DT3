@@ -1,0 +1,108 @@
+<WEBOBJECT NAME=CktlDefaultPage1>
+
+<blockquote>
+<div align="center" class="mainTitle">Les services de l'application Demande de Travaux</div>
+<div align="center" class="title">(version <WEBOBJECT NAME=strVersion></WEBOBJECT>)</div>
+</blockquote>
+
+<p class="boxTitle"><a name="da"><font class="titleInverse">&nbsp;Direct Actions</font></a></p>
+
+<center>
+<WEBOBJECT NAME=CktlNote1>Le URL pour appeler une &quot;direct action&quot; d'une application est le suivant :<br>
+<table border=0>
+<tr><td width="12">&nbsp;</td>
+  <td class="textFixed">http://mon.serveur.com/cgi-bin/WebObjects/UneApplication.woa/wa/nomAction?parametre1=valeur1&amp;param2=val2&amp;...</td>
+</tr>
+</table>
+</WEBOBJECT>
+</center>
+
+<p class="listboxHeader"><font class="subTitle">&nbsp;Acc&egrave;s &agrave; la <em>Validation des
+    demandes</em></font></p>
+
+<p><i>Description&nbsp;:</i></p>
+<blockquote>Cette action affiche la page avec la liste des demandes &agrave; valider.
+  L'utilisateur doit s'identifier avant d'acc&eacute;der &agrave; cette page. La
+  liste est propos&eacute;e en fonction
+de l'identit&eacute; et donc des droits d'utilisateur dans l'application Demande
+de Travaux.</blockquote>
+
+<p><i>URL&nbsp;:</i>
+<blockquote><span class="textFixed">http://.../DT3.woa/wa/DAValidation</span></blockquote>
+
+<p><i>Param&egrave;tres&nbsp;:</i></p>
+<blockquote>(Cette action ne prend aucun param&egrave;tre.)</blockquote>
+
+
+<p class="listboxHeader"><font class="subTitle">&nbsp;Acc&egrave;s &agrave; la <em>Cr&eacute;ation
+des Demandes </em></font></p>
+
+<p><i>Description&nbsp;:</i></p>
+<blockquote>Cette action permet d'acc&eacute;der au formulaire de cr&eacute;ation des demandes
+  restreint uniquement &agrave; un service destinataire concret.</blockquote>
+
+<p><i>URL&nbsp;:</i>
+<blockquote><span class="textFixed">http://.../DT3.woa/wa/DACreation?&lt;parametres&gt;</span></blockquote>
+
+<p><i>Param&egrave;tres&nbsp;:</i></p>
+
+<table width="100%" class="noteBoxBorder" cellpadding="1" cellspacing="0"><tr><td>
+<table width="100%" border="0" cellspacing="1" cellpadding="3">
+<tr align="center">
+  <td class="subTitleInverse">Param&egrave;tre</td>
+  <td class="subTitleInverse">Pr&eacute;sence</td>
+  <td class="subTitleInverse">Description</td>
+</tr>
+<tr valign="top">
+<td class="noteBoxContents" align="center"><font class="textFixed">cs</font></td>
+<td class="noteBoxContents" align="center">Obligatoire</td>
+<td class="noteBoxContents">Le code de service. Ceci est un code interne d'un groupe
+  (structure) associ&eacute;e au service.<br>
+  Dans la base de donn&eacute;es, ce code correspond au champ <code>C_STRUCTURE</code> de la table <code>STRUCTURE_ULR</code>. <br>
+<p><i>Exemple :</i><br> 
+  cs=25
+</p>
+</td></tr>
+<tr valign="top">
+<td class="noteBoxContents" align="center"><font class="textFixed">actOrdre</font></td>
+<td class="noteBoxContents" align="center">Optionnel</td>
+<td class="noteBoxContents">Le code de l'activit&eacute;. Ceci est un code interne d'une activite
+  associ&eacute;e au service.<br>
+  Dans la base de donn&eacute;es, ce code correspond au champ <code>ACT_ORDRE</code> de la table <code>ACTIVITES</code>. <br>
+<p><i>Exemple :</i><br> 
+  actOrdre=1
+</p>
+</td></tr>
+</table>
+</td></tr></table>
+
+<p class="listboxHeader"><font class="subTitle">&nbsp;Acc&egrave;s &agrave; la <em>Cr&eacute;ation
+de demandes par email </em></font></p>
+
+<p><i>Description&nbsp;:</i></p>
+<blockquote>Cette action permet d'acc&eacute;der &agrave; la page contenant les adresses email
+  pour la cr&eacute;ation des demandes. Un message email envoy&eacute; &agrave; l'adresse donn&eacute;e d&eacute;clenche
+  la cr&eacute;ation d'une demande de travaux dans l'activit&eacute; correspondante. La liste des
+  activit&eacute;s est donn&eacute;e avec les adresses email.<br>
+  Le lien vers cette action est &eacute;galement
+  donn&eacute; dans la page d'accueil de l'application Demande de Travaux.</blockquote>
+
+<p><i>URL&nbsp;:</i>
+<blockquote><span class="textFixed">http://.../DT3.woa/wa/DACreationMail</span></blockquote>
+
+<p><i>Param&egrave;tres&nbsp;:</i></p>
+<blockquote>(Cette action ne prend aucun param&egrave;tre.)</blockquote>
+
+<p class="boxTitle"><a name="da"><font class="titleInverse">&nbsp;Services Web</font></a></p>
+
+<p>La d&eacute;finition des services Web "Demande de Travaux" (WSDL) est disponible &agrave; cette
+  adresse&nbsp;:
+</p>
+<div align="center"><WEBOBJECT NAME=linkWSDL><WEBOBJECT NAME=strWSDL></WEBOBJECT></WEBOBJECT></div>
+
+<p><em>Il est fortement recommand&eacute; d'utiliser l'impl&eacute;mentation d'un client des services "Demande
+  de Travaux" pour communiquer avec l'application. Cette impl&eacute;mentation est donn&eacute;e
+  sur le site de distribution de l'application &quot;Demande de Travaux&quot;. </em></p>
+<p><WEBOBJECT NAME=servicesFooter></WEBOBJECT></p>
+
+</WEBOBJECT>

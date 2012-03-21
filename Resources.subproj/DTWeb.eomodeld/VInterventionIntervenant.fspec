@@ -1,0 +1,62 @@
+{
+    FetchInterventionFast = {
+        class = EOFetchSpecification; 
+        entityName = VInterventionIntervenant; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = actOrdre; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = myActOrdre; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = cStructure; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = myCStructure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = ctOrdre; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = myCtOrdre; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = intEtat; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = myIntEtat; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = noIndIntervenant; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = myNoIndIntervenant; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = intDateCreation; 
+                    selectorName = isGreaterThanOrEqualTo; 
+                    value = {"_key" = myDateDebutPeriode; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = intDateCreation; 
+                    selectorName = isLessThanOrEqualTo; 
+                    value = {"_key" = myDateFinPeriode; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+        sortOrderings = (
+            {
+                class = EOSortOrdering; 
+                key = intCleService; 
+                selectorName = "compareAscending:"; 
+            }
+        ); 
+    }; 
+}

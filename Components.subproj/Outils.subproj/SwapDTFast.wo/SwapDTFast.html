@@ -1,0 +1,103 @@
+	<!-- message d'erreur -->
+	<webobject name = "ErrorBox"><webobject name = "StrErrorMessage"></webobject></webobject>
+	<webobject name = "FormFast">
+		<webobject name = "BtnDoNothing"></webobject>
+		<div align="left" id="Panel">
+			<webobject name = "CondShowConsultPanel">
+				<div id="PanelConsultation">
+					DT cr&eacute;&eacute;es entre le <webobject name = "DatePickerDebut"></webobject> et le 
+					<webobject name = "DatePickerFin"></webobject>
+					<webobject name = "BtnChangePeriode"></webobject>
+					Etat : <webobject name = "ComboEtat"></webobject>
+					Service : <webobject name = "ComboService"></webobject>
+					<hr/>
+					Activit&eacute; (<webobject name = "StrTotalActivite"></webobject>) : <webobject name = "ComboActivite"></webobject>
+					Contact (<webobject name = "StrTotalContact"></webobject>) : <webobject name = "ComboContact"></webobject>
+				</div>
+			</webobject>
+			<webobject name = "CondShowCreatePanel">
+				<div id="PanelCreation">
+					Nouvelle DT pour <b><webobject name = "StrServiceSelectedLlStructure"></webobject></b>
+				</div>
+			</webobject>
+			<hr/>
+			<webobject name = "CondShowComboIntervention">
+				DT (<webobject name = "StrTotalIntervention"></webobject>) : <webobject name = "ComboIntervention"></webobject>
+			</webobject>
+		</div>
+		<table>
+			<tr>
+				<td valign="top">
+					<div align="left" id="Detail">
+						Activit&eacute;:<webobject name = "ComboActiviteIntervention"></webobject><webobject name = "CondShowBtnChangeActiviteAutre"><webobject name = "BtnChangeActiviteAutre"></webobject></webobject><br/>
+						Contact:<webobject name = "ComboContactIntervention"></webobject><webobject name = "CondShowBtnChangeContactAutre"><webobject name = "BtnChangeContactAutre"></webobject></webobject><br/>
+						Mode d'appel:<webobject name = "ComboModeAppelIntervention"></webobject><br/>
+						Motif:<br/><webobject name = "TextMotif"></webobject><br/>
+						Commentaire interne:<br/><webobject name = "TextCommentaireInterne"></webobject>
+						<webobject name = "CondShowInterventionFileUpload"><br/>
+							<webobject name="InterventionFileUpload"></webobject>
+						</webobject>
+					</div>
+				</td>
+				<td valign="top">
+					<div align="left" id="DTFastTraitement">
+						<webobject name = "RepTraitement">
+							D&eacute;but:<webobject name = "DatePickerTraDDeb"></webobject>
+							Fin:<webobject name = "DatePickerTraDFin"></webobject>
+							Public:<webobject name = "CheckTraConsultable"></webobject><br/>
+							<table>
+								<webobject name = "CondTraitementHasError">
+								<tr>
+									<td colspan="3">
+										<webobject name = "TraitementErrorBox"><webobject name = "StrTraitementErrorMessage"></webobject></webobject>
+									</td>								
+								</tr>
+								</webobject>
+								<tr>
+									<td valign="top">Traitement:</td>
+									<td>
+										<webobject name = "TextTraMotif"></webobject>
+									</td>
+									<webobject name = "CondShowBtnDelTraitement">
+									<td>
+										<webobject name = "BtnDelTraitement"></webobject>
+									</td>
+									</webobject>
+								</tr>
+								<webobject name = "CondShowTraitementFileUpload">
+									<tr>
+										<td colspan="3">
+											<webobject name="TraitementFileUpload"></webobject>
+										</td>
+									</tr>
+								</webobject>
+							</table>
+						</webobject>
+						<hr/>
+						<webobject name = "CondShowBtnAddTraitementAtEnd">
+							<webobject name = "BtnAddTraitementAtEnd"></webobject>
+						</webobject>
+					</div>
+				</td>
+			</tr>
+		</table>
+	<hr/>
+	<div id="PanelButtons" align="center">
+		<!-- les boutons pour la creation d'une nouvelle DT -->
+		<webobject name = "CondShowCheckSendMails">
+			<webobject name = "CheckShouldSendMails"></webobject>&nbsp;<webobject name = "ImgSendMails"></webobject>&nbsp;<b>Envoyer les mails (creation / validation / cloture ...)</b><br/><br/>
+		</webobject>
+		<webobject name = "CondShowBtnCreate">&nbsp;&#124;&nbsp;<webobject name = "BtnCreate"></webobject></webobject>
+		<webobject name = "CondShowBtnCreateAndAffectSelf">&nbsp;&#124;&nbsp;<webobject name = "BtnCreateAndAffectSelf"></webobject></webobject>
+		<webobject name = "CondShowBtnCreateAndAffectSelfAndClose">&nbsp;&#124;&nbsp;<webobject name = "BtnCreateAndAffectSelfAndClose"></webobject></webobject>
+		&nbsp;&#124;&nbsp;
+	</div>
+	</webobject>
+	<hr/>
+	<div id="PanelLinks" align="center">
+		<!-- les liens de manipulation de DT existantes / partir sur une nouvelle DT -->
+		<webobject name = "CondShowLnkNewIntervention">&nbsp;&#124;&nbsp;<webobject name = "LnkNewIntervention"></webobject></webobject>
+		<webobject name = "CondShowLnkCancel">&nbsp;&#124;&nbsp;<webobject name = "LnkCancel"></webobject></webobject>
+		<webobject name = "CondShowLnkEdit">&nbsp;&#124;&nbsp;<webobject name = "LnkEdit"></webobject></webobject>
+		&nbsp;&#124;&nbsp;
+	</div>

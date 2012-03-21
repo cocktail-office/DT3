@@ -1,0 +1,52 @@
+{
+    attributes = (
+        {
+            columnName = "C_IMPLANTATION"; 
+            externalType = VARCHAR2; 
+            name = cImplantation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "IMGEO_ORDRE"; 
+            externalType = NUMBER; 
+            name = imgeoOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cImplantation, cLocal, imgeoOrdre); 
+    className = "org.cocktail.dt.server.metier.EORepartBatImpGeo"; 
+    classProperties = (cImplantation, cLocal, imgeoOrdre, toBatiment, toImplantationGeo); 
+    externalName = "GRHUM.REPART_BAT_IMP_GEO"; 
+    fetchSpecificationDictionary = {}; 
+    name = RepartBatImpGeo; 
+    primaryKeyAttributes = (cImplantation, cLocal, imgeoOrdre); 
+    relationships = (
+        {
+            destination = Batiment; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = toBatiment; 
+        }, 
+        {
+            destination = ImplantationGeo; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = imgeoOrdre; sourceAttribute = imgeoOrdre; }); 
+            name = toImplantationGeo; 
+        }
+    ); 
+}

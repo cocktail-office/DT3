@@ -1,0 +1,113 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_ALIAS"; 
+            externalType = VARCHAR2; 
+            name = grpAlias; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toStructureUlr.lcStructure"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = lcStructurePere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cStructure, 
+        cStructurePere, 
+        grpAlias, 
+        lcStructure, 
+        lcStructurePere, 
+        llStructure, 
+        persId
+    ); 
+    className = "org.cocktail.dt.server.metier.EOVService"; 
+    classProperties = (
+        cStructure, 
+        cStructurePere, 
+        grpAlias, 
+        lcStructure, 
+        lcStructurePere, 
+        llStructure, 
+        persId, 
+        toStructureUlr
+    ); 
+    externalName = "GRHUM.V_SERVICE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            cStructurePere, 
+            grpAlias, 
+            lcStructure, 
+            lcStructurePere, 
+            llStructure, 
+            persId, 
+            toStructureUlr
+        ); 
+        "_nameInObjectStore" = "SERVICE@GASPHARP"; 
+    }; 
+    isReadOnly = Y; 
+    name = VService; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = DTStructureUlr; 
+            internalInfo = {"_nameInObjectStore" = structureUlrHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toStructureUlr; 
+        }
+    ); 
+}

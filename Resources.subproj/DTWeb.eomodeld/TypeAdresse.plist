@@ -1,0 +1,38 @@
+{
+    attributes = (
+        {
+            columnName = "TADR_CODE"; 
+            externalType = VARCHAR2; 
+            name = tadrCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TADR_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tadrLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TADR_LIBELLE_COURT"; 
+            externalType = VARCHAR2; 
+            name = tadrLibelleCourt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 25; 
+        }
+    ); 
+    attributesUsedForLocking = (tadrCode, tadrLibelle, tadrLibelleCourt); 
+    className = "org.cocktail.dt.server.metier.EOTypeAdresse"; 
+    classProperties = (tadrCode, tadrLibelle, tadrLibelleCourt); 
+    externalName = "GRHUM.TYPE_ADRESSE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "TYPE_ADRESSE@GASPHARP"; }; 
+    name = TypeAdresse; 
+    primaryKeyAttributes = (tadrCode); 
+}

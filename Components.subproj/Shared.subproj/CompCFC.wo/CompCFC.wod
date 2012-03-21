@@ -1,0 +1,241 @@
+CondIsFullPage: WOConditional {
+	condition = listener.isFullPage;
+}
+
+DTDefaultPage1: DTDefaultPage {
+}
+
+siHasError: WOConditional {
+	condition = hasGeneralError;
+}
+
+boxErrorMessage: DTErrorBox {
+	message = errorMessage;
+}
+
+FormCFC: WOForm {
+	multipleSubmit = true;
+	name = "formCFC";
+}
+
+siHasSelectedContact: WOConditional {
+  condition = hasSelectedCfc;
+}
+
+TFCfcEditeur: WOTextField {
+	maxlength = 100;
+	size = 80;
+	value = cfcEditeur;
+	disabled = isConsulting;
+}
+
+CondIsEditing: WOConditional {
+  condition = isEditing;
+}
+
+CondIsAdding: WOConditional {
+  condition = isAdding;
+}
+
+btEditOK: WOImageButton {
+  	action = doEditOK;
+	filename = "img/OpValider.gif";
+	framework = "app";
+	escapeHTML = false;
+	title = "Valider la saisie de cette ligne de d&eacute;claration CFC";
+}
+
+btEditCancel: WOImageButton {
+	filename = "img/OpAnnuler.gif";
+	framework = "app";
+  	title = "Annuler les modifications";
+  	action = doEditCancel;
+  	escapeHTML = false;  	
+}
+
+TFCfcAuteur: WOTextField {
+	maxlength = 100;
+	size = 80;
+	value = cfcAuteur;
+	disabled = isConsulting;
+}
+
+TFCfcTitre: WOTextField {
+	maxlength = 200;
+	size = 80;
+	value = cfcTitre;
+	disabled = isConsulting;
+}
+
+TFCfcPages: WOTextField {
+	maxlength = 5;
+	size = 3;
+	value = cfcPages;
+	numberformat = "0";
+	disabled = isConsulting;
+}
+
+TFCfcExemplaires: WOTextField {
+	maxlength = 5;
+	size = 3;
+	value = cfcExemplaires;
+	numberformat = "0";
+	disabled = isConsulting;
+}
+
+CondIsConsulting: WOConditional {
+  condition = isConsulting;
+}
+
+CondCanShowAddUpdateDelete: WOConditional {
+	condition = canShowAddUpdateDelete;
+}
+
+BtnDoAdd: WOImageButton {
+	filename = "img/OpAjouter.gif";
+	framework = "app";
+	escapeHTML = false;
+	title = "Ajouter une ligne de d&eacute;claration CFC";
+	action = doAdd;
+}
+
+CondHasCfc: WOConditional {
+	condition = hasNoCfc;
+	negate = true;
+}
+
+BtnDoUpdate: WOImageButton {
+	filename = "img/OpModifier.gif";
+	framework = "app";
+	escapeHTML = false;
+	title = "Modifier cette ligne de d&eacute;claration CFC";
+	action = doUpdate;
+}
+
+BtnDoDelete: WOImageButton {
+	filename = "img/OpSupprimer.gif";
+	framework = "app";
+	escapeHTML = false;
+	title = "Supprimer cette ligne de d&eacute;claration CFC";
+	action = doDelete;
+}
+
+RepCfcList: WORepetition {
+	item = cfcItem;
+	list = listener.cfcList;
+}
+
+TrCfcItem: WOGenericContainer {
+	elementName = "tr";
+	style = styleTrCfc;
+	class = "listboxLine";
+	align = "center";
+}
+
+siListCfcSelected : WOConditional {
+	condition = isListCfcSelected;
+}
+
+LnkSelectCfc: WOHyperlink {
+	action = selectCfc;
+	class = "pageLink";
+	title = "S&eacute;lectionner ou modifier cette ligne de d&eacute;claration CFC";
+}
+
+strListEditeur: WOString {
+	value = cfcItem.editeurs;//VALID
+}
+
+strListAuteur: WOString {
+	value = cfcItem.auteurs;//VALID
+}
+
+strListTitre: WOString {
+	value = cfcItem.titre;//VALID
+}
+
+strListPages: WOString {
+	value = cfcItem.nbPages;//VALID
+}
+
+strListExemplaires: WOString {
+	value = cfcItem.nbExemplaires;//VALID
+}
+
+CktlNote1: CktlNote {
+	
+}
+
+BtnGoBack: WOSubmitButton {
+	action = goBack;
+	class = "bouton";
+	title = "Revenir a la DT";
+	value = "&laquo; Revenir";
+	escapeHTML = false;
+}
+
+
+// variables pour la vue non "full-page"
+
+
+CondNotIsFullPage: WOConditional {
+	condition = listener.isFullPage;
+	negate = true;
+}
+
+
+TFEditeur: WOTextField {
+	value = cfcItem.editeurs;//VALID
+	maxlength = 4000;
+	size = 25;
+}
+
+FormErrorEditeur: DTFormErrorBox {
+	showError = cfcItem.editeursErr;//VALID
+}
+
+TFAuteur: WOTextField {
+	value = cfcItem.auteurs;//VALID
+	maxlength = 4000;
+	size = 25;
+}
+
+TFTitre: WOTextField {
+	value = cfcItem.titre;//VALID
+	maxlength = 4000;
+	size = 40;
+}
+
+FormErrorTitre: DTFormErrorBox {
+	showError = cfcItem.titreErr;//VALID
+}
+
+TFPages: WOTextField {
+	value = cfcItem.nbPages;//VALID
+	size = "3";
+	maxlength = 5;
+	numberformat = "0";
+}
+
+FormErrorNbPages: DTFormErrorBox {
+	showError = cfcItem.nbPagesErr;//VALID
+}
+
+TFExemplaires: WOTextField {
+	value = cfcItem.nbExemplaires;//VALID
+	size = "3";
+	maxlength = 5;
+	numberformat = "0";
+}
+
+FormErrorNbExemplaires: DTFormErrorBox {
+	showError = cfcItem.nbExemplairesErr;//VALID
+}
+
+BtnDoAddComponent: WOSubmitButton {
+	action = doAdd;
+	title = "Saisir une nouvelle entr&eacute;e CFC";	
+	value = "Ajouter ligne";
+	class = "bouton";
+	fragmentIdentifier = "DTCfcContent";
+}

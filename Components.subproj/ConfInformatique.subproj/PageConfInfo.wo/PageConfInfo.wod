@@ -1,0 +1,129 @@
+CktlDefaultPage1: CktlDefaultPage {
+	pageTitle = "Configuration informatique";
+	hideFooter = true;
+}
+
+StrNomDemandeur: WOString {
+	value = eoIndividu.nomEtPrenom;
+}
+
+FormErrMessage: DTFormErrorBox {
+	showError = errMessage.length;
+}
+
+StrErrMessage: WOString {
+	value = errMessage;
+}
+
+CondNotHasError: WOConditional {
+	condition = errMessage.length;
+	negate = true;
+}
+
+RepImpInfo: WORepetition {
+	item = glpiComputerItem;
+	list = glpiComputerArray;
+}
+
+LnkGlpi: WOHyperlink {
+	href = glpiComputerItem.glpiUrlFrontComputer;//VALID
+	title = "Ouvrir GLPI sur cette machine ...";
+	target = "_new";
+}
+
+StrId: WOString {
+	value = glpiComputerItem.id;//VALID
+}
+
+
+StrName: WOString {
+	value = glpiComputerItem.name;//VALID
+}
+
+StrLocationName: WOString {
+	value = glpiComputerItem.toGLPIComputerLocation.completename;//VALID
+}
+
+StrSerial: WOString {
+	value = glpiComputerItem.serial;//VALID
+}
+
+StrManufacturersName: WOString {
+	value = glpiComputerItem.manufacturers_name;//VALID
+}
+
+StrModelName: WOString {
+	value = glpiComputerItem.toGLPIComputerModel.name;//VALID
+}
+
+StrOperatingSystemName: WOString {
+	value = glpiComputerItem.toGLPIComputerOperatingSystem.name;//VALID
+}
+
+StrOperatingSystemVersionName: WOString {
+	value = glpiComputerItem.toGLPIComputerOperatingSystemVersion.name;//VALID
+}
+
+StrOperatingSystemServicePackName: WOString {
+	value = glpiComputerItem.toGLPIComputerOperatingSystemServicePack.name;//VALID
+}
+
+StrStatesName: WOString {
+	value = glpiComputerItem.states_name;//VALID
+}
+
+StrDateMod: WOString {
+	value = glpiComputerItem.date_mod;//VALID
+}
+
+StrContact_num: WOString {
+	value = glpiComputerItem.contact_num;//VALID
+}
+
+StrContact: WOString {
+	value = glpiComputerItem.contact;//VALID
+}
+
+
+CondHasImpInfo: WOConditional {
+	condition = glpiComputerArray.count;
+}
+
+CondNotHasImpInfo: WOConditional {
+	condition = glpiComputerArray.count;
+	negate = true;
+}
+
+Form: WOForm {
+	name = "FormPageConfInfo";
+}
+
+
+ObserverChkIsAfficherTous: AjaxObserveField {
+	updateContainerID = "ContainerPageConfInfo";
+	action = doRefresh;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+}
+
+ChkIsAfficherTous: WOCheckBox {
+	checked = isAfficherTous;
+	id = "ChkIsAfficherTous";
+}
+
+LnkDoRefresh: AjaxUpdateLink {
+	action = doRefresh;
+	string = "Forcer une réinterrogation de GLPI pour ses machines";
+	updateContainerID = "ContainerPageConfInfo";
+	title = "cliquer pour lancer l'opération";
+}
+
+LnkDoRefreshAll: AjaxUpdateLink {
+	action = doRefreshAll;
+	string = "Forcer une réinterrogation intégrale de GLPI (machines, localisations, OS, ...)";
+	updateContainerID = "ContainerPageConfInfo";
+	title = "cliquer pour lancer l'opération";
+}
+
+ContainerPageConfInfo: AjaxUpdateContainer {
+	id = "ContainerPageConfInfo";
+}

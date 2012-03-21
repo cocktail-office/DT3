@@ -1,0 +1,346 @@
+
+ContainerSwapInstallPosteComplet2: AjaxUpdateContainer {
+	id = containerSwapInstallPosteComplet2Id;
+}
+
+
+
+ObserverRadioShouldCommandeON: AjaxObserveField {
+	updateContainerID = containerCommandeId;
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+ContainerCommande: AjaxUpdateContainer {
+	id = containerCommandeId;
+}
+
+RadioShouldCommandeOui: WORadioButton {
+	value = SHOULD_COMMANDE_OUI;
+	name = "RadioShouldCommande";
+	selection = shouldCommande;
+}
+
+RadioShouldCommandeNon: WORadioButton {
+	value = SHOULD_COMMANDE_NON;
+	name = "RadioShouldCommande";
+	selection = shouldCommande;
+}
+
+CondIsCommande: WOConditional {
+	condition = isCommande;
+}
+
+
+//CktlAjaxOrganSelect1: CktlAjaxOrganSelect {
+//	id = "CktlAjaxOrganSelectId";
+//	value = organSelected.longString;
+//	exercice = exeOrdreCurrent;
+//	utilisateur = utlOrdreConnected;
+//	type = typeLbudDepense;
+//	selection = organSelected;
+//}
+
+strLigneBud: WOString {
+	value = ligneBudDescription;
+	escapeHTML = false;
+}
+
+siLigneBudSelected: WOConditional {
+	condition = isLigneBudSelected;
+}
+
+btClearLigneBud: WOSubmitButton {
+	action = clearLigneBud;
+	class = "bouton";
+	title = "Annuler la s&eacute;lection de la ligne budg&eacute;taire";
+	value = "X";
+}
+
+siCanSelectLigneBud: WOConditional {
+	condition = canSelectLigneBud;
+}
+
+btLigneBud: WOSubmitButton {
+	class = "bouton";
+	title = "Choisir une ligne budg&eacute;taire";
+	value = "Choisir...";
+	action = selectLigneBud;
+}
+
+ObserverPosteSupplementaire: AjaxObserveField {
+	updateContainerID = containerSwapInstallPosteComplet2Id;
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+RadioCommandeNaturePremierPoste: WORadioButton {
+	value = COMMANDE_NATURE_PREMIER_POSTE;
+	name = "RadioCommandeNature";
+	selection = commandeNature;
+}
+
+RadioCommandeNaturePosteRemplacement: WORadioButton {
+	value = COMMANDE_NATURE_POSTE_REMPLACEMENT;
+	name = "RadioCommandeNature";
+	selection = commandeNature;
+	disabled = isDisabledRadioCommandeNaturePosteRemplacement;
+}
+
+RadioCommandeNaturePosteSupplementaire: WORadioButton {
+	value = COMMANDE_NATURE_POSTE_SUPPLEMENTAIRE;
+	name = "RadioCommandeNature";
+	selection = commandeNature;
+	disabled = isDisabledRadioCommandeNaturePosteSupplementaire;
+}
+
+StrSurcoutPosteSupplementaire: WOString {
+	value = surcoutPosteSupplementaire;
+}
+
+FormErrorRemplacer: DTFormErrorBox {
+	showError = errorRemplacer;
+}
+
+formErrorLBud: DTFormErrorBox {
+	showError = errorLBud;
+}
+
+TipLbud: CktlToolTip {
+	htmlText = "<font class=dtAttentionText>Une ligne budg&eacute;taire incorrecte entrainera des retards dans la commande !</font>";
+}
+
+ChkDemandeurConnu: WOCheckBox {
+	checked = isDemandeurConnu;
+}
+
+StrEoIndividuDemandeurConnuNomEtPrenom: WOString {
+	value = eoIndividuDemandeurConnu.nomEtPrenom;
+}
+
+TFNomPrenomDemandeurInconnu: WOTextField {
+	maxlength = 100;
+	size = 30;
+	value = nomPrenomDemandeurInconnu;
+}
+
+BtnChangeDemandeur: WOSubmitButton {
+	action = changeDemandeur;
+	class = "bouton";
+	value = "Autre ...";
+}
+
+formErrorDemandeur: DTFormErrorBox {
+	showError = errorDemandeur;
+}
+
+SelectBatimentBureau: SelectBatimentBureau {
+	batimentSelected = batimentSelected;
+	bureauSelected = bureauSelected;
+	contact = parentPage.recContactDemandeur;
+}
+
+popServices: WOPopUpButton {
+	item = serviceItem;
+	displayString = serviceLibelle;
+	list = serviceList;
+	selection = serviceSelected;
+}
+
+formErrorService: DTFormErrorBox {
+	showError = errorService;
+}
+
+formErrorBatiment: DTFormErrorBox {
+	showError = errorBatiment;
+}
+
+formErrorBureau: DTFormErrorBox {
+	showError = errorBureau;
+}
+
+StrEoIndividuInterlocuteurNomEtPrenom: WOString {
+	value = eoIndividuInterlocuteur.nomEtPrenom;
+}
+
+BtnChangeInterlocuteur: WOSubmitButton {
+	action = changeInterlocuteur;
+	class = "bouton";
+	value = "Rechercher ...";
+}
+
+TipLogiciels: CktlToolTip {
+	htmlText = "Pour information sont intall&eacute;s en standard les logiciels antivirus,<br/>\
+	pare-feu et logiciels libres suivants : gravure, compression, lecteur de m&eacute;dia,<br/>\
+	lecture et cr&eacute;ation de PDF, traitement de texte et tableau d'open office, navigateur<br/>\
+	internet, messagerie, capture d'image ...<br/>Toutes autres demandes logicielles doivent\
+	imp&eacute;rativement &ecirc;tre pr&eacute;cis&eacute;es dans<br/>cette demande de travaux.";     
+}
+
+ImgAide: WOImage {
+	filename = "img/Aide.png";
+	framework = "app";
+	height = "16";
+	width = "16";
+	border = "0";
+}
+
+TextLogiciels: WOText {
+	class = "dtTextareaIntMotif";
+	value = logiciels;
+}
+
+TextRemarques: WOText {
+	class = "dtTextareaIntMotif";
+	value = intMotif;
+}
+
+CondShowProcedureInstallation: WOConditional {
+	condition = showProcedureInstallation;
+}
+
+FormErrorPriseConnaissance: DTFormErrorBox {
+	showError = errorPriseConnaissance;
+}
+
+CondErrorPriseConnaissance: WOConditional {
+	condition = errorPriseConnaissance;
+}
+
+StrEncartErrorPriseConnaissanceDebut: WOString {
+	value = "<table><tr><td style='border:2px dotted red'>";
+	escapeHTML = false;		
+}
+
+ChkIsPriseConnaissance: WOCheckBox {
+	checked = isPriseConnaissance;//VALID
+}
+
+LnkProcedureInstallation: WOHyperlink {
+	href = urlProcedureInstallation;
+	target = "_new";
+	title = "Ouvrir le document contenant la procedure dans une nouvelle fenetre";
+	string = "procédure de commande & d'installation de l'équipement informatique";
+}
+
+StrEncartErrorPriseConnaissanceFin: WOString {
+	value = "</td></tr></table>";
+	escapeHTML = false;		
+}
+
+formErrorMotif: DTFormErrorBox {
+	showError = errorMotif;
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrerDT: WOSubmitButton {
+	value = "Enregistrer";
+	action = validerDemande;
+    class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}
+
+ContainerPosteSupplementaire: AjaxUpdateContainer {
+	id = containerPosteSupplementaire;
+}
+
+
+CondIsPosteSupplementaire: WOConditional {
+	condition = isPosteSupplementaire;
+}
+
+strLigneSurcoutBud: WOString {
+	value = ligneBudSurcoutDescription;
+	escapeHTML = false;
+}
+
+siLigneBudSurcoutSelected: WOConditional {
+	condition = isLigneBudSurcoutSelected;
+}
+
+btClearLigneBudSurcout: WOSubmitButton {
+	action = clearLigneBudSurcout;
+	class = "bouton";
+	title = "Annuler la s&eacute;lection de la ligne budg&eacute;taire";
+	value = "X";
+}
+
+btLigneBudSurcout: WOSubmitButton {
+	class = "bouton";
+	title = "Choisir une ligne budg&eacute;taire";
+	value = "Choisir...";
+	action = selectLigneBudSurcout;
+}
+
+
+formErrorLBudSurcout: DTFormErrorBox {
+	showError = errorLBudSurcout;
+}
+
+
+
+
+ObserverDemandeurPoste: AjaxObserveField {
+	updateContainerID = containerSwapInstallPosteComplet2Id;
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+ContainerDemandeurPoste: AjaxUpdateContainer {
+	id = containerDemandeurPosteId;
+}
+
+CondIsDemandeurConnu: WOConditional {
+	condition = isDemandeurConnu;
+}
+
+CondNotIsDemandeurConnu: WOConditional {
+	condition = isDemandeurConnu;
+	negate = true;
+}
+
+CondShowMachine: WOConditional {
+	condition = glpiComputerArray.count;
+}
+
+StrTotalMachines: WOString {
+	value = glpiComputerArray.count;
+}
+
+TipMachines: CktlToolTip {
+	htmlText = tipMachines;
+}
+
+ErrPremierPoste: DTFormErrorBox {
+	showError = isPremierPoste;
+}
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}
+
+DestinationLolfCommande: ListeDestinationLolf {
+	ctrl = destinationCommandeCtrl;
+}
+
+
+DestinationSurcout: ListeDestinationLolf {
+	ctrl = destinationSurcoutCtrl;
+}

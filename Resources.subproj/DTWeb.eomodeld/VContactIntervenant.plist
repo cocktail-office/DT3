@@ -1,0 +1,112 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_CONTACT"; 
+            externalType = VARCHAR2; 
+            name = cStructService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "C_STRUCTURE_DEST"; 
+            externalType = VARCHAR2; 
+            name = cStructureDest; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CT_EMAIL"; 
+            externalType = VARCHAR2; 
+            name = ctEmail; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 60; 
+        }, 
+        {
+            columnName = "CT_ORDRE"; 
+            externalType = NUMBER; 
+            name = ctOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_DATE_CREATION"; 
+            externalType = DATE; 
+            name = intDateCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "INT_ETAT"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "ETAT_CODE"; }; 
+            name = intEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "NO_IND_INTERVENANT"; 
+            externalType = NUMBER; 
+            name = noIndIntervenant; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_IND_CONTACT"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NOM_ET_PRENOM"; 
+            externalType = VARCHAR2; 
+            name = nomEtPrenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }
+    ); 
+    className = "org.cocktail.dt.server.metier.EOVContactIntervenant"; 
+    classProperties = (
+        ctEmail, 
+        ctOrdre, 
+        noIndIntervenant, 
+        nomEtPrenom, 
+        cStructureDest, 
+        lcStructure, 
+        intDateCreation, 
+        intEtat, 
+        cStructService, 
+        cLocal, 
+        noIndividu
+    ); 
+    externalName = "V_CONTACT_INTERVENANT"; 
+    fetchSpecificationDictionary = {}; 
+    name = VContactIntervenant; 
+    primaryKeyAttributes = (ctOrdre, noIndIntervenant, cStructureDest); 
+}

@@ -1,0 +1,30 @@
+{
+    attributes = (
+        {
+            columnName = "C_CATEGORIE_EMPLOI"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_TYPE_CONTRAT_TRAV"; }; 
+            name = cCateoirieEmploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            columnName = "LC_CATEGORIE_EMPLOI"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "LC_TYPE_CONTRAT_TRAV"; }; 
+            name = lcCategorieEmploi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (cCateoirieEmploi, lcCategorieEmploi); 
+    className = "org.cocktail.dt.server.metier.EOCategorieEmploi"; 
+    classProperties = (cCateoirieEmploi, lcCategorieEmploi); 
+    externalName = "GRHUM.CATEGORIE_EMPLOI"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "TYPE_CONTRAT_TRAVAIL@GASPHARP"; }; 
+    name = TypeCatEmploi; 
+    primaryKeyAttributes = (lcCategorieEmploi); 
+}

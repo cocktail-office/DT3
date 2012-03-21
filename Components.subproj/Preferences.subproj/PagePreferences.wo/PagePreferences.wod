@@ -1,0 +1,49 @@
+pageCreation: DTDefaultPage {
+	useToolTip = true;
+	shouldShowMenu = true;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+	name = "formPreferences";
+}
+
+String3: WOString {
+	escapeHTML = false;
+	value = swapTitle;
+}
+
+Conditional1: WOConditional {
+	condition = showSwapLancement;
+}
+
+SwapLancement1: SwapLancement {
+}
+
+Conditional2: WOConditional {
+	condition = showSwapListes;
+}
+
+SwapListes1: SwapListes {
+}
+
+Conditional3: WOConditional {
+	condition = showSwapIntervenants;
+}
+
+SwapIntervenants1: SwapIntervenants {
+}
+
+Conditional5: WOConditional {
+	condition = showSwapCouleurs;
+}
+
+SwapCouleurs1: SwapCouleurs {
+}
+
+Conditional4: WOConditional {
+	condition = showSwapDivers;
+}
+
+SwapDivers1: SwapDivers {
+}

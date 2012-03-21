@@ -1,0 +1,185 @@
+CondShowFullPage: WOConditional {
+	condition = showFullPage;
+}
+
+DTDefaultPage1: DTDefaultPage {
+	useDatePicker = false;
+}
+
+CondHasError: WOConditional {
+	condition = hasError;
+}
+
+StrErrorMessage: WOString {
+	value = errorMessage;
+	escapeHTML = false;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+	name = "formAffectation";
+}
+
+RadioAffAffectation: WORadioButton {
+	name = "typeAff";
+	onClick = "this.form.submit();";
+	selection = typeAff;
+	value = TYPE_AFF_AFFECTATION;
+}
+
+RadioAffTransmission: WORadioButton {
+	name = "typeAff";
+	selection = typeAff;
+	value = TYPE_AFF_TRANSMISSION;
+	onClick = "this.form.submit();";
+}
+
+RadioAffSuiteADonner: WORadioButton {
+	name = "typeAff";
+	selection = typeAff;
+	value = TYPE_AFF_SUITEADONNER;
+	onClick = "this.form.submit();";
+}
+
+CondNotIsSuiteADonner: WOConditional {
+	condition = isSuiteADonner;
+	negate = true;
+}
+
+BrowserStructure: WOBrowser {
+	displayString = structureItem.llStructure;//VALID
+	item = structureItem;
+	list = structureDisplayGroup.displayedObjects;
+	onChange = "this.form.submit();";
+	selections = structureSelecteds;
+}
+
+CondIsSuiteADonner: WOConditional {
+	condition = isSuiteADonner;
+}
+
+CktlHXBrowserStructure: CktlHXBrowser {
+	columnHeight = 8;
+	columnsCount = 1;
+	formName = "formAffectation";
+	selectedObject = structureSelectedItem;
+	selectedPath = structureSelectedPath;
+	zeroItem = structuresZeroItem;
+}
+
+TextCommentaireInterne: WOText {
+	cols = 40;
+	rows = 4;
+	value = affectationComment;
+}
+
+RadioIntAnnuaire: WORadioButton {
+	name = "typeInt";
+	selection = typeInt;
+	value = TYPE_INT_ANNUAIRE;
+	onClick = "this.form.submit();";
+}
+
+RadioIntService: WORadioButton {
+	name = "typeInt";
+	selection = typeInt;
+	value = TYPE_INT_INTERVENANTS;
+	onClick = "this.form.submit();";
+}
+
+RadioIntActivites: WORadioButton {
+	name = "typeInt";
+	selection = typeInt;
+	value = TYPE_INT_ACTIVITES;
+	onClick = "this.form.submit();";
+}
+
+RadioIntAffectes: WORadioButton {
+	name = "typeInt";
+	selection = typeInt;
+	value = TYPE_INT_AFFECTES;
+	onClick = "this.form.submit();";
+}
+
+BrowserIndividu: WOBrowser {
+	displayString = individuItem.nomEtPrenom;//VALID
+	item = individuItem;
+	list = individuDisplayGroup.displayedObjects;
+	selections = individuDisplayGroup.selectedObjects;
+	size = 10;
+	multiple = true;
+}
+
+ComboPriorite: WOPopUpButton {
+	item = prioriteItem;
+	list = prioritesList;
+	selection = prioriteSelection;
+}
+
+BtnDoAffectation: WOSubmitButton {
+	action = doAffectation;
+	class = "bouton";
+	disabled = isDisabledBtnAffecter;
+	value = "Affecter";
+}
+
+BtnDoMeLAffecter: WOSubmitButton {
+	action = doMeLaffecter;
+	class = "bouton";
+	disabled = isDisabledBtnMeLAffecter;
+	value = "Me l'affecter";
+}
+
+BtnDoMInterChanger: WOSubmitButton {
+	action = doMInterchanger;
+	class = "bouton";
+	disabled = isDisabledBtnInterchanger;
+	value = "Inverser avec moi";
+	title = "La demande sera affectée a la personne selectionnée, et vous ne serez plus intervenant pour ce DT";
+}
+
+BtnDoSupprimerIntervenant: WOSubmitButton {
+	action = doSupprimerIntervenant;
+	class = "bouton";
+	disabled = isDisabledBtnSupprimer;
+	value = "Supprimer";
+}
+
+BtnRetourner: WOSubmitButton {
+	escapeHTML = "false";
+	action = cancel;
+	class = "bouton";
+	title = "Annuler";
+	value = "Retourner";
+}
+
+CondNotShowFullPage: WOConditional {
+	condition = showFullPage;
+	negate = true;
+}
+
+CondIsTransmissionService: WOConditional {
+	condition = isTransmissionService;
+}
+
+CondNotIsTransmissionService: WOConditional {
+	condition = isTransmissionService;
+	negate = true;
+}
+
+CondShouldShowTransmissionActiviteComponent: WOConditional {
+	condition = shouldShowTransmissionActiviteComponent;
+}
+
+TransmissionSelectActivite: SelectActivite {
+	listener = activiteListener;
+}
+
+BtnTransmettre: WOSubmitButton {
+	name = "BtnTransmettre";
+	value = "Transmettre";
+	action = doTransmettre;
+	class = "bouton";
+	title = "transmettre la DT au service, en precisant l'activite associee";
+	disabled = isDisabledBtnTransmission;
+}

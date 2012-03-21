@@ -1,0 +1,96 @@
+{
+    attributes = (
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_STRUCTURE"; }; 
+            name = prfCStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_CT_ORDRE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "PRF_PHOTO"; }; 
+            name = prfCtOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_DST_CODE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "PRF_DRO_SERVICE"; }; 
+            name = prfDstCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_LOLF_ID"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "PRF_ONGLET"; }; 
+            name = prfLolfId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_ORG_ID"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "PRF_ONGLET"; }; 
+            name = prfOrgId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_ORG_ORDRE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "PRF_ONGLET"; }; 
+            name = prfOrgOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_TCD_CODE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "PRF_DRO_SERVICE"; }; 
+            name = prfTcdCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOPrefDefaut"; 
+    classProperties = (
+        noIndividu, 
+        prfCStructure, 
+        prfCtOrdre, 
+        prfDstCode, 
+        prfLolfId, 
+        prfOrgId, 
+        prfOrgOrdre, 
+        prfTcdCode
+    ); 
+    externalName = "PREF_DEFAUT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (noIndividu, prfCtOrdre, prfDstCode, prfOrgOrdre, prfTcdCode); 
+    }; 
+    name = PrefDefaut; 
+    primaryKeyAttributes = (noIndividu); 
+}

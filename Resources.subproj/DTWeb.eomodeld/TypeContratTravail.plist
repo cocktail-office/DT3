@@ -1,0 +1,79 @@
+{
+    attributes = (
+        {
+            columnName = "C_TYPE_CONTRAT_TRAV"; 
+            externalType = VARCHAR2; 
+            name = cTypeContratTrav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_TYPE_CONTRAT_TRAV"; 
+            externalType = VARCHAR2; 
+            name = lcTypeContratTrav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_TYPE_CONTRAT_TRAV"; 
+            externalType = VARCHAR2; 
+            name = llTypeContratTrav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_CDI"; 
+            externalType = VARCHAR2; 
+            name = temCdi; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_REMUNERATION_ACCESSOIRE"; 
+            externalType = VARCHAR2; 
+            name = temRemunerationAccessoire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_TITULAIRE"; 
+            externalType = VARCHAR2; 
+            name = temTitulaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cTypeContratTrav, 
+        lcTypeContratTrav, 
+        llTypeContratTrav, 
+        temCdi, 
+        temRemunerationAccessoire, 
+        temTitulaire
+    ); 
+    className = "org.cocktail.dt.server.metier.EOTypeContratTravail"; 
+    classProperties = (
+        cTypeContratTrav, 
+        lcTypeContratTrav, 
+        llTypeContratTrav, 
+        temCdi, 
+        temRemunerationAccessoire, 
+        temTitulaire
+    ); 
+    externalName = "GRHUM.TYPE_CONTRAT_TRAVAIL"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "GRHUM.CATEGORIE_EPMLOI"; }; 
+    name = TypeContratTravail; 
+    primaryKeyAttributes = (cTypeContratTrav); 
+}

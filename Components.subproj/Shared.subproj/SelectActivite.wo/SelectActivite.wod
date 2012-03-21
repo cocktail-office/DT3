@@ -1,0 +1,162 @@
+BtnSearch: WOSubmitButton {
+	action = listener.searchActivite;
+	class = "bouton bigSearchButton"; 
+	title = "Trouver les activites contenant la chaine indiquee";
+	name = "BtnSearch";
+	value = "Trouver";
+}
+
+BtnSearchCache: WOSubmitButton {
+	action = listener.searchActivite;
+	value = "BOUTON CACHE (BtnSearchCache)";
+	style = "visibility:hidden;display:none";
+	name = "BtnSearchCache";
+}
+
+CktlHXBrowserActivite: CktlHXBrowser {
+	columnHeight = nbLigBrowserAct;
+	columnsCount = 3;
+	formName = formName;
+	selectedObject = listener.activiteSelectedItem;
+	selectedPath = listener.activiteSelectedPath;
+	zeroItem = listener.activitesZeroItem;
+}
+
+CondHasCommentaire: WOConditional {
+	condition = listener.activiteSelectedItem.actSwapMessage.length;//VALID
+}
+
+CktlNoteActCommentaire: CktlNote {
+	
+}
+
+StrActCommentaire: WOString {
+	value = listener.activiteSelectedItem.actSwapMessage;//VALID
+	escapeHTML = false;
+}
+
+CondHasNoResult: WOConditional {
+	condition = listener.errNoResults;
+}
+
+CondNoErrNoResults: WOConditional {
+	condition = listener.errNoResults;
+	negate = true;
+}
+
+CondNotShowFullPage: WOConditional {
+	condition = showFullPage;
+	negate = true;
+}
+
+CondShowFullPage: WOConditional {
+	condition = showFullPage;
+}
+
+DTDefaultPage1: DTDefaultPage {
+}
+
+ErrorBoxSize: DTFormErrorBox {
+	showError = listener.errSizeStrSearch;
+}
+
+FormFullPage: WOForm {
+	action = doNothing;
+	multipleSubmit = true;
+	name = formName;
+}
+
+LnkResult: WOHyperlink {
+	action = listener.selectActiviteFoundItem;
+	title = "Selectionner cette activite dans l'arborescence";
+}
+
+
+RepResults: WORepetition {
+	item = listener.activiteFoundItem;
+	list = listener.activitesFoundList;
+}
+
+StrMinSize: WOString {
+	value = listener.MIN_SIZE_STRING_SEARCH;
+}
+
+StrResult: WOString {
+	value = displayActiviteFoundItem;
+}
+
+StrSelectionPath: WOString {
+	value = listener.activiteSelectionPath;
+	escapeHTML = false;
+}
+
+CondNotIsAllowedChangeService: WOConditional {
+	condition = listener.isAllowedChangeService;
+	negate = true;
+}
+
+StrService: WOString {
+	value = listener.displayLibelleService;
+}
+
+CondIsAllowedChangeService: WOConditional {
+	condition = listener.isAllowedChangeService;
+}
+
+ComboService: WOPopUpButton {
+	list = listener.serviceList;
+	item = listener.serviceItem;
+	selection = listener.serviceSelected;
+	onChange = "this.form.submit();";
+	displayString = listener.displayLibelleService;
+}
+
+ContainerActivitesFavorites: AjaxUpdateContainer {
+}
+
+
+ExpansionActivitesFavorites: AjaxExpansion {
+	insertion="Effect.blind";
+	insertionDuration="0.1";
+	string = listener.titreExpansionActivitesFavorites;
+	id = "activitesFavoritesExpansion";
+}
+
+CondHasActivitesFavorites: WOConditional {
+	condition = listener.activitesFavoritesList.count;
+}
+
+RepActivitesFavorites: WORepetition {
+	list = listener.activitesFavoritesList;
+	item = listener.activiteFoundItem;
+}
+
+TFSearch: WOTextField {
+	value = listener.strSearch;
+	onKeyDown = "if(event.keyCode==13){this.form.BtnSearchCache.click();};";
+	class = "bigSearchField";
+}
+
+BtnRetourner: WOSubmitButton {
+	action = cancel;
+	class = "bouton";
+	title = "Retourner a l'ecran pr&eacute;c&eacute;dent";
+	value = "<< Retourner";
+}
+
+BtnSelectActivite: WOSubmitButton {
+	escapeHTML = "false";
+	action = selectActivite;
+	class = "bouton";
+	title = "Valider la selection de l'activit&eacute;";
+	value = "Sélectionner activité";
+	disabled = isDisabledBtnSelectActivite;
+}
+
+CktlAjaxAutoCompleteActivite: CktlAjaxAutoComplete {
+	displayString = listener.aacActiviteItem.actLibelle;//VALID
+	value = listener.aacActiviteValue;
+	item = listener.aacActiviteItem;
+	selection = listener.aacActiviteSelected;
+	list = listener.aacActiviteList;
+}

@@ -1,0 +1,34 @@
+{
+    arguments = (
+        {
+            allowsNull = Y; 
+            columnName = A_INT_ORDRE; 
+            externalType = NUMBER; 
+            name = 001aIntOrdre; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_C_STRUCTURE; 
+            externalType = VARCHAR2; 
+            name = 002aCStructure; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_INT_CLE_SERVICE; 
+            externalType = NUMBER; 
+            name = 003aIntCleService; 
+            parameterDirection = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    externalName = UPD_INT_TRANSMISSION; 
+    name = updIntTransmission; 
+}

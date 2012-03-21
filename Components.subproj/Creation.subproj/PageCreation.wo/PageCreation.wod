@@ -1,0 +1,256 @@
+pageCreation: DTDefaultPage {
+  	targetPosition = positionInPage;
+	shouldShowMenu = true;
+	useToolTip = true;
+}
+
+siHasExitLink: WOConditional {
+	condition = hasExitLink;
+}
+
+exitLinkBox: CktlNote {
+  padding = "2";
+}
+
+dtExitLink: DTExitLink {
+	forceSSOLogout = true;
+	linkText = "Quitter";
+	linkToolTip = "Quitter la page de cr&eacute;ation des demandes";
+	linkURL = exitLinkURL;
+}
+
+FormBrowser: WOForm {
+	multipleSubmit = true;
+    name = activiteListener.formName;
+	enctype = "multipart/form-data";
+	id = activiteListener.formName;
+}
+
+ContNotIsOnlyFactService: WOConditional {
+	condition = isOnlyFactService;
+	negate = true;
+}
+
+strDemandeurNomMail: WOString {
+	value = demandeurNomMail;
+	escapeHTML = false;
+}
+
+siChangerDemandeurYES: WOConditional {
+	condition = canChangerDemandeur;
+}
+
+btChangerDemandeur: WOSubmitButton {
+	action = changeDemandeur;
+	value = "Changer le demandeur";
+    class = "bouton";
+	title = "Indiquer un autre demandeur";
+}
+
+strContactInfo: WOString {
+	value = contactLibelle;
+	escapeHTML = false;
+}
+
+formErrorContact: DTFormErrorBox {
+	showError = errorContact;
+}
+
+formErrorSyncContact: DTFormErrorBox {
+	showError = errorSyncContact;
+}
+
+btContact: WOSubmitButton {
+	action = choisirContact;
+	class = "bouton";
+	title = "Choisir les informations sur la localisation";
+	value = "Autre informations de contact ...";
+}
+
+CondIsOnlyFactService: WOConditional {
+	condition = isOnlyFactService;
+}
+
+popServices: WOPopUpButton {
+	item = factServiceItem;
+	displayString = factServiceLibelle;
+	list = factServiceList;
+	selection = factServiceSelected;
+	onChange = "this.form.submit();";
+	noSelectionString = "--- selection du service ---";
+}
+
+StrFactServiceResponsablesLibelle: WOString {
+	value = factServiceResponsablesLibelle;
+	escapeHTML = false;
+}
+
+CondShowSelectActivite: WOConditional {
+	condition = showSelectActivite;
+}
+
+CondNotShowSelectActivite: WOConditional {
+	condition = showSelectActivite;
+	negate = true;
+}
+
+StrServiceLibelle: WOString {
+	value = activiteListener.displayLibelleService;
+}
+
+StrSelectionPath: WOString {
+	value = activiteListener.activiteSelectionPath;
+	escapeHTML = false;
+}
+
+CondNotServiceConcerneChoisisYN: WOConditional {
+	condition = serviceConcerneChoisisYN;
+	negate = true;
+}
+
+ImgFleshUp: WOImage {
+	border = 0;
+	filename = "img/FleshUp.gif";
+	framework = "app";
+}
+
+CondServiceConcerneChoisisYN: WOConditional {
+	condition = serviceConcerneChoisisYN;
+}
+
+SelectActivite1: SelectActivite {
+	listener = activiteListener;
+}
+
+CondEnterAllDataYN: WOConditional {
+	condition = enterAllDataYN;
+}
+
+Ancre: WOGenericContainer {
+	elementName = "a";
+	name = PosDTCreateContent;
+}
+
+CondSwapDefaultYN: WOConditional {
+	condition = swapDefaultYN;
+}
+
+SwapDefault1: SwapDefault {
+	activiteListener = activiteListener;
+}
+
+CondSwapCarteYN: WOConditional {
+	condition = swapCarteYN;
+}
+
+SwapCompte1: SwapCompte {
+	activiteListener = activiteListener;
+}
+
+CondSwapReproYN: WOConditional {
+	condition = swapReproYN;
+}
+
+SwapRepro1: SwapRepro {
+	activiteListener = activiteListener;
+}
+
+CondSwapMessageYN: WOConditional {
+	condition = swapMessageYN;
+}
+
+swapMessage: SwapMessage {
+	activiteListener = activiteListener;
+}
+
+CondSwapInstallComposant: WOConditional {
+	condition = swapInstallComposantYN;
+}
+
+SwapInstallComposant1: SwapInstallComposant {
+	activiteListener = activiteListener;
+}
+
+CondSwapInstallMAteriel: WOConditional {
+	condition = swapInstallMaterielYN;
+}
+
+SwapInstallMateriel1: SwapInstallMateriel {
+	activiteListener = activiteListener;
+}
+
+CondSwapInstallPosteComplet: WOConditional {
+	condition = swapInstallPosteCompletYN;
+}
+
+SwapInstallPosteComplet: SwapInstallPosteComplet {
+	activiteListener = activiteListener;
+}
+
+CondSwapInstallPosteComplet2: WOConditional {
+	condition = swapInstallPosteComplet2YN;
+}
+
+SwapInstallPosteComplet2: SwapInstallPosteComplet2 {
+	activiteListener = activiteListener;
+}
+
+CondSwapIndicateur: WOConditional {
+	condition = swapIndicateurYN;
+}
+
+SwapIndicateur1: SwapIndicateur {
+	activiteListener = activiteListener;
+}
+
+CondSwapReferentFonctionnel: WOConditional {
+	condition = swapReferentFonctionnelYN;
+}
+
+SwapReferentFonctionnel1: SwapReferentFonctionnel {
+	activiteListener = activiteListener;
+}
+
+CondAutorisationRecrutementEtudiant: WOConditional {
+	condition = swapAutorisationRecrutementEtudiantYN;
+}
+
+SwapAutorisationRecrutementEtudiant1: SwapAutorisationRecrutementEtudiant {
+	activiteListener = activiteListener;
+}
+
+CondSupportHandicap: WOConditional {
+	condition = swapSupportHandicapYN;
+}
+
+SwapSupportHandicap1: SwapSupportHandicap {
+	activiteListener = activiteListener;
+}
+
+CondCelluleGeomatique: WOConditional {
+	condition = swapCelluleGeomatiqueYN;
+}
+
+SwapCelluleGeomatique1: SwapCelluleGeomatique {
+	activiteListener = activiteListener;
+}
+
+CondLogiciel: WOConditional {
+	condition = swapLogicielYN;
+}
+
+SwapLogiciel1: SwapLogiciel {
+	activiteListener = activiteListener;
+}
+
+
+
+AjaxExpansionContainerDemandeur: AjaxUpdateContainer {
+}
+
+AjaxExpansionDemandeur: AjaxExpansion {
+	insertion="Effect.blind";
+	insertionDuration="0.1";
+	string = "Afficher / modifier ...";
+	id = "demandeurExpansion";
+}

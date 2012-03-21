@@ -1,0 +1,138 @@
+BrowserResponsables: WOBrowser {
+	displayString = responsableItem.toIndividuUlr.nomEtPrenom;//VALID
+	item = responsableItem;
+	list = responsableList;
+	selections = responsableSelecteds;
+	disabled = isDisabledInterface;
+}
+
+BtnAjouterResponsable: WOSubmitButton {
+	action = ajouterResponsable;
+	class = "bouton";
+	value = "Ajouter responsable";
+	disabled = isDisabledInterface;
+}
+
+BtnDoChangeToLocalPref: WOSubmitButton {
+	action = doChangeToLocalPref;
+	class = "bouton";
+	value = "Redefinir";
+}
+
+BtnDoChangeToPerePref: WOSubmitButton {
+	action = doChangeToPerePref;
+	class = "bouton";
+	value = "Supprimer";
+}
+
+BtnDoNothing: WOSubmitButton {
+	action = doNothing;
+	value = "BOUTON CACHE (doNothing)";
+	style = "visibility:hidden;display:none";
+}
+
+BtnRevenir: WOSubmitButton {
+	action = revenir;
+	class = "bouton";
+	value = "Revenir";
+}
+
+BtnSupprimerAllResponsable: WOSubmitButton {
+	action = supprimerAllResponsable;
+	class = "bouton";
+	value = "Supprimer TOUS les responsables";
+	disabled = isDisabledInterface;
+}
+
+BtnSupprimerResponsable: WOSubmitButton {
+	action = supprimerResponsable;
+	class = "bouton";
+	value = "Supprimer responsable";
+	disabled = isDisabledInterface;
+}
+
+CheckBoxEnvoiMail: WOCheckBox {
+	checked = isEnvoyerMail;
+	disabled = isDisabledInterface;
+}
+
+CondIsHeritee: WOConditional {
+	condition = isHeritee;
+}
+
+CondNotIsHeritee: WOConditional {
+	condition = isHeritee;
+	negate = true;
+}
+
+DTDefaultPage1: DTDefaultPage {
+	pageTitle = "Gestion des responsables DT";
+	shouldShowMenu = false;
+	useToolTip = true;
+}
+
+FormActiviteResponsables: WOForm {
+	multipleSubmit = true;
+}
+
+TableResponsable: WOGenericContainer {
+	elementName = "table";
+	style = styleTableResponsable;
+}
+
+ImgAide: WOImage {
+	filename = "img/Aide.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+}
+
+LnkGoFonctionnel: WOHyperlink {
+	action = goNiveauFonctionnel;
+	title = "voir les responsables fonctionnels";
+	style = styleNiveauFonctionnel;
+}
+
+LnkGoIntervenant: WOHyperlink {
+	action = goNiveauIntervenant;
+	title = "voir les intervenants";
+	style = styleNiveauIntervenant;
+}
+
+LnkGoTechnique: WOHyperlink {
+	action = goNiveauTechnique;
+	title = "Voir les responsables techniques";
+	style = styleNiveauTechnique;
+}
+
+StrActPereLibelle: WOString {
+	value = actPereLibelle;
+}
+
+StrActiviteLibelle: WOString {
+	value = recActivite.actLibelle;//VALID
+}
+
+StrTotalFonctionnel: WOString {
+	value = totalFonctionnel;
+}
+
+StrTotalIntervenant: WOString {
+	value = totalIntervenant;
+}
+
+StrTotalTechnique: WOString {
+	value = totalTechnique;
+}
+
+ToolTipIntervenant: CktlToolTip {
+	htmlText = htmlTextRespIntervenant;
+}
+
+ToolTipRespTechnique: CktlToolTip {
+	htmlText = htmlTextRespTechnique;
+}
+
+ToolTipRespFonctionnel: CktlToolTip {
+	htmlText = htmlTextRespFonctionnel;
+}

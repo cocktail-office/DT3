@@ -1,0 +1,7 @@
+ImgCancel: WOImage {
+	filename = "img/OpAnnuler.gif";
+	framework = "app";
+	width = "16px";
+	height = "16px";
+	border = "0";
+}

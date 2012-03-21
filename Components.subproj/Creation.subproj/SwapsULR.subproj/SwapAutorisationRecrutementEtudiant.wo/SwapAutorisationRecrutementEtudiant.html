@@ -1,0 +1,114 @@
+s<table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+  <tr>
+    <td>
+      <font class = "subTitleInverse">&nbsp;Autorisation de recrutement en vue de l'&eacute;tablissement d'un contrat &eacute;tudiant</font>
+    </td>
+  </tr>
+  <tr class = "boxBorder">
+    <td>
+      <table cellpadding = "10" cellspacing = "0" border = "0" valign = "middle" width = "100%" class = "boxContents">
+        <tr>
+          <td align = "right" nowrap>
+            <font class = "textEntry">&Eacute;tudiant concern&eacute; <font color="red">*</font></font>
+          </td>
+          <td align = "left">
+            <webobject name = "TFNomPrenomEtudiant" />&nbsp;&nbsp; 
+            <webobject name = "BtnChangeEtudiant" />
+            <webobject name = "FormErrorEtudiantVide">Le nom de l'&eacute;tudiant est obligatoire !</webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" nowrap>
+            <font class = "textEntry">P&eacute;riode du contrat <font color="red">*</font></font>
+          </td>
+          <td align = "left">
+            D&eacute;but : <webobject name = "DPDebutContrat" />
+            <webobject name = "FormErrorDateDebutContratVide">Le date de d&eacute;but de contrat est obligatoire !</webobject>
+            <webobject name = "FromErrorDateDebutFinContrat">Incoh&eacute;rence entre date de d&eacute;but et date de fin !</webobject>
+            Fin : <webobject name = "DPFinContrat" />
+            <webobject name = "FormErrorDateFinContratVide">Le date de fin de contrat est obligatoire !</webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right">
+            <font class = "textEntry">Nombre maximum de vacations estim&eacute; pour la p&eacute;riode <font color="red">*</font></font>
+          </td>
+          <td align = "left">
+            <webobject name = "TFNombreMaxiVacationEstimePourPeriode" /> heures
+            <webobject name = "FromErrorNombreMaxiVacationEstimePourPeriodeVide">Veuillez saisir une valeur !</webobject>
+            <br />
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" valign = "top" width = "1%">
+            <font class = "textEntry">Imputation	budg&eacute;taire <font color="red">*</font></font>
+            <br />
+            <font class = "textNote">provenance des cr&eacute;dits 30 utilis&eacute;s pour cette d&eacute;pense de personnel</font>
+          </td>
+          <td align = "left">
+            <webobject name = "strLigneBud" />&nbsp;&nbsp; 
+            <webobject name = "siLigneBudSelected"> <webobject name = "btClearLigneBud" /> </webobject>
+            <webobject name = "siCanSelectLigneBud"> <webobject name = "btLigneBud" /> </webobject>
+            <webobject name = "formErrorLbud">La ligne budg&eacute;taire est obligatoire !</webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" nowrap>
+            <font class = "textEntry">Lieu(x) d&rsquo;ex&eacute;cution du travail <font color="red">*</font></font>
+          </td>
+          <td align = "left">
+            <font class = "textEntry"><webobject name = "TFLieuxExecutionDuTravail" /></font>
+            <webobject name = "FormErrorLieuxExecutionDuTravailVide">Cette valeur doit &ecirc;tre renseign&eacute;e !</webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" valign = "top">
+            <font class = "textEntry">Activit&eacute; exerc&eacute;e par l&rsquo;&eacute;tudiant <font color="red">*</font></font>
+            <br />
+            <font class = "textNote">choisir au moins l&rsquo;une des huit activit&eacute;s pr&eacute;cis&eacute;es par le d&eacute;cret n&deg; 2007-1915 du 26 d&eacute;cembre 2007 (art. 1) </font>
+          </td>
+          <td align = "left">
+            <webobject name = "ChkListRecrutementActivite" />
+            <webobject name = "FormErrorRecrutementActiviteSelectedsVide">Merci de choisir au moins une activit&eacute; !</webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right">
+            <font class = "textEntry">Responsable du recrutement <font color="red">*</font></font>
+          </td>
+          <td align = "left">
+            <webobject name = "TFNomPrenomResponsableRecrutement" />&nbsp;&nbsp; 
+            <webobject name = "BtnChangeResponsableRecrutement" />
+            <webobject name = "FormErrorResponsableRecrutementVide">Le nom est obligatoire !</webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right">
+            <font class = "textEntry">Directeur de la composante ou du service <font color="red">*</font></font>
+          </td>
+          <td align = "left">
+            <webobject name = "PopUpDirecteur" />
+            <br />
+            <font class = "textNote">Ce liste est d&eacute;duites &agrave; partir du service du contact selectionn&eacute; pour cr&eacute;er la DT</font>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" valign = "top">
+            <font class = "textEntry">Compl&eacute;ment &eacute;ventuel d&rsquo;information&nbsp;:</font>
+          </td>
+          <td align = "left">
+            <font class = "textEntry"><webobject name = "TextComplement" /></font>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<hr class = "subLine" />
+<webobject name = "FooterSwap"/>
+<br />
+<font class = "textEntry">Document(s) attach&eacute;(s)&nbsp;:</font>
+<br />
+<webobject name = "fileUpload" />
+<br />
+<webobject name = "btEnregistrerDT" /> &nbsp;&nbsp; <webobject name = "btNouvelleDT" />

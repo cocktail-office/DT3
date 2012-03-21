@@ -1,0 +1,21 @@
+StrRowCount: WOString {
+	value = countEnCoursArray.count;
+}
+
+RepDate: WORepetition {
+	list = countEnCoursArray;
+	item = countEnCoursItem;
+	index = countEnCoursItemIndex;
+}
+
+StrDate: WOString {
+	value = dateItem;
+}
+
+StrIndex: WOString {
+	value = countEnCoursItemIndex;
+}
+
+StrCount: WOString {
+	value = countEnCoursItem;
+}

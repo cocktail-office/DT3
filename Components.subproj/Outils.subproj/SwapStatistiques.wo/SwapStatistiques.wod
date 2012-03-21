@@ -1,0 +1,33 @@
+PopupService: WOPopUpButton {
+	displayString = serviceDisplay;
+	item = serviceItem;
+	list = serviceList;
+	onChange = "this.form.submit();";
+	selection = serviceSelected;
+}
+
+SelectActivite1: SelectActivite {
+	listener = activiteListener;
+}
+
+DTChartRepartitionActivite1 : DTChartRepartitionActivite {
+	eoVActivites = eoVActivites;
+	dDebut = dDebut;
+	dFin = dFin;
+}
+
+DDebut: CktlDatePicker {
+	dateValue = dDebut;
+	updateContainerID = "ContainerDTChartRepartitionActivite1";
+}
+
+DFin: CktlDatePicker {
+	dateValue = dFin;
+	updateContainerID = "ContainerDTChartRepartitionActivite1";
+}
+
+BtnNeFaitRien: WOSubmitButton {
+	action = neFaitRien;
+	value = "OK";
+	class = "bouton";
+}

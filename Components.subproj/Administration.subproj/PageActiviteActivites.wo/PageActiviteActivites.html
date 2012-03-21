@@ -1,0 +1,102 @@
+<webobject name = "PageActiviteActivites">
+	<div align="center">
+		<table cellpadding = "1" cellspacing = "0" border = "0" class = "boxTitle">
+		  <tr>
+		    <td>
+		      <font class = "subTitleInverse">
+		        Gestion d'activit&eacute; DT
+		      </font>
+		    </td>
+		  </tr>
+		  <tr>
+		    <td class = "boxBorder">
+		      <table cellpadding = "10" cellspacing = "0" border = "0" width = "100%" class = "boxContents">
+		        <tr>
+		          <td align = "CENTER">
+		            <table cellpadding = "3" cellspacing = "0" border = "0">
+		              <tr>
+		                <td align = "CENTER">
+										  <webobject name = "CondHasErrorMessage">
+										    <webobject name = "DTErrorBox1"></webobject>
+										  </webobject>
+										  <webobject name = "FormCreationService">
+										    <table>
+										      <tr>
+										        <td align = "right" colspan = "2">
+										          Code activit&eacute; :
+										          <webobject name = "TextFieldCodeActivite"></webobject>
+										        </td>
+										      </tr>
+										      <tr>
+										        <td colspan = "2">
+										        	Libell&eacute; :<br/>
+										        	<font class="textNote">(celles qui commencent par "_" seront invisibles pour les non-intervenants)</font>
+										        </td>
+										      </tr>
+										      <tr>
+										        <td colspan = "2">
+										          <webobject name = "TextFieldLibelle"></webobject>
+										        </td>
+										      </tr>
+										      <tr>
+										        <td colspan = "2">
+										        	Cr&eacute;ation par email (activit&eacute; &quot;feuille&quot; uniquement)<br/>
+										        	<font class="textNote">Le format de l'adresse doit etre email@domaine</font>
+										        </td>
+										      </tr>
+										      <tr>
+										        <td colspan = "2">
+										          <webobject name = "TextFieldEmail"></webobject>
+										        </td>
+										      </tr>
+										      <tr>
+										        <td>Prestation (code article)</td>
+										        <td>
+										          <webobject name = "TextFieldCaarId"></webobject>
+										        </td>
+										      </tr>
+										      <tr>
+										        <td colspan = "2">
+										          <table style="border:1px #CCCCCC solid; background-color:#FFFFEE">
+										            <webobject name="CondNotIsLocalPrefDef"><tr><td>D&eacute;finition h&eacute;rit&eacute;e de l'activit&eacute; :<br><webobject name="StrLibelleActHeritee"></webobject></td><td><webobject name="BtnDoChangeLocal"></webobject></td></tr></webobject><webobject name="CondIsLocalPrefDef"><tr><td>D&eacute;finition locale</td><td><webobject name="BtnDoChangePere"></webobject></td></tr></webobject><tr>
+										              <td colspan = "2">
+										                Vue par d&eacute;faut:
+										                <webobject name = "ComboSwap"></webobject>
+										              </td>
+										            </tr>
+										            <tr>
+										              <td colspan = "2">Informations suppl&eacute;mentaires<br/>
+										      		  	<font class="textNote">Max 500 caract&egrave;res (balises HTML accept&eacute;)</font></td>
+										            </tr>
+										            <tr>
+										              <td colspan = "2">
+										                <webobject name = "TextCommentActivite"></webobject>
+										              </td>
+										            </tr>
+										          </table>
+										        </td>
+										      </tr>
+										      <tr>
+										        <td colspan = "2">
+										          <webobject name = "CheckAfficherListe"></webobject>
+										          Activit&eacute; affichable        </td>
+										      </tr>
+										      <tr>
+										        <td align = "center" colspan = "2">
+										          <webobject name = "BtnOK"></webobject>
+										          <webobject name = "BtnAnnuler"></webobject>
+										        </td>
+										      </tr>
+										    </table>
+										  </webobject>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</webobject>

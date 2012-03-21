@@ -1,0 +1,274 @@
+pageContact: DTDefaultPage {
+	useDatePicker = false;
+}
+strNomIndividu: WOString {
+	value = connectedUserInfo.nomEtPrenom;
+}
+
+siHasError: WOConditional {
+	condition = hasGeneralError;
+}
+
+boxErrorMessage: DTErrorBox {
+	message = errorMessage;
+}
+
+formContact: WOForm {
+	multipleSubmit = true;
+	action = doFormChangeSubmit;
+	name = "formContact";
+}
+
+siHasSelectedContact: WOConditional {
+  condition = hasSelectedContact;
+}
+
+strTitreEdition: WOString {
+  value = titreEdition;
+  escapeHTML = false;
+}
+
+siNetExterneEditingYES: WOConditional {
+  condition = isNetExterneEdit;
+}
+
+tfEtablissement: WOTextField {
+	maxlength = 80;
+	size = 25;
+	value = ctEtablissement;
+}
+
+siNetExterneEditingNO: WOConditional {
+  condition = isNetExterneEdit;
+  negate = true;
+}
+
+strCtEtablissement: WOString {
+	value = ctEtabLibelle;
+	valueWhenEmpty = "&lt;inconnu&gt;";
+}
+
+formErrorEtab: DTFormErrorBox {
+	showError = errorEtab;
+}
+
+siNetLocalEditingYES: WOConditional {
+  condition = isNetLocalEdit;
+}
+
+popServices: WOPopUpButton {
+	item = ctServiceItem;
+	displayString = ctServiceLibelle;
+	list = ctServiceList;
+	selection = ctServiceSelected;
+}
+
+chTousServices: WOCheckBox {
+	checked = chTousServices;
+	onClick = "formContact.submit();";
+}
+
+siNetLocalEditingNO: WOConditional {
+  condition = isNetLocalEdit;
+  negate = true;
+}
+
+strCtService: WOString {
+  value = ctServiceLibelle;
+	valueWhenEmpty = "&lt;inconnu&gt;";
+}
+
+formErrorService: DTFormErrorBox {
+	showError = errorService;
+}
+
+CondShowPole: WOConditional {
+	condition = appShowContactPole;
+}
+
+popPole: WOPopUpButton {
+	displayString = ctPoleItem.llImplantationGeo; //VALID
+	item = ctPoleItem;
+	list = ctPoleList;
+	selection = ctPoleSelected;
+	onChange = "formContact.submit();";
+	noSelectionString = "";
+}
+
+strCtPole: WOString {
+	value = ctPoleLibelle;
+	valueWhenEmpty = "&lt;inconnu&gt;";
+}
+
+popBatiment: WOPopUpButton {
+	displayString = ctBatimentItem.appellation; //VALID
+	item = ctBatimentItem;
+	list = ctBatimentList;
+	selection = ctBatimentSelected;
+	onChange = "formContact.submit();";
+}
+
+chTousBatiments: WOCheckBox {
+	checked = chTousBatiments;
+	onClick = "formContact.submit();";
+}
+
+strCtBatiment: WOString {
+	value = ctBatimentLibelle;
+	valueWhenEmpty = "&lt;inconnu&gt;";
+}
+
+formErrorBatiment: DTFormErrorBox {
+	showError = errorBatiment;
+}
+
+popBureau: WOPopUpButton {
+	displayString = ctBureauItemLibelle;
+	item = ctBureauItem;
+	list = ctBureauList;
+	selection = ctBureauSelected;
+}
+
+strCtBureau: WOString {
+	value = ctBureauLibelle;
+	valueWhenEmpty = "&lt;inconnu&gt;";
+}
+
+siEditingYES: WOConditional {
+  condition = isEditing;
+}
+
+tfTelephone: WOTextField {
+	maxlength = 16;
+	size = 14;
+	value = ctTelephone;
+}
+
+siEditingNO: WOConditional {
+  condition = isEditing;
+  negate = true;
+}
+
+strCtTelephone: WOString {
+	value = ctTelephone;
+	valueWhenEmpty = "&lt;inconnu&gt;";
+}
+
+formErrorTelephone: DTFormErrorBox {
+	showError = errorTelephone;
+}
+
+BtnEditOK: WOImageButton {
+ 	title = "Valider et enregistrer la modification du contact";
+  	action = doEditOK;
+	filename = "img/OpValider.gif";
+	framework = "app";
+	width = "16px";
+	height = "16px";
+	border = "0";
+}
+
+ImgValidateContact: ImgValidate {
+	
+}
+
+LnkEditCancel: WOHyperlink {
+  title = "Annuler la modification du contact";
+  action = doEditCancel;
+}
+
+ImgCancelContact: ImgCancel {
+	
+}
+
+strCtEmail: WOString {
+	value = ctEmail;
+}
+
+siShowToolBar: WOConditional {
+  condition = canShowToolBar;
+}
+
+siShowAddUpdateDelete: WOConditional {
+	condition = canShowAddUpdateDelete;
+}
+
+LnkAjouter: WOHyperlink {
+	title = "Ajouter un nouveau contact";
+	action = doAdd;
+}
+
+ImgAddContact: ImgAdd {
+}
+
+LnkModifier: WOHyperlink {
+	title = "Modifier le contact s&eacute;lectionn&eacute;";
+	action = doUpdate;
+}
+
+ImgUpdateContact: ImgUpdate {
+	
+}
+
+LnkSupprimer: WOHyperlink {
+	title = "Supprimer le contact s&eacute;lectionn&eacute;";
+	action = doDelete;
+}
+
+ImgDeleteContact: ImgDelete {
+	
+}
+
+siShowSelect: WOConditional {
+  condition = canShowSelect;
+}
+
+LnkSelect: WOHyperlink {
+	action = doSelect;
+	title = "S&eacute;lectionner ces informations pour la demande que vous allez realiser";
+}
+
+LnkAnnu: WOHyperlink {
+	action = doCancel;
+	title = "Annuler la s&eacute;lection d'un contact et revenir a la page de creation de demande";
+}
+
+repetContactList: WORepetition {
+	item = contactItem;
+	list = allContactsItems;
+}
+
+siHasContactsYES: WOConditional {
+	condition = hasContacts;
+}
+
+siListContactSelected: WOConditional {
+	condition = isListContactSelected;
+}
+
+linkSelectContact: WOHyperlink {
+	action = doSelectListContact;
+	class = "pageLink";
+	title = "S&eacute;lectionner ou modifier ce contact";
+}
+
+strListService: WOString {
+	value = contactItem.service;
+}
+
+strBatiment: WOString {
+	value = contactItem.batiment;
+}
+
+strListTelephone: WOString {
+	value = contactItem.telephone;
+}
+
+strListEmail: WOString {
+	value = contactItem.email;
+}
+
+siHasContactsNO: WOConditional {
+	negate = true;
+	condition = hasContacts;
+}

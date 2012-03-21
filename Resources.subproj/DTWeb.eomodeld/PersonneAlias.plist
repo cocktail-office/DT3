@@ -1,0 +1,26 @@
+{
+    attributes = (
+        {
+            columnName = ALIAS; 
+            externalType = VARCHAR2; 
+            name = alias; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (alias, persId); 
+    className = "org.cocktail.dt.server.metier.EOPersonneAlias"; 
+    classProperties = (alias, persId); 
+    externalName = "GRHUM.PERSONNE_ALIAS"; 
+    fetchSpecificationDictionary = {}; 
+    name = PersonneAlias; 
+    primaryKeyAttributes = (alias, persId); 
+}

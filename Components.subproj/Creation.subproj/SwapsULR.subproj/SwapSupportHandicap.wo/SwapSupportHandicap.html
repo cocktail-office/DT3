@@ -1,0 +1,76 @@
+<table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+  <tr>
+    <td>
+      <font class = "subTitleInverse">&nbsp;Cellule handicap : suivi d'&eacute;tudiant(s)</font>
+    </td>
+  </tr>
+  <tr>
+	  <td>
+  		<table cellpadding = "10" cellspacing = "0" border = "0" valign = "middle" width = "100%" class = "boxContents">
+  			<tr>
+  				<td colspan = "2" align = "left">
+     	    	<font class = "dtAttentionText">ATTENTION&nbsp;! L'orthographe du nom doit &ecirc;tre exacte, car le login 
+     	    		ne pourra pas &ecirc;tre modifi&eacute; par la suite.</font>
+  				</td>
+  			</tr>
+    		<tr>
+    	    <td align = "right"><font class = "textEntry">Nom <font color="red">*</font>&nbsp;:</font></td>
+  	      <td align = "left">
+	          <webobject name = "TFNom"></webobject>
+	          <webobject name = "FormErrorNom">Veuillez saisir le nom de la personne&nbsp;!</webobject>
+          </td>
+        </tr>
+      	<tr>
+       		<td align = "right"><font class = "textEntry">Pr&eacute;nom <font color="red">*</font>&nbsp;:</font></td>
+          <td align = "left">
+      	    <webobject name = "TFPrenom"></webobject>
+            <webobject name = "FormErrorPrenom">Veuillez saisir le pr&eacute;nom de la personne&nbsp;!</webobject>
+          </td>
+        </tr>
+
+				<tr>
+          <td align = "right" nowrap>
+            <font class = "textEntry">&Eacute;tudiant(s) concern&eacute;(s) <font color="red">*</font> :</font>
+          </td>
+          <td align = "left">
+          	<ul>
+  	        	<webobject name = "RepEtudiant">
+      	    		<li><webobject name = "StrEtudiantItemNomEtPrenom"/>	<webobject name = "BtnRemoveEtudiant"/></li>
+   		       	</webobject>
+        	  	<li>
+	          		<webobject name = "TFNomPrenomEtudiant" />&nbsp;&nbsp; 
+	            	<webobject name = "BtnChangeEtudiant" />
+	        	  </li>
+           	</ul>
+          </td>
+        </tr>
+        
+        <tr>
+          <td colspan = "2" align = "center">
+						<webobject name = "BtnAddEtudiant"/>
+          </td>
+        </tr>
+        
+        <tr>
+          <td align = "right" valign = "top">
+            <font class = "textEntry">Compl&eacute;ment &eacute;ventuel d&rsquo;information&nbsp;:</font>
+          </td>
+          <td align = "left">
+            <font class = "textEntry"><webobject name = "TextComplement" /></font>
+          </td>
+        </tr>
+        
+    	</table>
+    </td>
+  </tr>
+</table>
+
+
+<hr class = "subLine" />
+<webobject name = "FooterSwap"/>
+<br />
+<font class = "textEntry">Document(s) attach&eacute;(s)&nbsp;:</font>
+<br />
+<webobject name = "fileUpload" />
+<br />
+<webobject name = "btEnregistrerDT" /> &nbsp;&nbsp; <webobject name = "btNouvelleDT" />

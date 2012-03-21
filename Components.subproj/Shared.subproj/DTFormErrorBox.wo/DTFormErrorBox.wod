@@ -1,0 +1,12 @@
+content: WOComponentContent {
+}
+
+imgAttention: WOImage {
+	filename = "img/MiniAttention.png";
+	border = 0;
+	framework = "app";
+}
+
+siShowError: WOConditional {
+	condition = ^showError;
+}

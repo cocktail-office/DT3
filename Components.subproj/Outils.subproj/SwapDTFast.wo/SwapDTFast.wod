@@ -1,0 +1,341 @@
+ErrorBox: DTFormErrorBox {
+	showError = ctrl.hasError;
+}
+
+StrErrorMessage: WOString {
+	value = ctrl.errorMessage;
+	escapeHTML  = false;
+}
+
+FormFast: WOForm {
+	action = doNothing;
+	multipleSubmit = true;
+	enctype = "multipart/form-data";
+}
+
+BtnDoNothing: WOSubmitButton {
+	action = doNothing;
+	value = "BOUTON CACHE (doNothing)";
+	style = "visibility:hidden;display:none";
+}
+
+// 1er filtre
+
+CondShowConsultPanel: WOConditional {
+	condition = showConsultPanel;
+}
+
+DatePickerDebut: CktlDatePicker {
+	dateValue = ctrl.dateDebutPeriode;
+}
+
+DatePickerFin: CktlDatePicker {
+	dateValue = ctrl.dateFinPeriode;
+}
+
+BtnChangePeriode: WOSubmitButton {
+	action = changePeriode;
+	//value = "Changer p&eacute;riode";
+	value = "Changer période";
+	escapeHTML = false;
+	class = "bouton";
+}
+
+ComboEtat: WOPopUpButton {
+	list = ctrl.etatList;
+	item = etatItem;
+	selection = ctrl.etatSelected;
+	displayString = etatItemDisplay;
+	onChange = "javascript:this.form.submit();";
+}
+
+// 2 eme filtre
+
+ComboService: WOPopUpButton {
+	list = ctrl.serviceList;
+	item = serviceItem;
+	selection = ctrl.serviceSelected;
+	displayString = serviceItemDisplay;
+	onChange = "javascript:this.form.submit();";
+}
+
+StrTotalContact: WOString {
+	value = ctrl.contactList.count;
+}
+
+ComboContact: WOPopUpButton {
+	noSelectionString = "--- contacts ---";
+	list = ctrl.contactList;
+	item = contactItem;
+	selection = ctrl.contactSelected;
+	displayString = contactItemDisplay;
+	onChange = "javascript:this.form.submit();";	
+}
+
+StrTotalActivite: WOString {
+	value = ctrl.activiteList.count;
+}
+
+ComboActivite: WOPopUpButton {
+	noSelectionString = "--- activites ---";
+	list = ctrl.activiteList;
+	item = activiteItem;
+	selection = ctrl.activiteSelected;
+	displayString = activiteItemDisplay;
+	onChange = "javascript:this.form.submit();";	
+}
+
+CondShowCreatePanel: WOConditional {
+	condition = showCreatePanel;
+}
+
+StrServiceSelectedLlStructure: WOString {
+	value = serviceSelectedDisplay;
+	escapeHTML = true;
+}
+
+CondShowComboIntervention: WOConditional {
+	condition = showComboIntervention;
+}
+
+StrTotalIntervention: WOString {
+	value = interventionDg.allObjects.count;
+}
+
+// intervention en cours
+
+ComboIntervention: WOPopUpButton {
+	list = interventionDg.allObjects;
+	item = interventionItem;
+	selection = ctrl.interventionSelected;
+	displayString = interventionItemDisplay;
+	onChange = "javascript:this.form.submit();";	
+	disabled = isDisabledComboIntervention;
+}
+
+ComboActiviteIntervention: WOPopUpButton {
+	list = ctrl.activiteList;
+	item = activiteItem;
+	selection = ctrl.interventionSelectedActiviteSelected;
+	displayString = activiteItemDisplay;
+	disabled = isDisabledComboActiviteIntervention;
+}
+
+CondShowBtnChangeActiviteAutre: WOConditional {
+	condition = showBtnChangeActiviteAutre;
+}
+
+BtnChangeActiviteAutre: WOSubmitButton {
+	action = changeActiviteAutre;
+	value = "Autre";
+	class = "bouton";
+	escapeHTML = "false";
+}
+
+ComboContactIntervention: WOPopUpButton {
+	list = ctrl.contactList;
+	item = contactItem;
+	selection = ctrl.interventionSelectedContactSelected;
+	displayString = contactItemDisplay;
+	disabled = isDisabledComboContactIntervention;
+}
+
+CondShowBtnChangeContactAutre: WOConditional {
+	condition = showBtnChangeContactAutre;
+}
+
+BtnChangeContactAutre: WOSubmitButton {
+	action = changeContactAutre;
+	value = "Autre";
+	class = "bouton";
+	escapeHTML = "false";
+}
+
+ComboModeAppelIntervention: WOPopUpButton {
+	list = ctrl.modeAppelList;
+	item = modeAppelItem;
+	selection = ctrl.interventionSelectedModeAppelSelected;
+	displayString = modeAppelItemDisplay;
+	disabled = isDisabledComboModeAppelIntervention;
+}
+
+TextMotif: WOText {
+	disabled = isDisabledTextMotif;
+	value = ctrl.interventionSelectedMotif;
+	class = "dtTextareaIntMotif";
+}
+
+TextCommentaireInterne: WOText {
+	disabled = isDisabledTextCommentaireInterne;
+	value = ctrl.interventionSelectedCommentaire;
+	class = "dtTextareaIntMotif";
+	style = "height:50px";
+}
+
+CondShowInterventionFileUpload: WOConditional {
+	condition = showInterventionFileUpload;
+}
+
+InterventionFileUpload: DTFileUpload {
+	ctrl = ctrlInterventionFileUpload;
+}
+
+// traitements
+
+RepTraitement: WORepetition {
+	list = ctrl.newInterventionTraitementList;
+	item = newInterventionTraitementItem;
+}
+
+DatePickerTraDDeb: CktlDatePicker {
+	dateValue = newInterventionTraitementItem.dDeb;
+	showsTime = true;
+	disabled = isDisabledTextTraTraitement;
+} 
+
+DatePickerTraDFin: CktlDatePicker {
+	dateValue = newInterventionTraitementItem.dFin;
+	showsTime = true;
+	disabled = isDisabledTextTraTraitement;
+} 
+
+CheckTraConsultable: WOCheckBox {
+	checked = newInterventionTraitementItem.consultable;
+	disabled = isDisabledTextTraTraitement;
+}
+
+CondTraitementHasError: WOConditional {
+	condition = newInterventionTraitementItem.hasError;
+}
+
+TraitementErrorBox: DTFormErrorBox {
+	showError = newInterventionTraitementItem.hasError;
+}
+
+StrTraitementErrorMessage: WOString {
+	value = newInterventionTraitementItem.errorMessage;
+	escapeHTML  = false;
+}
+
+TextTraMotif: WOText {
+	value = newInterventionTraitementItem.text;
+	class = "dtTextareaIntMotif";
+	style = "height:70px; width:300px";
+	disabled = isDisabledTextTraTraitement;
+}
+
+CondShowTraitementFileUpload: WOConditional {
+	condition = showTraitementFileUpload;
+}
+
+TraitementFileUpload: DTFileUpload {
+	ctrl = newInterventionTraitementItem.ctrlTraitementFileUpload;
+}
+
+// bouton sur les traitements
+
+CondShowBtnAddTraitementAtEnd: WOConditional {
+	condition = showBtnAddTraitementAtEnd;
+}
+
+BtnAddTraitementAtEnd: WOSubmitButton {
+	action = addTraitementAtEnd;
+	value = "Nouveau traitement";
+	class = "bouton";
+}
+
+CondShowBtnDelTraitement: WOConditional {
+	condition = showBtnDelTraitement;
+}
+
+BtnDelTraitement: WOSubmitButton {
+	action = delTraitement;
+	value = "Supprimer";
+	class = "bouton";
+}
+
+// creation de DT
+
+CondShowCheckSendMails: WOConditional {
+	condition = showCheckSendMails;
+}
+
+ImgSendMails: WOImage {
+	filename = "img/small-mail.gif";
+	framework = "FwkCktlWebApp";
+	border = "0";
+	width = "11";
+	height = "8";
+}
+
+CheckShouldSendMails: WOCheckBox {
+	checked = ctrl.shouldSendMails;
+}
+
+CondShowBtnCreate: WOConditional {
+	condition = showBtnCreate;
+}
+
+BtnCreate: WOSubmitButton {
+	action = create;
+	//value = "Cr&eacute;er (non valid&eacute;e / non affect&eacute;e)";
+	value = "Créer (non validée / non affectée)";
+	class = "bouton";
+	escapeHTML = "false";
+}
+
+CondShowBtnCreateAndAffectSelf: WOConditional {
+	condition = showBtnCreateAndAffectSelf;
+}
+
+BtnCreateAndAffectSelf: WOSubmitButton {
+	action = createAndAffectSelf;
+	//value = "Cr&eacute;er (se l'affecter)";
+	value = "Créer (se l'affecter)";
+	class = "bouton";
+	escapeHTML = "false";
+}
+
+CondShowBtnCreateAndAffectSelfAndClose: WOConditional {
+	condition = showBtnCreateAndAffectSelfAndClose;
+}
+
+BtnCreateAndAffectSelfAndClose: WOSubmitButton {
+	action = createAndAffectSelfAndClose;
+	//value = "Cr&eacute;er (se l'affecter et cloturer)";
+	value = "Créer (se l'affecter et cloturer)";
+	class = "bouton";
+	escapeHTML = "false";
+}
+
+// boutons d'ajout / modif de DT
+
+CondShowLnkNewIntervention: WOConditional {
+	condition = showLnkNewIntervention;
+}
+
+LnkNewIntervention: WOHyperlink {
+	action = newIntervention;
+	title = "Creer une nouvelle demande de travaux";
+	string = "Saisir une Nouvelle DT";
+}
+
+CondShowLnkCancel: WOConditional {
+	condition = showLnkCancel;
+}
+
+LnkCancel: WOHyperlink {
+	action = cancel;
+	title = "Annuler l'operation en cours";
+	string = "Annuler";
+}
+
+CondShowLnkEdit: WOConditional {
+	condition = showLnkEdit;
+}
+
+LnkEdit: WOHyperlink {
+	action = edit;
+	title = "Modifier la demande de travaux";
+	string = "Modifier";
+}

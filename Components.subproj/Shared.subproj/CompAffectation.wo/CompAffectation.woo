@@ -1,0 +1,56 @@
+{
+    "WebObjects Release" = "WebObjects 5.0"; 
+    encoding = "UTF-8"; 
+    variables = {
+        individuDisplayGroup = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = DTIndividuUlr; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                }; 
+                fetchSpecificationName = fetchAffectation; 
+            }; 
+            formatForLikeQualifier = "%@*"; 
+            localKeys = (); 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+            sortOrdering = (
+                {
+                    class = EOSortOrdering; 
+                    key = nomEtPrenom; 
+                    selectorName = "compareAscending:"; 
+                }
+            ); 
+        }; 
+        structureDisplayGroup = {
+            class = WODisplayGroup; 
+            dataSource = {
+                class = EODatabaseDataSource; 
+                editingContext = "session.defaultEditingContext"; 
+                fetchSpecification = {
+                    class = EOFetchSpecification; 
+                    entityName = DTStructureUlr; 
+                    fetchLimit = 0; 
+                    isDeep = YES; 
+                }; 
+                fetchSpecificationName = fetchAffectation; 
+            }; 
+            formatForLikeQualifier = "%@*"; 
+            localKeys = (); 
+            numberOfObjectsPerBatch = 0; 
+            selectsFirstObjectAfterFetch = NO; 
+            sortOrdering = (
+                {
+                    class = EOSortOrdering; 
+                    key = llStructure; 
+                    selectorName = "compareAscending:"; 
+                }
+            ); 
+        }; 
+    }; 
+}

@@ -1,0 +1,114 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toStructureUlr.llStructure"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            definition = "toIndividuUlr.noIndividu"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "toIndividuUlr.nomUsuel||' '||toIndividuUlr.prenom"; 
+            externalType = VARCHAR2; 
+            name = nomEtPrenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 110; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toIndividuUlr.nomUsuel"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toIndividuUlr.prenom"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, llStructure, noIndividu, nomUsuel, persId, prenom); 
+    className = "org.cocktail.dt.server.metier.EORepartStructure"; 
+    classProperties = (
+        cStructure, 
+        llStructure, 
+        noIndividu, 
+        nomEtPrenom, 
+        nomUsuel, 
+        persId, 
+        prenom, 
+        toIndividuUlr, 
+        toStructureUlr
+    ); 
+    externalName = "GRHUM.REPART_STRUCTURE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            llStructure, 
+            noIndividu, 
+            nomEtPrenom, 
+            nomUsuel, 
+            persId, 
+            prenom, 
+            toIndividuUlr, 
+            toStructureUlr
+        ); 
+    }; 
+    name = DTRepartStructure; 
+    primaryKeyAttributes = (cStructure, persId); 
+    relationships = (
+        {
+            destination = IndividuUlrPersId; 
+            internalInfo = {"_nameInObjectStore" = individuUlrHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = persId; sourceAttribute = persId; }); 
+            name = toIndividuUlr; 
+        }, 
+        {
+            destination = DTStructureUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toStructureUlr; 
+        }
+    ); 
+}

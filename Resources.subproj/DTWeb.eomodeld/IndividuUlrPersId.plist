@@ -1,0 +1,104 @@
+{
+    attributes = (
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "nomUsuel||' '||prenom"; 
+            externalType = VARCHAR2; 
+            name = nomEtPrenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NOM_PATRONYMIQUE"; 
+            externalType = VARCHAR2; 
+            name = nomPatronymique; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NOM_USUEL"; 
+            externalType = VARCHAR2; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = PRENOM; 
+            externalType = VARCHAR2; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TEM_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = temValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu, nomEtPrenom, nomPatronymique, nomUsuel, persId, prenom); 
+    className = "org.cocktail.dt.server.metier.EOIndividuPersId"; 
+    classProperties = (
+        noIndividu, 
+        nomEtPrenom, 
+        nomPatronymique, 
+        nomUsuel, 
+        persId, 
+        prenom, 
+        temValide, 
+        toIndividuUlr
+    ); 
+    externalName = "GRHUM.INDIVIDU_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            noIndividu, 
+            nomEtPrenom, 
+            nomPatronymique, 
+            nomUsuel, 
+            persId, 
+            prenom, 
+            temValide, 
+            toIndividuUlr
+        ); 
+        "_nameInObjectStore" = "INDIVIDU_ULR@GASPHARP"; 
+    }; 
+    name = IndividuUlrPersId; 
+    primaryKeyAttributes = (persId); 
+    relationships = (
+        {
+            destination = DTIndividuUlr; 
+            internalInfo = {"_nameInObjectStore" = individuUlrs; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividuUlr; 
+        }
+    ); 
+}

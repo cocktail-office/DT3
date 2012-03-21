@@ -1,0 +1,101 @@
+<webobject name = "CondShowPanelAdd">
+	<webobject name = "FormTraitementIntervention">
+		<webobject name = "CondNotIsTraitementPrestation"><webobject name = "TraitementIntervention1"></webobject></webobject>
+		<webobject name = "CondIsTraitementPrestation"><webobject name = "TraitementPrestation1"></webobject></webobject>
+	</webobject>
+</webobject>
+<webobject name = "CondShowListTraitement">
+	<table width="100%" border="0" cellspacing="0" cellpadding="1" class="listboxBorder">
+		<tr>
+			<td>
+				<table width=100% border=0 cellspacing=1 cellpadding=2>
+					<tr class="listboxHeader">
+						<th>Date</th>
+						<th><webobject name = "FormChangeIntervenant"><webobject name = "PopUpIntervenant"/></webobject></th>
+						<th>GED</th>
+						<th>Type</th>
+						<th>Motif</th>
+						<th>Del.</th>
+						<webobject name = "CondShowColumnUpd"><th>Mod.</th></webobject>
+						<th>&nbsp;</th>
+					</tr>
+					<webobject name = "RepTraitement">
+					<tr class="textBox">
+						<td width="1%" nowrap><webobject name = "AnchorTraitement"></webobject><webobject name = "StrDate"></webobject></td>		
+						<td width="1%" nowrap><webobject name = "StrIntervenant"></webobject></td>		
+						<td width="1%" nowrap valign="middle">
+							<webobject name = "CondHasTraitementItemAttachments">
+								<webobject name = "ImgFichierAttache"></webobject>
+								(<webobject name = "StrTotalAttachments"></webobject>)
+							</webobject>
+							<webobject name = "CondNotHasTraitementItemAttachments">&nbsp;</webobject>
+						</td>		
+						<td width="1%" align="center">
+							<webobject name = "ImgTraitementTypeTraitementItem"/>
+						</td>
+						<td>
+							<font class="textNote">
+								<webobject name = "TipTraitement">
+									<webobject name = "CondIsPublic"><webobject name = "StrTraitement"></webobject></webobject>
+									<webobject name = "CondNotIsPublic"><font color="red"><webobject name = "StrTraitement"></webobject></font></webobject>
+								</webobject>
+							</font>
+						</td>		
+						<td width="1%" nowrap>
+							<webobject name = "CondShowLnkDeleteTraitement"><webobject name = "LnkDelTraitement"><webobject name = "ImgDelete"></webobject></webobject></webobject>
+							<webobject name = "CondNotShowLnkDeleteTraitement">&nbsp;</webobject>
+						</td>		
+						<webobject name = "CondShowColumnUpd">
+							<td width="1%" nowrap>
+								<webobject name = "CondShowLnkUpdateTraitement"><webobject name = "LnkUpdTraitement"><webobject name = "ImgUpdate"></webobject></webobject></webobject>
+								<webobject name = "CondNotShowLnkUpdateTraitement">&nbsp;</webobject>
+							</td>
+						</webobject>
+						<td width="1%" nowrap>
+							<webobject name = "CondNotShowLnkCloseDetail"><webobject name = "LnkDetailTraitement"><webobject name = "ImgDetail"></webobject></webobject></webobject>
+							<webobject name = "CondShowLnkCloseDetail"><webobject name = "LnkRemDetailraitement"><webobject name = "ImgRemDetail"></webobject></webobject></webobject>
+						</td>
+					</tr>
+					<!-- traitement en cours d'inspection -->
+					<webobject name = "CondShowDetailTraitement">
+					<tr class="listboxLine">
+						<td colspan="8">
+							<table width="100%">
+								<tr>
+									<td><webobject name = "StrTraitementDetail"></webobject></td>
+									<td>
+										<webobject name = "CondHasTraitementItemAttachments"><webobject name = "TraitementFileUpload"></webobject></webobject>
+									</td>
+								</tr>						
+							</table>
+						</td>			
+					</tr>
+					</webobject>
+					<!-- traitement en cours d'edition -->
+					<webobject name = "CondShowPanelUpd">
+					<tr class="listboxLine">
+						<td colspan="8">
+						<webobject name = "FormTraitementIntervention">
+							<webobject name = "CondNotIsTraitementPrestation"><webobject name = "TraitementIntervention1"></webobject></webobject>
+							<webobject name = "CondIsTraitementPrestation"><webobject name = "TraitementPrestation1"></webobject></webobject>
+						</webobject>
+						</td>
+					</tr>
+					</webobject>
+					</webobject>
+					<!-- totaux -->
+					<tr class="listboxLine">
+						<td>TOTAL : <font class="subTitle"><webobject name = "StrTotalTimeTraitement"></webobject></font></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<webobject name = "CondShowColumnUpd"><td></td></webobject>
+						<td></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</webobject>

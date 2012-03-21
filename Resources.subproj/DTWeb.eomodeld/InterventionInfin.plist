@@ -1,0 +1,169 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CAN_CODE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = REMARQUES; }; 
+            name = canCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 8; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DEV_ORDRE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "NB_PAGES"; }; 
+            name = devOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DST_CODE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = RELIURE; }; 
+            name = dstCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "FOU_ORDRE"; 
+            externalType = NUMBER; 
+            name = fouOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LOLF_ID"; 
+            externalType = NUMBER; 
+            name = lolfId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ORG_ID"; 
+            externalType = NUMBER; 
+            name = orgId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ORG_ORDRE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "NB_PAGES"; }; 
+            name = orgOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PREST_ID"; 
+            externalType = NUMBER; 
+            name = prestId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PREST_NUMERO"; 
+            externalType = NUMBER; 
+            name = prestNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TCD_CODE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "TYPE_DOCUMENT"; }; 
+            name = tcdCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cStructure, 
+        canCode, 
+        devOrdre, 
+        dstCode, 
+        fouOrdre, 
+        intOrdre, 
+        lolfId, 
+        orgId, 
+        orgOrdre, 
+        prestId, 
+        prestNumero, 
+        tcdCode
+    ); 
+    className = "org.cocktail.dt.server.metier.EOInterventionInfin"; 
+    classProperties = (
+        cStructure, 
+        canCode, 
+        devOrdre, 
+        dstCode, 
+        fouOrdre, 
+        intOrdre, 
+        lolfId, 
+        orgId, 
+        orgOrdre, 
+        prestId, 
+        prestNumero, 
+        tcdCode, 
+        toIntervention
+    ); 
+    externalName = "INTERVENTION_INFIN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            canCode, 
+            devOrdre, 
+            dstCode, 
+            fouOrdre, 
+            intOrdre, 
+            lolfId, 
+            orgId, 
+            orgOrdre, 
+            prestId, 
+            prestNumero, 
+            tcdCode, 
+            toIntervention
+        ); 
+        "_nameInObjectStore" = "INTERVENTION_JEFYNFO"; 
+    }; 
+    name = InterventionInfin; 
+    primaryKeyAttributes = (intOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Intervention; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }
+    ); 
+}

@@ -1,0 +1,35 @@
+{
+    attributes = (
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (intOrdre, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOInterventionMasquee"; 
+    classProperties = (intOrdre, noIndividu, toIntervention); 
+    externalName = "INTERVENTION_MASQUEE"; 
+    fetchSpecificationDictionary = {}; 
+    name = InterventionMasquee; 
+    primaryKeyAttributes = (intOrdre, noIndividu); 
+    relationships = (
+        {
+            destination = Intervention; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }
+    ); 
+}

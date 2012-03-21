@@ -1,0 +1,132 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = cc; 
+            externalType = VARCHAR2; 
+            name = cc; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DIS_ORDRE"; 
+            externalType = NUMBER; 
+            name = disOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = NUMBER; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "EMAIL_ORDRE"; 
+            name = emailOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = FROM; 
+            externalType = VARCHAR2; 
+            name = from; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = MESSAGE; 
+            externalType = VARCHAR2; 
+            name = message; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MESSAGE_ID"; 
+            externalType = VARCHAR2; 
+            name = messageId; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = TO; 
+            externalType = VARCHAR2; 
+            name = to; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TRA_ORDRE"; 
+            externalType = NUMBER; 
+            name = traOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (emailOrdre); 
+    className = "org.cocktail.dt.server.metier.EOEmail"; 
+    classProperties = (
+        cc, 
+        dCreation, 
+        disOrdre, 
+        dModification, 
+        from, 
+        intOrdre, 
+        message, 
+        messageId, 
+        to, 
+        toDiscussion, 
+        toIntervention, 
+        toTraitement, 
+        traOrdre
+    ); 
+    externalName = "DT3.EMAIL"; 
+    fetchSpecificationDictionary = {}; 
+    name = Email; 
+    primaryKeyAttributes = (emailOrdre); 
+    relationships = (
+        {
+            destination = Discussion; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = disOrdre; sourceAttribute = disOrdre; }); 
+            name = toDiscussion; 
+        }, 
+        {
+            destination = Intervention; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }, 
+        {
+            destination = Traitement; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = traOrdre; sourceAttribute = traOrdre; }); 
+            name = toTraitement; 
+        }
+    ); 
+}

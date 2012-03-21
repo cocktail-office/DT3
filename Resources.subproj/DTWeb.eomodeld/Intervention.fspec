@@ -1,0 +1,401 @@
+{
+    FetchEnCoursIntervenant = {
+        class = EOFetchSpecification; 
+        entityName = Intervention; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = cStructure; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOOrQualifier; 
+                    qualifiers = (
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = intEtat; 
+                            selectorName = isEqualTo; 
+                            value = C; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = intEtat; 
+                            selectorName = isEqualTo; 
+                            value = A; 
+                        }
+                    ); 
+                }, 
+                {
+                    class = EOOrQualifier; 
+                    qualifiers = (
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu00; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu01; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu02; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu03; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu04; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu05; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu06; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu07; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu08; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu09; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu10; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu11; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu12; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu13; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu14; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu15; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu16; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu17; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu18; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu19; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu20; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu21; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu22; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu23; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu24; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu25; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu26; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu27; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu28; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu29; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu30; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu31; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu32; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu33; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu34; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu35; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu36; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu37; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu38; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu39; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu40; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu41; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu42; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu43; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu44; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu45; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu46; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu47; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu48; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu49; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu40; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu41; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu42; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu43; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu44; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu45; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu46; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu47; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu48; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosIntervenant.noIndividu"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = noIndividu49; class = EOQualifierVariable; }; 
+                        }
+                    ); 
+                }
+            ); 
+        }; 
+        usesDistinct = YES; 
+    }; 
+}

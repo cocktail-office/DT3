@@ -1,0 +1,440 @@
+pageInspecteur: DTDefaultPage {
+	targetPosition = targetPosition;
+	useToolTip = true;
+}
+
+taskBar: ConsultTaskBar {
+	taskBarListener = taksBarListener;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+	enctype = "multipart/form-data";
+	name = "formInspecteurDT";
+}
+
+StrLibelleService: WOString {
+	value = libelleService;
+}
+
+CondIsAfficherPhoto: WOConditional {
+	condition = isAfficherPhoto;
+}
+
+ImgPhotoDemandeur: WOImage {
+	border = 1;
+	data = photo;
+	mimeType = "image/jpeg";
+	width = 58;
+}
+
+CondNotIsAfficherPhoto: WOConditional {
+	condition = isAfficherPhoto;
+	negate = true;
+}
+
+CondNotIsDTRepro: WOConditional {
+	condition = isDTRepro;//VALID
+	negate = true;
+}
+
+CondIsShowLnkShowConfInfo: WOConditional {
+	condition = isShowLnkShowConfInfo;
+}
+
+LnkShowConfInfo: WOHyperlink {
+	action = afficherConfInfo;
+	title = "Voir la configuration informatique du demandeur";
+  	class = "linkPage";
+	target = "_new";
+	onClick = "javascript:ouvrirPopup(this.href,400,1000);return false;";
+}
+
+ImgConfInfoShow: WOImage {
+	filename = "img/ConfInformatique.gif";
+	framework = "app";
+	class="imgLink";
+	hspace="2";
+}
+
+StrIntCleService: WOString {
+	value = demande.intCleService;//VALID
+	numberformat = "#";
+}
+
+StrIntDateCreation: WOString {
+	value = demande.intDateCreation;//VALID
+	dateformat = "%d/%m/%Y %H:%M";
+}
+
+StrIntDateSouhaite: WOString {
+	value = demande.intDateSouhaite;//VALID
+	dateformat = "%d/%m/%Y";
+}
+
+StrIndividuConcerneNomEtPrenom: WOString {
+	value = demande.toIndividuConcerne.nomEtPrenom;
+}
+
+LnkEnvoyerMailDemandeur: WOHyperlink {
+	action = envoyerMailDemandeur;
+  	class = "linkPage";
+  	title = "Envoyer un email de demande d'information";
+}
+
+StrMailDemandeur: WOString {
+	value = mailDemandeur; 
+}
+
+StrCompteInformatique: WOString {
+	value = comptesDemandeur;
+}
+
+strContactInfo: WOString {
+	escapeHTML = false;
+	value = contactInfo;
+	valueWhenEmpty = "&lt;aucune information&gt;";
+}
+
+ContainerMotif: AjaxUpdateContainer {
+	id = "ContainerMotif";
+}
+
+CondIsAfficherErreur: WOConditional {
+	condition = isAfficherErreur;
+}
+
+JsErrMessage: WOJavaScript {
+	scriptString = errMessageScript;
+}
+
+CondNotIsMotifEnCoursDeModification: WOConditional {
+	condition = isMotifEnCoursDeModification;
+	negate = true;
+}
+
+CondIsHistoSelected: WOConditional {
+	condition = eoHistoriqueMotifSelected;
+}
+
+CondNotIsHistoSelected: WOConditional {
+	condition = eoHistoriqueMotifSelected;
+	negate = true;
+}
+
+StrMotif: WOString {
+	escapeHTML = false;
+	value = motifAAfficher;
+}
+
+StrMotifHistorique: WOString {
+	escapeHTML = false;
+	value = motifHistorique;
+}
+
+CondIsMotifEnCoursDeModification: WOConditional {
+	condition = isMotifEnCoursDeModification;
+}
+
+LnkToModifier: AjaxUpdateLink {
+	action = toModification;
+	title = "Modifier le motif de cette demande ...";
+	updateContainerID = "ContainerMotif";
+} 
+
+ImgModifier: ImgUpdate {
+	
+}
+
+TFMotif: WOText {
+	value = motif;
+	class = "dtTextareaIntMotif";
+}
+
+BtnEnregistrerMotif: WOSubmitButton {
+	action = enregistrerMotif;
+	value = "Enregistrer";
+	class = "bouton";
+	title = "Cliquer pour enregistrer";
+} 
+
+LnkAnnuler: AjaxUpdateLink {
+	action = annuler;
+	title = "Annuler les modifications";
+	updateContainerID = "ContainerMotif";
+} 
+
+CondShowPopUpHisto: WOConditional {
+	condition = demande.tosHistoriqueMotif.count;
+}
+
+ObserverPopUpHisto: AjaxObserveField {
+	updateContainerID = "ContainerMotif";
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+PopUpHisto: WOPopUpButton {
+	noSelectionString = "-- motif actuel --";
+	list = demande.tosHistoriqueMotifSorted;
+	item = eoHistoriqueMotifItem;
+	selection = eoHistoriqueMotifSelected;
+	displayString = eoHistoriqueMotifItem.dCreation;
+}
+
+CondCanChangerMotif: WOConditional {
+	condition = canChangerMotif;
+}
+
+CondIsDTRepro: WOConditional {
+	condition = isDTRepro;//VALID
+}
+
+StrIntMotsClefsFormat: WOString {
+	value = demande.intMotsClefs;//VALID
+}
+
+CondIsLibelle: WOConditional {
+	condition = isLibelle;
+}
+
+StrRecReproLibelle: WOString {
+	value = recRepro.libelle;//VALID
+}
+
+CondHasAttachements: WOConditional {
+	condition = hasAttachements;//VALID
+}
+
+CktlFileUpload1: CktlFileUpload {
+	boxWidth = "300";
+	filePaths = attachementPaths;//VALID
+	readOnly = true;
+}
+
+CondNotHasAttachements: WOConditional {
+	condition = hasAttachements;//VALID
+	negate = true;
+}
+
+StrNbCopies: WOString {
+	numberformat = "#";
+	value = reproDataInfo.nbCopies;//VALID
+}
+
+StrNbPages: WOString {
+	numberformat = "#";
+	value = reproDataInfo.nbPages;//VALID
+}
+
+StrCouverture: WOString {
+	value = couverture;
+}
+
+StrReliureLibelle: WOString {
+	value = reproDataInfo.reliureLibelle;//VALID
+}
+
+StrPlastificationLibelle: WOString {
+	value = reproDataInfo.plastificationLibelle;//VALID
+}
+
+StrLivretLibelle: WOString {
+	value = reproDataInfo.livretLibelle;//VALID
+}
+
+CondIsRemarques: WOConditional {
+	condition = isRemarques;
+}
+
+StrRemarques: WOString {
+	value = recRepro.remarques;//VALID
+	escapeHTML = true;
+}
+
+CondCanChangerCfc: WOConditional {
+	condition = canChangerCfc;
+}
+
+BtnModifierCFC: WOImageButton {
+	framework = "app";
+	action = modifierCFC;
+	escapeHTML = false;
+	title = "Modifier la liste des d&eacute;claration CFC concernant cette demande ...";
+	filename = "img/OpModifier.gif";
+}
+
+StrServicePayeur: WOString {
+	value = servicePayeur;
+	valueWhenEmpty = "<font class='textError'>ERREUR : Non pr&eacute;cis&eacute;</font>";
+	escapeHTML = false;
+}
+
+CondNotIsServicePayeurFournisValidInterne: WOConditional {
+	condition = isServicePayeurFournisValidInterne;
+	negate = true;
+}
+
+CondIsServicePayeurFournisValidInterne: WOConditional {
+	condition = isServicePayeurFournisValidInterne;
+}
+
+CondIsAfficherLigneBudgedaire: WOConditional {
+	condition = ligneBudgetaire.length;
+}
+
+StrLigneBudgetaire: WOString {
+	value = ligneBudgetaire;
+}
+
+CondIsAfficherDestination: WOConditional {
+	condition = destination;
+}
+
+StrDestination: WOString {
+	value = destination;
+	escapeHTML = false;
+}
+
+StrPrestNumero: WOString {
+	value = prestNumero;
+	valueWhenEmpty = "<font class='textError'>ATTENTION : Pas de devis !</font>";
+}
+
+CondHasInterventionInfin: WOConditional {
+	condition = hasInterventionInfin;
+}
+
+CondNotHasInterventionInfin: WOConditional {
+	condition = hasInterventionInfin;
+	negate = true;
+}
+
+CondNotHasDevis: WOConditional {
+	condition = hasDevis;
+	negate = true;
+}
+
+CondNotIsPieTested: WOConditional {
+	condition = isPieTested;
+	negate = true;
+}
+
+CondIsPieTested: WOConditional {
+	condition = isPieTested;
+}
+
+CondIsPieOnline: WOConditional {
+	condition = isPieOffline;
+	negate = true;
+}
+
+CondIsPieOffline: WOConditional {
+	condition = isPieOffline;
+}
+
+BtnTesterDisponibilitePie: WOSubmitButton {
+	action = testerDisponibilitePie;
+	value = "Tester la disponibilité de PIE";
+	class = "bouton";
+	name = "BtnTesterDisponibilitePie";
+	title = "Cliquer pour vérifier si PIE fonctionne ou pas ...";
+	escapeHTML = "false";
+}
+
+BtnRecreerDevis: WOSubmitButton {
+	action = recreerDevis;
+	value = "Créer le devis";
+	class = "bouton";
+	name = "BtnRecreerDevis";
+	title = "Cliquer ici pour créer le devis dans PIE";
+	escapeHTML = "false";
+	disabled = isDisabledBtnRecreerDevis;
+}
+
+CondHasCFC: WOConditional {
+	condition = cfcList.count;
+}
+
+RepRecsReproCFC: WORepetition {
+	item = cfcItem;//VALID
+	list = cfcList;
+}
+
+StrCfcEditeurs: WOString {
+	value = cfcItem.editeurs;//VALID
+}
+
+StrCfcAuteurs: WOString {
+	value = cfcItem.auteurs;//VALID
+}
+
+StrCfcTitre: WOString {
+	value = cfcItem.titre;//VALID
+}
+
+StrCfcNbPages: WOString {
+	numberformat = "#";
+	value = cfcItem.nbPages;//VALID
+}
+
+StrCfcNbExemplaires: WOString {
+	numberformat = "#";
+	value = cfcItem.nbExemplaires;//VALID
+}
+
+CondShowCommentaireInterne: WOConditional {
+	condition = showCommentaireInterne;//VALID
+}
+
+ImgCommentaireInterne: WOImage {
+	filename = "img/CommentaireInterne.png";
+	framework = "app";
+}
+
+StrCommentaireInterne: WOString {
+	value = commentaireInterne;
+	escapeHTML = false;
+}
+
+StrIntMotsClefs: WOString {
+	value = demande.intMotsClefs;//VALID
+}
+
+CondCanChangerActivite: WOConditional {
+	condition = canChangerActivite;
+}
+
+LnkChangerActivite: WOHyperlink {
+	action = changerActivite;
+	title = "Modifier l'activit&eacute; / les mots clefs associ&eacute;s &agrave; cette demande ...";
+}
+
+StrLibelleEtat: WOString {
+	value = libelleEtat;
+}
+
+LnkUrlPermanent: WOHyperlink {
+	href = strUrlPermanent;
+	target = "_new";
+	title = "Lien permanent vers la DT : faire clic-droit et copier pour conservation ou r&eacute;utilisation ult&eacute;rieure ...";
+	escapeHTML = "true";
+}
+
+CondShowIntervenants: WOConditional {
+	condition = showIntervenants;
+}
+
+StrStringIntervenants: WOString {
+	value = stringIntervenants;
+}
+
+CondCanChangerDemandeur: WOConditional {
+	condition = canChangerDemandeur;
+}
+
+LnkChangeDemandeur: WOHyperlink {
+	action = changeDemandeur;
+	title = "Modifier le demandeur";
+}

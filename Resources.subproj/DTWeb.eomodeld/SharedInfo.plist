@@ -1,0 +1,30 @@
+{
+    attributes = (
+        {
+            columnName = INFO; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "ETAT_LIBELLE"; }; 
+            name = info; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = KEY; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "ETAT_CODE"; }; 
+            name = key; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }
+    ); 
+    attributesUsedForLocking = (info, key); 
+    className = "org.cocktail.dt.server.metier.EOSharedInfo"; 
+    classProperties = (info, key); 
+    externalName = "SHARED_INFO"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "ETAT_DT"; }; 
+    name = SharedInfo; 
+    primaryKeyAttributes = (key); 
+}

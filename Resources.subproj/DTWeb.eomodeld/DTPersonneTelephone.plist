@@ -1,0 +1,50 @@
+{
+    attributes = (
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_TELEPHONE"; 
+            externalType = VARCHAR2; 
+            name = noTelephone; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 14; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TYPE_NO"; 
+            externalType = VARCHAR2; 
+            name = typeNo; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            columnName = "TYPE_TEL"; 
+            externalType = VARCHAR2; 
+            name = typeTel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }
+    ); 
+    attributesUsedForLocking = (dModification, noTelephone, persId, typeNo, typeTel); 
+    className = "org.cocktail.dt.server.metier.EOPersonneTelephone"; 
+    classProperties = (dModification, noTelephone, persId, typeNo, typeTel); 
+    externalName = "GRHUM.PERSONNE_TELEPHONE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "PERSONNE_TELEPHONE@GASPHARP"; }; 
+    name = DTPersonneTelephone; 
+    primaryKeyAttributes = (noTelephone, persId, typeNo, typeTel); 
+}

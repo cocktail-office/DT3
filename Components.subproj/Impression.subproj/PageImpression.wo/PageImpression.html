@@ -1,0 +1,40 @@
+<webobject name=DTDefaultPage1>
+	<script name="text/javascript">
+	 function selectAllOptions(selStr, selected) {
+    	var selObj = document.getElementById(selStr);
+    	for (var i=0; i<selObj.options.length; i++) {
+      	selObj.options[i].selected = selected;
+    	}
+  	}
+	</script>
+	<table border=0 width=100%%>
+		<tr align=CENTER>
+			<td><webobject name=FormImpressionDT>
+					<table border=0>
+						<tr>
+							<th>Format d'impression</th>
+						</tr>
+						<tr>
+							<td colspan=3 align=CENTER>
+								<webobject NAME="BtnImpResume"/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<webobject NAME="BtnImpDetail"/>
+							</td>
+						</tr>
+						<tr>
+							<td colspan=3 align=CENTER>&nbsp;<webobject name="BrowserIntervention"/></td>
+						</tr>
+						<TR>
+							<TD colspan="3" align="CENTER">
+								<font class="textNote">Selectionnez les DTs a imprimer</font><br/>
+								<input type="button" onclick = "javascript:selectAllOptions('BrowserIntervention', true);" value="TOUTES" class="bouton"/>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<input type="button" onclick = "javascript:selectAllOptions('BrowserIntervention', false);" value="AUCUNE" class="bouton"/>
+							</TD>
+						</TR>
+					</table>
+				</webobject>
+			</td>
+		</tr>
+	</table>
+</webobject>

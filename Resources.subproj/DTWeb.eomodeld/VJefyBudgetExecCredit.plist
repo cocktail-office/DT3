@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            columnName = ANNEE; 
+            externalType = NUMBER; 
+            name = annee; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = DISPONIBLE; 
+            externalType = NUMBER; 
+            name = disponible; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ORG_ORDRE"; 
+            externalType = NUMBER; 
+            name = orgOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TCD_CODE"; 
+            externalType = VARCHAR2; 
+            name = tcdCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }
+    ); 
+    attributesUsedForLocking = (annee, disponible, orgOrdre, tcdCode); 
+    className = "org.cocktail.dt.server.metier.EOVBudgetExecCredit"; 
+    classProperties = (annee, disponible, orgOrdre, tcdCode, toVJefyOrgan, toVJefyTypeCredit); 
+    externalName = "GRHUM.V_BUDGET_EXEC_CREDIT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (annee, disponible, orgOrdre, tcdCode); }; 
+    isReadOnly = Y; 
+    name = VJefyBudgetExecCredit; 
+    primaryKeyAttributes = (annee, orgOrdre, tcdCode); 
+    relationships = (
+        {
+            destination = VJefyOrgan; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = annee; sourceAttribute = annee; }, 
+                {destinationAttribute = orgOrdre; sourceAttribute = orgOrdre; }
+            ); 
+            name = toVJefyOrgan; 
+        }, 
+        {
+            destination = VJefyTypeCredit; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = (
+                {destinationAttribute = annee; sourceAttribute = annee; }, 
+                {destinationAttribute = tcdCode; sourceAttribute = tcdCode; }
+            ); 
+            name = toVJefyTypeCredit; 
+        }
+    ); 
+}

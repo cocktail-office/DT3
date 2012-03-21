@@ -1,0 +1,33 @@
+<webobject name = "FormIndicateur">
+  <table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+    <tr>
+      <td>
+        <font class = "subTitleInverse">&nbsp;Demande d'indicateur</font>
+      </td>
+    </tr>
+    <tr>
+      <td class = "boxBorder">
+	      <webobject name = "FormErrorEmpty">Veuillez saisir au moins 1 champ dans votre demande !</webobject>
+        <table cellpadding = "10" cellspacing = "0" border = "0" width = "100%" class = "boxContents">
+					<webobject name = "RepTitle">
+          <tr>
+            <td width="180px" align="right" valign="top"><font class = "textEntry"><webobject name = "StrTitle"></webobject> :</font></td>
+          	<td><webobject name = "TextField"></webobject></td>
+          </tr>
+					</webobject>
+					<tr>
+						<td>
+						  <webobject name = "FooterSwap"/>
+						</td>
+						<td>
+							<font class="textEntry">Document(s) attach&eacute;(s)&nbsp;:</font><br/>
+							<webobject name="fileUpload"></webobject><br/>
+						</td>
+					</tr>
+      	</table>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <webobject name = "btEnregistrerDT"></webobject>&nbsp;&nbsp;<webobject name = "btNouvelleDT"></webobject>
+</webobject>

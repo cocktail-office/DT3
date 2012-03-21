@@ -1,0 +1,65 @@
+{
+    attributes = (
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            columnName = "HIS_ORDRE"; 
+            externalType = NUMBER; 
+            name = hisOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = intMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (hisOrdre); 
+    className = "org.cocktail.dt.server.metier.EOHistoriqueMotif"; 
+    classProperties = (dCreation, intMotif, toIndividu, toIntervention); 
+    externalName = "DT3.HISTO_MOTIF"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (intMotif); }; 
+    name = HistoriqueMotif; 
+    primaryKeyAttributes = (hisOrdre); 
+    relationships = (
+        {
+            destination = DTIndividuUlr; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividu; 
+        }, 
+        {
+            destination = Intervention; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }
+    ); 
+}

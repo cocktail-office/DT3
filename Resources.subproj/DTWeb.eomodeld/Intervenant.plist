@@ -1,0 +1,84 @@
+{
+    attributes = (
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INTV_NO_IND_AFFECTANT"; 
+            externalType = NUMBER; 
+            name = intvNoIndAffectant; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (intOrdre, intvNoIndAffectant, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOIntervenant"; 
+    classProperties = (
+        intOrdre, 
+        intvNoIndAffectant, 
+        noIndividu, 
+        toIndividuUlr, 
+        toIntervention, 
+        tosTraitement
+    ); 
+    externalName = INTERVENANT; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            intOrdre, 
+            intvNoIndAffectant, 
+            noIndividu, 
+            toIndividuUlr, 
+            toIntervention, 
+            tosTraitement
+        ); 
+        "_nameInObjectStore" = "INTERVENANT_HARP"; 
+    }; 
+    name = Intervenant; 
+    primaryKeyAttributes = (intOrdre, noIndividu); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            internalInfo = {"_nameInObjectStore" = individuUlrHarp; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividuUlr; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Intervention; 
+            internalInfo = {"_nameInObjectStore" = interventionHarp; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Traitement; 
+            internalInfo = {"_nameInObjectStore" = traitementHarp; }; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = (
+                {destinationAttribute = intOrdre; sourceAttribute = intOrdre; }, 
+                {destinationAttribute = noIndividu; sourceAttribute = noIndividu; }
+            ); 
+            name = tosTraitement; 
+        }
+    ); 
+}

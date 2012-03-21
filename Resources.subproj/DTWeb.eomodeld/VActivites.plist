@@ -1,0 +1,292 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ACT_CODE"; 
+            externalType = VARCHAR2; 
+            name = actCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_CREER_MAIL"; 
+            externalType = VARCHAR2; 
+            name = actCreerMail; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = actLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DT3.CHAINE_SANS_ACCENTS(ACT_LIBELLE)"; 
+            definition = "CHAINE_SANS_ACCENTS(ACT_LIBELLE)"; 
+            externalType = VARCHAR2; 
+            name = actLibelleClean; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_MAIL_SERVICE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "ACT_IGNORE_MAIL_GROUPE"; }; 
+            name = actMailService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "ACT_ORDRE"; 
+            externalType = NUMBER; 
+            name = actOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_ORDRE_HIERARCHIE"; 
+            externalType = VARCHAR2; 
+            name = actOrdreHierarchie; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_PERE"; 
+            externalType = NUMBER; 
+            name = actPere; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_PREF"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "ACT_RESPONSABLES"; }; 
+            name = actPref; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_RESP"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "ACT_RESPONSABLES"; }; 
+            name = actResp; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_SWAP_MESSAGE"; 
+            externalType = VARCHAR2; 
+            name = actSwapMessage; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_SWAP_VIEW"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "ACT_SWAPVIEW"; }; 
+            name = actSwapView; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CART_ORDRE"; 
+            externalType = NUMBER; 
+            name = cartOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GRP_AFFICHABLE"; 
+            externalType = CHAR; 
+            name = grpAffichable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_POSITION"; 
+            externalType = NUMBER; 
+            name = grpPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_VISIBILITE"; 
+            externalType = VARCHAR2; 
+            name = grpVisibilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_VISIBILITE_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = grpVisibiliteStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        actCode, 
+        actCreerMail, 
+        actLibelle, 
+        actLibelleClean, 
+        actMailService, 
+        actOrdre, 
+        actOrdreHierarchie, 
+        actPere, 
+        actPref, 
+        actResp, 
+        actSwapMessage, 
+        actSwapView, 
+        cStructure, 
+        cartOrdre, 
+        grpAffichable, 
+        grpPosition, 
+        grpVisibilite, 
+        grpVisibiliteStructure
+    ); 
+    className = "org.cocktail.dt.server.metier.EOVActivites"; 
+    classProperties = (
+        actCode, 
+        actCreerMail, 
+        actLibelle, 
+        actMailService, 
+        actOrdre, 
+        actOrdreHierarchie, 
+        actPere, 
+        actPref, 
+        actResp, 
+        actSwapMessage, 
+        actSwapView, 
+        cStructure, 
+        cartOrdre, 
+        grpAffichable, 
+        grpPosition, 
+        grpVisibilite, 
+        toActPere, 
+        toActPref, 
+        toActResp, 
+        toGroupesDt, 
+        tosActFils, 
+        tosActResponsables, 
+        grpVisibiliteStructure, 
+        actLibelleClean
+    ); 
+    externalName = "V_ACTIVITES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            actCode, 
+            actCreerMail, 
+            actLibelle, 
+            actMailService, 
+            actOrdre, 
+            actPere, 
+            actPref, 
+            actResp, 
+            actSwapMessage, 
+            actSwapView, 
+            cStructure, 
+            cartOrdre, 
+            grpAffichable, 
+            grpPosition, 
+            grpVisibilite, 
+            toActPere, 
+            toActPref, 
+            toActResp, 
+            toGroupesDt, 
+            tosActFils, 
+            tosActResponsables
+        ); 
+        "_nameInObjectStore" = "V_ACTIVITES_HARP"; 
+    }; 
+    isReadOnly = Y; 
+    name = VActivites; 
+    primaryKeyAttributes = (actOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = VActivites; 
+            internalInfo = {"_nameInObjectStore" = actPereActivites; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actOrdre; sourceAttribute = actPere; }); 
+            name = toActPere; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = VActivites; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actOrdre; sourceAttribute = actPref; }); 
+            name = toActPref; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = VActivites; 
+            internalInfo = {"_nameInObjectStore" = actPereActivites; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actOrdre; sourceAttribute = actResp; }); 
+            name = toActResp; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = GroupesDt; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toGroupesDt; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = VActivites; 
+            internalInfo = {"_nameInObjectStore" = actPereActivitesInverseArray; }; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = actPere; sourceAttribute = actOrdre; }); 
+            name = tosActFils; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = ActivitesResponsables; 
+            internalInfo = {"_nameInObjectStore" = actPereActivites; }; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = actOrdre; sourceAttribute = actResp; }); 
+            name = tosActResponsables; 
+        }
+    ); 
+}

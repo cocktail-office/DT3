@@ -1,0 +1,207 @@
+
+CondIsPrestaGatewayError: WOConditional {
+	condition = dtPrestaGateway.hasErrors;
+}
+
+DTErrorBox1: DTErrorBox {
+	message = dtPrestaGateway.errorMessage;
+}
+
+CondIsNotPrestaGatewayError: WOConditional {
+	condition = dtPrestaGateway.hasErrors;
+	negate = true;
+}
+
+StrBoxTraitementTitle: WOString {
+	value = boxTraitementTitle;
+}
+
+StrPrestNumero: WOString {
+	value = prestNumero;
+	valueWhenEmpty = "<font class='textError'>ERREUR : Pas de devis !</font>";
+}
+
+Conditional10: WOConditional {
+	condition = isDisabledDevis;
+}
+
+SubmitButton9: WOSubmitButton {
+	action = modifyDevis;
+	class = "bouton";
+	value = "Modifier";
+}
+
+CktlNote1: CktlNote {
+}
+
+CondNotIsDisabledDevis: WOConditional {
+	condition = isDisabledDevis;
+	negate = true;
+}
+
+RepLigneDevis: WORepetition {
+	item = dtPrestaGateway.ligneDevisItem;//VALID
+	list = dtPrestaGateway.lignes;
+}
+
+LnkRemoveLigneDevis: WOHyperlink {
+	action = dtPrestaGateway.removeLigneDevisItem;
+	title = "Supprimer cet article";
+}
+
+StrLigneDevisItemRef: WOString {
+	value = dtPrestaGateway.ligneDevisItemReference;
+}
+
+StrLigneDevisItemDesc: WOString {
+	value = dtPrestaGateway.ligneDevisItemDescription;
+}
+
+TextField1: WOTextField {
+	maxlength = 6;
+	numberformat = "0";
+	size = 5;
+	value = dtPrestaGateway.ligneDevisItemNbArticles;
+	disabled = isDisabledDevis;
+}
+
+StrLigneDevisItemHT: WOString {
+	value = dtPrestaGateway.ligneDevisItemArtHT;
+	numberformat = "0.00";
+}
+
+StrLigneDevisItemTotal: WOString {
+	value = dtPrestaGateway.ligneDevisItemTotal;
+	numberformat = "0.00";
+}
+
+CondShowAddArticle: WOConditional {
+	condition = showAddArticle;
+}
+
+PopUpCatalogueArticleItemReference: WOPopUpButton {
+	displayString = dtPrestaGateway.catalogueArticleItemReference;
+	item = dtPrestaGateway.catalogueArticleItem;
+	list = dtPrestaGateway.catalogueArticles;
+	selection = dtPrestaGateway.catalogueArticleSelection;//VALID
+	disabled = isDisabledDevis;
+}
+
+TFNbArticles: WOTextField {
+	maxlength = 6;
+	size = 5;
+	value = tfNbArticles;
+	disabled = isDisabledDevis;
+}
+
+BtnAddArticle: WOSubmitButton {
+	action = addArticle;
+	class = "bouton";
+	value = "Ajouter";
+}
+
+Conditional5: WOConditional {
+	condition = showAddArticle;
+	negate = true;
+}
+
+Hyperlink2: WOHyperlink {
+	action = clicShowAddArticle;
+	title = "Ajouter un nouvel article";
+}
+
+DTFormErrorBox2: DTFormErrorBox {
+	showError = errorArticleExiste;
+}
+
+DTFormErrorBox1: DTFormErrorBox {
+	showError = errorNbArticles;
+}
+
+BtnEstimer: WOSubmitButton {
+	action = dtPrestaGateway.estimer;
+	class = "bouton";
+	value = "Re-calculer";
+	disabled = isDisabledDevis;
+}
+
+StrSommeTTCDevis: WOString {
+	numberformat = "0.00";
+	value = dtPrestaGateway.getSommeTTCDevis;
+}
+
+BtnApply: WOSubmitButton {
+	action = apply;
+	class = "bouton";
+	value = "Appliquer";
+	title = "Appliquer les modification au devis reel";
+}
+
+BtnRestoreDevis: WOSubmitButton {
+	action = restoreDevis;
+	class = "bouton";
+	value = "Restaurer";
+	title = "Restaurer le devis original et quiiter le mode edition de devis";
+}
+
+DatePickerDeb: CktlAjaxDatePicker {
+  dateValue = traDateDeb;
+  showsTime = true;
+}
+
+DatePickerFin: CktlAjaxDatePicker {
+  dateValue = traDateFin;
+  showsTime = true;
+}
+
+tfTraitement: WOText {
+	class = "dtTextareaAjoutTraitementRepro";
+	value = tfTraitement;
+	disabled = isDisabledTraitement;
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+chAffichable: WOCheckBox {
+	id = "chAffichable";
+	checked = chConsultable;
+	disabled = isDisabledTraitement;
+	title = "Cochez pour que votre traitement ne soit pas confidentiel";
+}
+
+chEmail: WOCheckBox {
+	id = "chEmail";
+	checked = chEmail;
+	disabled = isDisabledTraitement;
+	title = "Cochez pour qu'un mail soit envoye en meme temps que votre traitement";
+}
+
+BtnAnnuler: WOSubmitButton {
+	class = "bouton";
+	title = "Annuler la saisie de nouveau traitement";
+	value = "Annuler";
+	action = cancel;
+	disabled = isDisabledTraitement;
+}
+
+BtnAdd: WOSubmitButton {
+	class = "bouton";
+	title = "Ajouter un nouveau traitement et laisser la demande en cours";
+	value = "Ajouter traitement";
+	action = add;
+	disabled = isDisabledTraitement;
+}
+
+BtnClose: WOSubmitButton {
+	class = "bouton";
+	title = "Ajouter le traitement et clore la demande";
+	value = "Clore la demande";
+	action = close;
+	disabled = isDisabledTraitement;
+}

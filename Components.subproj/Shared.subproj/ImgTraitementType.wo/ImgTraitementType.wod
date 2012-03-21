@@ -1,0 +1,108 @@
+CondIsTraitementCommande: WOConditional {
+	condition = eoTraitement.toTraitementType.isTraitementCommande;
+}
+
+ImgTraitementCommande: WOImage {
+	filename = "img/TraitementCommande.png";
+	framework = "app";
+	width = "22px";
+	height = "22px";
+	border = "0";
+	title = "Type de traitement : commande";
+}
+
+CondIsTraitementLivraison: WOConditional {
+	condition = eoTraitement.toTraitementType.isTraitementLivraison;
+}
+
+ImgTraitementLivraison: WOImage {
+	filename = "img/TraitementLivraison.gif";
+	framework = "app";
+	width = "22px";
+	height = "22px";
+	border = "0";
+	title = "Type de traitement : livraison";
+}
+
+CondIsTraitementNoSerie: WOConditional {
+	condition = eoTraitement.toTraitementType.isTraitementNoSerie;
+}
+
+ImgTraitementNoSerie: WOImage {
+	filename = "img/TraitementNoSerie.gif";
+	framework = "app";
+	width = "22px";
+	height = "22px";
+	border = "0";
+	title = "Type de traitement : numero de serie";
+}
+
+CondIsTraitementEmissionBdcInternePourSignature: WOConditional {
+	condition = eoTraitement.toTraitementType.isTraitementEmissionBdcInternePourSignature;
+}
+
+ImgEnvoiDocument: WOImage {
+	filename = "img/TraitementEnvoiDocument.png";
+	framework = "app";
+	width = "22px";
+	height = "22px";
+	border = "0";
+	title = eoTraitement.toTraitementType.libelle;
+}
+
+CondIsTraitementReceptionBdcInterneSigne: WOConditional {
+	condition = eoTraitement.toTraitementType.isTraitementReceptionBdcInterneSigne;
+}
+
+CondIsCommandeSurcoutSigneeNon: WOConditional {
+	condition = eoTraitement.isCommandeSurcoutSigneeNon;
+}
+
+CondNotIsCommandeSurcoutSigneeNon: WOConditional {
+	condition = eoTraitement.isCommandeSurcoutSigneeNon;
+	negate = true;
+}
+
+ImgReceptionDocument: WOImage {
+	filename = "img/TraitementReceptionDocument.png";
+	framework = "app";
+	width = "22px";
+	height = "22px";
+	border = "0";
+	title = eoTraitement.toTraitementType.libelle;
+}
+
+ImgReceptionDocumentSurcoutNonSigne: WOImage {
+	filename = "img/TraitementReceptionDocumentSurcoutNonSigne.gif";
+	framework = "app";
+	width = "28px";
+	height = "29px";
+	border = "0";
+	title = eoTraitement.toTraitementType.libelle;
+}
+
+CondIsTraitementClotureSurcoutNonSigne: WOConditional {
+	condition = eoTraitement.toTraitementType.isTraitementClotureSurcoutNonSigne;
+}
+
+ImgTraitementSurcoutNonSigne: WOImage {
+	filename = "img/TraitementSurcoutNonSigne.png";
+	framework = "app";
+	width = "28px";
+	height = "29px";
+	border = "0";
+	title = eoTraitement.toTraitementType.libelle;
+}
+
+CondIsTraitementIncoherenceDemandeNbPoste: WOConditional {
+	condition = eoTraitement.toTraitementType.isTraitementIncoherenceDemandeNbPoste;
+}
+
+ImgTraitementIncoherenceDemandeNbPoste: WOImage {
+	filename = "img/TraitementIncoherenceDemande.gif";
+	framework = "app";
+	width = "20px";
+	height = "20px";
+	border = "0";
+	title = eoTraitement.toTraitementType.libelle;
+}

@@ -1,0 +1,34 @@
+Text1: WOText {
+	value = intMotif;
+	class = "dtTextareaIntMotif";
+}
+
+formErrorMotif: DTFormErrorBox {
+	showError = errorMotif;
+}
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrer: WOSubmitButton {
+	action = validerDemande;
+	value = "Enregistrer";
+        class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}

@@ -1,0 +1,65 @@
+FormReferentFonctionnel: WOForm {
+	multipleSubmit = true;
+	name = "FormReferentFonctionnel";
+	enctype = "multipart/form-data";
+}
+
+FormErrorGroupeTravail: DTFormErrorBox {
+	showError = errorGroupeTravail;
+}
+
+ChkListGroupeTravail: WOCheckBoxList {
+	list = groupeTravailList;
+	item = groupeTravail;
+	selections = groupeTravailSelectedList;
+	escapeHTML = true;
+	suffix = "<br>";
+}
+
+FormErrorNatureProposition: DTFormErrorBox {
+	showError = errorNatureProposition;
+}
+
+ChkListNatureProposition: WOCheckBoxList {
+	list = naturePropositionList;
+	item = natureProposition;
+	selections = naturePropositionSelectedList;
+	suffix = "<br>";
+	escapeHTML = true;
+}
+
+FormErrorDetailProposition: DTFormErrorBox {
+	showError = errorDetailProposition;
+}
+
+TFDetailProposition: WOText {
+	value = detailProposition;
+	class = "dtTextareaCreationIndicateur";
+}
+
+TFDatesProposition: WOText {
+	value = datesProposition;
+	class = "dtTextareaCreationIndicateur";
+}
+
+CktlFileUpload1: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrerDT: WOSubmitButton {
+	action = validerDemande;
+	value = "Enregistrer";
+    class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}

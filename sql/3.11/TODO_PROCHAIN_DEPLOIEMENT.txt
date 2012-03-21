@@ -1,0 +1,2 @@
+a verifier lors de la prochaine maj
+- ajouter le parametre APP_SHOW_CONTACT_POLE au fichier de config

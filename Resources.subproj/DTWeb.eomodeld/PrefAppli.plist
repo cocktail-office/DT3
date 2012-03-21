@@ -1,0 +1,201 @@
+{
+    attributes = (
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_AIDE_SYS_NAV"; 
+            externalType = CHAR; 
+            internalInfo = {"_nameInObjectStore" = "DRO_TRI"; }; 
+            name = prfAideSysNav; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "PRF_CONFIRMATION_CLOTURE"; 
+            externalType = NUMBER; 
+            name = prfConfirmationCloture; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_CTRL_CHEV_PLANNING"; 
+            externalType = NUMBER; 
+            name = prfControleChevauchementPlanning; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_DRO_SERVICE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DRO_SERVICE"; }; 
+            name = prfDroService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "PRF_ETAT_CODE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "ETAT_CODE"; }; 
+            name = prfEtatCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "PRF_EXPORT_PLANNING"; 
+            externalType = NUMBER; 
+            name = prfExportPlanning; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_INSERT_DT_SIG"; 
+            externalType = NUMBER; 
+            name = prfInsertDtSig; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_MAIL_TRAITEMENT"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "DRO_MAIL_TRAITEMENT"; }; 
+            name = prfMailTraitement; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_NB_INT_PER_PAGE"; 
+            externalType = NUMBER; 
+            name = prfNbIntPerPage; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_ONGLET"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "DRO_ONGLET"; }; 
+            name = prfOnglet; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_ORDRE_COLUMNS"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DRO_ORDRE_COLUMNS"; }; 
+            name = prfOrdreColumns; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_PANIER"; 
+            externalType = VARCHAR2; 
+            name = prfPanier; 
+            valueClassName = NSString; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "PRF_PHOTO"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "DRO_PHOTO"; }; 
+            name = prfPhoto; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_SAUVEGARDER_PANIER"; 
+            externalType = NUMBER; 
+            name = prfSauvegarderPanier; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PRF_TIMER"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "DRO_TIMER"; }; 
+            name = prfTimer; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_TRI"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DRO_TRI"; }; 
+            name = prfTri; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "PRF_TRI_INT"; 
+            externalType = CHAR; 
+            internalInfo = {"_nameInObjectStore" = "DRO_TRI"; }; 
+            name = prfTriInt; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "PRF_TRI_TRA"; 
+            externalType = CHAR; 
+            internalInfo = {"_nameInObjectStore" = "DRO_TRI"; }; 
+            name = prfTriTra; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "PRF_USE_COUL_BAT"; 
+            externalType = NUMBER; 
+            name = prfUseCoulBat; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRF_USE_MAIL_INTERNE"; 
+            externalType = NUMBER; 
+            name = prfUseMailInterne; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOPrefAppli"; 
+    classProperties = (
+        noIndividu, 
+        prfAideSysNav, 
+        prfDroService, 
+        prfEtatCode, 
+        prfInsertDtSig, 
+        prfMailTraitement, 
+        prfNbIntPerPage, 
+        prfOnglet, 
+        prfOrdreColumns, 
+        prfPhoto, 
+        prfTimer, 
+        prfTri, 
+        prfTriInt, 
+        prfTriTra, 
+        prfUseCoulBat, 
+        prfUseMailInterne, 
+        prfExportPlanning, 
+        prfControleChevauchementPlanning, 
+        prfConfirmationCloture, 
+        prfPanier, 
+        prfSauvegarderPanier
+    ); 
+    externalName = "PREF_APPLI"; 
+    fetchSpecificationDictionary = {}; 
+    name = PrefAppli; 
+    primaryKeyAttributes = (noIndividu); 
+}

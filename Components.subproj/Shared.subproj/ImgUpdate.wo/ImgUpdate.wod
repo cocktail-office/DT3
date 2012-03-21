@@ -1,0 +1,7 @@
+ImgUpdate: WOImage {
+	filename = "img/OpModifier.gif";
+	framework = "app";
+	width = "16px";
+	height = "16px";
+	border = "0";
+}

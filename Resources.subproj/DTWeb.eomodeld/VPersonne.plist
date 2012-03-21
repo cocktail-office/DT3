@@ -1,0 +1,55 @@
+{
+    attributes = (
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_LC"; 
+            externalType = VARCHAR2; 
+            name = persLc; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = persLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_ORDRE"; 
+            externalType = NUMBER; 
+            name = persOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "PERS_TYPE"; 
+            externalType = VARCHAR2; 
+            name = persType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }
+    ); 
+    attributesUsedForLocking = (persId, persLc, persLibelle, persOrdre, persType); 
+    className = "org.cocktail.dt.server.metier.EOVPersonne"; 
+    classProperties = (persId, persLc, persLibelle, persOrdre, persType); 
+    externalName = "GRHUM.V_PERSONNE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "PERSONNE@GASPHARP"; }; 
+    isReadOnly = Y; 
+    name = VPersonne; 
+    primaryKeyAttributes = (persId); 
+}

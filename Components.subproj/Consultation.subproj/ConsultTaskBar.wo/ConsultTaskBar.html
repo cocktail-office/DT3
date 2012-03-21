@@ -1,0 +1,108 @@
+<table width=100% border=0 cellpadding=1 cellspacing=0>
+	<tr>
+		<td class="boxTitle">
+			<table width=100% border=0 cellpadding=3 cellspacing=0 class="boxContents">
+				<tr>
+					<td>
+						<webobject name="CondIsTaskBarVisible">
+							<!-- traitements non detailles -->
+							<table border="0" cellpadding="0" cellspacing="0">
+								<tr>
+									<!-- Le bouton de retour - toujours visible -->
+									<td align="left"><webobject name="LnkDoGoBak"><webobject name="ImgRetour"></webobject></webobject></td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<!-- Le bouton de la validation -->
+									<webobject name="CondCanValider">
+										<td><webobject name="LnkToValider"><webobject name="ImgValider"></webobject></webobject></td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									</webobject>
+									<!-- Le bouton de l'affectation -->
+									<webobject name="CondCanAffecter">
+										<td><webobject name="LnkToAffecter"><webobject name="ImgAffecter"></webobject></webobject></td>
+										<td>&nbsp;&nbsp;</td>
+									</webobject>
+									<!-- Le bouton de consultation / traitement -->
+									<webobject name="CondCanVoirTraitement">
+										<td>
+											<webobject name="CondNotIsDisabledTraiter"><webobject name="LnkToTraiter"><webobject name="ImgTraiter"></webobject></webobject></webobject>
+											<webobject name="CondIsDisabledTraiter"><webobject name="ImgTraiterDisabled"></webobject></webobject>
+										</td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									</webobject>
+									<!-- Le bouton d'ajout de traitement -->
+									<webobject name="CondCanAjouterTraitement">
+										<td><webobject name="LnkToAjouterTraitement"><webobject name="ImgAjouterTraitement"></webobject></webobject></td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									</webobject>
+									<!-- Changement d'etat -->
+									<webobject name="CondCanChangerEtat">
+										<td><webobject name="LnkChangerEtat"><webobject name="ImgChangeEtat"></webobject></webobject></td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									</webobject>
+									<!-- Renvoi de mail de cloture -->
+									<webobject name="CondCanRenvoyerMailCloture">
+										<td><webobject name="LnkRenvoyerMailCloture"><webobject name="ImgRenvoyerMailCloture"></webobject></webobject></td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									</webobject>
+								</tr>
+							</table>
+						</webobject>
+						<webobject name="CondNotIsTaskBarVisible">
+							<!-- traitements visible -->
+							<table width=100% cellspacing=0 cellpadding=0 border=0>
+								<tr>
+									<td><webobject name="LnkDoGoBak"><webobject name="ImgRetour"></webobject></webobject></td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<td><webobject name="LnkToTaskBar"><webobject name="ImgMasquer"></webobject></webobject></td>
+									<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									<!-- Le bouton d'ajout de traitement -->
+									<webobject name="CondCanAjouterTraitement">
+										<td><webobject name="LnkToAjouterTraitement"><webobject name="ImgAjouterTraitement"></webobject></webobject></td>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+									</webobject>
+									<td width="99%"><font class="title">&nbsp;<webobject name="StrTaskTitle"></webobject></font></td>
+								</tr>
+							</table>
+						</webobject>
+						<webobject name="CondHasError">
+							<!-- messager d'erreur -->
+							<div align="center">
+								<font class="textError"><webobject name="StrErrorMessage"/></font><br>
+								<br>
+								<webobject name="CondShowGoToBar">
+									<webobject name="FormError"><webobject name="BtnToTaskBar"/></webobject>
+								</webobject>
+							</div>
+						</webobject>
+						<webobject name="CondIsValiderVisible">
+							<!-- barre de validation -->
+							<webobject name="CondCanValider">
+								<table border="0">
+									<tr>
+										<td>
+											<webobject name="FormValider">
+												<font class="textEntry"> Commentaire interne de la demande&nbsp;:</font><br>
+												<webobject name="TxtValidationComment"/>
+												<div align="right">
+													<webobject name="BtnDoValider"/>&nbsp;&nbsp;<webobject name="BtnDoRejeter"/>&nbsp;&nbsp;<webobject name="BtnToTaskBarAnnulerValidation"/>
+												</div>
+											</webobject>
+										</td>
+									</tr>
+								</table>
+							</webobject>
+						</webobject>
+						<webobject name="CondIsAffecterVisible">
+							<webobject name="CompAffectation1"/>
+						</webobject>
+						<webobject name="CondIsTraiterVisible">
+							<div>
+								<webobject name = "CompListTraitement1"/>
+							</div>
+						</webobject>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>

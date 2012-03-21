@@ -1,0 +1,61 @@
+<webobject name="PageConsultation">
+<webobject name="Form1">
+	<webobject name="BtnDoAutoRefresh"></webobject>&nbsp;<webobject name="BtnDoNothing"></webobject>
+	<webobject name="siDAMode">
+		<webobject name="exitLinkBox"><webobject name="dtExitLink"></webobject></webobject><br/>
+	</webobject>
+	<webobject name="siAccessModeLogin">
+			<webobject name="isAutoRefresh"><webobject name="JavaScriptAutoRefresh"></webobject></webobject>
+			<table cellpadding="1" cellspacing="0" border="0" width="100%" class="boxTitle">
+				<tr>
+					<td><font class="subTitleInverse">&nbsp;Filtres de consultation</font></td>
+				</tr>
+				<tr>
+					<td class="boxBorder">
+						<table cellpadding="5" cellspacing="0" border="0" width="100%" class="boxContents">
+							<tr>
+								<webobject name="CondShowServiceList">
+								<td><font CLASS="textEntry">Service: </font><webobject name="PopUpServiceDst"></webobject></td>
+								</webobject>
+								<td><font class="textEntry">&Eacute;tat : </font><webobject name="PopUpEtat"></webobject></td>
+								<webobject name="CondShowPeriodeList">
+								<td><font class="textEntry">P&eacute;riode : </font><webobject name="PopUpPeriode"></webobject></td>
+								</webobject>
+								<webobject name="CondShowRadioIntDemandeur">
+									<td title="Consulter les demandes en tant que :">
+										<font class="textEntry">Profil&nbsp;:</font>&nbsp;&nbsp;
+										<label><webobject name="RadioModeIntervenant"></webobject>Intervenant</label>
+											&nbsp;&nbsp;&nbsp;
+										<label><webobject name="RadioModeDemandeur"></webobject>Demandeur</label>
+									</td>
+								</webobject>
+								<webobject name="CondUseInterventionMasquee">
+									<td>&nbsp;<label><webobject name="ChkShowInterventionMasquee"></webobject> voir/cacher DTs</label></td>
+								</webobject>
+								<webobject name = "CondShowChkSurcout">
+									<td>
+										<label><webobject name = "ChkSurcout"/>
+										<small>surcoûts refusés</small></label>
+										<webobject name = "TemSurcoutNonSigne"/>
+									</td>
+								</webobject>
+								<webobject name = "CondShowChkRemplacementNonRestitute">
+									<td>
+										<label><webobject name = "ChkShowDtRemplacementNonRestitue"/>
+										<small>postes non restitués</small></label>
+										<webobject name = "TemRemplacementNonRestitue"/>
+									</td>
+								</webobject>
+								<webobject name="CondShowBtnNouvelleRecherche">
+									<td align="right" width=1%><webobject name="BtnNouvelleRecherche"></webobject></td>
+								</webobject>
+								<td align="right"><webobject name="LnkAfficheImprimer"><webobject name="ImgImprimer"></webobject></webobject></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+	</webobject>
+	<webobject name="CompListeDemande1"></webobject><br>
+</webobject>
+</webobject>

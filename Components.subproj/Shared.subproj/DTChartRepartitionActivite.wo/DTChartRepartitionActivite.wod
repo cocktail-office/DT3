@@ -1,0 +1,33 @@
+DTFormErrorBox1: DTFormErrorBox {
+	showError = errMessage.length;
+}
+
+StrErrMessage: WOString {
+	value = errMessage;
+}
+
+RepActivite: WORepetition {
+	list = actCountArray;
+	item = actCountItem;
+	index = actCountItemIndex;
+}
+
+StrRowCount: WOString {
+	value = actCountArray.count;
+}
+
+StrIndex: WOString {
+	value = actCountItemIndex;
+}
+
+StrTitre: WOString {
+	value = titre;
+}
+
+StrLibelle: WOString {
+	value = libelle;
+}
+
+StrCount: WOString {
+	value = actCountItem.count;
+}

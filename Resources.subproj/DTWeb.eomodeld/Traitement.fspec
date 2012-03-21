@@ -1,0 +1,24 @@
+{
+    FetchTraitement = {
+        class = EOFetchSpecification; 
+        entityName = Traitement; 
+        prefetchingRelationshipKeyPaths = (); 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = intOrdre; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = intOrdre; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = toIndividuUlr; 
+                    selectorName = "isEqualTo:"; 
+                    value = {"_key" = toIndividuUlr; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

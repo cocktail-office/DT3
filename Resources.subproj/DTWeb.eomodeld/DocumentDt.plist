@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            columnName = "DOC_ORDRE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "NOM_FICHIER"; }; 
+            name = docOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TRA_ORDRE"; 
+            externalType = NUMBER; 
+            name = traOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (docOrdre, intOrdre, traOrdre); 
+    className = "org.cocktail.dt.server.metier.EODocumentDt"; 
+    classProperties = (docOrdre, intOrdre, toIntervention, traOrdre); 
+    externalName = "DOCUMENT_DT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (docOrdre, intOrdre, toIntervention, traOrdre); 
+        "_nameInObjectStore" = "DOCUMENT_DT"; 
+    }; 
+    name = DocumentDt; 
+    primaryKeyAttributes = (docOrdre, intOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Intervention; 
+            internalInfo = {"_nameInObjectStore" = interventionHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }
+    ); 
+}

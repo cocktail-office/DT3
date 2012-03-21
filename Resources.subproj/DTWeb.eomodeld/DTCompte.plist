@@ -1,0 +1,121 @@
+{
+    attributes = (
+        {
+            columnName = "CPT_DOMAINE"; 
+            externalType = VARCHAR2; 
+            name = cptDomaine; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            columnName = "CPT_EMAIL"; 
+            externalType = VARCHAR2; 
+            name = cptEmail; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPT_LOGIN"; 
+            externalType = VARCHAR2; 
+            name = cptLogin; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 8; 
+        }, 
+        {
+            columnName = "CPT_ORDRE"; 
+            externalType = NUMBER; 
+            name = cptOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPT_PASSWD"; 
+            externalType = VARCHAR2; 
+            name = cptPasswd; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            columnName = "CPT_UID_GID"; 
+            externalType = NUMBER; 
+            name = cptUidGid; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CPT_VLAN"; 
+            externalType = VARCHAR2; 
+            name = cptVlan; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 15; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "cptEmail||'@'||cptDomaine"; 
+            externalType = VARCHAR2; 
+            name = email; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cptDomaine, cptEmail, cptLogin, cptOrdre, cptPasswd, cptUidGid, email, persId); 
+    className = "org.cocktail.dt.server.metier.EOCompte"; 
+    classProperties = (
+        cptDomaine, 
+        cptEmail, 
+        cptLogin, 
+        cptOrdre, 
+        cptPasswd, 
+        cptUidGid, 
+        cptVlan, 
+        email, 
+        persId, 
+        tosRepartCompte
+    ); 
+    externalName = "GRHUM.COMPTE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cptDomaine, 
+            cptEmail, 
+            cptLogin, 
+            cptOrdre, 
+            cptPasswd, 
+            cptUidGid, 
+            cptVlan, 
+            email, 
+            persId, 
+            tosRepartCompte
+        ); 
+        "_nameInObjectStore" = "COMPTE@GASPHARP"; 
+    }; 
+    name = DTCompte; 
+    primaryKeyAttributes = (cptOrdre); 
+    relationships = (
+        {
+            destination = DTRepartCompte; 
+            internalInfo = {"_nameInObjectStore" = toRepartCompteHarp; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cptOrdre; sourceAttribute = cptOrdre; }); 
+            name = tosRepartCompte; 
+        }
+    ); 
+}

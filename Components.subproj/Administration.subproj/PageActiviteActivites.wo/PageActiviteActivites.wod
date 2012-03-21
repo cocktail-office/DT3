@@ -1,0 +1,90 @@
+BtnAnnuler: WOSubmitButton {
+	action = annuler;
+	class = "bouton";
+	value = "Annuler";
+}
+
+BtnDoChangeLocal: WOSubmitButton {
+	action = doChangeToLocalPref;
+	class = "bouton";
+	value = "Redefinir";
+}
+
+BtnDoChangePere: WOSubmitButton {
+	action = doChangeToPerePref;
+	class = "bouton";
+	value = "Supprimer";
+}
+
+BtnOK: WOSubmitButton {
+	action = ok;
+	class = "bouton";
+	value = "OK";
+}
+
+CheckAfficherListe: WOCheckBox {
+	checked = isActiviteAffichable;
+}
+
+ComboSwap: WOPopUpButton {
+	item = swapItem;
+	list = swapList;
+	selection = swapSelected;
+	disabled = isDisabledComboSwap;
+}
+
+CondHasErrorMessage: WOConditional {
+	condition = hasErrorMessage;
+}
+
+CondIsLocalPrefDef: WOConditional {
+	condition = isLocalPrefDef;
+}
+
+CondNotIsLocalPrefDef: WOConditional {
+	condition = isLocalPrefDef;
+	negate = true;
+}
+
+DTErrorBox1: DTErrorBox {
+	message = errorMessage;
+}
+
+FormCreationService: WOForm {
+	multipleSubmit = true;
+}
+
+PageActiviteActivites: DTDefaultPage {
+	pageTitle = "Creation d'un nouveau service DT";
+}
+
+StrLibelleActHeritee: WOString {
+	value = libelleActiviteHeritee;
+}
+
+TextCommentActivite: WOText {
+	value = commentActivite;
+	class = "dtTextareaIntMotif";
+	disabled = isDisabledTextCommentActivite;
+}
+
+TextFieldCaarId: WOTextField {
+	numberformat = "0";
+	size = 5;
+	value = caarId;
+}
+
+TextFieldCodeActivite: WOTextField {
+	numberformat = "0";
+	size = 5;
+	value = codeActivite;
+	disabled = true;
+}
+
+TextFieldEmail: WOTextField {
+	value = emailActivite;
+}
+
+TextFieldLibelle: WOTextField {
+	value = libelleActivite;
+}

@@ -1,0 +1,171 @@
+BtnColler: WOImageButton {
+	action = coller;
+	class = "bouton"; 
+	disabled = isDisabledBtnColler;
+	filename = "img/Administration/EditPaste.png";
+	framework = "app";
+	title = "Deplacer l'activit&eacute; pr&eacute;c&eacute;demment selectionn&eacute;e vers celle ci";
+}
+
+
+BtnCouper: WOImageButton {
+	action = couper;
+	class = "bouton"; 
+	disabled = isDisabledBtnCouper;
+	filename = "img/Administration/EditCut.png";
+	framework = "app";
+	title = "Couper l'activite";
+}
+
+CondIsARecordToCutSelected: WOConditional {
+	condition = isARecordToCutSelected;
+}
+
+StrRecordToCut: WOString {
+	value = recordToCut.actLibelle;//VALID
+}
+
+LnkClearRecordToCutAndRecordToMerge: WOHyperlink {
+	action = clearRecordToCutAndRecordToMerge;
+	title = "Deselectionner";
+}
+
+ImgClearRecordToCutAndRecordToMerge: WOImage {
+	filename = "img/OpAnnuler.gif";
+	framework = "app";
+	width = "16px";
+	height = "16px";
+	border = "0";
+}
+
+BtnSelectToMerge: WOImageButton {
+	action = selectToMerge;
+	class = "bouton"; 
+	filename = "img/Administration/EditCut.png";
+	framework = "app";
+	title = "Selectionner l'activite &agrave; fusionner";
+}
+
+BtnMerge: WOImageButton {
+	action = merge;
+	class = "bouton"; 
+	filename = "img/Administration/EditPaste.png";
+	framework = "app";
+	title = "Fusionner avec cette activit&eacute;";
+}
+
+CondIsARecordToMergeSelected: WOConditional {
+	condition = isARecordToMergeSelected;
+}
+
+StrRecordToMerge: WOString {
+	value = recordToMerge.actLibelle;//VALID
+}
+
+BtnCreerActivite: WOImageButton {
+	action = creerActivite;
+	class = "bouton"; 
+	disabled = isDisabledBtnCreerActivite;
+	filename = "img/Administration/AddActivite.png";
+	framework = "app";
+	title = "Creer une nouvelle activite";
+}
+
+BtnCreerService: WOSubmitButton {
+	action = creerService;
+	value = "Creer un nouveau service DT";
+	class = "bouton"; 
+	disabled = isDisabledBtnCreerService;
+}
+
+BtnDefinirResponsables: WOImageButton {
+	action = definirResponsables;
+	class = "bouton"; 
+	disabled = isDisabledBtnDefinirResponsables;
+	filename = "img/Administration/EditResponsables.png";
+	framework = "app";
+	title = "Definir les responsables de l'activite selectionnee";
+}
+
+BtnModifierActivite: WOImageButton {
+	action = modifierActivite;
+	class = "bouton"; 
+	disabled = isDisabledBtnModifierActivite;
+	filename = "img/Administration/EditActivite.png";
+	framework = "app";
+	title = "Modifier l'activite selectionnee";
+}
+
+BtnModifierService: WOSubmitButton {
+	action = modifierService;
+	value = "Modifier";
+	class = "bouton"; 
+	disabled = isDisabledBtnModifierService;
+}
+
+BtnRefreshAndClearSelection: WOSubmitButton {
+	action = refreshAndClearSelection;
+	class = "bouton";
+	disabled = isDisabledBtnClearSelection;
+	value = "Racine du service";
+	title = "Deselectionner l'activite";
+}
+
+BtnSupprimer: WOImageButton {
+	action = supprimerActivite;
+	class = "bouton"; 
+	disabled = isDisabledBtnSupprimerActivite;
+	filename = "img/Administration/DeleteActivite.png";
+	framework = "app";
+	title = "Supprimer l'activite selectionnee";
+}
+
+BtnSupprimerService: WOSubmitButton {
+	action = supprimerService;
+	value = "Supprimer";
+	class = "bouton"; 
+	disabled = isDisabledBtnSupprimerService;
+}
+
+LnkExporter: WOHyperlink {
+	action = exporterHTML;
+	title = "Exporter l'arboresence complete des activites en HTML";
+	target = "_new";
+}
+
+ImgSAM: WOImage {
+	filename = "img/Administration/SAM.png";
+	framework = "app";
+	border = 0;
+}
+
+LnkNotifierSAM: WOHyperlink {
+	action = notifierSAM;
+	title = "Notifier le serveur de messagerie des changements d'email";
+}
+
+ImgExporter: WOImage {
+	filename = "img/Administration/Export.png";
+	framework = "app";
+	border = 0;
+}
+
+PopupService: WOPopUpButton {
+	displayString = serviceDisplay;
+	item = serviceItem;
+	list = serviceList;
+	onChange = "this.form.submit();";
+	selection = serviceSelected;
+}
+
+SelectActivite1: SelectActivite {
+	listener = activiteListener;
+}
+
+CondFalse: WOConditional {
+	condition = true;
+}
+
+CondIsServiceSelected: WOConditional {
+	condition = serviceSelected;
+}

@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "ACT_ORDRE"; 
+            externalType = NUMBER; 
+            name = actOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ACT_TYPE_RESPONSABLE"; 
+            externalType = VARCHAR2; 
+            name = actTypeResponsable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (actOrdre, actTypeResponsable, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOActivitesResponsables"; 
+    classProperties = (actOrdre, actTypeResponsable, noIndividu, toIndividuUlr); 
+    externalName = "ACTIVITES_RESPONSABLES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (actOrdre, actTypeResponsable, noIndividu, toIndividuUlr); 
+    }; 
+    name = ActivitesResponsables; 
+    primaryKeyAttributes = (actOrdre, actTypeResponsable, noIndividu); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividuUlr; 
+        }
+    ); 
+}

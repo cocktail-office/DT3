@@ -1,0 +1,49 @@
+{
+    attributes = (
+        {
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = COULEUR; 
+            externalType = VARCHAR2; 
+            name = couleur; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cLocal, couleur, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOPrefCouleurs"; 
+    classProperties = (cLocal, couleur, noIndividu, toBatiment); 
+    externalName = "PREF_COULEURS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cLocal, couleur, noIndividu, toBatiment); 
+        "_nameInObjectStore" = "PREF_COULEURS_HARP"; 
+    }; 
+    name = PrefCouleurs; 
+    primaryKeyAttributes = (cLocal, noIndividu); 
+    relationships = (
+        {
+            destination = Batiment; 
+            internalInfo = {"_nameInObjectStore" = batimentHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = toBatiment; 
+        }
+    ); 
+}

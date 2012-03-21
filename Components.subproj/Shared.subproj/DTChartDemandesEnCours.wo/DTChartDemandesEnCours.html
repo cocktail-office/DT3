@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Date');
+        data.addColumn('number', 'DT sans traitement');
+        data.addRows(<webobject name = "StrRowCount"/>);
+        
+         <webobject name = "RepDate">
+	        data.setValue(<webobject name = "StrIndex"/>, 0, <webobject name = "StrDate"/>);
+  	      data.setValue(<webobject name = "StrIndex"/>, 1, <webobject name = "StrCount"/>);
+ 	      </webobject>
+     
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 400, height: 240, title: 'Nombre de DTs sans traitement'});
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>

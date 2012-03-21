@@ -1,0 +1,1 @@
+ -destination src -extension java -java -model Resources.subproj/DTWeb.eomodeld -packagedirs -subclassDestination src -templatedir _EOGenVelocityTemplates -verbose -loadModelGroup

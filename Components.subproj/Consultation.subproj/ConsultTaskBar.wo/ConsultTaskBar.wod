@@ -1,0 +1,249 @@
+CondIsTaskBarVisible: WOConditional {
+	condition = isTaskBarVisible;
+}
+
+LnkDoGoBak: WOHyperlink {
+	action = doGoBak;
+	fragmentIdentifier = "pos";
+	title = "Retourner dans la liste des demandes";
+  	class = "linkPage";
+}
+
+ImgRetour: WOImage {
+	filename = "img/Retour.png";
+	border = 0;
+	hspace = 2;
+	framework = "app";
+    class = "imgLink";
+   	height = "22px";
+	width = "22px";	    
+}
+
+CondCanValider: WOConditional {
+  condition = canValider;
+}
+
+LnkToValider: WOHyperlink {
+  title = "Valider la demande";
+  action = toValider;
+  class = "linkPage";
+}
+
+ImgValider: WOImage {
+	filename = "img/Valider.png";
+    border = "0";
+    hspace = "2";
+	framework = "app";
+    class = "imgLink";
+}
+
+CondCanAffecter: WOConditional {
+  condition = canAffecter;
+}
+
+LnkToAffecter: WOHyperlink {
+  title = "Affecter la demande";
+  action = toAffecter;
+  class = "linkPage";
+}
+
+ImgAffecter: WOImage {
+	filename = "img/Affecter.png";
+    border = "0";
+    hspace = "2";
+	framework = "app";
+    class = "imgLink";
+}
+
+CondCanVoirTraitement: WOConditional {
+  condition = canVoirTraitement;
+}
+
+LnkToTraiter: WOHyperlink {
+  	title = "Consulter les traitements r&eacute;alis&eacute;s sur cette demande";
+  	action = toVoirTraitement;
+  	class = "linkPage";
+	escapeHTML = false;
+}
+
+CondNotIsDisabledTraiter: WOConditional {
+	condition = isDisabledTraiter;
+	negate = true;
+}
+
+ImgTraiter: WOImage {
+	filename = "img/Traiter.png";
+    border = "0";
+    hspace = "2";
+	framework = "app";
+    class = "imgLink";
+}
+
+CondIsDisabledTraiter: WOConditional {
+	condition = isDisabledTraiter;
+}
+
+ImgTraiterDisabled: WOImage {
+	border = 0;
+	filename = "img/TraiterDisabled.png";
+	framework = "app";
+	hspace = 2;
+   	height = "22px";
+	width = "22px";	    	
+}
+
+CondCanAjouterTraitement: WOConditional {
+  condition = canAjouterTraitement;
+}
+
+LnkToAjouterTraitement: WOHyperlink {
+  title = "Ajouter un traitement ou clore la DT directement";
+  action = toAjouterTraitement;
+  class = "linkPage";
+}
+
+ImgAjouterTraitement: WOImage {
+	filename = "img/AjouterTraitement.png";
+    border = "0";
+    hspace = "2";
+	framework = "app";
+    class = "imgLink";
+}
+
+CondNotIsTaskBarVisible: WOConditional {
+	condition = isTaskBarVisible;
+	negate = true;
+}
+
+LnkToTaskBar: WOHyperlink {
+	action = toTaskBar;
+	fragmentIdentifier = "pos";
+	title = "Masquer les traitements";
+  	class = "linkPage";
+	name = "pos";
+}
+
+ImgMasquer: WOImage {
+	filename = "img/Masquer.png";
+	border = 0;
+	hspace = 2;
+	framework = "app";
+    class = "imgLink";
+   	height = "22px";
+	width = "22px";	    
+}
+
+StrTaskTitle: WOString {
+	value = taskTitle;
+	escapeHTML = false;
+}
+
+CondHasError: WOConditional {
+	condition = hasError;
+}
+
+StrErrorMessage: WOString {
+	value = errorMessage;
+	escapeHTML = false;
+}
+
+CondShowGoToBar: WOConditional {
+	condition = showGoToBar;
+}
+
+FormError: WOForm {
+}
+
+BtnToTaskBar: WOSubmitButton {
+	action = toTaskBar;
+	class = "Bouton";
+	value = "OK";
+}
+
+CondIsValiderVisible: WOConditional {
+	condition = isValiderVisible;
+}
+
+FormValider: WOForm {
+	multipleSubmit = true;
+}
+
+TxtValidationComment: WOText {
+	cols = 50;
+	rows = 6;
+	value = validationComment;
+}
+
+BtnDoValider: WOSubmitButton {
+	action = doValider;
+	class = "Bouton";
+	title = "Valider la demande";
+	value = "Valider";
+}
+
+BtnDoRejeter: WOSubmitButton {
+	action = doRejeter;
+	class = "bouton";
+	title = "Rejeter cette demande";
+	value = "Rejeter";
+}
+
+BtnToTaskBarAnnulerValidation: WOSubmitButton {
+	action = toTaskBar;
+	class = "Bouton";
+	title = "Annuler l'operation de la validation";
+	value = "Annuler";
+}
+
+CondIsAffecterVisible: WOConditional {
+	condition = isAffecterVisible;
+}
+
+CompAffectation1: CompAffectation {
+	listener = compAffectationListener; 
+}
+
+CondIsTraiterVisible: WOConditional {
+	condition = isTraiterVisible;
+}
+
+CompListTraitement1: CompListeTraitement {
+	eoIntervention = recIntervention;
+	shouldForceAddTraitement = shouldForceAddTraitement;
+}
+
+CondCanChangerEtat: WOConditional {
+	condition = canChangerEtat;
+}
+
+LnkChangerEtat: WOHyperlink {
+  title = "Changer l'etat de la DT";
+  action = changerEtat;
+  class = "linkPage";
+}
+
+ImgChangeEtat: WOImage {
+	filename = "img/ChangeEtat.gif";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+}
+
+CondCanRenvoyerMailCloture: WOConditional {
+	condition = canRenvoyerMailCloture;
+}
+
+LnkRenvoyerMailCloture: WOHyperlink {
+  title = "Renvoyer le mail de cl&ocirc;ture de DT";
+  action = renvoyerMailCloture;
+  class = "linkPage";
+}
+
+ImgRenvoyerMailCloture: WOImage {
+	filename = "img/RenvoyerMailCloture.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+}

@@ -1,0 +1,27 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "DATAS_PHOTO"; 
+            externalType = "BLOB"; 
+            name = image; 
+            valueClassName = NSData; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "ADR_ORDRE"; }; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (image, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOPhotoEmployes"; 
+    classProperties = (image, noIndividu); 
+    externalName = "GRHUM.PHOTOS_EMPLOYES_GRHUM"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "PHOTOS_EMPLOYES"; }; 
+    name = PhotoEmployes; 
+    primaryKeyAttributes = (noIndividu); 
+}

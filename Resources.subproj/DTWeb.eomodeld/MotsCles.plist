@@ -1,0 +1,29 @@
+{
+    attributes = (
+        {
+            columnName = "MC_LIBELLE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "MOT_CLEF"; }; 
+            name = mcLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 25; 
+        }, 
+        {
+            columnName = "MC_TYPE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "MOT_CLEF"; }; 
+            name = mcType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (mcLibelle, mcType); 
+    className = "org.cocktail.dt.server.metier.EOMotsCles"; 
+    classProperties = (mcLibelle, mcType); 
+    externalName = "COURRIER.MOTS_CLEFS"; 
+    fetchSpecificationDictionary = {}; 
+    name = MotsCles; 
+    primaryKeyAttributes = (mcLibelle, mcType); 
+}

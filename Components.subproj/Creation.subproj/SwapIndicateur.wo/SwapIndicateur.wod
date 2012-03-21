@@ -1,0 +1,50 @@
+FormIndicateur: WOForm {
+	multipleSubmit = true;
+	name = "formIndicateur";
+	enctype = "multipart/form-data";
+}
+
+FormErrorEmpty: DTFormErrorBox {
+	showError = errorEmpty;
+}
+
+RepTitle: WORepetition {
+	list = titleList;
+	item = titleItem;
+	index = titleIndex;
+}
+
+StrTitle: WOString {
+	value = titleItem;
+}
+
+TextField: WOText {
+	value = fieldItem;
+	class = "dtTextareaCreationIndicateur";
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrerDT: WOSubmitButton {
+	action = validerDemande;
+	value = "Enregistrer";
+    class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}

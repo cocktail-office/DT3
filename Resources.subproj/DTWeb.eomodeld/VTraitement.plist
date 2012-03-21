@@ -1,0 +1,191 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ACT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = actLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ACT_ORDRE"; 
+            externalType = NUMBER; 
+            name = actOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "INT_CLE_SERVICE"; 
+            externalType = NUMBER; 
+            name = intCleService; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TRA_COMMENTAIRE_INTERNE"; 
+            externalType = VARCHAR2; 
+            name = traCommentaireInterne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1024; 
+        }, 
+        {
+            columnName = "TRA_CONSULTABLE"; 
+            externalType = VARCHAR2; 
+            name = traConsultable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TRA_DATE_DEB"; 
+            externalType = DATE; 
+            name = traDateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "TRA_DATE_FIN"; 
+            externalType = DATE; 
+            name = traDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "TRA_ETAT"; 
+            externalType = VARCHAR2; 
+            name = traEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TRA_ORDRE"; 
+            externalType = NUMBER; 
+            name = traOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TRA_TRAITEMENT"; 
+            externalType = VARCHAR2; 
+            name = traTraitement; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }
+    ); 
+    className = "org.cocktail.dt.server.metier.EOVTraitement"; 
+    classProperties = (
+        intOrdre, 
+        noIndividu, 
+        toEtatDt, 
+        toIndividuUlr, 
+        toIntervention, 
+        tosDocumentDt, 
+        traCommentaireInterne, 
+        traConsultable, 
+        traDateDeb, 
+        traDateFin, 
+        traEtat, 
+        traOrdre, 
+        traTraitement, 
+        actLibelle, 
+        actOrdre, 
+        cStructure, 
+        lcStructure, 
+        intCleService
+    ); 
+    externalName = "V_TRAITEMENT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            intOrdre, 
+            noIndividu, 
+            toEtatDt, 
+            toIndividuUlr, 
+            toIntervention, 
+            tosDocumentDt, 
+            traCommentaireInterne, 
+            traConsultable, 
+            traDateDeb, 
+            traDateFin, 
+            traEtat, 
+            traOrdre, 
+            traTraitement
+        ); 
+    }; 
+    isReadOnly = Y; 
+    name = VTraitement; 
+    primaryKeyAttributes = (traOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = SharedInfo; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = traEtat; }); 
+            name = toEtatDt; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividuUlr; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Intervention; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DocumentDt; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = traOrdre; sourceAttribute = traOrdre; }); 
+            name = tosDocumentDt; 
+        }
+    ); 
+}

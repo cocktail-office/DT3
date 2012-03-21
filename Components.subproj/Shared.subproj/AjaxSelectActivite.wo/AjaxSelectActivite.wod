@@ -1,0 +1,6 @@
+AjaxAutoCompleteActivite: CktlAjaxAutoComplete {
+	list = ctrl.activiteResultList;
+	value = ctrl.actLibelleRecherche;
+	item = ctrl.activiteResultItem;
+	displayString = ctrl.activiteResultItemDisplay;
+}

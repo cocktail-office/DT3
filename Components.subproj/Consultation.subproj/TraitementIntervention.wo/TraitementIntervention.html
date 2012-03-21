@@ -1,0 +1,248 @@
+<table cellpadding="1" cellspacing="0" border="0" class="boxTitle">
+	<tr>
+		<td> <font class="subTitleInverse">&nbsp;<webobject name = "StrBoxTraitementTitle"/></font> </td>
+	</tr>
+	<tr>
+		<td class="boxBorder">
+			<table cellpadding="5" cellspacing="0" border="0" width="100%" class="textBox">
+
+				<webobject name = "CondIsNotUpdating">
+				
+				<!-- la modification du type n'est autorisée qu'en ajout, pas en modification -->
+				<tr>
+					
+					<td>
+						<font class="textEntry">Type&nbsp;:</font>
+						<webobject name = "PopUpTraitementType"/>
+						<webobject name = "ObserverPopUpTraitementType"/>
+					</td>
+					
+				</tr>
+				
+				</webobject>
+				
+				
+				
+				<!-- la zone ci dessous varie selon le type de traitement selectionné -->
+				<tr>
+					<td>
+					
+						<webobject name = "ContainerTraitementPourType">
+						<table>
+		
+							<!-- traitement "textuel" -->
+							<webobject name = "CondIsTraitementTypeSelectedTextuelLibreOuPreRempli">
+							<tr>
+								<td>
+									<font class="textEntry">D&eacute;but&nbsp;:</font>&nbsp;<webobject name = "DatePickerDeb"/>&nbsp;&nbsp;&nbsp;
+									<font class="textEntry">Fin&nbsp;:</font>&nbsp;<webobject name = "DatePickerFin"/><br/>
+									<font class="textEntry">Traitement&nbsp;:</font><br/>
+									<webobject name="TxtTraitementTextuel"/>
+								</td>
+							</tr>
+							</webobject>
+		
+							<!-- traitement "textuel" -->
+							<webobject name = "CondIsTraitementTypeSelectedAvecDateEtSansMotif">
+							<tr>
+								<td>
+									<font class="textEntry">Date&nbsp;:</font>&nbsp;<webobject name = "DatePickerDeb"/><br/>
+								</td>
+							</tr>
+							</webobject>
+							
+							<!-- traitement "commande" -->
+							<webobject name = "CondIsTraitementTypeSelectedCommande">
+							<tr>
+								<td>
+									<table>
+										<tr>
+											<td align="right"><font class="textEntry">Date commande&nbsp;:</font></td>
+											<td align="left"><webobject name = "DatePickerDeb"/></td>
+										</tr>
+										<tr>
+											<td align="right"><font class="textEntry">Num&eacute;ro de commande&nbsp;:</font></td>
+											<td align="left"><webobject name = "TFTraitementCommande"/></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							</webobject>
+							
+							<!-- traitement "livraison" -->
+							<webobject name = "CondIsTraitementTypeSelectedLivraison">
+							<tr>
+								<td>
+									<table>
+										<tr>
+											<td align="right"><font class="textEntry">Date livraison&nbsp;:</font></td>
+											<td align="left"><webobject name = "DatePickerDeb"/></td>
+										</tr>
+										<tr>
+											<td align="right"><font class="textEntry">Lieu de stockage&nbsp;:</font></td>
+											<td align="left" nowrap>
+												<webobject name = "SelectBatimentBureauLivraison"/>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							</webobject>
+							
+							<!-- traitement "no serie" -->
+							<webobject name = "CondIsTraitementTypeSelectedNoSerie">
+							<tr>
+								<td>
+									<table>
+										<tr>
+											<td align="right"><font class="textEntry">Inventori&eacute; le&nbsp;:</font></td>
+											<td align="left"><webobject name = "DatePickerDeb"/></td>
+										</tr>
+										<tr>
+											<td align="right"><font class="textEntry">Num&eacute;ro de s&eacute;rie&nbsp;:</font></td>
+											<td align="left"><webobject name = "TFTraitementNoSerie"/></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							</webobject>
+														
+							<!-- traitement "emission bdc interne pour signature" -->
+							<webobject name = "CondIsTraitementEmissionBdcInternePourSignature">
+							<tr>
+								<td>
+									<table>
+										<tr>
+											<td align="right"><font class="textEntry">Date d'émission du(des) bon(s) de commande(s) interne(s) :</font></td>
+											<td align="left"><webobject name = "DatePickerDeb"/></td>
+										</tr>
+										<tr>
+											<td align="right"><font class="textEntry">Numéro(s) de commande(s) :</font></td>
+											<td align="left"><webobject name = "TFTraitementEmissionBdcNumeroCommande"/></td>
+										</tr>
+										<webobject name = "CondIsPosteSupplementaire">
+											<tr>
+												<td align="right"><font class="textEntry">Numéro(s) de commande(s) pour le surcout :</font></td>
+												<td align="left"><webobject name = "TFTraitementEmissionBdcNumeroCommandeSurcout"/></td>
+											</tr>
+										</webobject>
+									</table>
+								</td>
+							</tr>
+							</webobject>
+							
+							<!-- traitement "reception bdc interne signe" -->
+							<webobject name = "CondIsTraitementReceptionBdcInterneSigne">
+							<tr>
+								<td>
+									<table>
+									
+										<tr>
+											<td align="right"><font class="textEntry">Date de réception du(des) bon(s) de commande(s) interne(s) signé(s) :</font></td>
+											<td align="left"><webobject name = "DatePickerDeb"/></td>
+										</tr>
+										
+										<tr>
+											<td align="right"><font class="textEntry">Commande(s) de matériel signée(s) :</font></td>
+											<td align="left">
+												<label><webobject name = "RadioCommandeSigneONOUI"/> OUI</label>
+												<label><webobject name = "RadioCommandeSigneONNON"/> NON</label>
+												<label><webobject name = "RadioCommandeSigneONSansObjet"/> Sans objet</label>
+											</td>
+										</tr>
+										
+										<tr>
+											<td align="right"><font class="textEntry">Commande(s) liée(s) au(x) surcoût(s) signée(s) :</font></td>
+											<td align="left">
+												<webobject name = "ObserverRadioCommandeSurcoutSigneON">
+													<label><webobject name = "RadioCommandeSurcoutSigneONOUI"/> OUI</label>
+													<label><webobject name = "RadioCommandeSurcoutSigneONNON"/> NON</label>
+													<label><webobject name = "RadioCommandeSurcoutSigneONSansObjet"/> Sans objet</label>
+												</webobject>
+											</td>
+											
+										</tr>
+									</table>
+								</td>
+							</tr>
+							</webobject>
+							
+							
+						</table>
+						</webobject>
+	
+					
+					</td>
+				</tr>
+							
+				<!-- le commentaire additionnel commun a toutes les types de traitement -->
+				<tr>
+					<td>
+						
+												
+						<webobject name = "ContainerTraitementAdditionnel">
+							<webobject name = "AjaxExpansionTraitementAdditionnel">
+								<webobject name = "AjaxExpansionContainerTraitementAdditionnel">
+									<webobject name="TxtTraitementAdditionnel"/>
+								</webobject>
+							</webobject>
+						</webobject>
+						
+					</td>
+				</tr>
+				
+				
+				<!-- documents attachés -->
+				<tr>
+					<td>
+					<webobject name="CondIsNotUpdating">
+				
+						<!--pas de modification de fichier joint-->
+						<webobject name = "AjaxExpansionFileUpload">
+							<webobject name = "AjaxExpansionContainerFileUpload">
+								<webobject name="fileUpload"/>
+							</webobject>
+						</webobject>
+				
+					</webobject>
+					</td>
+				</tr>
+		
+		
+				<!-- consultable / annulation / ajout / cloture -->
+				<tr>
+					<td>
+						<hr class="subLine" />
+						<table>
+							<tr>
+								<td valign="bottom" nowrap>
+									<span title="Les traitements non consultablesne sont visibles que par le demandeur et les agents affect&eacute;s &agrave; la DT">
+										<webobject name="chAffichable"/> Consultable / public
+									</span>
+								</td>
+								<td width="100%"></td>
+								<td valign="bottom"><webobject name="BtnAnnuler"/></td>
+								<td valign="bottom" nowrap>&nbsp;&#124;&#124;&nbsp;</td>
+								<webobject NAME="CondIsNotUpdating">
+									<td valign="bottom" nowrap>
+										<webobject name="BtnAdd"/><webobject name="chEmail"/><font class="textNote">E-mail</font>
+									</td>
+									<td valign="bottom" nowrap>&nbsp;&#124;&#124;&nbsp;</td>
+									<td valign="bottom"><webobject name="BtnClose"/></td>
+								</webobject>
+								<webobject name="CondIsUpdating">
+									<td valign="bottom"><webobject name="BtnUpdate"/></td>
+								</webobject>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+			</table>
+		</td>
+	</tr>
+</table>
+
+
+
+		

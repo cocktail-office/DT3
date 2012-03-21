@@ -1,0 +1,108 @@
+<webobject name = "PageActiviteService">
+  <div align = "center">
+    <table cellpadding = "1" cellspacing = "0" border = "0" class = "boxTitle">
+      <tr>
+        <td>
+          <font class = "subTitleInverse">Gestion de service DT</font>
+        </td>
+      </tr>
+      <tr>
+        <td class = "boxBorder">
+          <table cellpadding = "10" cellspacing = "0" border = "0" width = "100%" class = "boxContents">
+            <tr>
+              <td align = "CENTER">
+                <table cellpadding = "3" cellspacing = "0" border = "0">
+                  <tr>
+                    <td align = "CENTER">
+                      <webobject name = "CondHasErrorMessage">
+                        <webobject name = "DTErrorBox1"/>
+                      </webobject>
+                      <webobject name = "FormCreationService">
+                        <table>
+                          <tr>
+                            <td colspan = "3" title = "Le groupe de l'annuaire associe au groupe DT">
+                            	<webobject name = "BrwsServices"/><br/>
+															<font class="textNote">Cette liste contient les groupes typ&eacute;s &quot;DT&quot; dans l'annuaire.</font>                            	
+                            </td>
+                          </tr>
+                          <tr><td colspan = "3"><hr/></td></tr>
+                          <tr>
+                            <td align = "left" title = "Cochez pour que le service apparaisse dans les onglets de creation de DT">
+                              <webobject name = "CheckAfficherListe"/><font class="textEntry">Afficher</font>
+                            </td>
+                            <td align = "center" title = "La taille du browser des activites pour les demandes liees a ce service">
+                              <font class="textEntry">Nombre de lignes :</font>
+                              <webobject name = "TextFieldNbLignesBrowserActivites"/>
+                            </td>
+                            <td align = "right" title = "Plus petit = a gauche dans les onglets, plus grand a droite">
+                              <font class="textEntry">Position dans la liste :</font>
+                              <webobject name = "TextFieldPosition"/>
+                            </td>
+                          </tr>
+                          <tr><td colspan = "3"><hr/></td></tr>
+                          <tr>
+                            <td colspan = "3">
+                              <font class="textEntry">Email pour le service (format adresse@domaine) : </font>
+                              <webobject name = "TextFieldEmail"/><br/>
+                              <font class="textNote">Un mail y est envoy&eacute; lors des cr&eacute;tion et des cl&ocirc;ture des DTs</font>
+                            </td>
+                          </tr>
+                          <tr><td colspan = "3"><hr/></td></tr>
+                          <tr>
+                            <td colspan = "3" title = "L'ecran par defaut (pour les activites n'en utilisant pas un autre explicitement)">
+                              <font class="textEntry">Vue par d&eacute;faut:</font>
+                              <webobject name = "ComboSwap"/>
+                            </td>
+                          </tr>
+                          <tr><td colspan = "3"><hr/></td></tr>
+                          <tr>
+                            <td colspan = "2" valign = "top" title = "Visible que par les comptes appartenant aux VLANS (aucun = TOUS)">
+                            	<font class="textEntry">Visibilit&eacute; (VLANS)</font><br/>
+                            	<webobject name = "CheckBoxListVlans"/>
+                            </td>
+                            <td valign = "top" title = "Visible que par les membres des groupes (aucun = TOUS)">
+                            	<font class="textEntry">Visibilit&eacute; (groupes)</font><br/>
+                            	<webobject name = "CondStructureListCount">
+																<table border="1">
+	                              <webobject name = "RepStructure">
+	                              	<tr>
+	                              		<td><webobject name = "StrStructureItem"/></td>
+	                              		<td><webobject name = "LnkDeleteStructureVisibilite"><webobject name = "ImgDelete"/></webobject></td>
+	                              	</tr>
+	                              </webobject>
+	                              </table>
+                              </webobject>
+                              <webobject name = "CondNotStructureListCount">
+																&lt;pas de restrictions&gt;
+                              </webobject>
+                              <webobject name = "LnkAddStructureVisibilite"/>
+                            </td>
+                          </tr>
+                          <tr><td colspan = "3"><hr/></td></tr>
+                          <tr>
+                            <td colspan = "3" title = "Adresse email sur le Service d'Action par Mail">
+                              <font class="textEntry">Point d'entr&eacute;e SAM (format adresse@domaine) :</font>
+                              <webobject name = "TextFieldEmailServiceSam"/><br/>
+                              <font class="textNote">Laisser cette adresse vide pour ne pas activer SAM (les emails seront envoy&eacute;s entre personnels)</font>
+                            </td>
+                          </tr>
+                          <tr><td colspan = "3"><hr/></td></tr>
+                          <tr>
+                            <td colspan = "3" align = "center">
+                              <webobject name = "BtnOK"/>
+                              <webobject name = "BtnAnnuler"/>
+                            </td>
+                          </tr>
+                        </table>
+                      </webobject>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</webobject>

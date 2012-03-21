@@ -1,0 +1,115 @@
+<!-- la css pour la gestion de l'affichage ou non des dates de stage -->
+<style>
+.show{display:inline;}
+.hide{display:none;}
+</style>
+<script>
+function ShowHideDatesStage() {
+	if (document.getElementById('ComboTypeAutre').selectedIndex == 2) {
+		document.getElementById('dateStage').className="show";
+	} else {
+		document.getElementById('dateStage').className="hide";
+	}
+	return true;
+}
+</script>
+
+
+<webobject name = "Form1">
+  <table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+    <tr><td><font class = "subTitleInverse">&nbsp;Demande de cr&eacute;ation de compte</font></td></tr>
+    <tr class = "boxBorder">
+      <td>
+        <table cellpadding = "5" cellspacing = "0" border = "0" valign = "middle" width = "100%" class = "boxContents">
+        	<tr title="Le type de compte conditionne les ressources reseau accessibles par le compte">
+            <td align = "right"><font class = "textEntry">Type de compte (*)&nbsp;:</font></td>
+            <td align = "left" colspan="2"><webobject name = "ComboTypeCompte"></webobject></td>
+         </tr>
+          <tr>
+            <td align = "right"><font class = "textEntry">Nom de la personne (*)&nbsp;:</font></td>
+            <td align = "left">
+              <webobject name = "TFNomPersonne"></webobject>
+              <webobject name = "formErrorNom">Veuillez saisir le nom de la personne&nbsp;!</webobject>
+            </td>
+             <td align = "left" rowspan="2">
+              <font class = "dtAttentionText">ATTENTION&nbsp;! L'orthographe du nom doit &ecirc;tre exacte, car le login ne pourra pas &ecirc;tre modifi&eacute; par la suite.</font>
+            </td>
+          </tr>
+          <tr>
+            <td align = "right"><font class = "textEntry">Pr&eacute;nom (*)&nbsp;:</font></td>
+            <td align = "left">
+              <webobject name = "TFPrenomPersonne"></webobject>
+              <webobject name = "formErrorPrenom">Veuillez saisir le pr&eacute;nom de la personne&nbsp;!</webobject>
+            </td>
+          </tr>
+          <tr>
+            <td align = "right" valign = "top" title = "Le lien de la personne avec l'etablissement"><font class = "textEntry">Type d'affectation (*)&nbsp;:</font></td>
+            <td colspan = "3" align = "left">
+              <table width = "100%" border = "0" cellspacing = "0" cellpadding = "0">
+                <tr valign = "top">
+                  <td>
+                  	<span title="Cliquez ici et selectionnez le type de contrat si la personne est contractuelle">
+                    	<webobject name = "RadioContractuel"></webobject>
+                    	<webobject name = "ComboTypeContrat"></webobject>
+                    	<webobject name = "FormErrorTypeContrat">Veuillez	saisir un type de contrat&nbsp;! </webobject>
+                    	&nbsp;
+                    	<font class = "textEntry">dur&eacute;e&nbsp;:&nbsp;</font><webobject name = "TFDureeContrat"></webobject>&nbsp;mois
+                    	<webobject name = "formErrorDuree">Veuillez	saisir une dur&eacute;e pour ce type de contrat&nbsp;! </webobject>
+                    </span>
+                    <br/>
+                    <span title="Cliquez ici et selectionnez le type d'emploi si la personne est titulaire">
+                    	<webobject name = "RadioTitulaire"></webobject>
+                    	<webobject name = "ComboCategorieEmploi"></webobject>
+                   		<webobject name = "FormErrorTypeEmploi">Veuillez	saisir un type d'emploi&nbsp;! </webobject>
+                    </span>
+                    <br/>
+                    <span title="Cliquez ici si la personne n'appartient a aucune categorie">
+                    	<webobject name = "RadioAutre"></webobject>
+                    	<webobject name = "ComboTypeAutre"></webobject>
+                   		<webobject name = "FormErrorTypeAutre">Veuillez	saisir un type d'affectation&nbsp;! </webobject>
+                    </span>
+                    <!-- la zone contenant les dates de debut et de fin de stage -->
+                    <span id="dateStage" name="dateStage" class="hide">
+                    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&raquo;&raquo;
+											<font class = "textEntry">
+                    	P&eacute;riode du stage :
+                    	du <webobject name = "CktlDatePickerDateDebutStage"/>
+                    	au <webobject name = "CktlDatePickerDateFinStage"/>
+                    	</font>
+                    	<webobject name = "formErrorDateStage">La date de d&eacute;but doit &ecirc;tre avant la date de fin&nbsp;! </webobject>
+                    	<webobject name = "formErrorDateStageEmpty">Veuillez	saisir une p&eacute;riode de stage&nbsp;! </webobject>
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr title = "L'affectation administrative de l'agent dans l'etablissement">
+            <td align = "right"><font class = "textEntry">Service&nbsp (*)&nbsp;:</font></td>
+            <td align = "left" colspan = "3"><webobject name = "ComboService"></webobject><webobject name = "FormErrorService">Veuillez	saisir un service ! </webobject></td>
+          </tr>
+          <tr title = "La localisation geographique de l'agent">
+            <td align = "right"><font class = "textEntry">Localisation (*)&nbsp;:</font></td>
+            <td align = "left" colspan = "3"><webobject name = "ComboBatiment"></webobject><webobject name = "FormErrorBatiment">Veuillez	saisir un batiment ! </webobject></td>
+          </tr>
+          <tr>
+            <td align = "right"><font class = "textEntry">T&eacute;l&eacute;phone&nbsp;:</font></td>
+            <td colspan = "3"><webobject name = "TFTelephone"></webobject>&nbsp;</td>
+          </tr>
+          <tr>
+            <td align = "right" valign = "top"><font class = "textEntry">Remarques&nbsp;:</font></td>
+            <td colspan = "3"><webobject name = "TextRemarques"></webobject></td>
+          </tr>
+          <tr>
+          	<td></td>
+          	<td colspan = "3" align="right"><font class = "textEntry">(*) valeurs obligatoires</font></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <!-- gestion de l'affichage des dates de stage lors du rechargement de la page -->
+  <script>ShowHideDatesStage();</script>
+  <br/>
+  <webobject name = "btEnregistrerDT"></webobject>&nbsp;&nbsp;<webobject name = "btNouvelleDT"></webobject>
+</webobject>

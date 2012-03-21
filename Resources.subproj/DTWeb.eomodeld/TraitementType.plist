@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            columnName = "TTY_CODE"; 
+            externalType = VARCHAR2; 
+            name = ttyCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TTY_KEY"; 
+            externalType = NUMBER; 
+            name = ttyKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TTY_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = ttyLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 64; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TTY_POSITION"; 
+            externalType = NUMBER; 
+            name = ttyPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ttyCode, ttyKey, ttyLibelle); 
+    className = "org.cocktail.dt.server.metier.EOTraitementType"; 
+    classProperties = (ttyCode, ttyKey, ttyLibelle, ttyPosition); 
+    externalName = "TRAITEMENT_TYPE"; 
+    fetchSpecificationDictionary = {}; 
+    name = TraitementType; 
+    primaryKeyAttributes = (ttyKey); 
+}

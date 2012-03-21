@@ -1,0 +1,257 @@
+/* Style pour l'application DT Web/HTML */
+
+.dtErrorBox {
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #234B6E;
+	padding: 3px;
+	border-color: #990000;
+	border-style: dashed;
+	border-width: 1px;
+	background-color: #ECC9C9;
+}
+
+.dtErrorBoxText {
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #234B6E;
+}
+
+.dtFormErrorText {
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #B70000;
+}
+
+.dtAttentionText {
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #990000;
+}
+
+/* zone de texte pour le motif d'une DT (creation) */
+.dtTextareaIntMotif {
+	width:600px;
+	height:150px;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-size: 1em;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: rgb(0, 0, 0);
+	border-right-color: rgb(0, 0, 0);
+	border-bottom-color: rgb(0, 0, 0);
+	border-left-color: rgb(0, 0, 0);
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* zone de texte pour l'ajout d'un traitement */
+.dtTextareaAjoutTraitement {
+	width:600px;
+	height:200px;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-size: 1em;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: rgb(0, 0, 0);
+	border-right-color: rgb(0, 0, 0);
+	border-bottom-color: rgb(0, 0, 0);
+	border-left-color: rgb(0, 0, 0);
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* zone de texte pour l'ajout d'un traitement additionnel */
+.dtTextareaTraitementAdditionnel {
+	width:600px;
+	height:100px;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-size: 1em;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: rgb(0, 0, 0);
+	border-right-color: rgb(0, 0, 0);
+	border-bottom-color: rgb(0, 0, 0);
+	border-left-color: rgb(0, 0, 0);
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* zone de texte pour l'ajout d'un traitement reprographie */
+.dtTextareaAjoutTraitementRepro {
+	width:600px;
+	height:50px;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-size: 1em;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: rgb(0, 0, 0);
+	border-right-color: rgb(0, 0, 0);
+	border-bottom-color: rgb(0, 0, 0);
+	border-left-color: rgb(0, 0, 0);
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* zone de texte dans le swap de creation de dt indicateur */
+.dtTextareaCreationIndicateur {
+	width:400px;
+	height:50px;
+	margin-top: 0pt;
+	margin-bottom: 0pt;
+	font-size: 1em;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: rgb(0, 0, 0);
+	border-right-color: rgb(0, 0, 0);
+	border-bottom-color: rgb(0, 0, 0);
+	border-left-color: rgb(0, 0, 0);
+	font-family: Arial, Verdana, "Microsoft Sans Serif", "MS Sans Serif", Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+/* DTFast : les zones de traitement */
+DTFastTraitement {
+	font-size: 9px;
+}
+
+/* Ventilation : la liste des DT contient un ascenceur horizontal et une police proportionnelle */
+.dtVentilationInterventionContainer {
+	overflow: auto;
+	width: 400px;
+	height: 230px;
+}
+
+.dtVentilationInterventionBrowser {
+	font-family: monospace;
+}
+
+/* Ventilation : la liste des DT du panier contient un ascenceur horizontal et une police proportionnelle */
+.dtVentilationPanierInterventionContainer {
+	overflow: auto;
+	width: 600px;
+	height: 120px;
+}
+
+.dtVentilationPanierInterventionBrowser {
+	font-family: monospace;
+}
+
+/* liens ajax expansion */
+
+a#demandeurExpansionLink{
+	background-image: url(images/triangleRight.gif);
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	margin-left: 20px;
+	color: rgb(140, 140, 140);
+	text-decoration: none;
+}
+
+a#demandeurExpansionLink.expanded {
+	background-image: url(images/triangleDown.gif);
+}
+
+a#fileExpansionLink{
+	background-image: url(images/triangleRight.gif);
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	margin-left: 20px;
+	color: rgb(140, 140, 140);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a#fileExpansionLink.expanded {
+	background-image: url(images/triangleDown.gif);
+}
+
+a#traitementAdditionnelExpansionLink{
+	background-image: url(images/triangleRight.gif);
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	margin-left: 20px;
+	color: rgb(140, 140, 140);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a#traitementAdditionnelExpansionLink.expanded {
+	background-image: url(images/triangleDown.gif);
+}
+
+a#activitesFavoritesExpansionLink{
+	background-image: url(images/triangleRight.gif);
+	background-repeat: no-repeat;
+	padding-left: 20px;
+	margin-left: 20px;
+	color: rgb(140, 140, 140);
+	text-decoration: none;
+}
+
+a#activitesFavoritesExpansionLink.expanded {
+	background-image: url(images/triangleDown.gif);
+}
+
+/************************************
+ *      CHAMPS DE RECHERCHE         *
+ ************************************/
+.bigSearchField {
+  background: #FFFFFF url(images/forms/find18.png) no-repeat scroll left top;
+  padding-left: 20px;
+  height: 28px;
+  font-size: 16px;
+}
+
+.bigSearchButton, .bigSearchButton:hover {
+	font-size: 16px;
+}
+
+.bigSearchLabel {
+	font-size: 16px;	
+}
+
+/************************************
+ * SURCHAGE DES STYLE DE CKTLTHEME  *
+ ************************************/
+a {
+	color: blue;
+}

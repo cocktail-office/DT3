@@ -1,0 +1,81 @@
+{
+    attributes = (
+        {
+            columnName = "HOR_DATE_DEBUT"; 
+            externalType = DATE; 
+            name = horDateDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "HOR_DATE_FIN"; 
+            externalType = DATE; 
+            name = horDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "HOR_HEURES"; 
+            externalType = VARCHAR2; 
+            name = horHeures; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "HOR_NUMERO"; 
+            externalType = NUMBER; 
+            name = horNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "HOR_TOTAL"; 
+            externalType = VARCHAR2; 
+            name = horTotal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "HOR_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = horValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        horDateDebut, 
+        horDateFin, 
+        horHeures, 
+        horNumero, 
+        horTotal, 
+        horValide, 
+        noIndividu
+    ); 
+    className = "org.cocktail.dt.server.metier.EOHoraire"; 
+    classProperties = (
+        horDateDebut, 
+        horDateFin, 
+        horHeures, 
+        horNumero, 
+        horTotal, 
+        horValide, 
+        noIndividu
+    ); 
+    externalName = "EDT.HORAIRE_GRHUM"; 
+    fetchSpecificationDictionary = {}; 
+    name = Horaire; 
+    primaryKeyAttributes = (horNumero); 
+}

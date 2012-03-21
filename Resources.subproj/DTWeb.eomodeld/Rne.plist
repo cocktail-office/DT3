@@ -1,0 +1,30 @@
+{
+    attributes = (
+        {
+            columnName = "C_RNE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_STRUCTURE"; }; 
+            name = cRne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 8; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_RNE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "LL_STRUCTURE"; }; 
+            name = llRne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 65; 
+        }
+    ); 
+    attributesUsedForLocking = (cRne, llRne); 
+    className = "org.cocktail.dt.server.metier.EORne"; 
+    classProperties = (cRne, llRne); 
+    externalName = "GRHUM.RNE"; 
+    fetchSpecificationDictionary = {}; 
+    name = Rne; 
+    primaryKeyAttributes = (cRne); 
+}

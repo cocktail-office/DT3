@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="SwapRepro" wocomponentcontent="false">
+
+        <binding name="activiteListener"/>
+        <validation message="'activiteListener' is a required binding.">
+            <unbound name="activiteListener"/>
+        </validation>
+    </wo>
+</wodefinitions>

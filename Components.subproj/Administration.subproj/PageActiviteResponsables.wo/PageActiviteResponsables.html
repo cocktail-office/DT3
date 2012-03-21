@@ -1,0 +1,92 @@
+<webobject name = "DTDefaultPage1">
+  <div align = "center">
+    <table cellpadding = "1" cellspacing = "0" border = "0" class = "boxTitle" width = "1%">
+      <tr>
+        <td>
+          <font class = "subTitleInverse">Gestion des responsables par activit&eacute; DT</font>
+        </td>
+      </tr>
+      <tr>
+        <td class = "boxBorder">
+          <table cellpadding = "10" cellspacing = "0" border = "0" width = "100%" class = "boxContents">
+            <tr>
+              <td align = "CENTER">
+                <table cellpadding = "3" cellspacing = "0" border = "0">
+                  <tr>
+                    <td align = "CENTER">
+                      <webobject name = "FormActiviteResponsables">
+                        <webobject name = "BtnDoNothing"></webobject>
+                        <table>
+                          <tr>
+                            <td colspan = "2">
+                              Activit&eacute; : <webobject name = "StrActiviteLibelle"></webobject>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan = "2">
+                              <webobject name = "TableResponsable">
+                                <webobject name = "CondIsHeritee">
+                                  <tr>
+                                    <td style = "white-space:nowrap">
+                                      D&eacute;finition h&eacute;rit&eacute;e de l'activit&eacute; :
+                                      <br>
+                                        <webobject name = "StrActPereLibelle"></webobject>
+                                    </td>
+                                    <td width = "1%">
+                                      <webobject name = "BtnDoChangeToLocalPref"></webobject>
+                                    </td>
+                                  </tr>
+                                </webobject>
+                                <webobject name = "CondNotIsHeritee">
+                                  <tr>
+                                    <td>D&eacute;finition locale des responsables</td>
+                                    <td>
+                                      <webobject name = "BtnDoChangeToPerePref"></webobject>
+                                    </td>
+                                  </tr>
+                                </webobject>
+                                <tr>
+                                  <td colspan = "2" style = "white-space:nowrap">
+                                  	<hr/>
+                                    <webobject name = "LnkGoFonctionnel">Fonctionnels&nbsp;[<webobject name = "StrTotalFonctionnel"></webobject>]</webobject>&nbsp;
+                                    <webobject name = "ToolTipRespFonctionnel"><webobject name = "ImgAide"></webobject></webobject>&nbsp;&nbsp;&#124;&#124;&nbsp;&nbsp;
+                                    <webobject name = "LnkGoTechnique">Techniques&nbsp;[<webobject name = "StrTotalTechnique"></webobject>]</webobject>&nbsp;
+                                    <webobject name = "ToolTipRespTechnique"><webobject name = "ImgAide"></webobject></webobject>&nbsp;&nbsp;&#124;&#124;&nbsp;&nbsp;
+                                    <webobject name = "LnkGoIntervenant">Intervenants&nbsp;[<webobject name = "StrTotalIntervenant"></webobject>]</webobject>&nbsp;
+                                    <webobject name = "ToolTipIntervenant"><webobject name = "ImgAide"></webobject></webobject>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td><webobject name = "BrowserResponsables"></webobject></td>
+                                  <td>
+                                    <webobject name = "BtnAjouterResponsable"></webobject>
+                                    <br />
+                                    <webobject name = "BtnSupprimerResponsable"></webobject>
+                                    <br />
+                                    <webobject name = "BtnSupprimerAllResponsable"></webobject>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td colspan = "2"><webobject name = "CheckBoxEnvoiMail"></webobject>Envoyer un email au service destinataire</td>
+                                </tr>
+                              </webobject>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align = "center" colspan = "2">
+                              <webobject name = "BtnRevenir"></webobject>
+                            </td>
+                          </tr>
+                        </table>
+                      </webobject>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</webobject>

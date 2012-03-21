@@ -1,0 +1,343 @@
+{
+    attributes = (
+        {
+            columnName = "ACT_ORDRE"; 
+            externalType = NUMBER; 
+            name = actOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CT_ORDRE"; 
+            externalType = NUMBER; 
+            name = ctOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DST_CODE"; 
+            externalType = VARCHAR2; 
+            name = dstCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "INT_CLE_SERVICE"; 
+            externalType = NUMBER; 
+            name = intCleService; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INT_COMMENTAIRE_INTERNE"; 
+            externalType = VARCHAR2; 
+            name = intCommentaireInterne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 512; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INT_DATE_BUTOIR"; 
+            externalType = DATE; 
+            name = intDateButoir; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "INT_DATE_CREATION"; 
+            externalType = DATE; 
+            name = intDateCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "INT_DATE_SOUHAITE"; 
+            externalType = DATE; 
+            name = intDateSouhaite; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "INT_ETAT"; 
+            externalType = VARCHAR2; 
+            name = intEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "INT_MOTIF"; 
+            externalType = VARCHAR2; 
+            name = intMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INT_MOTS_CLEFS"; 
+            externalType = VARCHAR2; 
+            name = intMotsClefs; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "INT_NO_IND_APPELANT"; 
+            externalType = NUMBER; 
+            name = intNoIndAppelant; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_NO_IND_CONCERNE"; 
+            externalType = NUMBER; 
+            name = intNoIndConcerne; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_PRIORITE"; 
+            externalType = NUMBER; 
+            name = intPriorite; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "INT_SERVICE_CONCERNE"; 
+            externalType = VARCHAR2; 
+            name = intServiceConcerne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "MOD_CODE"; 
+            externalType = VARCHAR2; 
+            name = modCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_IND_INTERVENANT"; 
+            externalType = NUMBER; 
+            name = noIndIntervenant; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "toIndividuConcerne.nomUsuel||' '||toIndividuConcerne.prenom"; 
+            externalType = VARCHAR2; 
+            name = nomPrenomConcerne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        actOrdre, 
+        cLocal, 
+        cStructure, 
+        ctOrdre, 
+        dstCode, 
+        intCleService, 
+        intCommentaireInterne, 
+        intEtat, 
+        intMotif, 
+        intMotsClefs, 
+        intNoIndAppelant, 
+        intNoIndConcerne, 
+        intOrdre, 
+        intPriorite, 
+        modCode, 
+        intServiceConcerne, 
+        noIndIntervenant
+    ); 
+    className = "org.cocktail.dt.server.metier.EOVInterventionIntervenant"; 
+    classProperties = (
+        actOrdre, 
+        cLocal, 
+        cStructure, 
+        ctOrdre, 
+        dstCode, 
+        intCleService, 
+        intCommentaireInterne, 
+        intDateButoir, 
+        intDateCreation, 
+        intDateSouhaite, 
+        intEtat, 
+        intMotif, 
+        intMotsClefs, 
+        intNoIndAppelant, 
+        intNoIndConcerne, 
+        intOrdre, 
+        intPriorite, 
+        intServiceConcerne, 
+        modCode, 
+        nomPrenomConcerne, 
+        toActivites, 
+        toBatiment, 
+        toEtat, 
+        toIndividuAppelant, 
+        toIndividuConcerne, 
+        tosDocumentDt, 
+        tosIntervenant, 
+        tosInterventionInfin, 
+        tosInterventionRepro, 
+        tosTraitement, 
+        noIndIntervenant
+    ); 
+    externalName = "V_INTERVENTION_INTERVENANT"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            actOrdre, 
+            cLocal, 
+            cStructure, 
+            ctOrdre, 
+            dstCode, 
+            intCleService, 
+            intCommentaireInterne, 
+            intDateButoir, 
+            intDateCreation, 
+            intDateSouhaite, 
+            intEtat, 
+            intMotif, 
+            intMotsClefs, 
+            intNoIndAppelant, 
+            intNoIndConcerne, 
+            intOrdre, 
+            intPriorite, 
+            intServiceConcerne, 
+            modCode, 
+            nomPrenomConcerne, 
+            toActivites, 
+            toBatiment, 
+            toEtat, 
+            toIndividuAppelant, 
+            toIndividuConcerne, 
+            tosDocumentDt, 
+            tosIntervenant, 
+            tosInterventionInfin, 
+            tosInterventionRepro, 
+            tosTraitement
+        ); 
+    }; 
+    isReadOnly = Y; 
+    name = VInterventionIntervenant; 
+    primaryKeyAttributes = (intOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Activites; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actOrdre; sourceAttribute = actOrdre; }); 
+            name = toActivites; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Batiment; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = toBatiment; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = EtatDt; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = etatCode; sourceAttribute = intEtat; }); 
+            name = toEtat; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = intNoIndAppelant; }); 
+            name = toIndividuAppelant; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = intNoIndConcerne; }); 
+            name = toIndividuConcerne; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DocumentDt; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = tosDocumentDt; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Intervenant; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = tosIntervenant; 
+        }, 
+        {
+            destination = InterventionInfin; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = tosInterventionInfin; 
+        }, 
+        {
+            destination = InterventionRepro; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = tosInterventionRepro; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Traitement; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = tosTraitement; 
+        }
+    ); 
+}

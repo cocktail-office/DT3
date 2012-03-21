@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="DTFormErrorBox" wocomponentcontent="true">
+
+		<binding name="showError" defaults="Boolean"/>
+
+		<validation message="&apos;showError&apos; is a required binding">
+			<unbound name="showError"/>
+		</validation>
+	</wo>
+</wodefinitions>

@@ -1,0 +1,28 @@
+{
+    attributes = (
+        {
+            columnName = "MOD_CODE"; 
+            externalType = VARCHAR2; 
+            name = modCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "MOD_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = modLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }
+    ); 
+    attributesUsedForLocking = (modCode, modLibelle); 
+    className = "org.cocktail.dt.server.metier.EOModeAppel"; 
+    classProperties = (modCode, modLibelle); 
+    externalName = "MODE_APPEL"; 
+    fetchSpecificationDictionary = {}; 
+    name = ModeAppel; 
+    primaryKeyAttributes = (modCode); 
+}

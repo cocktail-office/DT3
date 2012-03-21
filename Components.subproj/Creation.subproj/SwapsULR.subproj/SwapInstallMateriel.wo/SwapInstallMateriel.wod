@@ -1,0 +1,208 @@
+ObserverRadioShouldCommandeON: AjaxObserveField {
+	updateContainerID = containerCommandeId;
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+ContainerCommande: AjaxUpdateContainer {
+	id = containerCommandeId;
+}
+
+RadioShouldCommandeOui: WORadioButton {
+	value = SHOULD_COMMANDE_OUI;
+	name = "shouldCommande";
+	selection = shouldCommande;
+}
+
+RadioShouldCommandeNon: WORadioButton {
+	value = SHOULD_COMMANDE_NON;
+	name = "shouldCommande";
+	selection = shouldCommande;
+}
+
+CondIsCommande: WOConditional {
+	condition = isCommande;
+}
+
+strLigneBud: WOString {
+	value = ligneBudDescription;
+	escapeHTML = false;
+}
+
+siLigneBudSelected: WOConditional {
+	condition = isLigneBudSelected;
+}
+
+btClearLigneBud: WOSubmitButton {
+	action = clearLigneBud;
+	class = "bouton";
+	title = "Annuler la s&eacute;lection de la ligne budg&eacute;taire";
+	value = "X";
+}
+
+siCanSelectLigneBud: WOConditional {
+	condition = canSelectLigneBud;
+}
+
+btLigneBud: WOSubmitButton {
+	class = "bouton";
+	title = "Choisir une ligne budg&eacute;taire";
+	value = "Choisir...";
+	action = selectLigneBud;
+}
+
+formErrorLBud: DTFormErrorBox {
+	showError = errorLBud;
+}
+
+TipLbud: CktlToolTip {
+	htmlText = "<font class=dtAttentionText>Une ligne budg&eacute;taire incorrecte entrainera des retards dans la commande !</font>";
+}
+
+popServices: WOPopUpButton {
+	item = serviceItem;
+	displayString = serviceLibelle;
+	list = serviceList;
+	selection = serviceSelected;
+}
+
+SelectBatimentBureau: SelectBatimentBureau {
+	batimentSelected = batimentSelected;
+	bureauSelected = bureauSelected;
+	contact = parentPage.recContactDemandeur;
+}
+
+formErrorService: DTFormErrorBox {
+	showError = errorService;
+}
+
+formErrorBatiment: DTFormErrorBox {
+	showError = errorBatiment;
+}
+
+formErrorBureau: DTFormErrorBox {
+	showError = errorBureau;
+}
+
+
+StrEoIndividuInterlocuteurNomEtPrenom: WOString {
+	value = eoIndividuInterlocuteur.nomEtPrenom;
+}
+
+BtnChangeInterlocuteur: WOSubmitButton {
+	action = changeInterlocuteur;
+	class = "bouton";
+	value = "Rechercher ...";
+}
+
+TextRemarques: WOText {
+	class = "dtTextareaIntMotif";
+	value = intMotif;
+}
+
+CondShowProcedureInstallation: WOConditional {
+	condition = showProcedureInstallation;
+}
+
+FormErrorPriseConnaissance: DTFormErrorBox {
+	showError = errorPriseConnaissance;
+}
+
+CondErrorPriseConnaissance: WOConditional {
+	condition = errorPriseConnaissance;
+}
+
+StrEncartErrorPriseConnaissanceDebut: WOString {
+	value = "<table><tr><td style='border:2px dotted red'>";
+	escapeHTML = false;		
+}
+
+StrEncartErrorPriseConnaissanceFin: WOString {
+	value = "</td></tr></table>";
+	escapeHTML = false;		
+}
+
+CheckBox2: WOCheckBox {
+	checked = isPriseConnaissance;
+}
+
+LnkProcedureInstallation: WOHyperlink {
+	href = urlProcedureInstallation;
+	target = "_new";
+	title = "Ouvrir le document contenant la procedure dans une nouvelle fenetre";
+}
+
+fileUpload2: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrerDT: WOSubmitButton {
+	value = "Enregistrer";
+	action = validerDemande;
+        class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}
+
+ObserverDemandeurPoste: AjaxObserveField {
+	updateContainerID = containerDemandeurPosteId;
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+ContainerDemandeurPoste: AjaxUpdateContainer {
+	id = containerDemandeurPosteId;
+}
+
+CondIsDemandeurConnu: WOConditional {
+	condition = isDemandeurConnu;
+}
+
+CondNotIsDemandeurConnu: WOConditional {
+	condition = isDemandeurConnu;
+	negate = true;
+}
+
+BtnChangeDemandeur: WOSubmitButton {
+	action = changeDemandeur;
+	class = "bouton";
+	value = "Autre ...";
+}
+
+formErrorDemandeur: DTFormErrorBox {
+	showError = errorDemandeur;
+}
+
+ChkDemandeurConnu: WOCheckBox {
+	checked = isDemandeurConnu;
+}
+
+StrEoIndividuDemandeurConnuNomEtPrenom: WOString {
+	value = eoIndividuDemandeurConnu.nomEtPrenom;
+}
+
+TFNomPrenomDemandeurInconnu: WOTextField {
+	maxlength = 100;
+	size = 30;
+	value = nomPrenomDemandeurInconnu;
+}
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}
+
+DestinationLolfCommande: ListeDestinationLolf {
+	ctrl = destinationCommandeCtrl;
+}

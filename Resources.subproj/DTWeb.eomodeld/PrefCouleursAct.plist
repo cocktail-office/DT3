@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "ACT_ORDRE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "C_LOCAL"; }; 
+            name = actOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = COULEUR; 
+            externalType = VARCHAR2; 
+            name = couleur; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (actOrdre, couleur, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOPrefCouleursAct"; 
+    classProperties = (actOrdre, couleur, noIndividu, toActivites); 
+    externalName = "PREF_COULEURS_ACT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (couleur, noIndividu); }; 
+    name = PrefCouleursAct; 
+    primaryKeyAttributes = (actOrdre, noIndividu); 
+    relationships = (
+        {
+            destination = Activites; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = actOrdre; sourceAttribute = actOrdre; }); 
+            name = toActivites; 
+        }
+    ); 
+}

@@ -1,0 +1,29 @@
+{
+    attributes = (
+        {
+            columnName = "TGRP_CODE"; 
+            externalType = VARCHAR2; 
+            name = tgrpCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TGRP_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = tgrpLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }
+    ); 
+    attributesUsedForLocking = (tgrpCode, tgrpLibelle); 
+    className = "org.cocktail.dt.server.metier.EOTypeGroupe"; 
+    classProperties = (tgrpCode, tgrpLibelle); 
+    externalName = "GRHUM.TYPE_GROUPE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "TYPE_GROUPE@GASPHARP"; }; 
+    name = TypeGroupe; 
+    primaryKeyAttributes = (tgrpCode); 
+}

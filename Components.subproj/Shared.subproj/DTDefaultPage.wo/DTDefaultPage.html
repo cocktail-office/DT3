@@ -1,0 +1,23 @@
+<webobject name="CktlDefaultPage1">
+	<!-- cette instruction empeche de faire marcher les WOLongResponsePage dans la page de recherche sous safari
+	<script  type="text/javascript">
+		if(window.history.forward(1) != null) {
+			window.history.forward(1);
+		}
+ 	</script>
+	-->
+	<webobject name = "CktlAjaxUiMessageContainer"/>
+	<webobject name="CondShowMenu"><webobject name="Menu1"><webobject name="CondShowTitle"><webobject name="Title1"/></webobject></webobject></webobject>
+	<div id="busy" style="display: none; position: absolute; top: 50%; left: 50%; z-index: 9999;">
+ 		<webobject name="Indicateur"/>
+  </div>
+  <webobject name="Busy"/>
+	<table width="100%" border="0" cellspacing="1" cellpadding="0">
+		<tr>
+			<td nowrap valign="top"><webobject name="CondNotShowMenu"><webobject name="CondShowTitle"><webobject name="Title1"></webobject><br/></webobject></webobject>
+				<webobject name="WOComponentContent1"></webobject>
+			</td>
+		</tr>
+	</table>
+	<webobject name = "CondShowLayerMessageStop"><webobject name = "LayerWarnAppStop"/></webobject>
+</webobject>

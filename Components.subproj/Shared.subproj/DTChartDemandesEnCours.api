@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="DTChartDemandesEnCours" wocomponentcontent="false">    <binding name="dDebut"/>
+        <validation message="'dDebut' is a required binding.">
+            <unbound name="dDebut"/>
+        </validation>
+        <binding name="dFin"/>
+        <validation message="'dFin' is a required binding.">
+            <unbound name="dFin"/>
+        </validation>
+        <binding name="eoVActivites"/>
+        <validation message="'eoVActivites' is a required binding.">
+            <unbound name="eoVActivites"/>
+        </validation>
+    </wo>
+</wodefinitions>

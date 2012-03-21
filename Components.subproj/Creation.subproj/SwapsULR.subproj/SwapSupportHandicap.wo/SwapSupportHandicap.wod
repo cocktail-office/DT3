@@ -1,0 +1,86 @@
+TFNom: WOTextField {
+	value = nom;
+	maxlength = "80";
+	size = "20";
+}
+
+FormErrorNom: DTFormErrorBox {
+	showError = errorNom;
+}
+
+TFPrenom: WOTextField {
+	value = prenom;
+	maxlength = 30;
+	size = 20;
+}
+
+FormErrorPrenom: DTFormErrorBox {
+	showError = errorPrenom;
+}
+
+RepEtudiant: WORepetition {
+	list = etudiantArray;
+	item = etudiantItem;
+}
+
+StrEtudiantItemNomEtPrenom: WOString {
+	value = etudiantItem.nomEtPrenom;
+}
+
+BtnRemoveEtudiant: WOSubmitButton {
+	value = "Supprimer";
+	action = removeEtudiantItem;
+    class = "bouton";
+	title = "Supprimer cet etudiant";
+}
+
+TFNomPrenomEtudiant: WOTextField {
+	maxlength = 100;
+	size = 30;
+	value = eoIndividuEtudiant.nomEtPrenom;
+	disabled = true;
+}
+
+BtnChangeEtudiant: WOSubmitButton {
+	action = changeEtudiant;
+	class = "bouton";
+	value = "Sélectionner ...";
+}
+
+BtnAddEtudiant: WOSubmitButton {
+	value = "Ajouter un autre etudiant";
+	action = addEtudiant;
+    class = "bouton";
+	title = "Ajouter un autre etudiant";
+}
+
+TextComplement: WOText {
+	value = complement;
+	class = "dtTextareaIntMotif";
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrerDT: WOSubmitButton {
+	value = "Enregistrer";
+	action = validerDemande;
+    class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}

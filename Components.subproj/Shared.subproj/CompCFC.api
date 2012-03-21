@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+        <wo class="CompCFC" wocomponentcontent="false">
+
+        <binding name="listener"/>
+        <validation message="'listener' is a required binding.">
+            <unbound name="listener"/>
+        </validation>
+    </wo>
+</wodefinitions>

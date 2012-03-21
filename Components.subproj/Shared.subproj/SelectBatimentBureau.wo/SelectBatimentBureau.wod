@@ -1,0 +1,27 @@
+PopUpBatiment: WOPopUpButton {
+	displayString = batimentItem.appellation;
+	item = batimentItem;
+	list = batimentList;
+	selection = localBatimentSelected;
+	id = "PopUpBatiment";
+	noSelectionString = "--- batiment ---";
+}
+
+ObserverPopUpBatiment: AjaxObserveField {
+	observeFieldID = "PopUpBatiment";
+	updateContainerID = "ContainerBureau";
+	action = neFaitRien;
+}
+
+ContainerBureau: AjaxUpdateContainer {
+	id = "ContainerBureau";
+}
+
+PopUpBureau: WOPopUpButton {
+	displayString = bureauItemLibelle;
+	item = bureauItem;
+	list = bureauList;
+	selection = localBureauSelected;
+	id = "ContainerBureau";
+	noSelectionString = "--- salle ---";
+}

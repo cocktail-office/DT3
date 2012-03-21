@@ -1,0 +1,209 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "C_TYPE_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cTypeStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_ACCES"; 
+            externalType = VARCHAR2; 
+            name = grpAcces; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_ALIAS"; 
+            externalType = VARCHAR2; 
+            name = grpAlias; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_OWNER"; 
+            externalType = NUMBER; 
+            name = grpOwner; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_RESPONSABLE"; 
+            externalType = NUMBER; 
+            name = grpResponsable; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "decode(toGroupesDt.cStructure,null,0,1)"; 
+            externalType = NUMBER; 
+            name = isGroupesDT; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toStructurePere.lcStructure"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = lcStructurePere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cStructure, 
+        cStructurePere, 
+        cTypeStructure, 
+        grpAcces, 
+        grpAlias, 
+        grpOwner, 
+        grpResponsable, 
+        isGroupesDT, 
+        lcStructure, 
+        lcStructurePere, 
+        llStructure, 
+        persId
+    ); 
+    className = "org.cocktail.dt.server.metier.EOStructure"; 
+    classProperties = (
+        cStructure, 
+        cStructurePere, 
+        cTypeStructure, 
+        grpAcces, 
+        grpAlias, 
+        grpOwner, 
+        grpResponsable, 
+        isGroupesDT, 
+        lcStructure, 
+        lcStructurePere, 
+        llStructure, 
+        persId, 
+        toGroupesDt, 
+        toIndividuUlr, 
+        toStructurePere, 
+        tosRepartTypeGroupe, 
+        toIndividuUlrResponsable
+    ); 
+    externalName = "GRHUM.STRUCTURE_ULR"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            cStructurePere, 
+            cTypeStructure, 
+            grpAcces, 
+            grpAlias, 
+            grpOwner, 
+            grpResponsable, 
+            lcStructure, 
+            lcStructurePere, 
+            llStructure, 
+            persId, 
+            toGroupesDt, 
+            toIndividuUlr, 
+            toStructurePere, 
+            tosRepartTypeGroupe, 
+            toIndividuUlrResponsable
+        ); 
+        "_nameInObjectStore" = "STRUCTURE_ULR@GASPHARP"; 
+    }; 
+    name = DTStructureUlr; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            destination = GroupesDt; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toGroupesDt; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            internalInfo = {"_nameInObjectStore" = individuUlr; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = grpOwner; }); 
+            name = toIndividuUlr; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTStructureUlr; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructurePere; }); 
+            name = toStructurePere; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = RepartTypeGroupe; 
+            internalInfo = {"_nameInObjectStore" = repartTypeGroupeHarps; }; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = tosRepartTypeGroupe; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            internalInfo = {"_nameInObjectStore" = individuUlr0; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = grpResponsable; }); 
+            name = toIndividuUlrResponsable; 
+        }
+    ); 
+}

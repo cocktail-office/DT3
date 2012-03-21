@@ -1,0 +1,70 @@
+{
+    attributes = (
+        {
+            columnName = ANNEE; 
+            externalType = NUMBER; 
+            name = annee; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TCD_ABREGE"; 
+            externalType = VARCHAR2; 
+            name = tcdAbrege; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 12; 
+        }, 
+        {
+            columnName = "TCD_CODE"; 
+            externalType = VARCHAR2; 
+            name = tcdCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            columnName = "TCD_LIB"; 
+            externalType = VARCHAR2; 
+            name = tcdLib; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            columnName = ""; 
+            definition = "TO_NUMBER(TCD_CODE)"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "TCD_CODE"; }; 
+            name = tcdOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TCD_PRESIDENT"; 
+            externalType = NUMBER; 
+            name = tcdPresident; 
+            precision = 12; 
+            scale = 2; 
+            valueClassName = NSDecimalNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TCD_SECT"; 
+            externalType = CHAR; 
+            name = tcdSect; 
+            valueClassName = NSString; 
+            valueType = c; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (annee, tcdAbrege, tcdCode, tcdLib, tcdOrdre, tcdPresident, tcdSect); 
+    className = "org.cocktail.dt.server.metier.EOVTypeCredit"; 
+    classProperties = (annee, tcdAbrege, tcdCode, tcdLib, tcdOrdre, tcdPresident, tcdSect); 
+    externalName = "GRHUM.V_TYPE_CREDIT"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = VJefyTypeCredit; 
+    primaryKeyAttributes = (annee, tcdCode); 
+}

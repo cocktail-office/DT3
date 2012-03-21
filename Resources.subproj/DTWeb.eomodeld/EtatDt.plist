@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "ETAT_CODE"; 
+            externalType = VARCHAR2; 
+            name = etatCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "ETAT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = etatLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "ETAT_POSITION"; 
+            externalType = NUMBER; 
+            name = etatPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "ETAT_SWAPVIEW"; 
+            externalType = NUMBER; 
+            name = etatSwapview; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (etatCode, etatLibelle, etatPosition, etatSwapview); 
+    className = "org.cocktail.dt.server.metier.EOEtatDt"; 
+    classProperties = (etatCode, etatLibelle, etatPosition, etatSwapview); 
+    externalName = "ETAT_DT"; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (etatLibelle, etatPosition); 
+        "_nameInObjectStore" = "SHARED_INFO"; 
+    }; 
+    name = EtatDt; 
+    primaryKeyAttributes = (etatCode); 
+    sharedObjectFetchSpecificationNames = (FetchAll); 
+}

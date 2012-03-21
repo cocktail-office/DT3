@@ -1,0 +1,34 @@
+{
+    fetchAffectation = {
+        class = EOFetchSpecification; 
+        entityName = DTStructureUlr; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = cStructure; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = cStructure; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = isGroupesDT; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = isGroupesDT; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EONotQualifier; 
+                    qualifier = {
+                        class = EOKeyValueQualifier; 
+                        key = cStructure; 
+                        selectorName = isEqualTo; 
+                        value = {"_key" = cStructureExcluded; class = EOQualifierVariable; }; 
+                    }; 
+                }
+            ); 
+        }; 
+    }; 
+}

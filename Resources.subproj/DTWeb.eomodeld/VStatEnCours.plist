@@ -1,0 +1,51 @@
+{
+    attributes = (
+        {
+            columnName = "ACT_ORDRE"; 
+            externalType = NUMBER; 
+            name = actOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "INT_DATE_CREATION"; 
+            externalType = DATE; 
+            name = intDateCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TRA_DATE_FIN"; 
+            externalType = DATE; 
+            name = traDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }
+    ); 
+    attributesUsedForLocking = (intOrdre); 
+    className = "org.cocktail.dt.server.metier.EOVStatEnCours"; 
+    classProperties = (actOrdre, cStructure, intDateCreation, intOrdre, traDateFin); 
+    externalName = "DT3.V_STAT_EN_COURS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (actOrdre, cStructure, intDateCreation, intOrdre, traDateFin); 
+    }; 
+    name = VStatEnCours; 
+    primaryKeyAttributes = (intOrdre); 
+}

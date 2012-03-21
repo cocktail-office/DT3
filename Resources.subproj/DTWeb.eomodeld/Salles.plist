@@ -1,0 +1,101 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "SAL_ETAGE"; 
+            externalType = VARCHAR2; 
+            name = salEtage; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_PORTE"; 
+            externalType = VARCHAR2; 
+            name = salPorte; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_RESERVABLE"; 
+            externalType = VARCHAR2; 
+            name = salReservable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TSAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = tsalNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cLocal, salEtage, salNumero, salPorte, salReservable, tsalNumero); 
+    className = "org.cocktail.dt.server.metier.EOSalles"; 
+    classProperties = (
+        cLocal, 
+        salEtage, 
+        salNumero, 
+        salPorte, 
+        salReservable, 
+        toLocal, 
+        tosRepartBureau, 
+        tsalNumero
+    ); 
+    externalName = "GRHUM.SALLES"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cLocal, 
+            salEtage, 
+            salNumero, 
+            salPorte, 
+            salReservable, 
+            toLocal, 
+            tosRepartBureau, 
+            tsalNumero
+        ); 
+        "_nameInObjectStore" = "SALLES@GASPHARP"; 
+    }; 
+    name = Salles; 
+    primaryKeyAttributes = (salNumero); 
+    relationships = (
+        {
+            destination = Batiment; 
+            internalInfo = {"_nameInObjectStore" = local; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = toLocal; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = RepartBureau; 
+            internalInfo = {"_nameInObjectStore" = to; }; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = burOrdre; sourceAttribute = salNumero; }); 
+            name = tosRepartBureau; 
+        }
+    ); 
+}

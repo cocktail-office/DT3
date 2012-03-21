@@ -1,0 +1,39 @@
+CheckAfficherPhoto: WOCheckBox {
+	checked = isAfficherPhoto;
+	onChange = "this.form.submit();";
+}
+
+CheckEnvoyerMailTraitement: WOCheckBox {
+	checked = isEnvoyerMailTraitement;
+	onChange = "this.form.submit();";
+}
+
+CheckUseMailInterne: WOCheckBox {
+	checked = isUseMailInterne;
+	onChange = "this.form.submit();";
+}
+
+CheckInsertDtSig: WOCheckBox {
+	checked = isInsertDtSig;
+	onChange = "this.form.submit();";
+}
+
+CheckExportPlanning: WOCheckBox {
+	checked = isExportPlanning;
+	onChange = "this.form.submit();";
+}
+
+CheckControleChevauchementPlanning: WOCheckBox {
+	checked = isControleChevauchementPlanning;
+	onChange = "this.form.submit();";
+}
+
+CheckConfirmationCloture: WOCheckBox {
+	checked = isConfirmationCloture;
+	onChange = "this.form.submit();";
+}
+
+CheckSauvegarderPanier: WOCheckBox {
+	checked = isSauvegarderPanier;
+	onChange = "this.form.submit();";
+}

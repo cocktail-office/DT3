@@ -1,0 +1,254 @@
+TextField1: WOTextField {
+	maxlength = 100;
+	size = 30;
+	value = libelle;
+}
+
+formErrorNbCopies2: DTFormErrorBox { 
+	showError = errorLibelle;
+}
+
+BoxErrorSizeLibelle: DTFormErrorBox {
+	showError = errorLibelleSize;
+}
+
+rdDocSupportNum: WORadioButton {
+	name = "rdDocSupport";
+	selection = rdDocSupport;
+	value = 0;
+	onClick = "this.form.submit();";
+}
+
+rdDocSupportPap: WORadioButton {
+	name = "rdDocSupport";
+	selection = rdDocSupport;
+	value = 1;
+	onClick = "this.form.submit();";
+}
+
+Conditional1: WOConditional {
+	condition = rdDocSupport;
+	negate = true;
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "100%";
+	fileFieldSize = "30";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+formErrorFichier: DTFormErrorBox {
+	showError = errorAttache;
+}
+
+tfNbCopies: WOTextField {
+	maxlength = 5;
+	size = 4;
+	value = tfNbCopies;
+}
+
+tfNbPages: WOTextField {
+	maxlength = 5;
+	size = 4;
+	value = tfNbPages;
+}
+
+formErrorNbCopies: DTFormErrorBox {
+	showError = errorCopies;
+}
+
+formErrorNbPages: DTFormErrorBox {
+	showError = errorPages;
+}
+
+rdCouvertureCart: WORadioButton {
+	name = "rdCouverture";
+	selection = rdCouverture;
+	value = 0;
+}
+
+chCouvDessus: WOCheckBox {
+	checked = chCouvDessus;
+}
+
+rdCouvertureTrans: WORadioButton {
+	name = "rdCouverture";
+	selection = rdCouverture;
+	value = 1;
+}
+
+chCouvDessous: WOCheckBox {
+	checked = chCouvDessous;
+}
+
+rdReliureNon: WORadioButton {
+	name = "rdReliure";
+	selection = rdReliure;
+	value = 0;
+}
+
+rdReliureAgr1: WORadioButton {
+	name = "rdReliure";
+	selection = rdReliure;
+	value = 3;
+}
+
+rdReliureEnc: WORadioButton {
+	name = "rdReliure";
+	selection = rdReliure;
+	value = 1;
+}
+
+rdReliureAgr2: WORadioButton {
+	name = "rdReliure";
+	selection = rdReliure;
+	value = 4;
+}
+
+rdReliureRel: WORadioButton {
+	name = "rdReliure";
+	selection = rdReliure;
+	value = 2;
+}
+
+chPlastification: WOCheckBox {
+	checked = chPlastification;
+}
+
+chLivret: WOCheckBox {
+	checked = chLivret;
+}
+
+CktlNoteCFC: CktlNote {
+	
+}
+
+RadioShouldUseCfcOui: WORadioButton {
+	selection = shouldUseCfcSelected;
+	value = SHOULD_USE_CFC_OUI;
+	name = "useCfc";
+	onClick = "this.form.submit();";
+}
+
+RadioShouldUseCfcNon: WORadioButton {
+	selection = shouldUseCfcSelected;
+	value = SHOULD_USE_CFC_NON;
+	name = "useCfc";
+	onClick = "this.form.submit();";
+}
+
+CondShowCompCfc: WOConditional {
+	condition = showCompCfc;
+}
+
+
+FormErrorCfc: DTFormErrorBox {
+	showError = errorCfc;
+}
+
+strLigneBud: WOString {
+	value = ligneBudDescription;
+	escapeHTML = false;
+}
+
+siLigneBudSelected: WOConditional {
+	condition = isLigneBudSelected;
+}
+
+btClearLigneBud: WOSubmitButton {
+	action = clearLigneBud;
+	class = "bouton";
+	title = "Annuler la s&eacute;lection de la ligne budg&eacute;taire";
+	value = "X";
+}
+
+siCanSelectLigneBud: WOConditional {
+	condition = canSelectLigneBud;
+}
+
+btLigneBud: WOSubmitButton {
+	class = "bouton";
+	title = "Choisir une ligne budg&eacute;taire";
+	value = "Choisir...";
+	action = selectLigneBud;
+}
+
+
+DestinationDevisCtrl: ListeDestinationLolf {
+	ctrl = destinationDevisCtrl;
+}
+
+formErrorLBud: DTFormErrorBox {
+	showError = errorLigneBud;
+}
+
+
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}
+
+
+formErrorFichier2: DTFormErrorBox {
+	showError = errorLignesDevis;
+}
+
+txtRemarques: WOText {
+	cols = 50;
+	rows = 2;
+	value = remarques;
+}
+
+siCanUsePIE: WOConditional {
+	condition = canUsePIE;
+}
+
+strCoutEstime: WOString {
+	escapeHTML = false;
+	value = coutEstime;
+}
+
+btEstimerCout: WOSubmitButton {
+	action = refreshPrix;
+	class = "bouton";
+	title = "Estimer le co&ucirc;t de la r&eacute;alisation de cette demande";
+	value = "Estimer";
+}
+
+CondFalse: WOConditional {
+	condition = false;
+}
+
+strDisponible: WOString {
+	escapeHTML = false;
+	value = disponible;
+}
+
+btTesterDisponible: WOSubmitButton {
+	action = testerDisponible;
+	class = "bouton";
+	title = "V&eacute;rifier si la ligne budg&eacute;taire s&eacute;lectionn&eacute;e contient suffisament de cr&eacute;dits pour couvrir la d&eacute;pense du devis";
+	value = "Tester disponible";
+}
+
+BtnValiderDT: WOSubmitButton {
+	action = validerDemande;
+	value = "Enregistrer la DT";
+    class = "bouton";
+	title = "Enregistrer la demande";
+	name = "BtnValiderDT";
+}
+
+BtnNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+	name = "BtnNouvelleDT";
+}
+
+CompCFC1: CompCFC {
+	listener = cfcListener;
+}

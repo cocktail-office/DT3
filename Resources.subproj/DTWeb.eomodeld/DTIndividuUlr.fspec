@@ -1,0 +1,54 @@
+{
+    fetchAffectation = {
+        class = EOFetchSpecification; 
+        entityName = DTIndividuUlr; 
+        fetchLimit = 0; 
+        isDeep = YES; 
+        qualifier = {
+            class = EOAndQualifier; 
+            qualifiers = (
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "tosRepartStructure.cStructure"; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = cStructureAnnuaire; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "tosPrefDroits.droService"; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = cStructureDroit; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "tosActivitesResponsables.actOrdre"; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = actOrdre; class = EOQualifierVariable; }; 
+                }, 
+                {
+                    class = EOOrQualifier; 
+                    qualifiers = (
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosActivitesResponsables.actTypeResponsable"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = typeResponsable1; class = EOQualifierVariable; }; 
+                        }, 
+                        {
+                            class = EOKeyValueQualifier; 
+                            key = "tosActivitesResponsables.actTypeResponsable"; 
+                            selectorName = isEqualTo; 
+                            value = {"_key" = typeResponsable2; class = EOQualifierVariable; }; 
+                        }
+                    ); 
+                }, 
+                {
+                    class = EOKeyValueQualifier; 
+                    key = "tosIntervenant.intOrdre"; 
+                    selectorName = isEqualTo; 
+                    value = {"_key" = intOrdre; class = EOQualifierVariable; }; 
+                }
+            ); 
+        }; 
+    }; 
+}

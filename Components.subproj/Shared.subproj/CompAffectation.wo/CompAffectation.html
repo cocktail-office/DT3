@@ -1,0 +1,178 @@
+<webobject name="CondShowFullPage">
+	<webobject name="DTDefaultPage1">
+		<webobject name="CondHasError">
+			<div align="center"><font class="textError"><webobject name="StrErrorMessage"></webobject></font><br/><br/></div>
+		</webobject>
+		<div align="center"><font class="title">Affectation d'une nouvelle DT</font></div>
+		<center>
+			<webobject name="Form1">
+				<table border="0">
+					<tr>
+						<td>
+							<table cellpadding="1" border="0" cellspacing="0" class="boxTitle">
+								<tr>
+									<td><font class="subTitleInverse">&nbsp;Type d'affectation</font></td>
+								</tr>
+								<tr>
+									<td class="boxBorder">
+										<table border="0" cellpadding="10" cellspacing="0" class="boxContents">
+											<tr>
+												<td colspan="2" nowrap><font class="textEntry">Pour :</font>
+													&nbsp;&nbsp;&nbsp;&nbsp;<webobject name="RadioAffAffectation"></webobject>affectation
+													&nbsp;&nbsp;&nbsp;&nbsp;<webobject name="RadioAffTransmission"></webobject>transmission
+													&nbsp;&nbsp;&nbsp;&nbsp;<webobject name="RadioAffSuiteADonner"></webobject>suite &agrave; donner
+													<table width="100%">
+														<tr>
+															<td><font class="textEntry"> Services&nbsp;:</font></td>
+														</tr>
+														<tr>
+															<td>
+																<webobject name="CondNotIsSuiteADonner"><webobject name="BrowserStructure"></webobject></webobject>
+																<webobject name="CondIsSuiteADonner"><webobject name="CktlHXBrowserStructure"></webobject></webobject>
+															</td>
+														</tr>
+													</table>
+													<font class="textEntry">Commentaire interne de la demande&nbsp;:</font><br/>
+													<webobject name="TextCommentaireInterne"></webobject></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td>&nbsp;&nbsp;&nbsp;</td>
+							<td colspan="2" nowrap valign="top">
+							<webobject name = "CondNotIsTransmissionService">
+								<table cellpadding="1" cellspacing="0" border="0" class="boxTitle">
+									<tr>
+										<td colspan="3"><font class="subTitleInverse">&nbsp;Destinataires</font></td>
+									</tr>
+									<tr>
+										<td class="boxBorder">
+											<table border="0" cellpadding="10" cellspacing="0" class="boxContents">
+												<tr>
+													<td valign="top" nowrap colspan="3">
+													<webobject name="RadioIntService"></webobject>intervenants&nbsp;&nbsp;&nbsp;&nbsp;
+													<webobject name="RadioIntAnnuaire"></webobject>annuaire&nbsp;&nbsp;&nbsp;&nbsp;
+													<webobject name="RadioIntActivites"></webobject>activit&eacute;s&nbsp;&nbsp;&nbsp;&nbsp;
+													<webobject name="RadioIntAffectes"></webobject>affect&eacute;s
+														<table>
+															<tr>
+																<td><webobject name="BrowserIndividu"></webobject></td>
+															</tr>
+														</table>
+														<br>
+														<webobject name="ComboPriorite"></webobject>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+														<webobject name="BtnDoAffectation"></webobject>&nbsp;&nbsp;
+														<webobject name="BtnDoMeLAffecter"></webobject>&nbsp;&nbsp;
+														<webobject NAME="BtnDoMInterChanger"></webobject>&nbsp;&nbsp;
+														<webobject name="BtnDoSupprimerIntervenant"></webobject>&nbsp;
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</webobject>
+							<webobject name = "CondIsTransmissionService">
+								<webobject name = "CondShouldShowTransmissionActiviteComponent">
+									<webobject name = "TransmissionSelectActivite"></webobject>
+									<br/>
+									<webobject name = "BtnTransmettre"></webobject>
+								</webobject>
+							</webobject>
+						</td>
+					</tr>
+				</table>
+				<br/>
+				<p><webobject name="BtnRetourner"></webobject></p>
+			</webobject>
+		</center>
+	</webobject>
+</webobject>
+<webobject name="CondNotShowFullPage">
+	<webobject name="CondHasError">
+		<div align="center"><font class="textError"><webobject name="StrErrorMessage"></webobject></font><br/><br/></div>
+	</webobject>
+	<div align="center"><font class="title">Affectation d'une nouvelle DT</font></div>
+	<webobject name="Form1">
+		<table border="0">
+			<tr>
+				<td>
+					<table cellpadding="1" border="0" cellspacing="0" class="boxTitle">
+						<tr>
+							<td><font class="subTitleInverse">&nbsp;Type d'affectation</font></td>
+						</tr>
+						<tr>
+							<td class="boxBorder">
+								<table border="0" cellpadding="10" cellspacing="0" class="boxContents">
+									<tr>
+										<td colspan="2" nowrap><font class="textEntry">Pour :</font>
+											&nbsp;&nbsp;&nbsp;&nbsp;<webobject name="RadioAffAffectation"></webobject>affectation
+											&nbsp;&nbsp;&nbsp;&nbsp;<webobject name="RadioAffTransmission"></webobject>transmission
+											&nbsp;&nbsp;&nbsp;&nbsp;<webobject name="RadioAffSuiteADonner"></webobject>suite &agrave; donner
+											<table width="100%">
+												<tr>
+													<td><font class="textEntry"> Services&nbsp;:</font></td>
+												</tr>
+												<tr>
+													<td>
+														<webobject name="CondNotIsSuiteADonner"><webobject name="BrowserStructure"></webobject></webobject>
+														<webobject name="CondIsSuiteADonner"><webobject name="CktlHXBrowserStructure"></webobject></webobject>
+													</td>
+												</tr>
+											</table>
+											<font class="textEntry">Commentaire interne de la demande&nbsp;:</font><br/>
+											<webobject name="TextCommentaireInterne"></webobject></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>&nbsp;&nbsp;&nbsp;</td>
+					<td colspan="2" nowrap valign="top">
+					<webobject name = "CondNotIsTransmissionService">
+						<table cellpadding="1" cellspacing="0" border="0" class="boxTitle">
+							<tr>
+								<td colspan="3"><font class="subTitleInverse">&nbsp;Destinataires</font></td>
+							</tr>
+							<tr>
+								<td class="boxBorder">
+									<table border="0" cellpadding="10" cellspacing="0" class="boxContents">
+										<tr>
+											<td valign="top" nowrap colspan="3">
+											<webobject name="RadioIntService"></webobject>intervenants&nbsp;&nbsp;&nbsp;&nbsp;
+											<webobject name="RadioIntAnnuaire"></webobject>annuaire&nbsp;&nbsp;&nbsp;&nbsp;
+											<webobject name="RadioIntActivites"></webobject>activit&eacute;s&nbsp;&nbsp;&nbsp;&nbsp;
+											<webobject name="RadioIntAffectes"></webobject>affect&eacute;s
+												<table>
+													<tr>
+														<td><webobject name="BrowserIndividu"></webobject></td>
+													</tr>
+												</table>
+												<br>
+												<webobject name="ComboPriorite"></webobject>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												<webobject name="BtnDoAffectation"></webobject>&nbsp;&nbsp;
+												<webobject name="BtnDoMeLAffecter"></webobject>&nbsp;&nbsp;
+												<webobject NAME="BtnDoMInterChanger"></webobject>&nbsp;&nbsp;
+												<webobject name="BtnDoSupprimerIntervenant"></webobject>&nbsp;
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</webobject>
+					<webobject name = "CondIsTransmissionService">
+						<webobject name = "CondShouldShowTransmissionActiviteComponent">
+							<webobject name = "TransmissionSelectActivite"></webobject>
+							<br/>
+							<webobject name = "BtnTransmettre"></webobject>
+						</webobject>
+					</webobject>
+				</td>
+			</tr>
+		</table>
+	</webobject>
+</webobject>

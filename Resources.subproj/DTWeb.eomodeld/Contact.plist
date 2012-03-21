@@ -1,0 +1,201 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ADR_ORDRE"; 
+            externalType = NUMBER; 
+            name = adrOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCT_ETAB"; 
+            externalType = VARCHAR2; 
+            name = cStructEtab; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCT_SERVICE"; 
+            externalType = VARCHAR2; 
+            name = cStructService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CT_EMAIL"; 
+            externalType = VARCHAR2; 
+            name = ctEmail; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 60; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CT_IND_QUALITE"; 
+            externalType = VARCHAR2; 
+            name = ctIndQualite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CT_LIBELLE_ETAB"; 
+            externalType = VARCHAR2; 
+            name = ctLibelleEtab; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CT_NO_TELEPHONE"; 
+            externalType = VARCHAR2; 
+            name = ctNoTelephone; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 14; 
+        }, 
+        {
+            columnName = "CT_ORDRE"; 
+            externalType = NUMBER; 
+            name = ctOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CT_USER_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = ctUserLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "CT_VALIDE"; 
+            externalType = VARCHAR2; 
+            name = ctValide; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (ctOrdre); 
+    className = "org.cocktail.dt.server.metier.EOContact"; 
+    classProperties = (
+        adrOrdre, 
+        cLocal, 
+        cStructEtab, 
+        cStructService, 
+        ctEmail, 
+        ctIndQualite, 
+        ctLibelleEtab, 
+        ctNoTelephone, 
+        ctOrdre, 
+        ctUserLocal, 
+        ctValide, 
+        dModification, 
+        noIndividu, 
+        persId, 
+        salNumero, 
+        toBatiment, 
+        toSalles, 
+        toService
+    ); 
+    externalName = CONTACT; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            adrOrdre, 
+            cLocal, 
+            cStructEtab, 
+            cStructService, 
+            ctEmail, 
+            ctIndQualite, 
+            ctLibelleEtab, 
+            ctNoTelephone, 
+            ctOrdre, 
+            ctUserLocal, 
+            ctValide, 
+            dModification, 
+            noIndividu, 
+            persId, 
+            salNumero, 
+            toBatiment, 
+            toSalles, 
+            toService
+        ); 
+    }; 
+    name = Contact; 
+    primaryKeyAttributes = (ctOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Batiment; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = toBatiment; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Salles; 
+            internalInfo = {"_nameInObjectStore" = toSalle; }; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = salNumero; }); 
+            name = toSalles; 
+        }, 
+        {
+            destination = DTStructureUlr; 
+            isToMany = N; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructService; }); 
+            name = toService; 
+        }
+    ); 
+}

@@ -1,0 +1,20 @@
+{
+    attributes = (
+        {
+            columnName = NEXTVAL; 
+            externalType = NUMBER; 
+            name = nextval; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (nextval); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (nextval); 
+    externalName = DUAL; 
+    externalQuery = "select seq_contact.nextval nextval from dual"; 
+    fetchSpecificationDictionary = {}; 
+    name = SeqContact; 
+    primaryKeyAttributes = (nextval); 
+    userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+}

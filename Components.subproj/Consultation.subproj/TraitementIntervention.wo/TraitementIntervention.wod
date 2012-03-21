@@ -1,0 +1,223 @@
+StrBoxTraitementTitle: WOString {
+	value = boxTraitementTitle;
+}
+
+PopUpTraitementType: WOPopUpButton {
+	list = traitementTypeList;
+	item = traitementTypeItem;
+	selection = traitementTypeSelected;
+	displayString = traitementTypeItem.ttyLibelle;
+	id = "PopUpTraitementType";
+	escapeHTML = false;
+}
+
+ObserverPopUpTraitementType: AjaxObserveField {
+	observeFieldID = "PopUpTraitementType";
+	updateContainerID = "ContainerTraitementPourType";
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+}
+
+ContainerTraitementPourType: AjaxUpdateContainer {
+	id = "ContainerTraitementPourType";
+}
+
+CondIsTraitementTypeSelectedTextuelLibreOuPreRempli: WOConditional {
+	condition = traitementTypeSelected.isTraitementTextuelLibreOuPreRempli;
+}
+
+CondIsTraitementTypeSelectedAvecDateEtSansMotif: WOConditional {
+	condition = traitementTypeSelected.isTraitementAvecDateEtSansMotif;
+}
+
+CondIsTraitementTypeSelectedCommande: WOConditional {
+	condition = traitementTypeSelected.isTraitementCommande;
+}
+
+CondIsTraitementTypeSelectedLivraison: WOConditional {
+	condition = traitementTypeSelected.isTraitementLivraison;
+}
+
+CondIsTraitementTypeSelectedNoSerie: WOConditional {
+	condition = traitementTypeSelected.isTraitementNoSerie;
+}
+
+CondIsTraitementEmissionBdcInternePourSignature: WOConditional {
+	condition = traitementTypeSelected.isTraitementEmissionBdcInternePourSignature;
+}
+
+CondIsTraitementReceptionBdcInterneSigne: WOConditional {
+	condition = traitementTypeSelected.isTraitementReceptionBdcInterneSigne;
+}
+
+DatePickerDeb: CktlAjaxDatePicker {
+  dateValue = traDateDeb;
+  showsTime = true;
+}
+
+
+DatePickerFin: CktlAjaxDatePicker {
+  dateValue = traDateFin;
+  showsTime = true;
+}
+
+TxtTraitementTextuel: WOText {
+	value = tfTraitement;
+	class = "dtTextareaAjoutTraitement";
+}
+
+AjaxExpansionContainerTraitementAdditionnel : AjaxUpdateContainer {
+}
+
+ContainerTraitementAdditionnel : AjaxUpdateContainer {
+	id = "ContainerTraitementAdditionnel";
+}
+
+AjaxExpansionTraitementAdditionnel : AjaxExpansion {
+	insertion="Effect.blind";
+	insertionDuration="0.1";
+	string = "Commentaire additionnel ...";
+	id = "traitementAdditionnelExpansion";
+	expanded = isExpandedTraitementAdditionnel;
+}
+
+TxtTraitementAdditionnel: WOText {
+	value = tfTraitementAdditionnel;
+	class = "dtTextareaTraitementAdditionnel";
+}
+
+TFTraitementCommande: WOTextField {
+	value = tfTraitement;
+}
+
+SelectBatimentBureauLivraison: SelectBatimentBureau {
+	batimentSelected = recBatiment;
+	bureauSelected = recBureau;
+}
+
+TFTraitementNoSerie: WOTextField {
+	value = tfTraitement;
+}
+
+CondIsNotUpdating: WOConditional {
+	condition = listener.isUpdating;
+	negate = true;
+}
+
+AjaxExpansionContainerFileUpload : AjaxUpdateContainer {
+}
+
+AjaxExpansionFileUpload : AjaxExpansion {
+	insertion="Effect.blind";
+	insertionDuration="0.1";
+	string = "Associer des fichiers ...";
+	id = "fileExpansion";
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+chAffichable: WOCheckBox {
+	id = "chAffichable";
+	checked = chConsultable;
+	title = "Cochez pour que votre traitement ne soit pas confidentiel";
+}
+
+chEmail: WOCheckBox {
+	id = "chEmail";
+	checked = chEmail;
+	title = "Cochez pour qu'un mail soit envoye en meme temps que votre traitement";
+}
+
+BtnAnnuler: WOSubmitButton {
+	class = "bouton";
+	title = "Annuler la saisie de nouveau traitement";
+	value = "Annuler";
+	action = cancel;
+}
+
+BtnAdd: WOSubmitButton {
+	class = "bouton";
+	title = "Ajouter un nouveau traitement et laisser la demande en cours";
+	value = "Ajouter traitement";
+	action = add;
+}
+
+BtnClose: WOSubmitButton {
+	class = "bouton";
+	title = "Ajouter le traitement et clore la demande";
+	value = "Clore la demande";
+	action = close;
+}
+
+CondIsUpdating: WOConditional {
+	condition = listener.isUpdating;
+}
+
+BtnUpdate: WOSubmitButton {
+	class = "bouton";
+	title = "Enregistrer la modification du traitement";
+	value = "Enregistrer";
+	action = update;
+}
+
+TFTraitementEmissionBdcNumeroCommande: WOTextField {
+	value = tfTraitementEmissionBdcNumeroCommande;
+}
+
+CondIsPosteSupplementaire: WOConditional {
+	condition = eoIntervention.isPosteSupplementaire;
+}
+
+TFTraitementEmissionBdcNumeroCommandeSurcout: WOTextField {
+	value = tfTraitementEmissionBdcNumeroCommandeSurcout;
+}
+
+RadioCommandeSigneONOUI: WORadioButton {
+	value = OUI;
+	name = "RadioCommandeSigne";
+	selection = receptionCommandeSigneON;
+}
+
+RadioCommandeSigneONNON: WORadioButton {
+	value = NON;
+	name = "RadioCommandeSigne";
+	selection = receptionCommandeSigneON;
+}
+
+RadioCommandeSigneONSansObjet: WORadioButton {
+	value = SANS_OBJET;
+	name = "RadioCommandeSigne";
+	selection = receptionCommandeSigneON;
+}
+
+ObserverRadioCommandeSurcoutSigneON: AjaxObserveField {
+	updateContainerID = "ContainerTraitementAdditionnel";
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+
+RadioCommandeSurcoutSigneONOUI: WORadioButton {
+	value = OUI;
+	name = "RadioCommandeSurcoutSigne";
+	selection = receptionCommandeSurcoutSigneON;
+}
+
+RadioCommandeSurcoutSigneONNON: WORadioButton {
+	value = NON;
+	name = "RadioCommandeSurcoutSigne";
+	selection = receptionCommandeSurcoutSigneON;
+}
+
+RadioCommandeSurcoutSigneONSansObjet: WORadioButton {
+	value = SANS_OBJET;
+	name = "RadioCommandeSurcoutSigne";
+	selection = receptionCommandeSurcoutSigneON;
+}

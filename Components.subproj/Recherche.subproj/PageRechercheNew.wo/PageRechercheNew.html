@@ -1,0 +1,99 @@
+<webobject name = "DTDefaultPage1">
+  <webobject name = "FormRecherche">
+    <br />
+    <table width="100%">
+    	<tr>
+    		<td>
+  			  <table>
+  			  	<tr>
+  			  		<td class="boxBorder">
+			    			<table class="boxContents" width="100%">
+			    				<tr>
+			    					<td>
+			  				  		<b>Nom du favori :</b> <webobject name = "TxtLibelleBookmark"></webobject>
+											 <webobject name = "BtnDoSaveBookmark"></webobject>
+											 <webobject name = "BtnDoCopyBookmark"></webobject>
+											 <webobject name = "BtnDoDeleteBookmark"></webobject>
+											 <webobject name = "BtnDoNewDefaultBookmark"></webobject>
+			  			  		</td>
+			  			  	</tr>
+			  			  	<webobject name = "CondShowBookmarkList">
+			  			  	<tr>
+								  	<td align="left">&#124;&nbsp;
+			  			   		<webobject name = "RepBookmark">
+								   		<webobject name = "LnkDoLoadBookmark"><webobject name = "StrBookmarkItemDisplay"></webobject></webobject>&nbsp;&#124;&nbsp;
+								 		</webobject>
+							 			</td>
+							 		</tr>
+									</webobject>
+							 	</table>
+							</td>
+			    	</tr>
+			    	<tr>
+			    		<td>
+			 			    <font class = "textNote">
+						      <webobject name = "RadioAnd"></webobject>valident <b><u>toutes</u></b> les conditions suivantes
+			      			<webobject name = "RadioOr"></webobject>valident <b><u>au moins une</u></b> des conditions suivantes
+			    			</font>
+			    		</td>
+			    	</tr>
+			    	<tr>
+			    		<td class="boxContents" width="100%">
+			    			<table class="boxContents">
+							 	<webobject name = "RepNature">
+						 			<tr>
+										<td><webobject name = "ComboNature"></webobject></td>
+						      	<td><webobject name = "ComboConstraint"></webobject></td>
+						      	<td>
+								      <webobject name = "CondIsElementList">
+								        <webobject name = "ComboElement"></webobject>
+								      </webobject>
+								      <webobject name = "CondIsElementString">
+								        <webobject name = "TextfieldElementString"></webobject>
+								      </webobject>
+								      <webobject name = "CondIsElementNumber">
+								        <webobject name = "TextfieldElementNumber"></webobject>
+								      </webobject>
+								      <webobject name = "CondIsElementDate">
+								        <webobject name = "DateElement"></webobject>
+								      </webobject>
+								      <webobject name = "CondIsElementIndividu">
+								      	<webobject name = "StrIndividuDisplay"></webobject>
+								        <webobject name = "BtnChangeIndividu"></webobject>
+								      </webobject>
+								      <webobject name = "CondIsElementActivite">
+								      	<webobject name = "StrActiviteDisplay"></webobject>
+								        <webobject name = "BtnChangeActivite"></webobject>
+								      </webobject>
+								    </td>
+						      	<td nowrap>
+								      <webobject name = "BtnAddNode"></webobject>
+						    		  <webobject name = "BtnRemoveNode"></webobject>
+						      	</td>
+									</tr>
+						    </webobject>		    			
+			    			</table>
+			    		</td>
+			    	</tr>
+			    </table>
+			   </td>
+			   <td>
+			   		<table>
+			   			<tr>
+			   				<td align="center">
+						  		<webobject name = "BtnDoSearch"></webobject><br/>
+									<webobject name = "BtnDoClear"></webobject>
+			   				</td>
+			   				<td valign="middle">
+									<webobject name = "LnkAfficherImpression"><webobject name = "ImgImpression"></webobject></webobject>
+								</td>
+							</tr>
+						</table>
+			   </td>
+			 </tr>
+		</table>
+  </webobject>
+  <webobject name = "CondShowCompListeDemande">
+  	<webobject name = "CompListeDemande1"></webobject>
+  </webobject>
+</webobject>

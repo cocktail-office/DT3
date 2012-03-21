@@ -1,0 +1,76 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "ACT_LIBELLE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "NOM_ET_PRENOM"; }; 
+            name = actLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 120; 
+        }, 
+        {
+            columnName = "ACT_ORDRE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "CT_ORDRE"; }; 
+            name = actOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "ACT_PERE"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "CT_ORDRE"; }; 
+            name = actPere; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "C_STRUCTURE_DEST"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "INT_DATE_CREATION"; 
+            externalType = DATE; 
+            name = intDateCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "INT_ETAT"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "ETAT_CODE"; }; 
+            name = intEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NO_IND_INTERVENANT"; 
+            externalType = NUMBER; 
+            name = noIndIntervenant; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    className = "org.cocktail.dt.server.metier.EOVActivitesIntervenant"; 
+    classProperties = (
+        actOrdre, 
+        noIndIntervenant, 
+        actLibelle, 
+        cStructure, 
+        intDateCreation, 
+        intEtat, 
+        actPere
+    ); 
+    externalName = "V_ACTIVITES_INTERVENANT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "V_ACTIVITE_INTERVENANT"; }; 
+    name = VActivitesIntervenant; 
+    primaryKeyAttributes = (actOrdre, noIndIntervenant, cStructure); 
+}

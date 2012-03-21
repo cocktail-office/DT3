@@ -1,0 +1,44 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "INT_COUNT"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "PERS_ORDRE"; }; 
+            name = intCount; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "INT_ETAT"; 
+            externalType = VARCHAR2; 
+            name = intEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "PERS_ID"; }; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, intCount, intEtat, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOVIntervenantDtCount"; 
+    classProperties = (cStructure, intCount, intEtat, noIndividu); 
+    externalName = "V_INTERVENANT_DT_COUNT"; 
+    fetchSpecificationDictionary = {}; 
+    isReadOnly = Y; 
+    name = VIntervenantDtCount; 
+    primaryKeyAttributes = (intEtat, noIndividu); 
+}

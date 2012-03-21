@@ -1,0 +1,8 @@
+CktlFileUpload1: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = ctrl.filePaths;
+	resetFilePaths = ctrl.clearFilePaths;
+	destDir = dtApp.appTempDir;
+	readOnly = ctrl.readOnly;
+}

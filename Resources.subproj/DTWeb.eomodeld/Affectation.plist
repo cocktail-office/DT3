@@ -1,0 +1,42 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_AFFECTATION"; 
+            externalType = DATE; 
+            name = dDebAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_AFFECTATION"; 
+            externalType = DATE; 
+            name = dFinAffectation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, dDebAffectation, dFinAffectation, noDossierPers); 
+    className = "org.cocktail.dt.server.metier.EOAffectation"; 
+    classProperties = (cStructure, dDebAffectation, dFinAffectation, noDossierPers); 
+    externalName = "GRHUM.AFFECTATION"; 
+    fetchSpecificationDictionary = {}; 
+    name = Affectation; 
+    primaryKeyAttributes = (cStructure, noDossierPers); 
+}

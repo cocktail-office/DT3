@@ -1,0 +1,42 @@
+PopUpButton1: WOPopUpButton {
+	item = secondeItem;
+	list = secondeList;
+	onChange = "this.form.submit();";
+	selection = secondeSelected;
+	displayString = displaySecondeItem;
+}
+
+PopUpButton2: WOPopUpButton {
+	item = nombreIntItem;
+	list = nombreIntList;
+	onChange = "this.form.submit();";
+	selection = nombreIntSelected;
+}
+
+RadioButton1: WORadioButton {
+	name = "ordTriInt";
+	selection = ordTriInt;
+	value = ASCENDING;
+	onChange = "this.form.submit();";
+}
+
+RadioButton2: WORadioButton {
+	name = "ordTriInt";
+	value = DESCENDING;
+	onClick = "this.form.submit();";
+	selection = ordTriInt;
+}
+
+RadioButton3: WORadioButton {
+	value = ASCENDING;
+	name = "ordTriTra";
+	selection = ordTriTra;
+	onClick = "this.form.submit();";
+}
+
+RadioButton4: WORadioButton {
+	value = DESCENDING;
+	name = "ordTriTra";
+	selection = ordTriTra;
+	onClick = "this.form.submit();";
+}

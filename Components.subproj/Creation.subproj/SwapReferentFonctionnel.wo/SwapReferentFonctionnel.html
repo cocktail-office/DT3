@@ -1,0 +1,48 @@
+<webobject name = "FormReferentFonctionnel">
+
+<table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+	<tr>
+  	<td class = "boxBorder">
+  		<table cellpadding = "10" cellspacing = "0" border = "0" width = "100%" class = "boxContents">
+  			<tr>
+  				<td valign="top">
+						<font class="textEntry">Groupe de travail <font color="red">*</font></font><br>
+						<webobject name = "FormErrorGroupeTravail">Veuillez s&eacute;lectionner au moins 1 groupe de travail</webobject>
+						<webobject name = "ChkListGroupeTravail"/>
+					</td>
+					<td valign="top">
+  					<font class="textEntry">Nature de la proposition <font color="red">*</font></font><br>
+						<font class="textNote">la dur&eacute;e est sup&eacute;rieure ou &eacute;gale &agrave; la demi-journ&eacute;e</font><br>
+						<webobject name = "FormErrorNatureProposition">Veuillez s&eacute;lectionner au moins 1 nature de proposition</webobject>
+						<webobject name = "ChkListNatureProposition"/>
+					</td>
+  			</tr>
+  			<tr>
+  				<td colspan = "2">
+  					<font class="textEntry">D&eacute;tail de votre proposition <font color="red">*</font></font><br>
+						<font class="textNote">Objectif, public vis&eacute;, ...</font><br>
+						<webobject name = "FormErrorDetailProposition">Veuillez d&eacute;tailler votre proposition</webobject>
+						<webobject name = "TFDetailProposition"/>
+					</td>
+  			</tr>
+  			<tr>
+  				<td colspan = "2">
+						<font class="textEntry">Dates envisag&eacute;es</font><br>
+						<font class="textNote">jj/mm/aaaa</font><br>
+						<webobject name = "TFDatesProposition"/>
+					</td>
+				</tr>
+  			<tr>
+  				<td colspan = "2">
+						<font class="textEntry">Document(s) attach&eacute;(s) :</font><br>
+						<webobject name="CktlFileUpload1"/>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br/>
+<webobject name = "btEnregistrerDT"></webobject>&nbsp;&nbsp;<webobject name = "btNouvelleDT"></webobject>
+  
+</webobject>

@@ -1,0 +1,157 @@
+{
+    arguments = (
+        {
+            allowsNull = Y; 
+            columnName = 001; 
+            externalType = NUMBER; 
+            name = actOrdre; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 002; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 003; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 004; 
+            externalType = NUMBER; 
+            name = ctOrdre; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 005; 
+            externalType = NUMBER; 
+            name = intCleService; 
+            parameterDirection = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 006; 
+            externalType = CHAR; 
+            name = intCommentaireInterne; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 007; 
+            externalType = DATE; 
+            name = intDateButoir; 
+            parameterDirection = 1; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 008; 
+            externalType = DATE; 
+            name = intDateCreation; 
+            parameterDirection = 1; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 009; 
+            externalType = DATE; 
+            name = intDateSouhaite; 
+            parameterDirection = 1; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 010; 
+            externalType = CHAR; 
+            name = intEtat; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 011; 
+            externalType = CHAR; 
+            name = intMotif; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 012; 
+            externalType = CHAR; 
+            name = intMotsClefs; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 013; 
+            externalType = NUMBER; 
+            name = intNoIndAppelant; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 014; 
+            externalType = NUMBER; 
+            name = intNoIndConcerne; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 015; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            parameterDirection = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 016; 
+            externalType = NUMBER; 
+            name = intPriorite; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 017; 
+            externalType = VARCHAR2; 
+            name = intServiceConcerne; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = 018; 
+            externalType = CHAR; 
+            name = modCode; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+        }
+    ); 
+    externalName = INS_INTERVENTION; 
+    name = insInterventionBis; 
+}

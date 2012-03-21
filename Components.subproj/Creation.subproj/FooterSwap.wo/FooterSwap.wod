@@ -1,0 +1,7 @@
+datePicker: CktlAjaxDatePicker {
+  dateValue = ctrl.intDateSouhaite;
+}
+
+formErrorDate: DTFormErrorBox {
+	showError = ctrl.errorDate;
+}

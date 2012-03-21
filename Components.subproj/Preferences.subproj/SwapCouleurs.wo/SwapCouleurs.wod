@@ -1,0 +1,73 @@
+RadioBatiment: WORadioButton {
+	onClick = "this.form.submit();";
+	selection = couleurSelected;
+	value = COUL_BATIMENT;
+	name = "radActi";
+}
+
+RadioActivites: WORadioButton {
+	onClick = "this.form.submit();";
+	selection = couleurSelected;
+	value = COUL_ACTIVITE;
+	name = "radActi";
+}
+
+CondIsCoulBatiment: WOConditional {
+	condition = isCoulBatiment;
+}
+
+NavBarBatiement: CktlNavigationBar {
+	displayGroup = batimentDG;
+	longListLimit = 25;
+}
+
+RepBatiment: WORepetition {
+	item = batimentItem;
+	list = batimentDG.displayedObjects;
+}
+
+TRBatiment: WOGenericContainer {
+	bgColor = batimentItemColor;
+	elementName = "TR";
+}
+
+LnkBatiement: WOHyperlink {
+	action = selectBatiment;
+}
+
+StrBatiment: WOString {
+	value = batimentItem.appellation;//VALID
+}
+
+StrSelectedBatiment: WOString {
+	value = batimentSelected.appellation;//VALID
+}
+
+ColorPickerBatiment: CktlColorPicker {
+	colorValue = batimentSelectedColor;
+	fieldName = "batimentColor";
+	formName = "formPreferences";
+}
+
+CondIsNotCoulBatiment: WOConditional {
+	condition = isCoulBatiment;
+	negate = true;
+}
+
+PopupService: WOPopUpButton {
+	displayString = serviceItem.lcStructure;//VALID
+	item = serviceItem;
+	list = serviceList;
+	onChange = "this.form.submit();";
+	selection = serviceSelected;
+}
+
+SelectActivite1: SelectActivite {
+	listener = activiteListener;
+}
+
+ColorPickerActivite: CktlColorPicker {
+	colorValue = activiteSelectedColor;
+	fieldName = "activiteColor";
+	formName = "formPreferences";
+}

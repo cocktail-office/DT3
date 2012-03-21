@@ -1,0 +1,201 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "GRP_AFFICHABLE"; 
+            externalType = CHAR; 
+            name = grpAffichable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_EMAIL"; 
+            externalType = VARCHAR2; 
+            name = grpEmail; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 256; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_EMAIL_SAM"; 
+            externalType = VARCHAR2; 
+            name = grpEmailSam; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 256; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_MAIL_SERVICE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "ACT_IGNORE_MAIL_GROUPE"; }; 
+            name = grpMailService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "GRP_NB_LIG_BROWSER_ACT"; 
+            externalType = NUMBER; 
+            name = grpNbLigBrowserAct; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GRP_POSITION"; 
+            externalType = NUMBER; 
+            name = grpPosition; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GRP_SEQ"; 
+            externalType = NUMBER; 
+            name = grpSeq; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "GRP_SWAP_VIEW"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "GRP_SWAPVIEW"; }; 
+            name = grpSwapView; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_VISIBILITE"; 
+            externalType = VARCHAR2; 
+            name = grpVisibilite; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_VISIBILITE_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = grpVisibiliteStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 256; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GT_CODE"; 
+            externalType = VARCHAR2; 
+            name = gtCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toStructureUlr.lcStructure"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toStructureUlr.llStructure"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cStructure, 
+        grpAffichable, 
+        grpEmail, 
+        grpMailService, 
+        grpPosition, 
+        grpSeq, 
+        grpSwapView, 
+        grpVisibilite, 
+        gtCode, 
+        lcStructure, 
+        llStructure, 
+        grpVisibiliteStructure, 
+        grpNbLigBrowserAct, 
+        grpEmailSam
+    ); 
+    className = "org.cocktail.dt.server.metier.EOGroupesDt"; 
+    classProperties = (
+        cStructure, 
+        grpAffichable, 
+        grpEmail, 
+        grpMailService, 
+        grpPosition, 
+        grpSeq, 
+        grpSwapView, 
+        grpVisibilite, 
+        gtCode, 
+        lcStructure, 
+        llStructure, 
+        toStructureUlr, 
+        tosActivites, 
+        grpVisibiliteStructure, 
+        grpNbLigBrowserAct, 
+        grpEmailSam
+    ); 
+    externalName = "GROUPES_DT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            cStructure, 
+            grpAffichable, 
+            grpEmail, 
+            grpMailService, 
+            grpPosition, 
+            grpSeq, 
+            grpSwapView, 
+            grpVisibilite, 
+            gtCode, 
+            lcStructure, 
+            llStructure, 
+            toStructureUlr, 
+            tosActivites
+        ); 
+        "_nameInObjectStore" = "GROUPES_DT_HARP"; 
+    }; 
+    name = GroupesDt; 
+    primaryKeyAttributes = (cStructure); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTStructureUlr; 
+            internalInfo = {"_nameInObjectStore" = structureUlrHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = toStructureUlr; 
+        }, 
+        {
+            deleteRule = EODeleteRuleDeny; 
+            destination = Activites; 
+            internalInfo = {"_nameInObjectStore" = activitesArray; }; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = cStructure; }); 
+            name = tosActivites; 
+        }
+    ); 
+}

@@ -1,0 +1,199 @@
+{
+    attributes = (
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "toIndividuUlr.nomUsuel||' '||toIndividuUlr.prenom"; 
+            externalType = VARCHAR2; 
+            name = nomIntervenant; 
+            valueClassName = NSString; 
+            valueType = S; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TRA_COMMENTAIRE_INTERNE"; 
+            externalType = VARCHAR2; 
+            name = traCommentaireInterne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1024; 
+        }, 
+        {
+            columnName = "TRA_CONSULTABLE"; 
+            externalType = VARCHAR2; 
+            name = traConsultable; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TRA_DATE_DEB"; 
+            externalType = DATE; 
+            name = traDateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "TRA_DATE_FIN"; 
+            externalType = DATE; 
+            name = traDateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "TRA_ETAT"; 
+            externalType = VARCHAR2; 
+            name = traEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TRA_ORDRE"; 
+            externalType = NUMBER; 
+            name = traOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TRA_TRAITEMENT"; 
+            externalType = VARCHAR2; 
+            name = traTraitement; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "TRA_TRAITEMENT_ADDITIONNEL"; 
+            externalType = VARCHAR2; 
+            name = traTraitementAdditionnel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "TTY_KEY"; 
+            externalType = NUMBER; 
+            name = ttyKey; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        intOrdre, 
+        noIndividu, 
+        traCommentaireInterne, 
+        traConsultable, 
+        traDateDeb, 
+        traDateFin, 
+        traEtat, 
+        traOrdre, 
+        traTraitement, 
+        traTraitementAdditionnel, 
+        ttyKey
+    ); 
+    className = "org.cocktail.dt.server.metier.EOTraitement"; 
+    classProperties = (
+        intOrdre, 
+        noIndividu, 
+        nomIntervenant, 
+        toEtatDt, 
+        toIndividuUlr, 
+        toIntervention, 
+        tosDocumentDt, 
+        toTraitementType, 
+        traCommentaireInterne, 
+        traConsultable, 
+        traDateDeb, 
+        traDateFin, 
+        traEtat, 
+        traOrdre, 
+        traTraitement, 
+        traTraitementAdditionnel, 
+        ttyKey
+    ); 
+    externalName = TRAITEMENT; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            intOrdre, 
+            noIndividu, 
+            nomIntervenant, 
+            toEtatDt, 
+            toIndividuUlr, 
+            toIntervention, 
+            tosDocumentDt, 
+            traCommentaireInterne, 
+            traConsultable, 
+            traDateDeb, 
+            traDateFin, 
+            traEtat, 
+            traOrdre, 
+            traTraitement, 
+            traTraitementAdditionnel
+        ); 
+        "_nameInObjectStore" = "TRAITEMENT_HARP"; 
+    }; 
+    name = Traitement; 
+    primaryKeyAttributes = (traOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = SharedInfo; 
+            internalInfo = {"_nameInObjectStore" = etatDt; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = key; sourceAttribute = traEtat; }); 
+            name = toEtatDt; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            internalInfo = {"_nameInObjectStore" = individuUlrHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividuUlr; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Intervention; 
+            internalInfo = {"_nameInObjectStore" = interventionHarp; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DocumentDt; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = traOrdre; sourceAttribute = traOrdre; }); 
+            name = tosDocumentDt; 
+        }, 
+        {
+            destination = TraitementType; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = ttyKey; sourceAttribute = ttyKey; }); 
+            name = toTraitementType; 
+        }
+    ); 
+}

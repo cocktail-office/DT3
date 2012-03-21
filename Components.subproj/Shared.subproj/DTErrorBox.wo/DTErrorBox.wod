@@ -1,0 +1,12 @@
+imgError: WOImage {
+	hspace = 2;
+	vspace = 2;
+	filename = "img/SmallError.png";
+	border = 0;
+	framework = "app";
+}
+
+strErrorMessage: WOString {
+  escapeHTML = false;
+  value = ^message;
+}

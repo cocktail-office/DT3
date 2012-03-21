@@ -1,0 +1,197 @@
+{
+    arguments = (
+        {
+            allowsNull = Y; 
+            columnName = actOrdre; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "ACT_ORDRE"; }; 
+            name = actOrdre; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = cLocal; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_LOCAL"; }; 
+            name = cLocal; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = i; 
+            width = 5; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = cStructure; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_STRUCTURE"; }; 
+            name = cStructure; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ctOrdre; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "CT_ORDRE"; }; 
+            name = ctOrdre; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = dstCode; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_STRUCTURE"; }; 
+            name = dstCode; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intCleService; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "INT_CLE_SERVICE"; }; 
+            name = intCleService; 
+            parameterDirection = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intCommentaireInterne; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "INT_COMMENTAIRE_INTERNE"; }; 
+            name = intCommentaireInterne; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 512; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intDateButoir; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "INT_DATE_BUTOIR"; }; 
+            name = intDateButoir; 
+            parameterDirection = 1; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intDateCreation; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "INT_DATE_CREATION"; }; 
+            name = intDateCreation; 
+            parameterDirection = 1; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intDateSouhaite; 
+            externalType = DATE; 
+            internalInfo = {"_nameInObjectStore" = "INT_DATE_SOUHAITE"; }; 
+            name = intDateSouhaite; 
+            parameterDirection = 1; 
+            valueClassName = NSCalendarDate; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intEtat; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "INT_ETAT"; }; 
+            name = intEtat; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 1; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intMotif; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "INT_MOTIF"; }; 
+            name = intMotif; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intMotsClefs; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "INT_MOTS_CLEFS"; }; 
+            name = intMotsClefs; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 200; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intNoIndAppelant; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "INT_NO_IND_APPELANT"; }; 
+            name = intNoIndAppelant; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intNoIndConcerne; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "INT_NO_IND_CONCERNE"; }; 
+            name = intNoIndConcerne; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intOrdre; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "INT_ORDRE"; }; 
+            name = intOrdre; 
+            parameterDirection = 2; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intPriorite; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "INT_PRIORITE"; }; 
+            name = intPriorite; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = intServiceConcerne; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "INT_SERVICE_CONCERNE"; }; 
+            name = intServiceConcerne; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            valueType = i; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = modCode; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "MOD_CODE"; }; 
+            name = modCode; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 1; 
+        }
+    ); 
+    externalName = "INS_INTERVENTION"; 
+    name = insIntervention; 
+}

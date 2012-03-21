@@ -1,0 +1,36 @@
+DTDefaultPage1: DTDefaultPage {
+	shouldShowMenu = true;
+	useToolTip = true;
+}
+
+FormPanier: WOForm {
+	multipleSubmit = true;
+    name = "FormPanier";
+}
+
+LnkViderPanier: WOHyperlink {
+	action = dtSession.viderPanier;
+	string = "Vider le panier";	
+}
+
+LnkAfficherImpression: WOHyperlink {
+ 	title = "Affiche l'écran d'impression";
+  	action = afficherImpression;
+  	class = "linkPage";
+  	target = "_new";
+  	onClick = "javascript:ouvrirPopup(this.href,400, 800);return false;";
+}
+
+ImgImpression: WOImage {
+	filename = "img/Imprimer.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+    height = "22px";
+	width = "22px";
+}
+
+CompListeDemande1: CompListeDemande {
+	listener = listener;
+}

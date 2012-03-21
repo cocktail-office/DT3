@@ -1,0 +1,21 @@
+{
+    attributes = (
+        {
+            columnName = NEXTVAL; 
+            externalType = NUMBER; 
+            name = nextval; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (nextval); 
+    className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+    classProperties = (nextval); 
+    externalName = DUAL; 
+    externalQuery = "select seq_discussion.nextval nextval from dual"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_javaClientClassName" = SeqDiscussion; }; 
+    name = SeqDiscussion; 
+    primaryKeyAttributes = (nextval); 
+    userInfo = {"_EntityModeler" = {generateSource = NO; }; }; 
+}

@@ -1,0 +1,42 @@
+<INPUT TYPE=HIDDEN VALUE="bidon" NAME="champ_bidon">
+<TABLE CELLPADDING=0 CELLSPACING=1 BORDER=0>
+	<TR><TD><HR/></TD></TR>
+	<TR><TD><label><WEBOBJECT NAME="CheckAfficherPhoto"></WEBOBJECT>&nbsp;Afficher photo demandeur (si ce dernier accepte de la publier)</label></TD></TR>
+	<TR><TD><label><WEBOBJECT NAME="CheckEnvoyerMailTraitement"></WEBOBJECT>&nbsp;Par d&eacute;faut, envoyer un courriel &agrave; chaque traitement</label></TD></TR>
+	<TR><TD><label><WEBOBJECT NAME="CheckUseMailInterne"></WEBOBJECT>&nbsp;Par d&eacute;faut, envoyer les courriels avec ma propre application (Thunderbird, Outlook, Mail.app ...)</label></TD></TR>
+	<TR><TD><label><WEBOBJECT NAME="CheckInsertDtSig"></WEBOBJECT>&nbsp;Ins&eacute;rer automatiquement ma signature lors de l'envoi d'un courriel</label></TD></TR>
+	<TR>
+		<TD>
+			<label><WEBOBJECT NAME="CheckExportPlanning"></WEBOBJECT>&nbsp;Exporter le d&eacute;tail du contenu de mes traitements de DT via le serveur de planning</label>	
+				<ul>
+					<li><font class="textNote">Assurez vous que vous n'avez pas mis d'informations confidentielles dans vos traitements</font></li>
+					<li><font class="textNote">Seul les traitements "consultables" seront publi&eacute;s (ils le sont par d&eacute;faut)</font></li>
+					<li><font class="textNote">Les traitements <u>non publics</u> apparaitrons sous la forme <i>&lt;service&gt;-&lt;num&eacute;ro&gt;-&lt;activit&eacute;&gt;</i></font></li>
+				</ul>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<label>
+				<webobject name="CheckControleChevauchementPlanning"/>
+				Lors de l'ajout d'un traitement, vérifier si je suis disponible via le serveur de planning et m'avertir en cas de conflit
+			</label>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<label>
+				<webobject name="CheckConfirmationCloture"/>
+				Lors de la clôture d'une demande, toujours me demander une confirmation
+			</label>
+		</TD>
+	</TR>
+	<TR>
+		<TD>
+			<label>
+				<webobject name="CheckSauvegarderPanier"/>
+				Sauvegarder mon panier de DT (pour ne pas perdre son contenu dès que je ferme ma session)
+			</label>
+		</TD>
+	</TR>
+</TABLE>

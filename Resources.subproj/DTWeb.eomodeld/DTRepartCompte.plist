@@ -1,0 +1,40 @@
+{
+    attributes = (
+        {
+            columnName = "CPT_ORDRE"; 
+            externalType = NUMBER; 
+            name = cptOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cptOrdre, persId); 
+    className = "org.cocktail.dt.server.metier.EORepartCompte"; 
+    classProperties = (cptOrdre, persId, toCompte); 
+    externalName = "GRHUM.REPART_COMPTE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (cptOrdre, persId, toCompte); 
+        "_nameInObjectStore" = "REPART_COMPTE@GASPHARP"; 
+    }; 
+    name = DTRepartCompte; 
+    primaryKeyAttributes = (cptOrdre, persId); 
+    relationships = (
+        {
+            destination = DTCompte; 
+            internalInfo = {"_nameInObjectStore" = compte; }; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cptOrdre; sourceAttribute = cptOrdre; }); 
+            name = toCompte; 
+        }
+    ); 
+}

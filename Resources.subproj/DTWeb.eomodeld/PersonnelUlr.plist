@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "CODE_GROUPE"; 
+            externalType = VARCHAR2; 
+            name = codeGroupe; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "NO_DOSSIER_PERS"; 
+            externalType = NUMBER; 
+            name = noDossierPers; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = NUMEN; 
+            externalType = VARCHAR2; 
+            name = numen; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 13; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, codeGroupe, noDossierPers, numen); 
+    className = "org.cocktail.dt.server.metier.EOPersonnel"; 
+    classProperties = (cStructure, codeGroupe, noDossierPers, numen); 
+    externalName = "GRHUM.PERSONNEL_ULR"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "PERSONNEL_ULR@GASPHARP"; }; 
+    name = PersonnelUlr; 
+    primaryKeyAttributes = (noDossierPers); 
+}

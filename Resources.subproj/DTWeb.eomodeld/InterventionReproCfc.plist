@@ -1,0 +1,112 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = AUTEURS; 
+            externalType = VARCHAR2; 
+            name = auteurs; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "CFC_ORDRE"; 
+            externalType = NUMBER; 
+            name = cfcOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "D_CREATION"; 
+            externalType = DATE; 
+            name = dCreation; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "D_MODIFICATION"; 
+            externalType = DATE; 
+            name = dModification; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = EDITEURS; 
+            externalType = VARCHAR2; 
+            name = editeurs; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }, 
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NB_EXEMPLAIRES"; 
+            externalType = NUMBER; 
+            name = nbExemplaires; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NB_PAGES"; 
+            externalType = NUMBER; 
+            name = nbPages; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = TITRE; 
+            externalType = VARCHAR2; 
+            name = titre; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 4000; 
+        }
+    ); 
+    attributesUsedForLocking = (cfcOrdre); 
+    className = "org.cocktail.dt.server.metier.EOInterventionReproCfc"; 
+    classProperties = (
+        auteurs, 
+        cfcOrdre, 
+        dCreation, 
+        dModification, 
+        editeurs, 
+        intOrdre, 
+        nbExemplaires, 
+        nbPages, 
+        titre, 
+        toInterventionRepro
+    ); 
+    externalName = "INTERVENTION_REPRO_CFC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            auteurs, 
+            editeurs, 
+            intOrdre, 
+            nbExemplaires, 
+            nbPages, 
+            titre, 
+            toInterventionRepro
+        ); 
+        "_nameInObjectStore" = "REPRO_CFC"; 
+    }; 
+    name = InterventionReproCfc; 
+    primaryKeyAttributes = (cfcOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = InterventionRepro; 
+            internalInfo = {"_nameInObjectStore" = interventionRepro; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toInterventionRepro; 
+        }
+    ); 
+}

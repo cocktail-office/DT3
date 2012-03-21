@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="ConsultTaskBar" wocomponentcontent="false">
+
+		<binding name="taskBarListener"/>
+
+		<validation message="&apos;taskBarListener&apos; is a required binding">
+			<unbound name="taskBarListener"/>
+		</validation>
+	</wo>
+</wodefinitions>

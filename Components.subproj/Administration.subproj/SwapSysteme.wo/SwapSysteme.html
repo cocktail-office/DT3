@@ -1,0 +1,43 @@
+<table cellpadding="0" cellspacing="1" border="0">
+	<tr><td><hr/></td></tr>
+	<tr>
+		<td>
+			Arr&ecirc;t de l'application pour maintenance dans <webobject name = "TFTtlStop"></webobject> secondes 
+			<webobject name = "BtnStartProcedureStop"></webobject><br/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font class="textNote">Attention, la proc&eacute;dure n'est pas r&eacute;versible !</font>
+		</td>
+	</tr>
+</table>
+
+<br>
+<br>
+
+<table cellpadding="0" cellspacing="1" border="1" class="boxContents">
+	<legend>
+		Sessions ouvertes (<webobject name = "StrSessionCount"/>)
+	</legend>
+	
+	<tr class="listboxHeader">
+		<th>session id</th>
+		<th>login</th>
+		<th>ip</th>
+		<th>browser</th>
+		<th>version</th>
+		<th>platform</th>
+		<th>birth date</th>
+	</tr>	
+
+	
+	<webobject name = "RepSession">
+		<tr class="listboxLine">
+			<td><webobject name = "StrSessionItemId"/></td>
+			<td><webobject name = "StrSessionItemLogin"/></td>
+			<td><webobject name = "StrSessionItemIpAddress"/></td>
+			<td><webobject name = "StrSessionItemNavigator"/></td>
+			<td><webobject name = "StrSessionItemBrowserVersion"/></td>
+			<td><webobject name = "StrSessionItemBrowserPlatform"/></td>
+			<td><webobject name = "StrSessionItemBirthDate"/></td>
+		</tr>	
+	</webobject>
+
+</table>

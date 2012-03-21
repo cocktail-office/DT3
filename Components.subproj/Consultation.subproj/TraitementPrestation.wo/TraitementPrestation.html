@@ -1,0 +1,120 @@
+<WEBOBJECT NAME=CondIsPrestaGatewayError><WEBOBJECT NAME=DTErrorBox1></WEBOBJECT></WEBOBJECT><WEBOBJECT NAME=CondIsNotPrestaGatewayError><table cellpadding="1" cellspacing="0" border="0" class="boxTitle">
+	<tr>
+		<td> <font class="subTitleInverse">&nbsp;<webobject name = "StrBoxTraitementTitle"></webobject></font> </td>
+	</tr>
+	<tr>
+		<td class="boxBorder">
+			<table cellpadding=10 cellspacing=0 border=0 class=textBox>
+				<tr>
+					<td valign=TOP>
+						<a name=devis></a>
+						<font class=textEntry>Devis <webobject name="StrPrestNumero"/></font>
+						<webobject name=Conditional10>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name=SubmitButton9></webobject></webobject>
+						<table>
+							<tr>
+								<td align=RIGHT><webobject name=CktlNote1>
+										<table>
+											<tr>
+												<th colspan=2><nobr> R&eacute;f&eacute;rence</nobr></th>
+												<th><nobr> Description</nobr></th>
+												<th><nobr> Qt&eacute;</nobr></th>
+												<th><nobr> PU&nbsp;HT</nobr></th>
+												<th><nobr> Total</nobr></th>
+											</tr>
+											<webobject name=RepLigneDevis>
+												<tr>
+													<webobject name=CondNotIsDisabledDevis>
+														<td><webobject name=LnkRemoveLigneDevis>X</webobject></td>
+													</webobject>
+													<td colspan=2 align=LEFT><nobr>
+															<webobject name=StrLigneDevisItemRef></webobject>&nbsp;&nbsp;&nbsp;&nbsp;</nobr></td>
+													<td><nobr>
+															<webobject name=StrLigneDevisItemDesc></webobject>&nbsp;&nbsp;&nbsp;&nbsp;</nobr></td>
+													<td align=CENTER><webobject name=TextField1></webobject></td>
+													<td align=RIGHT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name=StrLigneDevisItemHT></webobject></td>
+													<td align=RIGHT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name=StrLigneDevisItemTotal></webobject></td>
+												</tr>
+											</webobject>
+											<webobject name=CondShowAddArticle>
+												<tr>
+													<td colspan=3 align=CENTER><webobject name=PopUpCatalogueArticleItemReference></webobject></td>
+													<td align=CENTER><webobject name=TFNbArticles></webobject></td>
+													<td align=CENTER colspan=2><webobject name=BtnAddArticle></webobject></td>
+												</tr>
+											</webobject>
+											<tr>
+												<webobject name=CondNotIsDisabledDevis><webobject name=Conditional5>
+														<td colspan=7 align=CENTER><webobject name=Hyperlink2>Ajouter un article</webobject></td>
+													</webobject></webobject>
+											</tr>
+											<tr>
+												<td colspan=7 align=CENTER><webobject name=DTFormErrorBox2>Cet article est d&eacute;ja dans le devis !</webobject><webobject name=DTFormErrorBox1>Le nombre d'articles est inccorect !</webobject>
+													<hr class=subLine>
+												</td>
+											</tr>
+											<tr>
+												<td colspan=7>&nbsp;
+													<table width=100% border=0 cellspacing=0 cellpadding=0>
+														<tr>
+															<td colspan=3 align=RIGHT><webobject name=CondNotIsDisabledDevis><webobject name=BtnEstimer></webobject>&nbsp;&nbsp;</webobject><webobject name=StrSommeTTCDevis></webobject></td>
+														</tr>
+														<webobject name=CondNotIsDisabledDevis>
+															<tr>
+																<td colspan=3><br>
+																	<br>
+																	<br>
+																</td>
+															</tr>
+															<tr>
+																<td colspan=2><webobject name=BtnApply></webobject>&nbsp;</td>
+																<td align=RIGHT><webobject name=BtnRestoreDevis></webobject></td>
+															</tr>
+														</webobject>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</webobject></td>
+							</tr>
+						</table>
+						<table border=0 cellpadding=0 cellspacing=2>
+							<tr>
+								<td>
+									<table border="0" cellpadding="0" cellspacing="1">
+										<tr>
+											<td><font class="textEntry">D&eacute;but&nbsp;:</font>&nbsp;<webobject name = "DatePickerDeb"></webobject></td>
+											<td><font class="textEntry">Fin&nbsp;:</font>&nbsp;<webobject name = "DatePickerFin"></webobject></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+						<br>
+						Commentaire&nbsp;:<br>
+						<webobject name=tfTraitement></webobject><br/>
+						<br/>
+						<font class="textEntry">Document(s) attach&eacute;(s)&nbsp;:</font><br/>
+						<webobject name="fileUpload"></webobject><br/>
+						<webobject name="chAffichable"></webobject><label for="chConsultable">Consultable</label>
+						<hr class="subLine" />
+						<div align="right">
+							<table>
+								<tr>
+									<td valign="bottom"><webobject name="BtnAnnuler"></webobject></td>
+									<td>&nbsp;&#124;&#124;&nbsp;</td>
+									<td valign="bottom">
+										<webobject name="BtnAdd"></webobject><webobject name="chEmail"></webobject><font class="textNote">E-mail</font>
+									</td>
+									<td>&nbsp;&#124;&#124;&nbsp;</td>
+									<td valign="bottom"><webobject name="BtnClose"></webobject></td>
+								</tr>
+							</table>
+						</div>
+					</td>
+					<td></td>
+					<td valign=TOP> </td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table></WEBOBJECT>

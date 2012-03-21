@@ -1,0 +1,131 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = "CODE_DONNEES"; 
+            externalType = VARCHAR2; 
+            name = codeDonnees; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "CODE_TYPE"; 
+            externalType = VARCHAR2; 
+            name = codeType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 3; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = COMMENTAIRE; 
+            externalType = VARCHAR2; 
+            name = commentaire; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_DEB"; 
+            externalType = DATE; 
+            name = dateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "DATE_FIN"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 21; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "NO_REFERENCE"; 
+            externalType = NUMBER; 
+            name = noReference; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_TYPE"; 
+            externalType = NUMBER; 
+            name = noType; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        codeDonnees, 
+        codeType, 
+        commentaire, 
+        dateDeb, 
+        dateFin, 
+        libelle, 
+        noIndividu, 
+        noReference, 
+        noType
+    ); 
+    className = "org.cocktail.dt.server.metier.EOVAgendaDt"; 
+    classProperties = (
+        codeDonnees, 
+        codeType, 
+        commentaire, 
+        dateDeb, 
+        dateFin, 
+        libelle, 
+        noIndividu, 
+        noReference, 
+        noType, 
+        tosPrefDroits
+    ); 
+    externalName = "V_AGENDA_DT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            codeDonnees, 
+            codeType, 
+            commentaire, 
+            dateDeb, 
+            dateFin, 
+            libelle, 
+            noIndividu, 
+            noReference, 
+            noType, 
+            tosPrefDroits
+        ); 
+    }; 
+    isReadOnly = Y; 
+    name = VAgendaDt; 
+    primaryKeyAttributes = (codeType, noType); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = PrefDroits; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = tosPrefDroits; 
+        }
+    ); 
+}

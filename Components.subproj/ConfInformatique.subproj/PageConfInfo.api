@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="PageConfInfo" wocomponentcontent="false">
+
+		<binding name="noIndividu"/>
+
+		<validation message="&apos;noIndividu&apos; is a required binding">
+			<unbound name="noIndividu"/>
+		</validation>
+	</wo>
+</wodefinitions>

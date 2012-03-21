@@ -1,0 +1,78 @@
+<table cellspacing = "1" cellpadding = "0" border = "0" width = "1%">
+  <tr>
+    <td valign = "TOP">
+      <table cellspacing = "1" cellpadding = "0" border = "0">
+        <tr>
+          <td>
+            <table cellspacing = "1" cellpadding = "0" border = "0">
+              <tr>
+                <td>
+                  <table class = "noteBox" cellspacing = "1" cellpadding = "0" border = "0">
+                    <tr>
+                      <th align = "CENTER" colspan = "2" nowrap style = "border:1px #CCCCCC solid; background-color:#FFFFCE">
+                        Service :
+                        <webobject name = "PopupService"></webobject>
+                        <webobject name = "BtnCreerService"></webobject>
+                        <webobject name = "BtnModifierService"></webobject>
+                        <webobject name = "BtnSupprimerService"></webobject>
+                      </th>
+                    </tr>
+                    <webobject name = "CondIsServiceSelected">
+                    <tr>
+                      <td nowrap style = "border:1px #CCCCCC solid; background-color:#FFFFEE">
+                        <webobject name = "SelectActivite1"></webobject>
+                      </td>
+                      <td width = "1%" style = "border:1px #CCCCCC solid; background-color:#FFFFEE" nowrap>
+                        <b>Gestion d'activit&eacute;s</b>
+                        <br />
+                        <webobject name = "BtnCreerActivite"/>
+                        <webobject name = "BtnModifierActivite"/>
+                        <webobject name = "BtnSupprimer"/>
+                        <webobject name = "BtnDefinirResponsables"/>
+                        <br />
+                        <br />
+                        <b>D&eacute;placements</b>
+                        <br />
+                        <webobject name = "BtnCouper"/>
+                        <webobject name = "BtnColler"/>
+                        <webobject name = "CondIsARecordToCutSelected">
+                        	<br/><span style="border: 2px solid #F00; font-weight:bold"><webobject name = "StrRecordToCut"/>
+                        	<webobject name = "LnkClearRecordToCutAndRecordToMerge"><webobject name = "ImgClearRecordToCutAndRecordToMerge"/></webobject></span>
+                        </webobject>
+                        <br />
+                        <br />
+                        <webobject name = "CondFalse">
+                        <b>Fusion</b>
+                        <br />
+                        <webobject name = "BtnSelectToMerge"/>
+                        <webobject name = "BtnMerge"/>
+                        <webobject name = "CondIsARecordToMergeSelected">
+                        	<br/><span style="border: 2px solid #F00; font-weight:bold"><webobject name = "StrRecordToMerge"/>
+                        	<webobject name = "LnkClearRecordToCutAndRecordToMerge"><webobject name = "ImgClearRecordToCutAndRecordToMerge"/></webobject></span>
+                        </webobject>
+                        <br />
+                        <br />
+                        </webobject>
+                        <b>Outils</b>
+                        <br />
+                        <webobject name = "BtnRefreshAndClearSelection"/>
+                      </td>
+                    </tr>
+										</webobject>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align = "right" colspan = "2">
+                  <webobject name = "LnkExporter"><webobject name = "ImgExporter"></webobject></webobject>
+                  &nbsp;&nbsp;
+                  <webobject name = "LnkNotifierSAM"><webobject name = "ImgSAM"></webobject></webobject>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

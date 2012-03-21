@@ -1,0 +1,53 @@
+TFTtlStop: WOTextField {
+	value = ttlStop;
+	numberformat = "0";
+	disabled = isDisabledFieldsStartProcedureStop;
+	size = "3";
+	maxLenght = "5";
+}
+
+BtnStartProcedureStop: WOSubmitButton {
+	action = startProcedureStop;
+	value = "Lancer la procedure d'arret";
+	escapeHTML = false;
+	class = "bouton";
+	disabled = isDisabledFieldsStartProcedureStop;
+}
+
+StrSessionCount: WOString {
+	value = sessionArray.count;
+}
+
+RepSession: WORepetition {
+	list = sessionArray;
+	item = sessionItem;
+}
+
+StrSessionItemId: WOString {
+	value = sessionItem.sessionID;
+}
+
+StrSessionItemLogin: WOString {
+	value = sessionItem.connectedUserInfo.login;
+}
+
+StrSessionItemIpAddress: WOString {
+	value = sessionItemIpAddress; 
+}
+
+StrSessionItemNavigator: WOString {
+	value = sessionItem.browser.browserName;
+}
+
+StrSessionItemBrowserVersion: WOString {
+	value = sessionItem.browser.version;
+}
+
+StrSessionItemBrowserPlatform: WOString {
+	value = sessionItem.browser.platform;
+}
+
+StrSessionItemBirthDate: WOString {
+	value = sessionItem.birthDate;
+	dateformat = "%d/%m/%Y %H:%M:%S";
+}

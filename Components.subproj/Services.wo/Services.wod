@@ -1,0 +1,24 @@
+CktlDefaultPage1: CktlDefaultPage {
+	pageTitle = "Services de l'application Demande de Travaux";
+	hideFooter = true;
+}
+
+CktlNote1: CktlNote {
+	padding = "10";
+}
+
+linkWSDL: WOHyperlink {
+	href = wsdlUrl;
+}
+
+servicesFooter: CktlHTMLFooter {
+	showBar = true;
+}
+
+strVersion: WOString {
+	value = application.version;
+}
+
+strWSDL: WOString {
+	value = wsdlUrl;
+}

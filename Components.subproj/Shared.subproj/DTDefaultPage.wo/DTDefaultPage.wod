@@ -1,0 +1,55 @@
+CktlDefaultPage1: CktlDefaultPage {
+	pageTitle = dtPageTitle;
+	targetPosition = ^targetPosition;
+	headerLines = ^headerLines;
+	useToolTip = ^useToolTip;
+	mailLabel = "Pour tout commentaire, contacter<br>";
+	hideFooter = false;
+}
+
+CondShowMenu: WOConditional {
+	condition = showMenu;
+}
+
+Menu1: Menu {
+}
+
+CondShowTitle: WOConditional {
+	condition = shouldShowTitle;
+}
+
+Title1: Title {
+}
+
+CondNotShowMenu: WOConditional {
+	condition = showMenu;
+	negate = true;
+}
+
+WOComponentContent1: WOComponentContent {
+}
+
+CondShowLayerMessageStop: WOConditional {
+	condition = shouldShowLayerMessageStop;
+}
+
+LayerWarnAppStop: CktlLayer {
+	text = strAppWillStopMessage;
+	title = "Message de l\'administrateur";
+}
+Indicateur : WOImage {
+  border = 0;
+  filename = "wait30.gif";
+  framework = "Ajax";
+  id="busy1";
+  height = "30px";
+  width = "30px";	    
+}
+
+Busy: AjaxBusyIndicator {
+  divID = "busy";
+}
+
+CktlAjaxUiMessageContainer : CktlAjaxUiMessageContainer {
+	id = "CktlAjaxUiMessageContainer";
+}

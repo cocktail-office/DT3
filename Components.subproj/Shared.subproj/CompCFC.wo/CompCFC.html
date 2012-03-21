@@ -1,0 +1,154 @@
+<webobject name = "CondIsFullPage">
+<webobject name="DTDefaultPage1">
+	<webobject name="siHasError">
+		<div align="CENTER">
+			<webobject name="boxErrorMessage"/>
+		</div><br/>
+	</webobject>
+	<p align="center"><font class="title">Droits de copie CFC</font></p>
+	<table border="0" width="80%" align="center">
+		<tr>
+			<td align="center">
+				<webobject name="FormCFC">
+					<webobject name="siHasSelectedContact">
+						<table cellpadding="1" cellspacing="0" border="0" width="100%" class="boxTitle">
+							<tr>
+								<td><font class="subTitleInverse">&nbsp;Publications (livre, journal, p&eacute;riodique, ...)</font></td>
+							</tr>
+							<tr>
+								<td class="boxBorder">
+									<table cellpadding="10" cellspacing="0" border="0" width="100%" class="boxContents">
+										<tr>
+											<td>
+												<table border="0" cellspacing="0" cellpadding="0" width="100%">
+													<tr>
+														<td colspan="3">
+															<table border="0" wodth="100%">
+																<tr valign="top">
+																	<td align="right"><font class="textEntry">Editeur(s)&nbsp;(*) :</font></td>
+																	<td colspan="2" align="left"><webobject name="TFCfcEditeur"/></td>
+																	<td rowspan="4" valign="top" width="1%">
+																		<webobject name="CondIsEditing">
+																			<webobject name="btEditOK"/><br/><br/>
+																			<webobject name="btEditCancel"/>
+																		</webobject>
+																		<webobject name="CondIsAdding">
+																			<webobject name="btEditOK"/><br/><br/>
+																			<webobject name="btEditCancel"/>
+																		</webobject>
+																		<webobject name="CondCanShowAddUpdateDelete">
+																		<webobject name = "CondIsConsulting">
+																			<webobject name="BtnDoAdd"/><br/><br/>
+																			<webobject name = "CondHasCfc">
+																				<webobject name="BtnDoUpdate"/><br/><br/>
+																				<webobject name="BtnDoDelete"/>
+																			</webobject>
+																		</webobject>
+																		</webobject>
+																	</td>
+																</tr>
+																<tr>
+																	<td align="right"><font class="textEntry">Auteur(s)&nbsp;:</font></td>
+																	<td colspan="2" align="left"><webobject name="TFCfcAuteur"/></td>
+																</tr>
+																<tr>
+																	<td align="right"><font class="textEntry">Titre&nbsp;(*) :</font></td>
+																	<td colspan="2" align="left"><webobject name="TFCfcTitre"/></td>
+																</tr>
+																<tr>
+																	<td colspan="3" align="left">
+																		<font class="textEntry">Nb.&nbsp;des pages A4&nbsp;(*) :&nbsp;</font>
+																		<webobject name="TFCfcPages"></webobject>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+																		<font class="textEntry">Nb.&nbsp;d'exemplaires&nbsp;(*) :</font>
+																		<webobject name="TFCfcExemplaires"/>
+																	</td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</webobject>
+					<br/>
+					<webobject name = "CktlNote1">
+					(*) Les champs marqu&eacute;s d'une &eacute;toile doivent &ecirc;tre obligatoirement renseign&eacute;s
+					</webobject>
+					<br/>
+					<webobject NAME="CondHasCfc">
+					<table width="100%" border="0" cellspacing="0" cellpadding="1" class="listboxBorder">
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="1" cellpadding="2">
+									<tr class="listboxHeader" align="center">
+										<td width="3%"><font class="textEntry">&nbsp;</font></td>
+										<td width="20%"><font class="textEntry">Editeurs(s) (*)</font></td>
+										<td width="20%"><font class="textEntry">Auteur(s) (* pour les livres)</font></td>
+										<td width="40%"><font class="textEntry">Titre (*)</font></td>
+										<td width="10%"><font class="textEntry">Pages (*)</font></td>
+										<td width="10%"><font class="textEntry">Exemplaires (*)</font></td>
+									</tr>
+									<webobject name="RepCfcList">
+									<webobject name="TrCfcItem">
+										<td><webobject name="siListCfcSelected"><b>&raquo;</b></webobject></td>
+										<td align="left"><webobject name="LnkSelectCfc"><webobject name="strListEditeur"/></webobject></td>
+										<td align="left"><webobject name="LnkSelectCfc"><webobject name="strListAuteur"/></webobject></td>
+										<td align="left"><webobject name="LnkSelectCfc"><webobject name="strListTitre"/></webobject></td>
+										<td><webobject name="LnkSelectCfc"><webobject name="strListPages"/></webobject></td>
+										<td><webobject name="LnkSelectCfc"><webobject name="strListExemplaires"/></webobject></td>
+									</webobject>
+									</webobject>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</webobject>
+					<br/><br/>
+					<webobject name="BtnGoBack"/>
+				</webobject>
+			</td>
+		</tr>
+		<tr><td><br><br></td></tr>
+	</table>
+</webobject>
+</webobject>
+
+
+
+<webobject name = "CondNotIsFullPage">
+<table width="100%" border="0" cellspacing="0" cellpadding="1" class="listboxBorder">
+	<tr>
+		<td>
+			<table width="100%" border="0" cellspacing="1" cellpadding="2">
+				<tr class="listboxHeader" align="center">
+					<td width="29%"><font class="textEntry">Editeur(s)</font></td>
+					<td width="29%"><font class="textEntry">Auteur(s) (obligatoire pour les livres)</font></td>
+					<td width="40%"><font class="textEntry">Titre (livre, journal ou p&eacute;riodique)</font></td>
+					<td width="1%" nowrap><font class="textEntry">Pages</font></td>
+					<td width="1%" nowrap><font class="textEntry">Exemplaires</font></td>
+					<td width="1%">&nbsp;</td>
+				</tr>
+				<webobject name="RepCfcList">
+				<webobject name="TrCfcItem">
+					<td align="left"><webobject name="TFEditeur"/><webobject name = "FormErrorEditeur">L'&eacute;diteur est obligatoire</webobject></td>
+					<td align="left"><webobject name="TFAuteur"/></td>
+					<td align="left"><webobject name="TFTitre"/><webobject name = "FormErrorTitre">Le titre est obligatoire</webobject></td>
+					<td><webobject name="TFPages"/><webobject name = "FormErrorNbPages">Le nombre de pages est obligatoire</webobject></td>
+					<td><webobject name="TFExemplaires"/><webobject name = "FormErrorNbExemplaires">Le nombre d'exemplaires est obligatoire</webobject></td>
+					<td><webobject name="BtnDoDelete"/></td>
+				</webobject>
+				</webobject>
+				<tr class="listboxLine">
+					<th colspan="6">
+						<webobject name = "BtnDoAddComponent"/>
+					</th>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+</webobject>

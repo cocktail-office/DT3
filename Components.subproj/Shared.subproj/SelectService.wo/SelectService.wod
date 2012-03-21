@@ -1,0 +1,31 @@
+Browser1: WOBrowser {
+	multiple = "false";
+	item = serviceItem;
+	list = servicesListe;
+	displayString = serviceItem.llStructure;//VALID
+	selections = servicesSelected;
+}
+
+Form2: WOForm {
+	multipleSubmit = true;
+}
+
+SubmitButton2: WOSubmitButton {
+	action = selectService;
+	value = "Sélectionner";
+        class = "bouton";
+}
+
+SubmitButton3: WOSubmitButton {
+	action = annuler;
+	value = "Annuler";
+        class = "bouton";
+}
+
+mainPage: DTDefaultPage {
+	useDatePicker = false;
+}
+
+strUserName: WOString {
+	value = nomIndividu;
+}

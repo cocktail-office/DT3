@@ -1,0 +1,175 @@
+ChkShowInterventionMasquee:  WOCheckBox {
+	checked = showInterventionMasquee;
+	onClick = "this.form.submit();";
+}
+
+CompListeDemande1: CompListeDemande {
+	listener = listener;
+}
+
+CondShowBtnNouvelleRecherche: WOConditional {
+	condition = showBtnNouvelleRecherche;
+}
+
+CondShowRadioIntDemandeur: WOConditional {
+	condition = showRadioIntDemandeur;
+}
+
+CondShowServiceList: WOConditional {
+	condition = showServiceList;
+}
+
+
+CondUseInterventionMasquee: WOConditional {
+	condition = listener.useInterventionMasquee;
+}
+
+isAutoRefresh: WOConditional {
+	condition = isAutoRefresh;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+  	name = "formeRecherche";
+}
+
+JavaScriptAutoRefresh: WOJavaScript {
+	scriptString = codeJavascriptAutoRefresh;
+}
+
+LnkAfficheImprimer: WOHyperlink {
+  title = "Affiche l'&eacute;cran d'impression des demandes de travaux";
+  action = afficherImpression;
+  class = "linkPage";
+	target = "_new";
+	onClick = "javascript:ouvrirPopup(this.href,400, 800);return false;";
+	escapeHTML = false;
+}
+
+PopUpServiceDst: WOPopUpButton {
+	displayString = serviceItem.lcStructure;
+	item = serviceItem;
+	list = serviceList;
+	onChange = "this.form.submit();";
+	selection = serviceSelected;
+}
+
+CondShowPeriodeList: WOConditional {
+	condition = showPeriodeList;
+}
+
+PopUpPeriode: WOPopUpButton {
+	list = periodList;
+	selection = periodSelected;
+	title = "Clause sur la date de cr&eacute;ation des DTs";
+	displayString = periodItem;
+	item = periodItem;
+	onChange = "this.form.submit();";
+	escapeHTML = false;
+}
+
+PopUpEtat: WOPopUpButton {
+	list = etatsLibelles;
+	selection = etatSelectedLibelle;
+	title = "L'&eacute;tat actuel des DT recherch&eacute;es";
+	displayString = etatLibelleItem;
+	item = etatLibelleItem;
+	onChange = "this.form.submit();";
+	escapeHTML = false;
+}
+
+RadioModeDemandeur: WORadioButton {
+	name = "userMode";
+	selection = modeUtilisateur;
+	value = USER_DEMANDEUR;
+	onClick = "this.form.submit();";
+}
+
+RadioModeIntervenant: WORadioButton {
+	name = "userMode";
+	selection = modeUtilisateur;
+	value = USER_INTERVENANT;
+	onClick = "this.form.submit();";
+}
+
+BtnDoNothing: WOSubmitButton {
+	action = doNothing;
+	value = "BOUTON CACHE (btnDoNothing)";
+	style = "visibility:hidden;display:none";
+	name = "btnDoNothing";
+}
+
+BtnNouvelleRecherche: WOSubmitButton {
+	action = nouvelleRecherche;
+	value = "RAZ filtres";
+    class = "bouton";
+    title = "Res&eacute;lectioner les &eacute;l&eacute;ments d'apr&egrave;s vos pr&eacute;f&eacute;rences utilisateurs par d&eacute;faut";
+	escapeHTML = false;
+}
+
+BtnDoAutoRefresh: WOSubmitButton {
+	action = doAutoRefresh;
+	value = "BOUTON CACHE (btnAutoRefresh)";
+	style = "visibility:hidden;display:none";
+	name = "btnAutoRefresh";
+}
+
+dtExitLink: DTExitLink {
+	forceSSOLogout = false;
+	linkText = "Quitter";
+	linkToolTip = "Terminer la session de travail avec l'application";
+	target = "_top";
+}
+
+exitLinkBox: CktlNote {
+  padding = "2";
+}
+
+ImgImprimer: WOImage {
+	filename = "img/Imprimer.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+   	height = "22px";
+	width = "22px";	    
+}
+
+PageConsultation: DTDefaultPage {
+	useToolTip = true;
+	shouldShowMenu = true;
+}
+
+siAccessModeLogin: WOConditional {
+	condition = isEnableSearch;
+}
+
+siDAMode: WOConditional {
+	condition = isDirectActionMode;
+}
+
+CondShowChkSurcout: WOConditional {
+	condition = showChkSurcout;
+}
+
+ChkSurcout: WOCheckBox {
+	checked = showDtSurcoutRefuse;
+	onClick = "this.form.submit();";
+}
+
+TemSurcoutNonSigne: TemSurcoutNonSigne {
+	
+}
+
+CondShowChkRemplacementNonRestitute: WOConditional {
+	condition = showChkRemplacementNonRestitute;
+}
+
+ChkShowDtRemplacementNonRestitue: WOCheckBox {
+	checked = showDtRemplacementNonRestitue;
+	onClick = "this.form.submit();";
+}
+
+TemRemplacementNonRestitue: TemRemplacementNonRestitue {
+	
+}

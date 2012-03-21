@@ -1,0 +1,151 @@
+TFNomPrenomEtudiant: WOTextField {
+	maxlength = 100;
+	size = 30;
+	value = eoIndividuEtudiant.nomEtPrenom;
+	disabled = true;
+}
+
+BtnChangeEtudiant: WOSubmitButton {
+	action = changeEtudiant;
+	class = "bouton";
+	value = "Sélectionner ...";
+}
+
+FormErrorEtudiantVide: DTFormErrorBox {
+	showError = errorEtudiantVide;
+}
+
+DPDebutContrat: CktlAjaxDatePicker {
+	dateValue = dateDebutContrat;
+}
+
+FormErrorDateDebutContratVide: DTFormErrorBox {
+	showError = errorDateDebutContratVide;
+}
+
+FromErrorDateDebutFinContrat: DTFormErrorBox {
+	showError = errorDateDebutFinContrat;
+}
+
+DPFinContrat: CktlAjaxDatePicker {
+	dateValue = dateFinContrat;
+}
+
+FormErrorDateFinContratVide: DTFormErrorBox {
+	showError = errorDateFinContratVide;
+}
+
+strLigneBud: WOString {
+	value = ligneBudDescription;
+	escapeHTML = false;
+}
+
+siLigneBudSelected: WOConditional {
+	condition = isLigneBudSelected;
+}
+
+btClearLigneBud: WOSubmitButton {
+	action = clearLigneBud;
+	class = "bouton";
+	title = "Annuler la s&eacute;lection de la ligne budg&eacute;taire";
+	value = "X";
+}
+
+siCanSelectLigneBud: WOConditional {
+	condition = canSelectLigneBud;
+}
+
+btLigneBud: WOSubmitButton {
+	class = "bouton";
+	title = "Choisir une ligne budg&eacute;taire";
+	value = "Choisir...";
+	action = selectLigneBud;
+}
+
+formErrorLbud: DTFormErrorBox {
+	showError = errorLBud;
+}
+
+TFNombreMaxiVacationEstimePourPeriode: WOTextField {
+	value = nombreMaxiVacationEstimePourPeriode;
+	numberformat = "0";
+	size = "4";
+}
+
+FromErrorNombreMaxiVacationEstimePourPeriodeVide: DTFormErrorBox {
+	showError = errorNombreMaxiVacationEstimePourPeriodeVide;
+}
+
+TFLieuxExecutionDuTravail: ERXWOTextField {
+	value = lieuxExecutionDuTravail;
+}
+
+FormErrorLieuxExecutionDuTravailVide: DTFormErrorBox {
+	showError = errorLieuxExecutionDuTravailVide;
+}
+
+ChkListRecrutementActivite : WOCheckBoxList {
+	list = recrutementActiviteList;
+	selections = recrutementActiviteSelecteds;
+	suffix = "<br>";
+}
+
+FormErrorRecrutementActiviteSelectedsVide: DTFormErrorBox {
+	showError = errorRecrutementActiviteSelectedsVide;
+}
+
+TextComplement: WOText {
+	value = complement;
+	class = "dtTextareaIntMotif";
+}
+
+TFNomPrenomResponsableRecrutement: WOTextField {
+	maxlength = 100;
+	size = 30;
+	value = eoIndividuResponsableRecrutement.nomEtPrenom;
+	disabled = true;
+}
+
+BtnChangeResponsableRecrutement: WOSubmitButton {
+	action = changeResponsableRecrutement;
+	class = "bouton";
+	value = "Autre responsable ...";
+}
+
+FormErrorResponsableRecrutementVide: DTFormErrorBox {
+	showError = errorResponsableRecrutementVide;
+}
+
+PopUpDirecteur: WOPopUpButton {
+	list = directeurList;
+	item = directeurItem;
+	selection = directeurSelected;
+	displayString = directeurItem.nomEtPrenom;
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrerDT: WOSubmitButton {
+	value = "Enregistrer";
+	action = validerDemande;
+    class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}
+
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}

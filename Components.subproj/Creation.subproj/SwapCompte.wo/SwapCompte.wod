@@ -1,0 +1,165 @@
+Form1: WOForm {
+	multipleSubmit = true;
+}
+
+ComboTypeCompte: WOPopUpButton {
+	item = typeCompteItem;
+	list = typeCompteListe;
+	selection = typeCompteSelectedItem;
+	escapeHTML = false;
+}
+
+TFNomPersonne: WOTextField {
+	value = nomPersonne;
+	maxlength = "80";
+	size = "20";
+}
+
+formErrorNom: DTFormErrorBox {
+	showError = errorNom;
+}
+
+TFPrenomPersonne: WOTextField {
+	value = prenomPersonne;
+	maxlength = 30;
+	size = 20;
+}
+
+formErrorPrenom: DTFormErrorBox {
+	showError = errorPrenom;
+}
+
+RadioContractuel: WORadioButton {
+	name = "typeTypeContrat";
+	selection = typeTypeContrat;
+	value = "C";
+}
+
+ComboTypeContrat: WOPopUpButton {
+	noSelectionString = "--- contractuel ---";
+	list = contratTravailListe;
+	item = contratTravailItem;
+	selection = contratTravailSelectedItem;
+	displayString = contratTravailItem.lcTypeContratTrav;//VALID
+}
+
+FormErrorTypeContrat: DTFormErrorBox {
+	showError = errorTypeContratEmpty;
+}
+
+TFDureeContrat: WOTextField {
+	value = dureContrat;
+	maxlength = 3;
+	size = 3;
+}
+
+formErrorDuree: DTFormErrorBox {
+	showError = errorDuree;
+}
+
+RadioTitulaire: WORadioButton {
+	name = "typeTypeContrat";
+	selection = typeTypeContrat;
+	value = "T";
+	title = "Si la personne est titulaire, cliquez ici et choisisez dans la liste";
+}
+
+ComboCategorieEmploi: WOPopUpButton {
+	noSelectionString = "--- titulaire ---";
+	list = catEmploiListe;
+	displayString = catEmploiItem.lcCategorieEmploi;//VALID
+	item = catEmploiItem;
+	selection = catEmploiSelectedItem;
+}
+
+FormErrorTypeEmploi: DTFormErrorBox {
+	showError = errorTypeEmploiEmpty;
+}
+
+RadioAutre: WORadioButton {
+	name = "typeTypeContrat";
+	selection = typeTypeContrat;
+	value = "A";
+}
+
+ComboTypeAutre: WOPopUpButton {
+	noSelectionString = "--- autre ---";
+	list = typeAutreList;
+	item = typeAutreItem;
+	selection = typeAutreSelectedItem;
+	name = "ComboTypeAutre";
+	id = "ComboTypeAutre";
+	onChange = "ShowHideDatesStage()";
+}
+
+FormErrorTypeAutre: DTFormErrorBox {
+	showError = errorTypeAutreEmpty;
+}
+
+CktlDatePickerDateDebutStage: CktlAjaxDatePicker {
+	dateValue = dateDebutStage;
+}
+
+CktlDatePickerDateFinStage: CktlAjaxDatePicker {
+	dateValue = dateFinStage;
+}
+
+
+formErrorDateStage: DTFormErrorBox {
+	showError = errorDateStage;
+}
+
+formErrorDateStageEmpty: DTFormErrorBox {
+	showError = errorDateStageEmpty;
+}
+
+ComboService: WOPopUpButton {
+	noSelectionString = "--- service de l'etablissement ---";
+	list = serviceListe;
+	item = serviceItem;
+	displayString = serviceItem.nomCourt;
+	selection = serviceSelectedItem;
+}
+
+FormErrorService: DTFormErrorBox {
+	showError = errorServiceVide;
+}
+
+ComboBatiment: WOPopUpButton {
+	noSelectionString = "--- batiment ---";
+	list = batimentListe;
+	item = batimentItem;
+	displayString = batimentItem.appellation;//VALID
+	selection = batimentSelectedItem;
+}
+
+FormErrorBatiment: DTFormErrorBox {
+	showError = errorBatimentVide;
+}
+
+TFTelephone: WOTextField {
+	value = telephone;
+	maxlength = 15;
+	size = 15;
+}
+
+TextRemarques: WOText {
+	cols = 70;
+	rows = 4;
+	value = remarques;
+ 	class = "dtTextareaIntMotif";
+}
+
+btEnregistrerDT: WOSubmitButton {
+	value = "Enregistrer";
+	action = validerDemande;
+        class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}

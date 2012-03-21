@@ -1,0 +1,57 @@
+PopUpEquipe: WOPopUpButton {
+	list = equipeArray;
+	item = equipeItem;
+	selection = equipeSelected;
+	noSelectionString = "-- choix --";
+}
+
+StrQuestionGeomatique: WOString {
+	value = questionGeomatique;
+}
+
+RadioReponseOui: WORadioButton {
+	selection = reponseSelected;
+	value = OUI;
+	name = "RadioReponse";
+}
+
+RadioReponseNon: WORadioButton {
+	selection = reponseSelected;
+	value = NON;
+	name = "RadioReponse";
+}
+
+TextMotif: WOText {
+	value = intMotif;
+	class = "dtTextareaIntMotif";
+}
+
+fileUpload: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;
+	resetFilePaths = clearFilePaths;
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrerDT: WOSubmitButton {
+	value = "Enregistrer";
+	action = validerDemande;
+    class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}
+
+FormErrReponse: DTFormErrorBox {
+	showError = errReponseVide;	
+}
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}

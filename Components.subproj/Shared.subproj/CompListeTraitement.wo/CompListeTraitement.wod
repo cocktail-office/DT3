@@ -1,0 +1,239 @@
+//
+
+CondShowListTraitement: WOConditional {
+	condition = showListTraitement;
+}
+
+RepTraitement: WORepetition {
+	list = traitementDg.displayedObjects;
+	item = traitementItem;
+}
+
+// affichage 
+
+AnchorTraitement: WOHyperlink {
+	name = traitementItemAnchor;	
+	href = "#";
+}
+
+StrDate: WOString {
+	value = traitementItemDateDisplay;
+}
+
+CondHasTraitementItemAttachments: WOConditional {
+	condition = hasTraitementItemAttachments;
+}
+
+CondNotHasTraitementItemAttachments: WOConditional {
+	condition = hasTraitementItemAttachments;
+	negate = true;
+}
+
+StrTotalAttachments: WOString {
+	value = traitementItemTotalAttachments;
+}
+
+StrIntervenant: WOString {
+	value = traitementItemIntervenantDisplay;
+}
+
+CondIsPublic: WOConditional {
+	condition = traitementItem.isPublic;
+}
+
+CondNotIsPublic: WOConditional {
+	condition = traitementItem.isPublic;
+	negate = true;
+}
+
+StrTraitement: WOString {
+	value = traitementItemTraitementDisplay;
+	escapeHTML = true;
+}
+
+TipTraitement: CktlToolTip {
+	htmlText = toolTipHtmlTraitement;
+}
+
+// DT Detaillee
+
+CondShowDetailTraitement: WOConditional {
+	condition = showDetailTraitement;	
+}
+
+CondNotShowLnkCloseDetail: WOConditional {
+	condition = showLnkCloseDetail;	
+	negate = true;
+}
+
+// images
+
+ImgDelete: WOImage {
+	border = 0;
+	class = "imgLink";
+	filename = "img/SmallError.png";
+	framework = "app";
+	hspace = "2";
+}
+
+ImgUpdate: WOImage {
+	border = 0;
+	class = "imgLink";
+	filename = "img/ModifierTraitement.png";
+	framework = "app";
+	hspace = "2";
+}
+
+ImgDetail: WOImage {
+	border = 0;
+	class = "imgLink";
+	filename = "img/Details.png";
+	framework = "app";
+	hspace = "2";
+}
+
+ImgRemDetail: WOImage {
+	border = 0;
+	class = "imgLink";
+	filename = "img/Masquer.png";
+	framework = "app";
+	hspace = "2";
+   	height = "22px";
+	width = "22px";	    
+}
+
+ImgFichierAttache: WOImage {
+	border = 0;
+	filename = "img/Fichier16.png";
+	framework = "app";
+	hspace = "2";
+	height = "16px";
+	width = "16px";
+	
+}
+
+// actions
+
+CondShowLnkDeleteTraitement: WOConditional {
+	condition = showLnkDeleteTraitement;
+}
+
+CondNotShowLnkDeleteTraitement: WOConditional {
+	condition = showLnkDeleteTraitement;
+	negate = true;
+}
+
+LnkDelTraitement: WOHyperlink {
+	action = deleteTraitement;
+  	title = "Supprimer ce traitement";
+  	class = "linkPage";	
+}
+
+LnkUpdTraitement: WOHyperlink {
+	action = updateTraitement;
+  	title = "Modifier ce traitement";
+  	class = "linkPage";	
+}
+
+LnkDetailTraitement: WOHyperlink {
+	action = addDetailTraitement;
+	title = "Detailler ce traitement";
+	class = "linkPage";
+}
+
+LnkRemDetailraitement: WOHyperlink {
+	action = hideDetailTraitement;
+	title = "Masquer le detail de ce traitement / annuler les modifications";
+	class = "linkPage";
+}
+
+CondShowLnkCloseDetail: WOConditional {
+	condition = showLnkCloseDetail;
+}
+
+// ajout-edition d'un traitement
+
+CondShowColumnUpd: WOConditional {
+	condition = showColumnUpd;
+}
+
+CondShowLnkUpdateTraitement: WOConditional {
+	condition = showLnkUpdateTraitement;
+}
+
+CondNotShowLnkUpdateTraitement: WOConditional {
+	condition = showLnkUpdateTraitement;
+	negate = true;
+}
+
+FormTraitementIntervention: WOForm {
+	name = "FormAddTraitementIntervention";
+	multipleSubmit = true;
+	enctype = "multipart/form-data";
+}
+
+CondShowPanelAdd: WOConditional {
+	condition = showPanelAdd;
+}
+
+CondShowPanelUpd: WOConditional {
+	condition = showPanelUpd;
+}
+
+CondIsTraitementPrestation: WOConditional {
+	condition = isTraitementPrestation;
+}
+
+CondNotIsTraitementPrestation: WOConditional {
+	condition = isTraitementPrestation;
+	negate = true;
+}
+
+TraitementIntervention1: TraitementIntervention {
+	traitementListener = traitementListener;
+}
+
+TraitementPrestation1: TraitementPrestation {
+	traitementListener = traitementListener;
+}
+
+// traitement detaille
+
+TraitementFileUpload: DTFileUpload {
+	ctrl = traitementItemFileUploadCtrl;
+}
+
+StrTraitementDetail: WOString {
+	escapeHTML = false;
+	value = traitementItemTraitementDetailDisplay;
+}
+
+ImgTraitementTypeTraitementItem: ImgTraitementType { 
+
+	eoTraitement = traitementItem;
+}
+
+
+// totaux
+
+StrTotalTimeTraitement: WOString {
+	value = totalTimeTraitement;
+}
+
+
+// filtres
+
+FormChangeIntervenant: WOForm {
+	name = "FormChangeIntervenant";
+	action = doFiltrerTraitementDgParIntervenant;
+}
+
+PopUpIntervenant: WOPopUpButton {
+	list = ctrl.intervenantList;
+	item = intervenantItem;
+	selection = intervenantSelected;
+	displayString = intervenantItemDisplay;
+	noSelectionString = "-- Intervenant --";
+	onChange = "FormChangeIntervenant.submit();";
+	title = "Liste des intervenants ayant saisi au moins 1 traitement sur la DT - selectionnez pour filtrer";
+}

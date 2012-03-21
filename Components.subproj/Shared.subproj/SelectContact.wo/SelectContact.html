@@ -1,0 +1,189 @@
+<WEBOBJECT NAME="pageContact">
+
+<p align="center" class="title">Contacts&nbsp;:&nbsp;<WEBOBJECT NAME="strNomIndividu"/></p>
+
+<WEBOBJECT NAME="siHasError">
+	<DIV ALIGN=CENTER><WEBOBJECT NAME="boxErrorMessage"/></DIV><BR>
+</WEBOBJECT>
+
+<table border="0" width="80%" align="center"><tr><td>
+
+<WEBOBJECT NAME="formContact">
+
+<WEBOBJECT NAME= "siHasSelectedContact">
+<table cellpadding="1" cellspacing="0" border="0" width="100%" class="boxTitle">
+	<tr>
+		<td><font class="subTitleInverse">&nbsp;<WEBOBJECT NAME=strTitreEdition></WEBOBJECT></font></td>
+	</tr>
+	<tr>
+		<td class="boxBorder">
+			<table cellpadding="10" cellspacing="0" border="0" width="100%" class="boxContents">
+				<tr>
+					<td>
+						<table border="0" cellspacing="0" cellpadding="0" width="100%">
+							<tr>
+								
+								
+								<!-- Etablissement et service -->
+								<td colspan="3">
+									<table border="0" wodth="100%">
+										<tr valign="top">
+											<td>
+												<font class="textEntry">Etablissement&nbsp;:</font><br/>
+												<WEBOBJECT NAME="siNetExterneEditingYES"><WEBOBJECT NAME="tfEtablissement"/></WEBOBJECT>
+												<WEBOBJECT NAME="siNetExterneEditingNO"><WEBOBJECT NAME="strCtEtablissement"/></WEBOBJECT>
+												<WEBOBJECT NAME="formErrorEtab">L'etablissement doit &ecirc;tre indiqu&eacute;&nbsp;!</WEBOBJECT>
+											</td>
+											<td>&nbsp;&nbsp;</td>
+											<td>
+												<font class="textEntry">Service&nbsp;:</font><br>
+												<WEBOBJECT NAME="siNetLocalEditingYES">
+													<WEBOBJECT NAME="popServices"/><br/><WEBOBJECT NAME="chTousServices"/>Afficher tous les services
+												</WEBOBJECT>
+												<WEBOBJECT NAME="siNetLocalEditingNO"><WEBOBJECT NAME="strCtService"/></WEBOBJECT>
+												<WEBOBJECT NAME="formErrorService">Le service doit &ecirc;tre indiqu&eacute;&nbsp;!</WEBOBJECT>
+											</td>
+										</tr>
+									</table>
+									<hr class="subLine"/>
+								</td>
+								
+								<!-- bouton d'ajout / modification / suppression de contact / enregistrement / annulation -->
+								<td width="1%" align="right">
+									<webobject NAME="siShowToolBar">
+										<WEBOBJECT NAME="siShowAddUpdateDelete">
+											<WEBOBJECT NAME="LnkAjouter"><webobject name = "ImgAddContact"/></webobject><br/>
+											<WEBOBJECT NAME="LnkModifier"><webobject name = "ImgUpdateContact"/></webobject><br/>
+											<WEBOBJECT NAME="LnkSupprimer"><webobject name = "ImgDeleteContact"/></webobject>
+										</WEBOBJECT>
+									</WEBOBJECT>
+									
+									<WEBOBJECT NAME="siEditingYES">
+										<WEBOBJECT NAME="BtnEditOK"/><br/>
+										<WEBOBJECT NAME="LnkEditCancel"><webobject name = "ImgCancelContact"/></WEBOBJECT>
+									</WEBOBJECT>
+							
+								</td>
+								
+							</tr>
+							
+							
+							<tr>
+								<td>
+
+									<!-- Pole, batiment, bureau et telephone -->
+									<table border="0" width="100%">
+										<tr valign="top">
+											<webobject name = "CondShowPole">
+											<td>
+												<font class="textEntry">P&ocirc;le&nbsp;:</font><br/>
+												<WEBOBJECT NAME="siNetLocalEditingYES"><WEBOBJECT NAME="popPole"/></WEBOBJECT>
+												<WEBOBJECT NAME="siNetLocalEditingNO"><WEBOBJECT NAME="strCtPole"/></WEBOBJECT>
+												<WEBOBJECT NAME="formErrorBatiment">Le p&acirc;le doit &ecirc;tre indiqu&eacute;&nbsp;!</WEBOBJECT>
+											</td>
+											<td>&nbsp;&nbsp;</td>
+											</webobject>
+											<td>
+												<font class="textEntry">B&acirc;timent&nbsp;:</font><br/>
+												<WEBOBJECT NAME="siNetLocalEditingYES">
+													<WEBOBJECT NAME="popBatiment"/><BR><WEBOBJECT NAME="chTousBatiments"/>Afficher tous les b&acirc;timents
+												</WEBOBJECT>
+												<WEBOBJECT NAME="siNetLocalEditingNO"><WEBOBJECT NAME="strCtBatiment"/></WEBOBJECT>
+												<WEBOBJECT NAME="formErrorBatiment">Le b&acirc;timent doit &ecirc;tre indiqu&eacute;&nbsp;!</WEBOBJECT>
+											</td>
+											<td>&nbsp;&nbsp;</td>
+											<td>
+												<font class="textEntry">Bureau&nbsp;:</font><br/>
+												<WEBOBJECT NAME="siNetLocalEditingYES"><WEBOBJECT NAME="popBureau"/></WEBOBJECT>
+												<WEBOBJECT NAME="siNetLocalEditingNO"><WEBOBJECT NAME="strCtBureau"/></WEBOBJECT>
+											</td>
+											<td>&nbsp;&nbsp;</td>
+											<td>
+												<font class="textEntry">T&eacute;l&eacute;phone&nbsp;:</font><br/>
+												<WEBOBJECT NAME="siEditingYES"><WEBOBJECT NAME="tfTelephone"/></WEBOBJECT>
+												<WEBOBJECT NAME="siEditingNO"><WEBOBJECT NAME="strCtTelephone"/></WEBOBJECT>
+												<WEBOBJECT NAME="formErrorTelephone">Le num&eacute;ro de t&eacute;l&eacute;phone doit &ecirc;tre indiqu&eacute;&nbsp;!</WEBOBJECT>
+											</td>
+										</tr>
+									</table>
+								
+								</td>
+								
+								<td rowspan="2">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+								
+								<td align="right" valign="bottom" rowspan="2" style="border: 5px solid red">
+
+
+								</td>
+
+							</tr>
+							
+							<tr>
+								<td>
+									<hr class="subLine">
+									<font class="textEntry">Email&nbsp;:</font> <WEBOBJECT NAME="strCtEmail"/>
+								</td>
+							</tr>
+					
+					
+						</table>
+						
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<br/>
+</WEBOBJECT>
+
+<WEBOBJECT NAME="siShowToolBar">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tr>
+		<th>
+			Choisir le contact ci-dessus ?
+			<WEBOBJECT NAME="siShowSelect">
+				<WEBOBJECT NAME="LnkSelect"><webobject name = "ImgValidateContact"/></webobject>&nbsp;&nbsp;
+			</WEBOBJECT>
+			<WEBOBJECT NAME="LnkAnnu"><webobject name = "ImgCancelContact"/></WEBOBJECT>
+		</th>
+	</tr>
+</table>
+<br/>
+<br/>
+</WEBOBJECT>
+
+<table width="100%" border=0 cellspacing=0 cellpadding=1 class="listboxBorder">
+<tr><td>
+<table width="100%" border=0 cellspacing=1 cellpadding=2>
+<tr class="listboxHeader" align="center">
+<td WIDTH=3%><font class="textEntry">&nbsp;</FONT></td>
+<td WIDTH=30%><FONT class="textEntry">Service/Etablissement</FONT></td>
+<td WIDTH=30%><FONT class="textEntry">B&acirc;timent</FONT></td>
+<td WIDTH=17%><FONT class="textEntry">T&eacute;l&eacute;phone</FONT></td>
+<td WIDTH=20%><FONT class="textEntry">Email</FONT></td>
+</tr>
+<WEBOBJECT NAME=repetContactList>
+<WEBOBJECT NAME=siHasContactsYES>
+<tr class="listboxLine" align="center">
+<td><WEBOBJECT NAME=siListContactSelected><b>&raquo;</b></WEBOBJECT></td>
+<td><WEBOBJECT NAME=linkSelectContact><WEBOBJECT NAME=strListService></WEBOBJECT></WEBOBJECT></td>
+<td><WEBOBJECT NAME=linkSelectContact><WEBOBJECT NAME=strBatiment></WEBOBJECT></WEBOBJECT></td>
+<td><WEBOBJECT NAME=linkSelectContact><WEBOBJECT NAME=strListTelephone></WEBOBJECT></WEBOBJECT></td>
+<td><WEBOBJECT NAME=linkSelectContact><WEBOBJECT NAME=strListEmail></WEBOBJECT></WEBOBJECT></td>
+</tr>
+</WEBOBJECT>
+<WEBOBJECT NAME=siHasContactsNO>
+<tr class="listboxLine"><td align="center" colspan="5">
+<font class="dtFormErrorText">La liste des contacts est vide&nbsp;!</font>
+</td></tr>
+</WEBOBJECT>
+</WEBOBJECT>
+</table>
+</td></tr></table>
+
+</WEBOBJECT>
+</td></tr></table>
+
+</WEBOBJECT>

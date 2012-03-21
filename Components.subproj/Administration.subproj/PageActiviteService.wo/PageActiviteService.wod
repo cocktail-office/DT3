@@ -1,0 +1,121 @@
+BrwsServices: WOBrowser {
+	displayString = serviceDisplay;
+	item = serviceItem;
+	list = serviceList;
+	multiple = false;
+	selections = serviceSelecteds;
+	size = 5;
+	style = "font-family: monospace;";
+	escapeHTML = "false";
+	disabled = isDisabledBrwsServices;
+}
+
+BtnAnnuler: WOSubmitButton {
+	action = annuler;
+	class = "bouton";
+	value = "Annuler";
+	title = "Annuler toutes les modifications"; 
+}
+
+BtnOK: WOSubmitButton {
+	action = ok;
+	class = "bouton";
+	value = "OK";
+	title = "Enregistrer / Appliquer modifications";
+}
+
+CheckAfficherListe: WOCheckBox {
+	checked = isAfficherDansLaListe;
+}
+
+CheckBoxListVlans: WOCheckBoxList {
+	displayString = vlanItem.llVlan;//VALID
+	item = vlanItem;
+	list = vlanList;
+	suffix = "<br/>";
+	selections = vlanSelecteds;
+}
+
+ComboSwap: WOPopUpButton {
+	item = swapItem;
+	list = swapList;
+	selection = swapSelected;
+}
+
+CondHasErrorMessage: WOConditional {
+	condition = hasErrorMessage;
+}
+
+DTErrorBox1: DTErrorBox {
+	message = errorMessage;
+}
+
+FormCreationService: WOForm {
+	multipleSubmit = true;
+}
+
+PageActiviteService: DTDefaultPage {
+	pageTitle = "Creation d'un nouveau service DT";
+}
+
+TextFieldEmail: WOTextField {
+	value = emailService;
+	maxlength = "256";
+}
+
+TextFieldEmailServiceSam: WOTextField {
+	value = emailServiceSam;
+	maxlength = "256";
+}
+
+TextFieldNbLignesBrowserActivites: WOTextField {
+	value = nbLignesBrowserActivites;
+	numberformat = "0";
+	size = "2";
+	maxlength = "2";
+}
+
+TextFieldPosition: WOTextField {
+	value = positionDansLaListe;
+	numberformat = "0";
+	size = "2";
+	maxlength = "2";
+}
+
+CondStructureListCount: WOConditional {
+	condition = structureList.count;
+}
+
+RepStructure: WORepetition {
+	list = structureList;
+	item = structureItem;
+}
+
+StrStructureItem: WOString {
+	value = structureVisibiliteDisplay;
+	escapeHTML = false;
+}
+
+LnkDeleteStructureVisibilite: WOHyperlink {
+	action = supprimerStructureVisibilite;
+	title = "Supprimer le droit de visibilite a cette structure";
+}
+
+ImgDelete: WOImage {
+	border = 0;
+	class = "imgLink";
+	filename = "img/SmallError.png";
+	framework = "app";
+	hspace = "2";
+}
+
+CondNotStructureListCount: WOConditional {
+	condition = structureList.count;
+	negate = true;
+}
+
+LnkAddStructureVisibilite: WOHyperlink {
+	action = ajouterStructureVisibilite;
+	string = "Ajouter";
+	title = "Ajouter un droit de visibilite a une structure";
+}

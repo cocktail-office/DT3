@@ -1,0 +1,74 @@
+btAnnuler: WOSubmitButton {
+	escapeHTML = false;
+	action = annuler;
+	class = "bouton";
+	title = "Annuler la s&eacute;lection d'une ligne budg&eacute;taire";
+	value = "Annuler";
+}
+
+btSelect: WOSubmitButton {
+	escapeHTML = false;
+	action = select;
+	class = "bouton";
+	title = "S&eacute;lectionner la ligne budg&eacute;taire";
+	value = "Sélectionner";
+	disabled = hasNoTypeCredit;
+}
+
+condTypeCreditNO: WOConditional {
+	condition = hasNoTypeCredit;
+}
+
+condTypeCreditYES: WOConditional {
+	condition = hasNoTypeCredit;
+	negate = true;
+}
+
+formLBud: WOForm {
+	multipleSubmit = true;
+	action = selectLigne;
+	name = "formLbud";
+}
+
+lbudBrowser: CktlHXBrowser {
+	columnHeight = 8;
+	columnsCount = 4;
+	formName = "formLbud";
+	selectedObject = lbudSelectedItem;
+	selectedPath = lbudSelectedPath;
+	zeroItem = lbudZeroItem;
+	hideControls = true;
+	showEmptyColumns = true;
+}
+
+mainPage: DTDefaultPage {
+	useDatePicker = false;
+}
+
+popupTypesCredit: WOPopUpButton {
+	displayString = typeCreditDisplayString;
+	escapeHTML = false;
+	item = typeCreditItem;
+	list = typeCreditList;
+	selection = typeCreditSelected;
+}
+
+strComposante: WOString {
+	escapeHTML = false;
+	value = titleComposante;
+}
+
+strLigneBud: WOString {
+	escapeHTML = false;
+	value = titleLigneBud;
+}
+
+strUC: WOString {
+	escapeHTML = false;
+	value = titleUC;
+}
+
+strUnite: WOString {
+	escapeHTML = false;
+	value = titleUnite;
+}

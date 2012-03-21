@@ -1,0 +1,82 @@
+{
+    attributes = (
+        {
+            columnName = "C_IMPLANTATION"; 
+            externalType = VARCHAR2; 
+            name = cImplantation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_DEB_VAL"; 
+            externalType = DATE; 
+            name = dDebVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "D_FIN_VAL"; 
+            externalType = DATE; 
+            name = dFinVal; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "IMGEO_ORDRE"; 
+            externalType = NUMBER; 
+            name = imgeoOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "LC_IMPLANTATION_GEO"; 
+            externalType = VARCHAR2; 
+            name = lcImplantationGeo; 
+            valueClassName = NSString; 
+            width = 20; 
+        }, 
+        {
+            columnName = "LL_IMPLANTATION_GEO"; 
+            externalType = VARCHAR2; 
+            name = llImplantationGeo; 
+            valueClassName = NSString; 
+            width = 40; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cImplantation, 
+        dDebVal, 
+        dFinVal, 
+        imgeoOrdre, 
+        lcImplantationGeo, 
+        llImplantationGeo
+    ); 
+    className = "org.cocktail.dt.server.metier.EOImplantationGeo"; 
+    classProperties = (
+        cImplantation, 
+        dDebVal, 
+        dFinVal, 
+        imgeoOrdre, 
+        lcImplantationGeo, 
+        llImplantationGeo, 
+        tosBatiment, 
+        tosRepartBatImpGeo
+    ); 
+    externalName = "GRHUM.IMPLANTATION_GEO"; 
+    fetchSpecificationDictionary = {}; 
+    name = ImplantationGeo; 
+    primaryKeyAttributes = (cImplantation); 
+    relationships = (
+        {definition = "tosRepartBatImpGeo.toBatiment"; name = tosBatiment; }, 
+        {
+            destination = RepartBatImpGeo; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = imgeoOrdre; sourceAttribute = imgeoOrdre; }); 
+            name = tosRepartBatImpGeo; 
+        }
+    ); 
+}

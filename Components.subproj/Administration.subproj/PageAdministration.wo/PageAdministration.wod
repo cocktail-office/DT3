@@ -1,0 +1,46 @@
+DefaultPage: DTDefaultPage {
+	useToolTip = true;
+	shouldShowMenu = true;
+}
+
+Form1: WOForm {
+	multipleSubmit = true;
+	name = "formAdministration";
+}
+
+StrSwapTitle: WOString {
+	escapeHTML = false;
+	value = swapTitle;
+}
+
+CondShowSwapDroits: WOConditional {
+	condition = showSwapDroits;
+}
+
+SwapDroits1: SwapDroits {
+	
+}
+
+CondShowSwapActivites: WOConditional {
+	condition = showSwapActivites;
+}
+
+SwapActivites1: SwapActivites {
+	
+}
+
+CondShowSwapSysteme: WOConditional {
+	condition = showSwapSysteme;
+}
+
+SwapSysteme1: SwapSysteme {
+	
+}
+
+CondShowSwapStats: WOConditional {
+	condition = showSwapStats;
+}
+
+SwapStatistiques1: SwapStatistiques {
+	
+}

@@ -1,0 +1,82 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "to_date(to_char(PER_DATE_RESA,'dd/mm/yyyy')||' '||to_char(RESA_HEURE_DEB,'HH24:MI'),'dd/mm/yyyy HH24:MI')"; 
+            externalType = DATE; 
+            isReadOnly = Y; 
+            name = dateDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = ""; 
+            definition = "to_date(to_char(PER_DATE_RESA,'dd/mm/yyyy')||' '||to_char(RESA_HEURE_FIN,'HH24:MI'),'dd/mm/yyyy HH24:MI')"; 
+            externalType = DATE; 
+            name = dateFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PER_DATE_RESA"; 
+            externalType = DATE; 
+            name = perDateResa; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "RESA_HEURE_DEB"; 
+            externalType = DATE; 
+            name = resaHeureDeb; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "RESA_HEURE_FIN"; 
+            externalType = DATE; 
+            name = resaHeureFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            columnName = "RESA_NUMERO"; 
+            externalType = NUMBER; 
+            name = resaNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TLOC_CODE"; 
+            externalType = VARCHAR2; 
+            name = tlocCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (noIndividu, perDateResa, resaHeureDeb, resaHeureFin, resaNumero, tlocCode); 
+    className = "org.cocktail.dt.server.metier.EOOccupantPeriodicite"; 
+    classProperties = (
+        dateDeb, 
+        dateFin, 
+        noIndividu, 
+        perDateResa, 
+        resaHeureDeb, 
+        resaHeureFin, 
+        resaNumero, 
+        tlocCode
+    ); 
+    externalName = "SALLE.OCCUPANT_PERIODICITE_HARP"; 
+    fetchSpecificationDictionary = {}; 
+    name = OccupantPeriodicite; 
+    primaryKeyAttributes = (noIndividu, perDateResa, resaNumero); 
+}

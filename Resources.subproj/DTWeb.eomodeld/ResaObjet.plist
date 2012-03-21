@@ -1,0 +1,50 @@
+{
+    attributes = (
+        {
+            columnName = "OBJE_CLE"; 
+            externalType = NUMBER; 
+            name = objeCle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "OBJE_LIBELLE1"; 
+            externalType = VARCHAR2; 
+            name = objeLibelle1; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "OBJE_LIBELLE2"; 
+            externalType = VARCHAR2; 
+            name = objeLibelle2; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = "OBJE_ORDRE"; 
+            externalType = NUMBER; 
+            name = objeOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TYPE_CODE"; 
+            externalType = VARCHAR2; 
+            name = typeCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }
+    ); 
+    attributesUsedForLocking = (objeCle, objeLibelle1, objeLibelle2, objeOrdre, typeCode); 
+    className = "org.cocktail.dt.server.metier.EOResaObjetHarp"; 
+    classProperties = (objeCle, objeLibelle1, objeLibelle2, objeOrdre, typeCode); 
+    externalName = "RESERVATION.RESA_OBJET_HARP"; 
+    fetchSpecificationDictionary = {}; 
+    name = ResaObjet; 
+    primaryKeyAttributes = (objeOrdre); 
+}

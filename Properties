@@ -1,0 +1,30 @@
+# ignorer les erreurs des modeles au lancement
+er.extensions.ERXModelGroup.Fwkpers_Association.tasId.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Compte.cptOrdre.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Compte.cptVlan.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_CompteEmail.cptOrdre.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Individu.noIndividu.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Individu.indCSituationFamille.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Individu.indCSitMilitaire.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_RepartAssociation.assId.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Rne.adrOrdre.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Structure.grpFormeJuridique.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Structure.cNaf.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Fwkpers_Structure.cStructure.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_CodeAnalytique.canId.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_CodeAnalytiqueOrgan.canId.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_Fonction.tyapId.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_LolfNomenclatureAbstract.lolfType.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_LolfNomenclatureDepense.lolfType.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_LolfNomenclatureRecette.lolfType.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_Organ.cStructure.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_TypeApplication.tyapId.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkJefyAdmin_UtilisateurFonction.fonOrdre.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.Inventaire.pcoNum.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.RepartStructure.cStructure.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.StructureUlr.cStructure.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkDroitsUtils_Compte.cptOrdre.ignoreTypeMismatch=true
+er.extensions.ERXModelGroup.FwkDroitsUtils_Compte.cptVlan.ignoreTypeMismatch=true
+
+# activer les logs SQL
+#log4j.logger.er.transaction.adaptor.EOAdaptorDebugEnabled=DEBUG

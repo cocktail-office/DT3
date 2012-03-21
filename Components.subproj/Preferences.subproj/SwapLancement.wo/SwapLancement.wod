@@ -1,0 +1,20 @@
+RadioButton1: WORadioButton {
+	name = "numeroOnglet";
+	onClick = "this.form.submit();";
+	selection = numeroOnglet;
+	value = NUMERO_ONGLET_CREATION;
+}
+
+RadioButton2: WORadioButton {
+	selection = numeroOnglet;
+	value = NUMERO_ONGLET_CONSULTATION;
+	onClick = "this.form.submit();";
+	name = "numeroOnglet";
+}
+
+PopUpButton1: WOPopUpButton {
+	item = etat;
+	list = etatsLibelles;
+	onChange = "this.form.submit();";
+	selection = etatSelectedLibelle;
+}

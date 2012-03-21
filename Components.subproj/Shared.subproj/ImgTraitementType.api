@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wodefinitions>
+    <wo class="ImgTraitementType" wocomponentcontent="false">    <binding name="eoTraitement"/>
+        <validation message="'newBinding' is a required binding.">
+            <unbound name="eoTraitement"/>
+        </validation>
+    </wo>
+</wodefinitions>

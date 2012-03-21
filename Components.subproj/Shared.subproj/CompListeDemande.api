@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="CompListeDemande" wocomponentcontent="false">
+
+		<binding name="listener"/>
+
+		<validation message="&apos;listener&apos; is a required binding">
+			<unbound name="listener"/>
+		</validation>
+	</wo>
+</wodefinitions>

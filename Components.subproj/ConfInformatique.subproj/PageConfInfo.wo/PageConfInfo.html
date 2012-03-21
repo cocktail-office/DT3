@@ -1,0 +1,115 @@
+<webobject name = "CktlDefaultPage1">
+
+  <font class = "mainTitle">
+    Configuration informatique :
+    <webobject name = "StrNomDemandeur" />
+  </font>
+
+	<webobject name = "Form">
+		<webobject name = "ObserverChkIsAfficherTous">
+				<label><webobject name = "ChkIsAfficherTous"/> Voir ses anciennes machines</label>	
+			</webobject>
+	</webobject>
+	
+	
+	<table width="100%">
+		<tr>
+			<td align="left">
+	    	<webobject name = "LnkDoRefresh"/>
+			</td>
+			<td align="right">
+		    <webobject name = "LnkDoRefreshAll"/>
+			</td>
+		</tr>
+	</table>
+	<br/>
+  <br/>
+	  
+  <webobject name = "ContainerPageConfInfo">
+	  <webobject name = "FormErrMessage">
+  		<font class="textError">Erreur d'accès à GLPI</font>
+	  	<br>
+   		<webobject name = "StrErrMessage"/>
+   	</webobject>
+	  
+	  <webobject name = "CondNotHasError">
+	    <webobject name = "CondHasImpInfo">
+	      <table border = "0" cellspacing = "0" cellpadding = "1" class = "listboxBorder">
+	        <tr>
+	          <td>
+	            <table>
+	              <tr class = "listboxHeader">
+	                <th>ID GLPI</th>
+	                <th>Nom machine</th>
+	                <th>Localisation</th>
+	                <th>Numéro de série</th>
+	                <th>Constructeur</th>
+	                <th>Modèle</th>
+	                <th>OS</th>
+	                <th>Version</th>
+	                <th>Service Pack</th>
+	                <th>Statut</th>
+	                <th>Dernière modification</th>
+	                <th>Contact GLPI</th>
+	                <th>Dernier login</th>
+	              </tr>
+	              <webobject name = "RepImpInfo">
+	                <tr class = "listboxLine">
+	                  <td>
+	                  	<webobject name = "LnkGlpi">
+		                    <webobject name = "StrId"/>
+	                    </webobject>
+	                  </td>
+	                  <td>
+	                    <webobject name = "StrName"/>
+	                  </td>
+	                  <td>
+	                    <webobject name = "StrLocationName"/>
+	                  </td>
+	                  <td>
+	                    <webobject name = "StrSerial"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrManufacturersName"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrModelName"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrOperatingSystemName"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrOperatingSystemVersionName"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrOperatingSystemServicePackName"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrStatesName"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrDateMod"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrContact_num"/>
+	                  </td> 
+	                  <td>
+	                    <webobject name = "StrContact"/>
+	                  </td> 
+	                </tr>
+	              </webobject>
+	            </table>
+	          </td>
+	        </tr>
+	      </table>
+	    </webobject>
+	    
+	    <webobject name = "CondNotHasImpInfo">
+	      <font class = "textError">Cette personne n'a pas de configuration informatique connue.</font>
+	    </webobject>
+    
+    
+    </webobject>
+	</webobject>
+	
+</webobject>

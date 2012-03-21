@@ -1,0 +1,46 @@
+{
+    attributes = (
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "PRB_BOOKMARK"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "C_LOCAL"; }; 
+            name = prbBookmark; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2000; 
+        }, 
+        {
+            columnName = "PRB_LIBELLE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = COULEUR; }; 
+            name = prbLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 256; 
+        }
+    ); 
+    attributesUsedForLocking = (prbBookmark, prbLibelle, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EOPrefRechBookmark"; 
+    classProperties = (prbBookmark, prbLibelle, noIndividu, toBatiment); 
+    externalName = "PREF_RECH_BOOKMARK"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_clientClassPropertyNames" = (noIndividu, toBatiment); }; 
+    name = PrefRechBookmark; 
+    primaryKeyAttributes = (noIndividu, prbLibelle); 
+    relationships = (
+        {
+            destination = Batiment; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = prbBookmark; }); 
+            name = toBatiment; 
+        }
+    ); 
+}

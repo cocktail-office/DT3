@@ -1,0 +1,64 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "C_STRUCTURE_PERE"; 
+            externalType = VARCHAR2; 
+            name = cStructurePere; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "GRP_ALIAS"; 
+            externalType = VARCHAR2; 
+            name = grpAlias; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 40; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LC_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "LL_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = llStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            columnName = "PERS_ID"; 
+            externalType = NUMBER; 
+            name = persId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (cStructure, cStructurePere, grpAlias, lcStructure, llStructure, persId); 
+    className = "org.cocktail.dt.server.metier.EOVGroupe"; 
+    classProperties = (cStructure, cStructurePere, grpAlias, lcStructure, llStructure, persId); 
+    externalName = "GRHUM.V_GROUPE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "GROUPE@GASPHARP"; }; 
+    isReadOnly = Y; 
+    name = VGroupe; 
+    primaryKeyAttributes = (cStructure); 
+}

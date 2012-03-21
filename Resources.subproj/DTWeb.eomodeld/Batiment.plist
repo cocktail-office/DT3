@@ -1,0 +1,79 @@
+{
+    attributes = (
+        {
+            columnName = "ADRESSE_INTERNE"; 
+            externalType = VARCHAR2; 
+            name = adresseInterne; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 32; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = APPELLATION; 
+            externalType = VARCHAR2; 
+            name = appellation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = "C_LOCAL"; 
+            externalType = VARCHAR2; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "ID_ADRESSE_ADMIN"; 
+            externalType = NUMBER; 
+            name = idAdresseAdmin; 
+            precision = 7; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (adresseInterne, appellation, cLocal, idAdresseAdmin); 
+    className = "org.cocktail.dt.server.metier.EOBatiment"; 
+    classProperties = (
+        adresseInterne, 
+        appellation, 
+        cLocal, 
+        idAdresseAdmin, 
+        tosImplantationGeo, 
+        tosRepartBatImpGeo, 
+        tosSalles
+    ); 
+    externalName = "GRHUM.LOCAL"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (adresseInterne, appellation, cLocal, idAdresseAdmin, tosSalles); 
+        "_nameInObjectStore" = "LOCAL@GASPHARP"; 
+    }; 
+    name = Batiment; 
+    primaryKeyAttributes = (cLocal); 
+    relationships = (
+        {
+            definition = "tosRepartBatImpGeo.toImplantationGeo"; 
+            name = tosImplantationGeo; 
+        }, 
+        {
+            destination = RepartBatImpGeo; 
+            isMandatory = Y; 
+            isToMany = Y; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = tosRepartBatImpGeo; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Salles; 
+            internalInfo = {"_nameInObjectStore" = toSalles; }; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = cLocal; sourceAttribute = cLocal; }); 
+            name = tosSalles; 
+        }
+    ); 
+}

@@ -1,0 +1,173 @@
+{
+    attributes = (
+        {
+            columnName = "COUV_DESSOUS"; 
+            externalType = CHAR; 
+            name = couvDessous; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "COUV_DESSUS"; 
+            externalType = CHAR; 
+            name = couvDessus; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = LIBELLE; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = REMARQUES; }; 
+            name = libelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = LIVRET; 
+            externalType = CHAR; 
+            name = livret; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "NB_COPIES"; 
+            externalType = NUMBER; 
+            name = nbCopies; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NB_PAGES"; 
+            externalType = NUMBER; 
+            name = nbPages; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = PLASTIFIC; 
+            externalType = CHAR; 
+            name = plastific; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = RELIURE; 
+            externalType = VARCHAR2; 
+            name = reliure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = REMARQUES; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = REMARQUES; }; 
+            name = remarques; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1000; 
+        }, 
+        {
+            columnName = "TYPE_COUV"; 
+            externalType = CHAR; 
+            name = typeCouv; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "TYPE_DOCUMENT"; 
+            externalType = CHAR; 
+            name = typeDocument; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        couvDessous, 
+        couvDessus, 
+        intOrdre, 
+        libelle, 
+        livret, 
+        nbCopies, 
+        nbPages, 
+        plastific, 
+        reliure, 
+        remarques, 
+        typeCouv, 
+        typeDocument
+    ); 
+    className = "org.cocktail.dt.server.metier.EOInterventionRepro"; 
+    classProperties = (
+        couvDessous, 
+        couvDessus, 
+        intOrdre, 
+        libelle, 
+        livret, 
+        nbCopies, 
+        nbPages, 
+        plastific, 
+        reliure, 
+        remarques, 
+        toIntervention, 
+        tosInterventionReproCfc, 
+        typeCouv, 
+        typeDocument
+    ); 
+    externalName = "INTERVENTION_REPRO"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            couvDessous, 
+            couvDessus, 
+            intOrdre, 
+            livret, 
+            nbCopies, 
+            nbPages, 
+            plastific, 
+            reliure, 
+            remarques, 
+            toIntervention, 
+            tosInterventionReproCfc, 
+            typeCouv, 
+            typeDocument
+        ); 
+    }; 
+    name = InterventionRepro; 
+    primaryKeyAttributes = (intOrdre); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = Intervention; 
+            internalInfo = {"_nameInObjectStore" = interventionHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = toIntervention; 
+        }, 
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = InterventionReproCfc; 
+            internalInfo = {"_nameInObjectStore" = reproCfcArray; }; 
+            isToMany = Y; 
+            joinSemantic = EOLeftOuterJoin; 
+            joins = ({destinationAttribute = intOrdre; sourceAttribute = intOrdre; }); 
+            name = tosInterventionReproCfc; 
+        }
+    ); 
+}

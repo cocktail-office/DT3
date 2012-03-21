@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<wodefinitions>
+	<wo class="DTErrorBox" wocomponentcontent="false">
+
+		<binding name="message"/>
+
+		<validation message="&apos;message&apos; is a required binding">
+			<unbound name="message"/>
+		</validation>
+	</wo>
+</wodefinitions>

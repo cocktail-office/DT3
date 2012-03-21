@@ -1,0 +1,159 @@
+<table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+  <tr>
+    <td>
+      <font class = "subTitleInverse">&nbsp;Demande d'installation de mat&eacute;riel</font>
+    </td>
+  </tr>
+  <tr class = "boxBorder">
+    <td>
+      <table cellpadding = "5" cellspacing = "0" border = "0" valign = "middle" width = "100%" class = "boxContents">
+        <tr>
+          <td colspan = "2">
+            <b>
+              La demande doit faire l'objet d'une commande de mat&eacute;riel : 
+              <label><webobject name = "RadioShouldCommandeOui" />OUI</label>
+              <label><webobject name = "RadioShouldCommandeNon" />NON</label>
+            </b>
+          </td>
+        </tr>
+        <webobject name = "CondIsCommande">
+        
+          <tr>
+            <td align = "right" valign = "top" rowspan = "2">
+              <font class = "textEntry">Ligne budg&eacute;taire &agrave; imputer&nbsp;:</font>
+            </td>
+            <td align = "left">
+              <webobject name = "strLigneBud" />&nbsp;&nbsp; 
+              <webobject name = "siLigneBudSelected"><webobject name = "btClearLigneBud" /></webobject>
+              <webobject name = "siCanSelectLigneBud"><webobject name = "btLigneBud" /></webobject>
+              <webobject name = "formErrorNom">La ligne budg&eacute;taire est obligatoire !</webobject>
+              <br />
+              <font class = "dtAttentionText">ATTENTION : Une ligne budg&eacute;taire incorrecte entrainera des retards dans la commande !</font>
+            </td>
+          </tr>
+                 
+                  
+          <tr>
+          	<td colspan = "2" align = "left">
+          		<webobject name = "DestinationLolfCommande"/>
+          	</td>
+          </tr>
+          
+          
+        </webobject>
+        <tr>
+          <td align = "right" NOWRAP WIDTH = "1%" valign = "top">
+            <font class = "textEntry">Remise du nouveau poste :</font>
+          </td>
+          <td align = "left" colspan = "3">
+            <webobject name = "FormErrorRemplacer">Selection de la nature obligatoire !</webobject>
+            <webobject name = "RadioShouldRemplacerOui" />
+            <b>Comme premier poste ou en remplacement d'un poste existant.</b>
+            <br />
+            Le poste &agrave; remplacer devra 
+            <b>
+              <u>obligatoirement &ecirc;tre restitu&eacute;</u>
+            </b>
+            &amp;agrave l'&amp;eacute;tablissement.<br />
+            <webobject name = "RadioShouldRemplacerNon" />
+            <b>Comme poste suppl&eacute;mentaire.</b>
+            <br />
+            <i>En cons&eacute;quence un surco&ucirc;t de maintenance, d'intervention humaine et de raccordement aux infrastructures<br />
+              serveurs, stockage, r&eacute;seau ... sera pr&eacute;lev&eacute; par l'&eacute;tablissement d&egrave;s la commande.</i>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right">
+            <font class = "textEntry">Destinataire du poste :</font>
+          </td>
+          <td align = "left" colspan = "3">
+            <table>
+              <tr>
+                <td>
+                  <webobject name = "ObserverDemandeurPoste">
+                    <label> <webobject name = "ChkDemandeurConnu" /> Personne connue du syst&egrave;me : </label>
+                  </webobject>
+                </td>
+                <td>
+                  <webobject name = "ContainerDemandeurPoste">
+                    <webobject name = "CondIsDemandeurConnu">
+                      <b><webobject name = "StrEoIndividuDemandeurConnuNomEtPrenom" /></b>
+                      <webobject name = "BtnChangeDemandeur" />
+                    </webobject>
+                    <webobject name = "CondNotIsDemandeurConnu">
+                      <webobject name = "TFNomPrenomDemandeurInconnu" />&nbsp;&nbsp; 
+                      <webobject name = "formErrorDemandeur">Le nom de la personne destinataire est obligatoire !</webobject>
+                    </webobject>
+                  </webobject>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right">
+            <font class = "textEntry">Local d'installation du poste &nbsp;:</font>
+          </td>
+          <td align = "left">
+            Service : 
+            <webobject name = "popServices" />
+            <br />
+            <webobject name = "SelectBatimentBureau" />
+            <br />
+            <webobject name = "formErrorNom2">Le service est obligatoire !</webobject>
+            <webobject name = "formErrorNom3">Le batiment est obligatoire !</webobject>
+            <webobject name = "formErrorNom4">Le bureau est obligatoire !</webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" valign = "top">
+            <font class = "textEntry">Interlocuteur du service demandeur&nbsp;:</font>
+          </td>
+          <td align = "left">
+            <webobject name = "StrEoIndividuInterlocuteurNomEtPrenom" />&nbsp;&nbsp;<webobject name = "BtnChangeInterlocuteur" />
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" valign = "top">
+            <font class = "textEntry">Liste exhaustive des logiciels compl&eacute;mentaires &agrave; installer&nbsp;:&nbsp;</font>
+            <webobject name = "TipLogiciels"><webobject name = "ImgAide" /></webobject>
+          </td>
+          <td align = "left"> <webobject name = "TextLogiciels" /> </td>
+        </tr>
+        <tr>
+          <td align = "right" valign = "top">
+            <font class = "textEntry">Descriptif du poste de travail demand&eacute;&nbsp;:</font>
+          </td>
+          <td> <webobject name = "TextRemarques" /> </td>
+        </tr>
+        <webobject name = "CondShowProcedureInstallation">
+          <tr>
+            <td align = "CENTER" colspan = "2">
+              <webobject name = "FormErrorPriseConnaissance">Impossible de continuer si vous n'avez pas accept&eacute; de prendre connaissance de la proc&eacute;dure !</webobject>
+              <webobject name = "CondErrorPriseConnaissance"> <webobject name = "StrEncartErrorPriseConnaissanceDebut" /> </webobject>
+              <label>
+                <webobject name = "ChkIsPriseConnaissance" />
+                J'ai pris connaissance de la 
+                <b>
+                  <webobject name = "LnkProcedureInstallation">procédure de commande & installation de l'équipement informatique</webobject>
+                </b>
+                que j'ai demand&eacute;.</label>
+              <webobject name = "CondErrorPriseConnaissance"> <webobject name = "StrEncartErrorPriseConnaissanceFin" /> </webobject>
+            </td>
+          </tr>
+        </webobject>
+        <tr>
+          <td colspan = "2">
+            <webobject name = "formErrorMotif">Veuillez saisir le motif de la demande&nbsp;!</webobject>
+            <webobject name = "FooterSwap" />
+            <font class = "textEntry">Document(s) attach&eacute;(s)&nbsp;:</font>
+            <br />
+            <webobject name = "fileUpload2" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br />
+<webobject name = "btEnregistrerDT" />&nbsp;&nbsp;<webobject name = "btNouvelleDT" />

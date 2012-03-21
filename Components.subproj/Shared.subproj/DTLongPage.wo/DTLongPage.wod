@@ -1,0 +1,12 @@
+DTDefaultPage1: DTDefaultPage {
+}
+
+ImgProgressBar: WOImage {
+	filename = "img/ProgressBar.gif";
+	framework = "app";
+}
+
+StrHtmlAdvanceString: WOString {
+	value = htmlAdvanceString;
+	escapeHTML = false;
+}

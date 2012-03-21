@@ -1,0 +1,58 @@
+{
+    attributes = (
+        {
+            allowsNull = Y; 
+            definition = "toSalles.toLocal.appellation"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = appellation; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 50; 
+        }, 
+        {
+            columnName = "BUR_ORDRE"; 
+            externalType = NUMBER; 
+            name = burOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            definition = "toSalles.toLocal.cLocal"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = cLocal; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 5; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            precision = 8; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (appellation, burOrdre, cLocal, noIndividu); 
+    className = "org.cocktail.dt.server.metier.EORepartBureau"; 
+    classProperties = (appellation, burOrdre, cLocal, noIndividu, toSalles); 
+    externalName = "GRHUM.REPART_BUREAU"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (appellation, burOrdre, cLocal, noIndividu, toSalles); 
+    }; 
+    name = RepartBureau; 
+    primaryKeyAttributes = (burOrdre, noIndividu); 
+    relationships = (
+        {
+            destination = Salles; 
+            isMandatory = Y; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = salNumero; sourceAttribute = burOrdre; }); 
+            name = toSalles; 
+        }
+    ); 
+}

@@ -1,0 +1,18 @@
+StrMode: WOString {
+	value = session.modeEnCoursNom;
+	escapeHTML = false;
+}
+
+CondShouldShowAppStopWarning: WOConditional {
+	condition = shouldShowAppStopWarning;
+}
+
+StrAppStopWarning: WOString {
+	value = appStopWarning;
+	escapeHTML = false;
+}
+
+StrUser: WOString {
+	value = userDescription;
+	escapeHTML = false;
+}

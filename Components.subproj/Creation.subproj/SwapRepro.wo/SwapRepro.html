@@ -1,0 +1,233 @@
+<table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+  <tr>
+    <td>
+      <font class = "subTitleInverse">&nbsp;Demande pour la reprographie</font>
+    </td>
+  </tr>
+  <tr class = "boxBorder">
+    <td valign = "TOP">
+      <table cellpadding = "3" cellspacing = "0" border = "0" valign = "middle" width = "100%" class = "boxContents">
+        <tr>
+          <td>
+            <div class = "listboxHeader">
+              &nbsp;<font class = "textEntry">Document</font>
+            </div>
+          </td>
+          <td>
+            <div class = "listboxHeader">
+              &nbsp;<font class = "textEntry">Finition</font>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td valign = "TOP">
+            <table border = "0" cellspacing = "3" cellpadding = "0">
+              <tr>
+                <td>
+                  <font class = "textEntry">Titre (*) :</font>
+                  <webobject name = "TextField1" />
+                  <webobject name = "formErrorNbCopies2">Veuillez indiquez le titre du document !</webobject>
+                  <webobject name = "BoxErrorSizeLibelle">Le titre du document d&eacute;passe la longueur autoris&eacute;e !</webobject>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <font class = "textEntry">Support (*) :</font>
+                  <label><webobject name = "rdDocSupportNum" />num&eacute;rique</label>
+                  <label><webobject name = "rdDocSupportPap" />papier</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <webobject name = "Conditional1">Document(s) attach&eacute;(s)&nbsp;:<br />
+                    <webobject name = "fileUpload" />
+                    <webobject name = "formErrorFichier">Veuillez indiquer le document attach&eacute;&nbsp;!</webobject>
+                  </webobject>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <font class = "textEntry">Nb. de copies (*):&nbsp;</font>
+                  <webobject name = "tfNbCopies" />  
+                  <font class = "textEntry">Nb. de pages (*):&nbsp;</font>
+                  <webobject name = "tfNbPages" />
+                  <webobject name = "formErrorNbCopies">Veuillez indiquez le nombre de copies&nbsp;!</webobject>
+                  <webobject name = "formErrorNbPages">Veuillez indiquer le nombre de pages&nbsp;!</webobject>
+                </td>
+              </tr>
+              <tr>
+                <td align = "LEFT"><br /> </td>
+              </tr>
+            </table>
+          </td>
+          <td valign = "TOP">
+            <table border = "0" cellpadding = "0" cellspacing = "0">
+              <tr>
+                <td rowspan = "2" valign = "TOP">
+                  <font class = "textEntry">Couverture  (*):&nbsp;</font>
+                </td>
+                <td>
+                  <label><webobject name = "rdCouvertureCart" />Cartonn&eacute;</label>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td colspan = "2">
+                  <label><webobject name = "chCouvDessus" />dessus</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label><webobject name = "rdCouvertureTrans" />Transparent</label>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td colspan = "2">
+                  <label><webobject name = "chCouvDessous" />dessous</label>
+                </td>
+              </tr>
+              <tr>
+                <td colspan = "4"><hr class = "subLine" /></td>
+              </tr>
+              <tr>
+                <td rowspan = "3" valign = "TOP">
+                  <font class = "textEntry">Reliure (*):&nbsp;</font>
+                </td>
+                <td>
+                  <label><webobject name = "rdReliureNon" />Non reli&eacute;</label>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <label><webobject name = "rdReliureAgr1" />Agrafage 1 point</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label><webobject name = "rdReliureEnc" />Encolage</label>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <label><webobject name = "rdReliureAgr2" />Agrafage 2 points</label>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label><webobject name = "rdReliureRel" />Reliure</label>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td colspan = "4"><hr class = "subLine" /></td>
+              </tr>
+              <tr>
+                <td />
+                <td>&nbsp;<label><webobject name = "chPlastification" />Plastification</label>
+                </td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td>
+                  <label><webobject name = "chLivret" />Livret</label>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class = "listboxHeader" colspan = "3">
+            <font class = "textEntry">&nbsp;Informations budg&eacute;taires</font>
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "3">
+            <table width = "100%" cellpadding = "0" cellspacing = "3" border = "0">
+
+
+              <tr>
+                <td nowrap colspan = "2">
+                  <font class = "textEntry">Ligne budgétaire : </font>
+                  <webobject name = "strLigneBud" />&nbsp;&nbsp;<webobject name = "siLigneBudSelected"><webobject name = "btClearLigneBud" /></webobject>
+                  <webobject name = "siCanSelectLigneBud"><webobject name = "btLigneBud" /></webobject>
+                  <webobject name = "formErrorLBud">Veuillez indiquerla ligne budgétaire !</webobject>
+                </td>
+              </tr>
+              
+              
+                  
+		          <tr>
+		          	<td colspan = "2" align = "left">
+		          		<webobject name = "DestinationDevisCtrl"/>
+		          	</td>
+		          </tr>
+              
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "3">
+            <table width = "100%" cellpadding = "0" cellspacing = "3" border = "0">
+              <tr>
+                <td colspan = "4" align = "CENTER">
+                  <webobject name = "formErrorFichier2">Vos selections ne	g&eacute;n&egrave;rent aucune ligne de devis.&nbsp;Le devis ne	peut etre	cr&eacute;&eacute;.</webobject>
+                </td>
+              </tr>
+              <webobject name = "siCanUsePIE">
+                <tr>
+                  <td colspan = "4" align = "right">
+                    <br />
+                    Co&ucirc;t estim&eacute;&nbsp;:&nbsp;<webobject name = "strCoutEstime" />&nbsp;&nbsp;<webobject name = "btEstimerCout" />
+                    <br />
+                    <webobject name = "CondFalse">
+                      Disponibilit&eacute; cr&eacute;dits&nbsp;:&nbsp;<webobject name = "strDisponible" />&nbsp;&nbsp;<webobject name = "btTesterDisponible" />
+                      <br />
+                    </webobject>
+                  </td>
+                </tr>
+              </webobject>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td class = "listboxHeader" colspan = "3">
+            <font class = "textEntry">&nbsp;Oeuvres prot&eacute;g&eacute;es</font>
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "3">
+            <a name = "DTCfcContent">&nbsp;</a>
+            <webobject name = "CktlNoteCFC">
+              <b>D&eacute;clarer :</b>
+              tous les extraits de livre (texte, dessin, photographie, plan, carte ...) ou articles de périodique ou en langue étrangère
+              quel que soit l'éditeur, les traductions, adaptations, normes (AFNOR, ISO ...), partitions de musique ...<br />
+              <b>Ne pas d&eacute;clarer :</b>
+              les œuvres qui relèvent du domaine public (livres 70 ans après la mort de l'auteur, journaux 70 ans après la date de publication), les œuvres
+              non publiées, les lois, actes administratifs, décisions de justice, tables et lois statistiques, courtes citations ...<br />
+              <br />
+              <i>Pour plus d'informations sur la r&eacute;glementation</i>
+              &raquo; 
+              <a href = "http://www.cfcopies.com" target = "_new">http://www.cfcopies.com</a>
+            </webobject>
+            Votre document contient-il des &oelig;uvres prot&eacute;g&eacute;es ? (*) 
+            <label><webobject name = "RadioShouldUseCfcOui" />OUI</label>
+            <label><webobject name = "RadioShouldUseCfcNon" />NON</label>
+            <webobject name = "FormErrorCfc">Vous souhaitez faire une d&eacute;claration CFC, mais vous n'avez saisi aucune information !</webobject>
+            <webobject name = "CondShowCompCfc"> <webobject name = "CompCFC1" /> </webobject>
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2">
+            <table>
+              <tr>
+                <td valign = "TOP">
+                  <font class = "textEntry">Remarques&nbsp;:</font>
+                </td>
+                <td><webobject name = "txtRemarques" /></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<webobject name = "FooterSwap" />
+<br />
+<div align = "center">
+  <webobject name = "BtnValiderDT" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<webobject name = "BtnNouvelleDT" />
+</div>

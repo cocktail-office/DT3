@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wodefinitions>
+	<wo class="DTDefaultPage" wocomponentcontent="true">
+
+		<binding name="targetPosition"/>
+		<binding defaults="Boolean" name="useToolTip"/>
+		<binding name="headerLines"/>
+		<binding defaults="Boolean" name="shouldShowMenu"/>
+	<binding defaults="Boolean" name="shouldShowTitle"/>
+    </wo>
+</wodefinitions>

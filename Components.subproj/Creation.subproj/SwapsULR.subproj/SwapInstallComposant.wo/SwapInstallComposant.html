@@ -1,0 +1,69 @@
+<table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+  <tr>
+    <td>
+      <font class = "subTitleInverse">&nbsp;Demande de composant informatique</font>
+    </td>
+  </tr>
+  <tr>
+    <td class = "boxBorder">
+      <table cellpadding = "10" cellspacing = "0" border = "0" width = "100%" class = "boxContents">
+        <tr>
+          <td colspan = "2">
+            <webobject name = "ObserverRadioShouldCommandeON">
+              <b>
+                La demande doit faire l'objet d'une commande de mat&eacute;riel : 
+                <label><webobject name = "RadioShouldCommandeOui" />OUI</label>
+                <label><webobject name = "RadioShouldCommandeNon" />NON</label>
+              </b>
+            </webobject>
+            <webobject name = "ContainerCommande">
+              <webobject name = "CondIsCommande">
+                <table>
+                  <tr>
+                    <td align = "right" valign = "top" rowspan = "2">
+                      <font class = "textEntry">Ligne budg&eacute;taire &agrave; imputer&nbsp;</font>
+                      <br />
+                      <webobject name = "TipLbud">
+                        <b>
+                          <a href = "#" onclick = "return false;">!! NOTE IMPORTANTE !!</a>
+                        </b>
+                      </webobject>: 
+                    </td>
+                    <td align = "left">
+                      <webobject name = "strLigneBud" />&nbsp;&nbsp; 
+                      <webobject name = "siLigneBudSelected"><webobject name = "btClearLigneBud" /></webobject>
+                      <webobject name = "siCanSelectLigneBud"><webobject name = "btLigneBud" /></webobject>
+                      <webobject name = "formErrorLBud">La ligne budg&eacute;taire est obligatoire !</webobject>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                  	<td colspan = "2" align = "left">
+                  		<webobject name = "DestinationLolfCommande"/>
+                  	</td>
+                  </tr>
+                  
+                </table>
+              </webobject>
+            </webobject>
+          </td>
+        </tr>
+        <tr>
+          <td colspan = "2">
+            <font class = "textEntry">Pr&eacute;cisions concernant le(s) composant(s) demand&eacute;(s)&nbsp;:</font>
+            <br />
+            <webobject name = "Text2" />
+            <br />
+            <webobject name = "formErrorMotif">Veuillez saisir le motif de la demande&nbsp;!</webobject>
+            <webobject name = "FooterSwap" />
+            <font class = "textEntry">Document(s) attach&eacute;(s)&nbsp;:</font>
+            <br />
+            <webobject name = "fileUpload2" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<br />
+<webobject name = "btEnregistrer" /> &nbsp;&nbsp; <webobject name = "btNouvelleDT" />

@@ -1,0 +1,38 @@
+DTDefaultPage1: DTDefaultPage {
+	pageTitle = "Impressions de DT";
+	hideFooter = true;
+	shouldShowMenu = false;
+	shouldShowTitle = false;
+}
+
+FormImpressionDT: WOForm {
+	multipleSubmit = true;
+}
+
+BtnImpResume: WOSubmitButton {
+	title = "Imprimer les demandes s&eacute;lectionn&eacute;es (r&eacute;sum&eacute;)";
+	action = imprimerResume;
+	value = "Résumé";
+	class = "bouton";
+	escapeHTML = false;
+}
+
+BtnImpDetail: WOSubmitButton {
+	title = "Imprimer les demandes s&eacute;lectionn&eacute;es (avec d&eacute;tails)";
+	action = imprimerDetail;
+	value = "Détails";
+	class = "bouton";
+	escapeHTML = false;
+}
+
+BrowserIntervention: WOBrowser {
+	displayString = displayRecIntervention;
+	escapeHTML = false;
+	item = recIntervention;
+	list = recsIntervention;
+	multiple = true;
+	selections = selectedsRecsIntervention;
+	size = 20;
+	style = "font-family: monospace;";
+	id = "BrowserIntervention";
+}

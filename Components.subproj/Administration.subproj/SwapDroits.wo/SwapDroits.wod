@@ -1,0 +1,114 @@
+CondHasErrorMessage: WOConditional {
+	condition = hasErrorMessage;
+}
+
+DTErrorBox1: DTErrorBox {
+	message = errorMessage;
+}
+
+BrwsDroits: WOBrowser {
+	displayString = droitDisplay;
+	item = droitItem;
+	list = dgDroits.displayedObjects;
+	multiple = false;
+	selections = droitSelecteds;
+	size = 20;
+	style = "font-family: monospace;";
+	escapeHTML = "false";
+	onClick = "this.form.submit();";
+}
+
+BtnAjouter: WOSubmitButton {
+	value = "Ajouter";
+	class = "bouton";
+	action = ajouter;
+	disabled = isDisabledBtnAjouter;
+}
+
+BtnAnnuler: WOSubmitButton {
+	action = annuler;
+	class = "bouton";
+	disabled = isDisabledBtnAnnuler;
+	value = "Annuler";
+}
+
+BtnChanger: WOSubmitButton {
+	value = "Changer";
+	action = changePersonne;
+	class = "bouton";
+	disabled = isDisabledBtnChanger;
+}
+
+BtnModifier: WOSubmitButton {
+	value = "Modifier";
+	class = "bouton";
+	action = modifier;
+	disabled = isDisabledBtnModifier;
+}
+
+BtnOK: WOSubmitButton {
+	action = ok;
+	class = "bouton";
+	disabled = isDisabledBtnOK;
+	value = "OK";
+}
+
+BtnSupprimer: WOSubmitButton {
+	value = "Supprimer";
+	class = "bouton";
+	action = supprimer;
+	disabled = isDisabledBtnSupprimer;
+}
+
+ComboService: WOPopUpButton {
+	displayString = serviceDisplay;
+	item = serviceItem;
+	list = serviceList;
+	selection = serviceSelected;
+	disabled = isDisabledComboService;
+}
+
+ComboTypeDroits: WOPopUpButton {
+	displayString = droitNiveauDisplay;
+	item = droitNiveauItem;
+	list = droitNiveauList;
+	selection = droitNiveauSelected;
+	disabled = isDisabledComboTypeDroits;
+}
+
+ImgAide: WOImage {
+	filename = "img/Aide.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+}
+
+ToolTipNiveau1: CktlToolTip {
+	htmlText = htmlTextNiveau1;
+}
+
+ToolTipNiveau2: CktlToolTip {
+	htmlText = htmlTextNiveau2;
+}
+
+ToolTipNiveau3: CktlToolTip {
+	htmlText = htmlTextNiveau3;
+}
+
+ToolTipNiveau4: CktlToolTip {
+	htmlText = htmlTextNiveau4;
+}
+
+ToolTipNiveau5: CktlToolTip {
+	htmlText = htmlTextNiveau5;
+}
+
+TextFieldNoIndividu: WOTextField {
+	disabled = true;
+	value = noIndividu;
+}
+
+TextFieldNomPrenom: WOTextField {
+	disabled = true;
+	value = nomPrenom;
+}

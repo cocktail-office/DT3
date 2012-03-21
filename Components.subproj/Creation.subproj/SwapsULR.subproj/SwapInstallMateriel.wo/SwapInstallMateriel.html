@@ -1,0 +1,138 @@
+<table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+  <tr>
+    <td>
+      <font class = "subTitleInverse"> Demande 
+        d'installation de matériel</font>
+    </td>
+  </tr>
+  <tr class = "boxBorder">
+    <td>
+      <table cellpadding = "10" cellspacing = "0" border = "0" valign = "middle" width = "100%" class = "boxContents">
+        <tr>
+          <td colspan = "2">
+            <webobject name = "ObserverRadioShouldCommandeON">
+              <b>
+                La demande doit faire l'objet d'une commande de mat&eacute;riel : 
+                <label><webobject name = "RadioShouldCommandeOui" />OUI</label>
+                <label><webobject name = "RadioShouldCommandeNon" />NON</label>
+              </b>
+            </webobject>
+            <webobject name = "ContainerCommande">
+              <webobject name = "CondIsCommande">
+                <table>
+                  <tr>
+                    <td align = "right" valign = "top" rowspan = "2">
+                      <font class = "textEntry">Ligne budg&eacute;taire &agrave; imputer&nbsp;</font>
+                      <br />
+                      <webobject name = "TipLbud">
+                        <b>
+                          <a href = "#" onclick = "return false;">!! NOTE IMPORTANTE !!</a>
+                        </b>
+                      </webobject>: 
+                    </td>
+                    <td align = "left">
+                      <webobject name = "strLigneBud" />&nbsp;&nbsp; 
+                      <webobject name = "siLigneBudSelected"><webobject name = "btClearLigneBud" /></webobject>
+                      <webobject name = "siCanSelectLigneBud"><webobject name = "btLigneBud" /></webobject>
+                      <webobject name = "formErrorLBud">La ligne budg&eacute;taire est obligatoire !</webobject>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                  	<td colspan = "2" align = "left">
+                  		<webobject name = "DestinationLolfCommande"/>
+                  	</td>
+                  </tr>
+                  
+                </table>
+              </webobject>
+            </webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right">
+            <font class = "textEntry">Destinataire du mat&eacute;riel :</font>
+          </td>
+          <td align = "left">
+            <table>
+              <tr>
+                <td>
+                  <webobject name = "ObserverDemandeurPoste">
+                    <label> <webobject name = "ChkDemandeurConnu" /> Personne connue du syst&egrave;me : </label>
+                  </webobject>
+                </td>
+                <td>
+                  <webobject name = "ContainerDemandeurPoste">
+                    <webobject name = "CondIsDemandeurConnu">
+                      <b><webobject name = "StrEoIndividuDemandeurConnuNomEtPrenom" /></b>
+                      <webobject name = "BtnChangeDemandeur" />
+                    </webobject>
+                    <webobject name = "CondNotIsDemandeurConnu">
+                      <webobject name = "TFNomPrenomDemandeurInconnu" />&nbsp;&nbsp; 
+                      <webobject name = "formErrorDemandeur">Le nom de la personne destinataire est obligatoire !</webobject>
+                    </webobject>
+                  </webobject>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right">
+            <font class = "textEntry">Local d'installation du mat&eacute;riel &nbsp;:</font>
+          </td>
+          <td align = "left">
+            Service : 
+            <webobject name = "popServices" />
+            <br />
+            <webobject name = "SelectBatimentBureau" />
+            <br />
+            <webobject name = "formErrorService">Le service est obligatoire !</webobject>
+            <webobject name = "formErrorBatiment">Le batiment est obligatoire !</webobject>
+            <webobject name = "formErrorBureau">Le bureau est obligatoire !</webobject>
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" valign = "top">
+            <font class = "textEntry">Interlocuteur du service demandeur&nbsp;:</font>
+          </td>
+          <td align = "left">
+            <webobject name = "StrEoIndividuInterlocuteurNomEtPrenom" />&nbsp;&nbsp;<webobject name = "BtnChangeInterlocuteur" />
+          </td>
+        </tr>
+        <tr>
+          <td align = "right" valign = "top">
+            <font class = "textEntry">D&eacute;tails sur le mat&eacute;riel demand&eacute;&nbsp;:</font>
+          </td>
+          <td><webobject name = "TextRemarques" /></td>
+        </tr>
+        <webobject name = "CondShowProcedureInstallation">
+          <tr>
+            <td align = "CENTER" colspan = "2">
+              <webobject name = "FormErrorPriseConnaissance">Impossible de continuer si vous n'avez pas accept&eacute; de prendre connaissance de la proc&eacute;dure !</webobject>
+              <webobject name = "CondErrorPriseConnaissance"><webobject name = "StrEncartErrorPriseConnaissanceDebut" /></webobject>
+              <label>
+                <webobject name = "CheckBox2" />
+                J'ai pris connaissance de la 
+                <b>
+                  <webobject name = "LnkProcedureInstallation">proc&eacute;dure de commande &amp; installation de	l'&eacute;quipement informatique</webobject>
+                </b>
+                que j'ai demand&eacute;. 
+              </label>
+              <webobject name = "CondErrorPriseConnaissance"><webobject name = "StrEncartErrorPriseConnaissanceFin" /></webobject>
+            </td>
+          </tr>
+        </webobject>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+<webobject name = "FooterSwap"/>
+
+<font class = "textEntry">Document(s) attach&eacute;(s)&nbsp;:</font>
+<br />
+<webobject name = "fileUpload2" />
+<br />
+<webobject name = "btEnregistrerDT" /> &nbsp;&nbsp; <webobject name = "btNouvelleDT" />

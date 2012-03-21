@@ -1,0 +1,29 @@
+{
+    attributes = (
+        {
+            columnName = "C_TYPE_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = cTypeStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 2; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = "L_TYPE_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            name = lTypeStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }
+    ); 
+    attributesUsedForLocking = (cTypeStructure, lTypeStructure); 
+    className = "org.cocktail.dt.server.metier.EOTypeStructure"; 
+    classProperties = (cTypeStructure, lTypeStructure); 
+    externalName = "GRHUM.TYPE_STRUCTURE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "TYPE_STRUCTURE@GASPHARP"; }; 
+    name = TypeStructure; 
+    primaryKeyAttributes = (cTypeStructure); 
+}

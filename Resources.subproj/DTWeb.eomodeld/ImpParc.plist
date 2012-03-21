@@ -1,0 +1,135 @@
+{
+    attributes = (
+        {
+            columnName = "C_STRUCTURE"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "GRP_ORDRE"; }; 
+            name = cStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "CNF_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = cnfLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "CNF_ORDRE"; 
+            externalType = NUMBER; 
+            name = cnfOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "CNF_SERVICE"; 
+            externalType = VARCHAR2; 
+            name = cnfService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 75; 
+        }, 
+        {
+            columnName = "CNF_TYPE"; 
+            externalType = VARCHAR2; 
+            name = cnfType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = "EML_SERIE"; 
+            externalType = VARCHAR2; 
+            name = emlSerie; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = INFOS; 
+            externalType = VARCHAR2; 
+            name = infos; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 125; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "ADR_ORDRE"; }; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "SAL_NUMERO"; 
+            externalType = NUMBER; 
+            name = salNumero; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = ""; 
+            definition = "DECODE(STY_FABRICANT, '', '?', STY_FABRICANT)"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "STY_FABRICANT"; }; 
+            name = styFabricant; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "STY_MODELE"; 
+            externalType = VARCHAR2; 
+            name = styModele; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 200; 
+        }, 
+        {
+            columnName = "TYP_LIBELLE"; 
+            externalType = VARCHAR2; 
+            name = typLibelle; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        cStructure, 
+        cnfLibelle, 
+        cnfOrdre, 
+        cnfService, 
+        cnfType, 
+        emlSerie, 
+        infos, 
+        noIndividu, 
+        salNumero, 
+        styFabricant, 
+        styModele, 
+        typLibelle
+    ); 
+    className = "org.cocktail.dt.server.metier.EOImpParc"; 
+    classProperties = (
+        cStructure, 
+        cnfLibelle, 
+        cnfOrdre, 
+        cnfService, 
+        cnfType, 
+        emlSerie, 
+        infos, 
+        noIndividu, 
+        salNumero, 
+        styFabricant, 
+        styModele, 
+        typLibelle
+    ); 
+    externalName = "PARC_INFO.IMP_PARC"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "PARC_INFO.IMP_PARC"; }; 
+    name = ImpParc; 
+    primaryKeyAttributes = (cnfOrdre, styModele); 
+}

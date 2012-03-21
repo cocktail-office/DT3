@@ -1,0 +1,32 @@
+RepEOIntervention: WORepetition {
+	list = eoInterventionArray;
+	item = eoInterventionItem;
+}
+
+StrId: WOString {
+	value = eoInterventionItem.intCleService;
+}
+
+StrMotif: WOString {
+	value = eoInterventionItem.intMotif;
+}
+
+LnkDetail: WOHyperlink {
+	href = href;
+}
+
+StrEtat: WOString {
+	value = eoInterventionItem.toEtat.etatLibelle;
+}
+
+StrActivite: WOString {
+	value = eoInterventionItem.toActivites.actLibelle;
+}
+
+StrDemandeur: WOString {
+	value = eoInterventionItem.toIndividuConcerne.nomEtPrenom;
+}
+
+StrActOrdre: WOString {
+	value = eoInterventionItem.actOrdre;
+}

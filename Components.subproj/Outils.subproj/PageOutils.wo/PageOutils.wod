@@ -1,0 +1,25 @@
+DefaultPage: DTDefaultPage {
+	useToolTip = true;
+	shouldShowMenu = true;
+}
+
+StrSwapTitle: WOString {
+	escapeHTML = false;
+	value = swapTitle;
+}
+
+CondShowSwapDTFast: WOConditional {
+	condition = showSwapDTFast;
+}
+
+SwapDTFast1: SwapDTFast {
+	
+}
+
+CondShowSwapVentilation: WOConditional {
+	condition = showSwapVentilation;
+}
+
+SwapVentilation1: SwapVentilation {
+	
+}

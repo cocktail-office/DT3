@@ -1,0 +1,233 @@
+DTDefaultPage1: DTDefaultPage {
+	shouldShowMenu = true;
+	useToolTip = true;
+}
+
+FormRecherche: WOForm {
+	multipleSubmit = true;
+    name = "formeRecherche";
+}
+
+RadioAnd: WORadioButton {
+	name = "radioAndOr";
+	value = config.LIST_AND;
+	selection = config.listSelected;
+}
+
+RadioOr: WORadioButton {
+	name = "radioAndOr";
+	value = config.LIST_OR;
+	selection = config.listSelected;
+}
+
+RepNature: WORepetition {
+	list = config.nodeList;
+	item = natureNodeItem;
+}
+
+ComboNature: WOPopUpButton {
+	list = config.natureList;
+	selection = natureNodeItem.natureSelected;
+	item = natureItem;
+	displayString = natureItemDisplay;
+	onChange = "this.form.submit();";
+}
+
+ComboConstraint: WOPopUpButton {
+	list = natureNodeItem.constraintList;
+	selection = natureNodeItem.constraintSelected;
+	item = constraintItem;
+	displayString = constraintItemDisplay;
+}
+
+CondIsElementList: WOConditional {
+	condition = isElementList;
+}
+
+ComboElement: WOPopUpButton {
+	list = natureNodeItem.elementList;
+	selection = natureNodeItem.elementSelected;
+	item = elementItem;
+	displayString = elementItemDisplay;	
+}
+
+CondIsElementString: WOConditional {
+	condition = isElementString;
+}
+
+TextfieldElementString: WOTextField {
+	value = natureNodeItem.elementSelected;
+	onKeyDown = "if(event.keyCode==13){this.form.BtnDoSearch.click();};";
+}
+
+CondIsElementNumber: WOConditional {
+	condition = isElementNumber;
+}
+
+TextfieldElementNumber: WOTextField {
+	value = natureNodeItem.elementSelected;
+	maxlength = 6;
+	size = 6;
+	numberformat = "0";
+	onKeyDown = "if(event.keyCode==13){this.form.BtnDoSearch.click();};";
+}
+
+CondIsElementDate: WOConditional {
+	condition = isElementDate;
+}
+
+DateElement: CktlDatePicker {
+	dateValue = natureNodeItem.elementSelected;
+}
+
+CondIsElementIndividu: WOConditional {
+	condition = isElementIndividu;
+}
+
+StrIndividuDisplay: WOString {
+	value = individuDisplay;
+}
+
+BtnChangeIndividu: WOSubmitButton {
+	action = changePersonne;
+	class = "bouton";
+	value = "Autre individu ...";
+}
+
+CondIsElementActivite: WOConditional {
+	condition = isElementActivite;
+}
+
+StrActiviteDisplay: WOString {
+	value = activiteDisplay;
+	escapeHTML = false;
+}
+
+BtnChangeActivite: WOSubmitButton {
+	action = changeActivite;
+	class = "bouton";
+	value = "Autre activité ...";
+	escapeHTML = false;
+}
+
+BtnAddNode: WOSubmitButton {
+	action = addNode;
+	value = "+";
+	class = "bouton";
+	title = "Ajouter une nouvelle condition de recherche";
+}
+
+BtnRemoveNode: WOSubmitButton {
+	action = removeNode;
+	value = "-";
+	class = "bouton";
+	disabled = isDisabledBtnRemoveNode;
+	title = "Supprimer cette condition de recherche";
+}
+
+BtnDoSearch: WOSubmitButton {
+	name = "BtnDoSearch";
+	action = doSearch;
+	value = "Rechercher";
+	class = "bouton";
+	title = "Lancer la recherche";
+	escapeHTML = false;
+}
+
+BtnDoClear: WOSubmitButton {
+	action = doClear;
+	value = "Nettoyer";
+	class = "bouton";
+	title = "Remettre &agrave; z&eacute;ro le formulaire";
+	escapeHTML = false;
+}
+
+LnkAfficherImpression: WOHyperlink {
+ 	title = "Affiche l'ecran d'impression de la liste des demandes affichees";
+  	action = afficherImpression;
+  	class = "linkPage";
+  	target = "_new";
+  	onClick = "javascript:ouvrirPopup(this.href,400, 800);return false;";
+}
+
+ImgImpression: WOImage {
+	filename = "img/Imprimer.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+    height = "22px";
+	width = "22px";
+}
+
+TxtLibelleBookmark: WOTextField {
+	value = prbLibelle;
+	length = "20";
+	maxlength = "256";
+}
+
+BtnDoSaveBookmark: WOSubmitButton {
+	action = doSaveBookmark;
+	value = "Enregistrer modif.";
+	class = "bouton";
+	name = "BtnDoSaveBookmark";
+	escapeHTML = false;
+	title = "Sauvegarder la d&eacute;finition de ce favori dans la base de donn&eacute;es";
+}
+
+BtnDoCopyBookmark: WOSubmitButton {
+	action = doCopyBookmark;
+	value = "Dupliquer";
+	class = "bouton";
+	name = "BtnDoCopyBookmark";
+	escapeHTML = false;
+	title = "Dupliquer la d&eacute;finition de ce favori dans la base de donn&eacute;es";
+	disabled = isDisabledBtnCopyBookmark;
+}
+
+BtnDoDeleteBookmark: WOSubmitButton {
+	action = doDeleteBookmark;
+	value = "Supprimer";
+	class = "bouton";
+	name = "BtnDoDeleteBookmark";
+	escapeHTML = false;
+	title = "Effacer la d&eacute;finition de ce favori de la base de donn&eacute;es";
+	disabled = isDisabledBtnDeleteBookmark;
+}
+
+BtnDoNewDefaultBookmark: WOSubmitButton {
+	action = doNewDefaultBookmark;
+	value = "Nouveau";
+	class = "bouton";
+	name = "BtnDoNewDefaultBookmark";
+	escapeHTML = false;
+	title = "Initier la r&eacute;daction d'un nouveau favori";
+}
+
+CondShowBookmarkList: WOConditional {
+	condition = bookmarkList.count;
+}
+
+RepBookmark: WORepetition {
+	list = bookmarkList;
+	item = bookmarkItem;
+}
+
+LnkDoLoadBookmark: WOHyperlink {
+	action = doLoadBookmark;
+	title = "Charger le formulare de recherche avec ce favori";
+	escapeHTML = false;
+}
+
+StrBookmarkItemDisplay: WOString {
+	value = bookmarkItemDisplay;
+	escapeHTML = false;
+}
+
+CondShowCompListeDemande: WOConditional {
+	condition = showCompListeDemande;
+}
+
+CompListeDemande1: CompListeDemande {
+	listener = listener;
+}

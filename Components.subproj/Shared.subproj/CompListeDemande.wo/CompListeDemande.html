@@ -1,0 +1,300 @@
+
+		<webobject name = "ContainerDemandes">
+
+<center>
+
+	<table cellpadding=2 cellspacing=0 border=0 width=100% class=boxTitle>
+		<tr>
+			<td><font class=subTitleInverse>&nbsp;R&eacute;sultats</font></td>
+			<td width=50% align=right>
+			<font class=subTitleInverse><webobject name="StringResultComment"/><webobject name="StrResultCommentPrefix"/>&nbsp;</font></td>
+			
+			<TD ALIGN=CENTER WIDTH=1%>
+				<WEBOBJECT NAME="lnkRefresh"><WEBOBJECT NAME="ImgRecharger"/></WEBOBJECT>
+			</TD>
+			
+		</tr>
+	</table>
+	
+	<br>
+	
+	<webobject name=CondIsNotInterventionFound>
+		<table cellpadding=1 cellspacing=0 border=0 width=100% class=boxBorder>
+			<tr>
+				<td>
+					<table cellpadding=5 cellspacing=0 border=0 width=100% class=boxContents>
+						<tr>
+							<td align=center><font class=textError>Aucune demande ne correspond aux crit&egrave;res de recherche</font></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</webobject>
+	
+	
+	<webobject name="CondIsInterventionFound">
+	
+	
+		
+		<table width = "100%">
+			<tr>
+				<td align = "center">
+
+					<webobject name="NavBarInterventionDG"/>
+					<webobject name="DTFormErrorBox1">
+						<webobject name="StrListenerWarnMessage"/>
+					</webobject>
+		
+				</td>
+				<td width = "1%" nowrap>
+
+					<webobject name = "ObserverNombreDtParPage">
+						DTs par page : 
+						<webobject name = "PopUpNombreDtParPage"/>
+					</webobject>
+				
+				</td>
+			</tr>
+		</table>
+	
+		
+		<p>
+		
+		<table width="100%" border="0" cellspacing="0" cellpadding="1" class="listboxBorder">
+			<tr>
+				<td>
+				
+				
+					<webobject name = "BtnDoFilter"/>
+					<table width="100%" border="0" cellspacing="1" cellpadding="2">
+						<tr class="listboxHeader">
+							<td nowrap width=1% align=CENTER><b><font class=small_entry>No.</font></b>
+								<webobject name=LnkTriNumAsc><webobject name=ImgTriAsc></webobject></webobject>
+								<webobject name=LnkTriNumDesc><webobject name=ImgTriDesc></webobject></webobject>
+							</td>
+							<td nowrap width="1%" align="center"><b><font class="small_entry">Date</font></b>
+								<webobject name="LnkTriDateAsc"><webobject name="ImgTriAsc"></webobject></webobject>
+								<webobject name="LnkTriDateDesc"><webobject name="ImgTriDesc"></webobject></webobject>
+							</td>
+							<td nowrap width="1%" align="center">
+								<webobject name="ToolTipInfosDemandeur">
+									<b><font class="small_entry">Dem.</font></b>
+									<webobject name="LnkTriNomAsc"><webobject name="ImgTriAsc"/></webobject>
+									<webobject name="LnkTriNomDesc"><webobject name="ImgTriDesc"/></webobject><br/>
+									<webobject name="CondFalse"><webobject name = "PopUpDemandeur"/></webobject>
+								</webobject>
+							</td>
+							<td align="center"><b><font class="small_entry">Motif</font></b></td>
+							<td nowrap width="1%" align="center" title="Localisation geographique du demandeur (batiment)">
+								<b><font class="small_entry">Bat.</font></b>
+								<webobject name=LnkTriBatAsc><webobject name=ImgTriAsc></webobject></webobject>
+								<webobject name=LnkTriBatDesc><webobject name=ImgTriDesc></webobject></webobject><br/>
+							</td>
+							<td nowrap width="1%" align="center" title="Service destinataire de la demande">
+							<b><font class="small_entry">Serv.</font></b>
+								<webobject name="LnkTriSerAsc"><webobject name="ImgTriAsc"></webobject></webobject>
+								<webobject name="LnkTriSerDesc"><webobject name="ImgTriDesc"></webobject></webobject>
+							</td>
+							<td nowrap width="1%" align="center">
+								<b><font class="small_entry">Activit&eacute;</font></b>
+								<webobject name="LnkTriActAsc"><webobject name="ImgTriAsc"/></webobject>
+								<webobject name="LnkTriActDesc"><webobject name="ImgTriDesc"/></webobject><br/>
+								<webobject name = "ObserverPopUpActivite">
+									<webobject name = "PopUpActivite"/>
+								</webobject>
+							</td>
+							<webobject name="CondShowColumnEtat">
+								<td width=1%><b><font class=small_entry>Etat</font></b></td>
+							</webobject>
+							<webobject name="CondShowColumnIntervenants">
+								<td width="1%" align="center">
+									<webobject name="ToolTipInfoIntervenants">Ints.</webobject>
+									<webobject name="CondFalse"><webobject name = "PopUpIntervenant"/></webobject>
+								</td>
+							</webobject>
+							<webobject name = "CondShowColumnDiscussion">
+								<th width="1%"><span title="Consulter les &eacute;changes relatif &agrave; la DT">D.</span></th>
+							</webobject>
+							<webobject name=CondNotShowColumnInterventionMasquee>
+							<webobject name=CondShowColumnSupprimer><td align=CENTER><b><font class=small_entry>Del.</font></b></td></webobject>
+							<webobject name=CondShowColumnValider>
+								<td width=1% align=CENTER><webobject name=ToolTipInfoValiderDT><b><font class=small_entry>Val</font></b></webobject></td>
+							</webobject>
+							<webobject name=CondShowColumnAffecter>
+								<td width=1% align=CENTER><webobject name=ToolTipInfoAffecterDT><b><font class=small_entry>Aff</font></b></webobject></td>
+							</webobject><webobject name=CondShowColunmViewTraitement>
+								<td width=1% align=CENTER><webobject name=ToolTipInfoVoirTraitementDT><b><font class=small_entry>Tra</font></b></webobject></td>
+							</webobject><webobject name=CondShowColumnAjoutTraitement>
+								<td width=1% align=CENTER><webobject name=ToolTipInfoAjoutTraitementDT><b><font class=small_entry>Add</font></b></webobject></td>
+							</webobject>
+							<td width=1% align=CENTER><webobject name=ToolTipInfoDetailsDT><b><font class=small_entry>D&eacute;t</font></b></webobject></td>
+							</webobject>
+							<webobject name=CondShowColumnInterventionMasquee>
+								<td width=1% align=CENTER><b><font class=small_entry>&nbsp;</font></b></td>
+							</webobject>
+							<webobject name="CondShowColumnAjouterPanier">
+								<td nowrap width = "1%">&nbsp;</td>
+							</webobject>
+							<webobject name="CondShowColumnSupprimerPanier">
+								<td nowrap width = "1%">&nbsp;</td>
+							</webobject>
+							
+						</tr>
+						
+						
+						<!-- la liste de toutes les demandes -->
+						<webobject name="RepInterventions">
+							<webobject name="TrIntervention">
+								<td width="1%" align="right" valign="top" nowrap>
+									<webobject name="CondIsTheSelectedIntervention">
+										<!--l'ancre de la DT en cours d'inspection-->
+										<a name="pos"></a>
+										<b>
+											<font size="-1">
+												<webobject name="LnkInspecteurDTSelected">
+													&raquo; <webobject name="StrIntCleService"/>
+												</webobject>
+											</font>
+										</b>
+									</webobject>
+									<webobject name="CondNotIsTheSelectedIntervention">
+										<b>
+											<font size="-1">
+												<webobject name="LnkInspecteur">
+													<webobject name="StrIntCleService"/>
+												</webobject>
+											</font>
+										</b>
+									</webobject>
+						
+									<webobject name = "CondIsInterventionInstallationPosteComplet2SurcoutNonSigne">
+										<webobject name = "TemSurcoutNonSigne"/>
+									</webobject>
+									
+									<webobject name = "CondIsInterventionInstallationPosteComplet2RemplacementNonRestitue">
+										<webobject name = "TemRemplacementNonRestitue"/>
+									</webobject>
+																		
+									
+									&nbsp;
+								</td>
+								
+								<td align="center" valign="top" nowrap>
+									<webobject name="ToolTipDate">&nbsp;<webobject name="StrIntDateCreation"/>&nbsp;</webobject>
+								</td>
+								<td valign="top" nowrap>&nbsp;
+									<webobject name="ToolTipContact">
+										<webobject name="StrIntDemandeurCourt"/>
+									</webobject>&nbsp;
+								</td>
+								<td valign="top" align="left">
+									<table border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td valign="top">
+												<webobject name="CondHasFichierAttache">
+													<webobject name="ImgFichierAttache"/>
+												</webobject>
+											</td>
+											<td>
+												<webobject name="FontSmall">
+													<webobject name="ToolTopMotif">
+														<webobject name="StrMotifCourt"/>
+													</webobject>
+												</webobject>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td align="center" valign="top" nowrap>
+									&nbsp;<webobject name="StrBatimentLibelle"/>&nbsp;
+								</td>
+								<td align="center" valign="top" nowrap>&nbsp;<webobject name="StrNomService"></webobject>&nbsp;</td>
+								<td align="center" valign="top" nowrap><webobject name="FontSmall"><webobject name = "ToolTipActivite">&nbsp;<webobject name="StrActiviteLibelle"></webobject>&nbsp;</webobject></webobject></td>
+								<webobject name="CondShowColumnEtat">
+									<td align="center" valign="top"><webobject name="ToolTipEtat"><webobject name="StrCodeEtat"></webobject></webobject></td>
+								</webobject>
+								<webobject name="CondShowColumnIntervenants">
+									<td align="center" valign="top" nowrap><webobject name="ToolTipAffectes"><webobject name="StrNbAffectes"></webobject></webobject></td>
+								</webobject>
+								<webobject name = "CondShowColumnDiscussion">
+									<td align="center" valign="top" nowrap><webobject name="ToolTipDiscussions"><webobject name="StrNbDiscussions"></webobject></webobject></td>
+								</webobject>
+								<webobject name="CondNotShowColumnInterventionMasquee">
+									<webobject name="CondShowColumnSupprimer">
+										<td width="25px" valign="middle" align="center">
+											<webobject name="CondCanSupprimerDT"><webobject name="LnkSupprimerDt"><webobject name="ImgSupprimer"></webobject></webobject></webobject>
+											<webobject name="CondNotCanSupprimerDT">&nbsp;</webobject>
+										</td>
+									</webobject>
+									<webobject name="CondShowColumnValider">
+										<td width="25px">
+											<webobject name="CondCanValiderDT"><webobject name="linkGoValider"><webobject name="imgValider"></webobject></webobject></webobject>
+											<webobject name="CondNotCanValiderDT">&nbsp;</webobject>
+										</td>
+									</webobject>
+									<webobject name="CondShowColumnAffecter">
+										<td width="25px">
+											<webobject name="CondCanAffecterDT"><webobject name="linkGoAffecter"><webobject name="imgAffecter"></webobject></webobject></webobject>
+											<webobject name="CondNotCanAffecterDT">&nbsp;</webobject>
+										</td>
+									</webobject>
+									<webobject name="CondShowColunmViewTraitement">
+										<td width="25px">
+											<webobject name="CondCanTraiterDT">
+												<webobject name="CondHasTraitements"><webobject name="linkGoTraiter"><webobject name="imgTraiter"/></webobject></webobject>
+												<webobject name="CondHasNotTraitements"><webobject name="ImgNoTraitements"/></webobject>
+											</webobject>
+											<webobject name="CondNotCanTraiterDT">&nbsp;</webobject>
+										</td>
+									</webobject>
+									<webobject name="CondShowColumnAjoutTraitement">
+										<td width="25px">
+											<webobject name="CondCanAjouterTraitementDT"><webobject name="linkGoAjouterTraitement"><webobject name="imgAjouterTraitement"></webobject></webobject></webobject>
+											<webobject name="CondNotCanAjouterTraitementDT">&nbsp;</webobject>
+										</td>
+									</webobject>
+									<td width="25px"><webobject name="LnkAfficherInspecteur"><webobject name="ImgDetailDT"></webobject></webobject></td>
+								</webobject>
+								<webobject name="CondShowColumnInterventionMasquee">
+									<td>
+										<webobject name="CondNotIsMasquee"><webobject name="LnkMasquerDT"><webobject name="ImgIntVisible"></webobject></webobject></webobject>
+										<webobject name="CondIsMasquee"><webobject name="LnkDeMasquerDT"><webobject name="ImgIntMasque"></webobject></webobject></webobject>
+									</td>
+								</webobject>
+								<webobject name="CondShowColumnAjouterPanier">
+									<td>
+										<webobject name = "ContainerAjoutPanier">
+											<webobject name = "CondIdAfficherAjouterPanier">
+												<webobject name = "LnkAjouterPanier"/>
+											</webobject>
+										</webobject>
+									</td>
+								</webobject>
+								<webobject name="CondShowColumnSupprimerPanier">
+									<td>
+										<webobject name = "LnkSupprimerPanier"/>
+									</td>
+								</webobject>
+							</webobject>
+						</webobject>
+					</table>
+					
+					
+					
+				</td>
+			</tr>
+		</table>
+		
+		
+		<br/>
+		<webobject name="NavBarInterventionDG"/>
+		
+		
+		
+		
+	</webobject>
+</center>
+
+
+		</webobject>

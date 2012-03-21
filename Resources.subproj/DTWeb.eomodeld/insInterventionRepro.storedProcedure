@@ -1,0 +1,78 @@
+{
+    arguments = (
+        {
+            allowsNull = Y; 
+            columnName = A_COUV_DESSOUS; 
+            externalType = NUMBER; 
+            name = aCouvDessous; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_COUV_DESSUS; 
+            externalType = NUMBER; 
+            name = aCouvDessus; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_INT_ORDRE; 
+            externalType = NUMBER; 
+            name = aIntOrdre; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_NB_COPIES; 
+            externalType = NUMBER; 
+            name = aNbCopies; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_NB_PAGES; 
+            externalType = NUMBER; 
+            name = aNbPages; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_RELIURE; 
+            externalType = VARCHAR2; 
+            name = aReliure; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_REMARQUES; 
+            externalType = VARCHAR2; 
+            name = aRemarques; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 500; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_TYPE_DOCUMENT; 
+            externalType = CHAR; 
+            name = aTypeDocument; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 1; 
+        }
+    ); 
+    externalName = INS_INTERVENTION_REPRO; 
+    name = insInterventionRepro; 
+}

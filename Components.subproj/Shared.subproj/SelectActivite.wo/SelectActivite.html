@@ -1,0 +1,172 @@
+<webobject name = "CondNotShowFullPage">
+  <font class = "textEntry">Service destinataire&nbsp;:</font>
+  <webobject name = "StrService"/><br/>
+  <table>
+
+ 		<webobject name = "CondHasActivitesFavorites">
+  	<tr>
+  		<td colspan = "2" nowrap>
+
+				<webobject name = "ContainerActivitesFavorites">	
+				<webobject name = "ExpansionActivitesFavorites">	
+	
+	       	<table cellpadding = "0" cellspacing = "0" width = "100%" border = "0">
+            <tr>
+              <td>
+                <ul>
+	              	<webobject name = "RepActivitesFavorites">
+	                <li><b><webobject name = "LnkResult"><webobject name = "StrResult"></webobject></webobject></b></li>
+	                </webobject>
+                </ul>
+              </td>
+            </tr>
+        	</table>
+	
+				</webobject>
+				</webobject>
+	
+	  	</td>
+  	</tr>
+    </webobject>
+
+
+  	<tr>
+			<td nowrap width="1%">
+				<font class = "textEntry bigSearchLabel">Mot-cl&eacute;&nbsp;:</font>
+			</td>  	
+			<td nowrap>  
+				<webobject name = "BtnSearchCache"/><webobject name = "TFSearch"/>&nbsp;<webobject name = "BtnSearch"/>
+			</td>
+		</tr>
+		<tr>
+	 		<td colspan="2" nowrap align="left">
+			  <font class = "textNote">Vous pouvez saisir partiellement le nom de l'activit&eacute; recherch&eacute;e.
+			  La casse et les accents n'ont pas d'importance</font>
+  		</td>
+  	</tr>
+  </table>
+  <webobject name = "ErrorBoxSize">Vous devez saisir au moins <webobject name = "StrMinSize"></webobject> caract&egrave;res</webobject>
+  <webobject name = "CondHasNoResult">
+    <table cellpadding = "5" cellspacing = "0" border = "0" width = "1%" class = "boxContents">
+      <tr>
+        <td align = "center" nowrap>
+          <font class = "textError">Aucune activit&eacute; ne correspond aux crit&egrave;res de recherche</font>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+  <webobject name = "CondNoErrNoResults">
+    <table cellpadding = "0" cellspacing = "0" width = "100%" border = "0">
+      <tr>
+        <td>
+          <ul>
+            <webobject name = "RepResults">
+              <li><b><webobject name = "LnkResult"><webobject name = "StrResult"/></webobject></b></li>
+            </webobject>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+  <table>
+		<tr>
+			<td><webobject name = "CktlHXBrowserActivite"/></td>		
+			<td valign="top">
+				<webobject name = "CondHasCommentaire">
+					<webobject name = "CktlNoteActCommentaire">
+						<webobject name = "StrActCommentaire"/>
+					</webobject>
+				</webobject>
+			</td>
+		</tr>  
+  </table>
+  <div><font class = "textEntry">S&eacute;lection&nbsp;:</font>&nbsp;<webobject name = "StrSelectionPath"></webobject></div>
+</webobject>
+<webobject name = "CondShowFullPage">
+  <webobject name = "DTDefaultPage1">
+    <p align = "center"><font class = "title">Selection d'une activit&eacute;</font></p>
+    <center>
+      <webobject name = "FormFullPage">
+        <table cellpadding = "1" cellspacing = "0" border = "0" class = "boxBorder">
+          <tr class = "boxBorder">
+            <td>
+              <table cellpadding = "5" cellspacing = "0" border = "0" valign = "middle" width = "100%" class = "boxContents">
+                <tr>
+                  <td align = "center">
+                    <font class = "textEntry">Service destinataire&nbsp;:</font>
+                    <webobject name = "CondNotIsAllowedChangeService"><webobject name = "StrService"></webobject></webobject>
+                    <webobject name = "CondIsAllowedChangeService"><webobject name = "ComboService"></webobject></webobject>
+										
+										<webobject name = "CondHasActivitesFavorites">
+	                    <br/>
+	                    <webobject name = "ContainerActivitesFavorites">	
+											<webobject name = "ExpansionActivitesFavorites">	
+	                    <table cellpadding = "0" cellspacing = "0" width = "100%" border = "0">
+		                    <tr>
+		                      <td>
+		                        <ul>
+					                    <webobject name = "RepActivitesFavorites">
+					                    	<li><b><webobject name = "LnkResult"><webobject name = "StrResult"></webobject></webobject></b></li>
+					                    </webobject>
+		                        </ul>
+		                      </td>
+		                    </tr>
+	                    </table>
+	                    </webobject>
+	                    </webobject>
+                    </webobject>
+                    
+                    <br/>
+                  	<font class = "textEntry bigSearchLabel">Mot-cl&eacute;&nbsp;:</font>
+                  	<webobject name = "BtnSearchCache"></webobject>
+                  	<webobject name = "TFSearch"></webobject>&nbsp;
+                  	<webobject name = "BtnSearch"></webobject><br/>
+                    <webobject name = "ErrorBoxSize">Vous devez saisir au moins <webobject name = "StrMinSize"></webobject> caract&egrave;res</webobject>
+                    <webobject name = "CondHasNoResult">
+                      <table cellpadding = "5" cellspacing = "0" border = "0" width = "1%" class = "boxContents">
+                        <tr>
+                          <td align = "center">
+                            <font class = "textError">Aucune activit&eacute; ne correspond aux crit&egrave;res de recherche</font>
+                          </td>
+                        </tr>
+                      </table>
+                    </webobject>
+                    <webobject name = "CondNoErrNoResults">
+                      <table cellpadding = "0" cellspacing = "0" width = "100%" border = "0">
+                        <tr>
+                          <td>
+                            <ul>
+                              <webobject name = "RepResults">
+                                <li><b><webobject name = "LnkResult"><webobject name = "StrResult"></webobject></webobject></b></li>
+                              </webobject>
+                            </ul>
+                          </td>
+                        </tr>
+                      </table>
+                    </webobject>
+									  <table>
+											<tr>
+												<td><webobject name = "CktlHXBrowserActivite"/></td>		
+												<td valign="top">
+													<webobject name = "CondHasCommentaire">
+														<webobject name = "CktlNoteActCommentaire">
+															<webobject name = "StrActCommentaire"/>
+														</webobject>
+													</webobject>
+												</td>
+											</tr>  
+									  </table>
+                    <font class = "textEntry">S&eacute;lection&nbsp;:</font>&nbsp;<webobject name = "StrSelectionPath"></webobject>
+                    <hr class = "subLine"/>
+                    <webobject name = "BtnSelectActivite"></webobject>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+        <div><br/><br/><webobject name = "BtnRetourner"></webobject></div>
+      </webobject>
+    </center>
+  </webobject>
+</webobject>

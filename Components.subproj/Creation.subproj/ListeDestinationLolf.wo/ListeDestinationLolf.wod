@@ -1,0 +1,24 @@
+siUseDestinsYES: WOConditional {
+	condition = ctrl.useDestins; 
+}
+
+siHasDestinYES: WOConditional {
+	condition = ctrl.hasDestin;
+}
+
+popDestin: WOPopUpButton {
+	title = "Action LOLF";
+	list = ctrl.listDestin;
+	item = ctrl.listDestinItem;
+	selection = ctrl.listDestinSelected;
+	displayString = ctrl.listDestinItem.dstLibelle;
+}
+
+siHasDestinNO: WOConditional {
+	condition = ctrl.hasDestin;
+	negate = true;
+}
+
+formErrorDstCode: DTFormErrorBox {
+	showError = ctrl.errorDstCode;
+}

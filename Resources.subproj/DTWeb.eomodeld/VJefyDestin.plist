@@ -1,0 +1,75 @@
+{
+    attributes = (
+        {
+            columnName = ANNEE; 
+            externalType = NUMBER; 
+            name = annee; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DST_ABREGE"; 
+            externalType = VARCHAR2; 
+            name = dstAbrege; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "DST_CODE"; 
+            externalType = VARCHAR2; 
+            name = dstCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            columnName = "DST_DLIB"; 
+            externalType = VARCHAR2; 
+            name = dstDlib; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "DST_LIB"; 
+            externalType = VARCHAR2; 
+            name = dstLib; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 100; 
+        }, 
+        {
+            columnName = "DST_NIV"; 
+            externalType = NUMBER; 
+            name = dstNiv; 
+            valueClassName = NSNumber; 
+            valueType = d; 
+        }, 
+        {
+            columnName = "DST_TYPE"; 
+            externalType = VARCHAR2; 
+            name = dstType; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "LOLF_ID"; 
+            externalType = NUMBER; 
+            name = lolfId; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+            width = 1; 
+        }
+    ); 
+    attributesUsedForLocking = (annee, dstAbrege, dstCode, dstDlib, dstLib, dstNiv, dstType, lolfId); 
+    className = "org.cocktail.dt.server.metier.EOVJefyDestin"; 
+    classProperties = (annee, dstAbrege, dstCode, dstDlib, dstLib, dstNiv, dstType, lolfId); 
+    externalName = "GRHUM.V_DESTIN"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {"_nameInObjectStore" = "V_DESTIN"; }; 
+    isReadOnly = Y; 
+    name = VJefyDestin; 
+    primaryKeyAttributes = (dstCode); 
+}

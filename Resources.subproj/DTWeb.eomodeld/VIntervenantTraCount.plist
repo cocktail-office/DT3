@@ -1,0 +1,47 @@
+{
+    attributes = (
+        {
+            columnName = "INT_ORDRE"; 
+            externalType = NUMBER; 
+            name = intOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "TRA_COUNT"; 
+            externalType = NUMBER; 
+            internalInfo = {"_nameInObjectStore" = "INT_COUNT"; }; 
+            name = traCount; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }
+    ); 
+    attributesUsedForLocking = (intOrdre, noIndividu, traCount); 
+    className = "org.cocktail.dt.server.metier.EOVIntervenantTraCount"; 
+    classProperties = (intOrdre, noIndividu, toIndividuUlr, traCount); 
+    externalName = "V_INTERVENANT_TRA_COUNT"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (intOrdre, noIndividu, toIndividuUlr, traCount); 
+    }; 
+    isReadOnly = Y; 
+    name = VIntervenantTraCount; 
+    primaryKeyAttributes = (intOrdre, noIndividu); 
+    relationships = (
+        {
+            deleteRule = EODeleteRuleNoAction; 
+            destination = DTIndividuUlr; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividuUlr; 
+        }
+    ); 
+}

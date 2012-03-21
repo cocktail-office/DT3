@@ -1,0 +1,203 @@
+FormVentilation: WOForm {
+	multipleSubmit = true;
+	name = "FormVentilation";
+	action = doNothing;	
+}
+
+// erreur
+
+ErrorVentilation: DTFormErrorBox {
+	showError = hasError;
+}
+
+// aide
+
+ToolTipAide: CktlToolTip {
+	htmlText = htmlToolTipHelp;
+}
+
+ImgAide: WOImage {
+	filename = "img/Aide.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+}
+
+// liste des services DT
+
+ComboService: WOPopUpButton {
+	list = ctrl.serviceList;
+	selection = ctrl.serviceSelected;
+	item = serviceItem;
+	displayString = serviceItemDisplay;
+	onChange = "this.form.submit();";
+}
+
+// les intervenants du service
+
+StrIndividuTotal: WOString {
+	value = individuDg.allObjects.count;
+}
+
+BrwsrIndividu: WOBrowser {
+	list = individuDg.displayedObjects;
+	item = individuItem;
+	displayString = individuItemDisplay;
+	selections = individuDg.selectedObjects;
+	multiple = true;	
+	size = sizeBrwsrIndividu;
+}
+
+BtnFiltrer: WOSubmitButton {
+	action = filtrer;
+	//value = "==&gt;&gt;";
+	value = "==>>";
+	class = "bouton";
+	escapeHTML = false;
+	title = "Afficher toutes les DT en cours des intervenants selectionn&eacute;s";
+}
+
+ToolTipBtnFiltrer: CktlToolTip {
+	htmlText = "Afficher toutes les DT en cours des intervenants selectionn&eacute;s<br/>Les DT affich&eacute;es sont celles en cours et en attente.";
+}
+
+// les DTs en cours des individus selectionnes
+
+StrTotalIntervention: WOString {
+	value = interventionDg.allObjects.count;
+}
+
+BrwsrIntervention: WOBrowser {
+	list = interventionDg.displayedObjects;
+	item = interventionItem;
+	displayString = interventionItemDisplay;
+	multiple = true;
+	size = sizeBrwsrIntervention;
+	escapeHTML = false;
+	class = "dtVentilationInterventionBrowser";
+	selections = interventionDg.selectedObjects;
+}
+
+// dt selectionnee pour detail
+
+BtnDetailSingleDt: WOSubmitButton {
+	//value = "D&eacute;tail d'une DT&nbsp;&gt;&gt;";
+	value = "Detail d'une DT >>";
+	class = "bouton";
+	action = selectSingleDetailDt;
+	escapeHTML = false;
+}
+
+TxtDetailSingleDt: WOText {
+	value = txtSingleDetailDt;
+	disabled = true;
+	class = "dtTextareaIntMotif";
+	style = "width:200px";
+}
+
+BrwsrDetailSingleDtIntervenant: WOBrowser {
+	list = detailSingleDtIntervenant;
+	item = individuItem;
+	displayString = individuItemDisplay;
+	size = 3;
+	disabled = true;
+}
+
+// boutons de manipulation du panier
+
+BtnRemoveIndividuPanier: WOSubmitButton {
+	action = removeIndividuPanier;
+	//value =  "&#47;&#92;";
+	value = "-";
+	class = "bouton";
+	escapeHTML = false;
+	title = "supprimer ces individus du panier";
+}
+
+BtnRemoveInterventionPanier: WOSubmitButton {
+	action = removeInterventionPanier;
+	//value =  "&#47;&#92;";
+	value = "-";
+	class = "bouton";
+	escapeHTML = false;
+	title = "supprimer ces DTs du panier";
+}
+
+BtnAddIndividuPanier: WOSubmitButton {
+	action = addIndividuPanier;
+	//value =  "&#92;&#47;";
+	value = "+";
+	class = "bouton";
+	escapeHTML = false;
+	title = "ajouter les individus au panier";
+}
+
+BtnAddInterventionPanier: WOSubmitButton {
+	action = addInterventionPanier;
+	//value =  "&#92;&#47;";
+	value = "+";
+	class = "bouton";
+	escapeHTML = false;
+	title = "ajouter les DTs au panier";
+}
+
+// les paniers
+
+StrTotalIndividuPanier: WOString {
+	value = ctrl.individuPanierList.count;
+}
+
+BtnSelectAllIndividuPanier: WOSubmitButton {
+	action = selectAllIndividuPanier;
+	//value =  "&lt;tous&gt;";
+	value =  "<tous>";
+	class = "bouton";
+	escapeHTML = false;
+	title = "selectionner tous les individus du panier";
+}
+
+BrwsrIndividuPanier: WOBrowser {
+	list = ctrl.individuPanierList;
+	item = individuItem;
+	displayString = individuItemDisplay;
+	multiple = true;
+	escapeHTML = false;
+	class = "dtVentilationInterventionBrowser";
+	selections = ctrl.individuPanierSelecteds;
+	size = sizeBrwsrIndividuPanier;
+}
+
+StrTotalInterventionPanier: WOString {
+	value = ctrl.interventionPanierList.count;
+}
+
+BtnSelectAllInterventionPanier: WOSubmitButton {
+	action = selectAllInterventionPanier;
+	//value =  "&lt;toutes&gt;";
+	value = "<toutes>";
+	class = "bouton";
+	escapeHTML = false;
+	title = "selectionner toutes les DTs du panier";
+}
+
+BrwsrInterventionPanier: WOBrowser {
+	list = ctrl.interventionPanierList;
+	item = interventionItem;
+	displayString = interventionItemDisplay;
+	multiple = true;
+	escapeHTML = false;
+	size = sizeBrwsrInterventionPanier;
+	class = "dtVentilationPanierInterventionBrowser";
+	selections = ctrl.interventionPanierSelecteds;
+}
+
+// ventilation
+
+BtnDoVentiler: WOSubmitButton {
+	action = doVentiler;
+	//value =  "&lt;==&gt;";
+	value = "<==>";
+	class = "bouton";
+	escapeHTML = false;
+	title = "Effectuer la ventilation";
+}

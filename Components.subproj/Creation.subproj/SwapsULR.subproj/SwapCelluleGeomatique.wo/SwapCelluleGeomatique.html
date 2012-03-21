@@ -1,0 +1,48 @@
+<table cellpadding = "1" cellspacing = "0" border = "0" width = "100%" class = "boxTitle">
+  <tr>
+    <td>
+      <font class = "subTitleInverse">Cellule géomatique</font>
+    </td>
+  </tr>
+  <tr>
+	  <td class = "boxBorder">
+  		<table cellpadding = "10" cellspacing = "0" border = "0" valign = "middle" width = "100%" class = "boxContents">
+  			<tr>
+  				<td align = "left">
+						<font class = "textEntry">Equipe : </font><webobject name = "PopUpEquipe"/>
+					</td>
+				</tr>
+				<tr>
+  				<td align = "left">
+						<webobject name = "StrQuestionGeomatique"/>
+						<label><webobject name = "RadioReponseOui"/> OUI</label>
+						<label><webobject name = "RadioReponseNon"/> NON</label>
+						<webobject name = "FormErrReponse">
+							Veuillez répondre à la question relative aux métadonnées, s'il vous plaît
+						</webobject>
+					</td>
+				</tr>
+				<tr>
+  				<td align = "left">
+						<font class="textEntry">Motif&nbsp;:</font><br>
+						<webobject name = "TextMotif"/>
+					</td>
+				</tr>
+				<tr>
+  				<td align = "left">
+
+						<hr class = "subLine" />
+						<webobject name = "FooterSwap"/>
+						<br />
+						<font class = "textEntry">Document(s) attach&eacute;(s)&nbsp;:</font>
+						<br />
+						<webobject name = "fileUpload" />
+					</td>
+				</tr>
+			</table>
+  	</td>
+  </tr>
+</table>
+
+<br />
+<webobject name = "btEnregistrerDT" /> &nbsp;&nbsp; <webobject name = "btNouvelleDT" /> 

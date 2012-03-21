@@ -1,0 +1,60 @@
+{
+    arguments = (
+        {
+            allowsNull = Y; 
+            columnName = A_AUTEURS; 
+            externalType = VARCHAR2; 
+            name = aAuteurs; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_EDITEURS; 
+            externalType = VARCHAR2; 
+            name = aEditeurs; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 100; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_INT_ORDRE; 
+            externalType = NUMBER; 
+            name = aIntOrdre; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_NB_EXEMPLAIRES; 
+            externalType = NUMBER; 
+            name = aNbExemplaires; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_NB_PAGES; 
+            externalType = NUMBER; 
+            name = aNbPages; 
+            parameterDirection = 1; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            columnName = A_TITRE; 
+            externalType = VARCHAR2; 
+            name = aTitre; 
+            parameterDirection = 1; 
+            valueClassName = NSString; 
+            width = 200; 
+        }
+    ); 
+    externalName = INS_INTERVENTION_REPRO_CFC; 
+    name = insInterventionReproCfc; 
+}

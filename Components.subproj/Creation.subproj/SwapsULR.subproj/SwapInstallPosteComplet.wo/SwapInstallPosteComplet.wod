@@ -1,0 +1,250 @@
+RadioShouldCommandeOui: WORadioButton {
+	value = SHOULD_COMMANDE_OUI;
+	name = "shouldCommande";
+	selection = shouldCommande;
+	onClick = "this.form.submit();";
+}
+
+RadioShouldCommandeNon: WORadioButton {
+	value = SHOULD_COMMANDE_NON;
+	name = "shouldCommande";
+	selection = shouldCommande;
+	onClick = "this.form.submit();";
+}
+
+CondIsCommande: WOConditional {
+	condition = isCommande;//VALID
+}
+
+
+//CktlAjaxOrganSelect1: CktlAjaxOrganSelect {
+//	id = "CktlAjaxOrganSelectId";
+//	value = organSelected.longString;
+//	exercice = exeOrdreCurrent;
+//	utilisateur = utlOrdreConnected;
+//	type = typeLbudDepense;
+//	selection = organSelected;
+//}
+
+strLigneBud: WOString {
+	value = ligneBudDescription;
+	escapeHTML = false;
+}
+
+siLigneBudSelected: WOConditional {
+	condition = isLigneBudSelected;
+}
+
+btClearLigneBud: WOSubmitButton {
+	action = clearLigneBud;
+	class = "bouton";
+	title = "Annuler la s&eacute;lection de la ligne budg&eacute;taire";
+	value = "X";
+}
+
+siCanSelectLigneBud: WOConditional {
+	condition = canSelectLigneBud;
+}
+
+btLigneBud: WOSubmitButton {
+	class = "bouton";
+	title = "Choisir une ligne budg&eacute;taire";
+	value = "Choisir...";
+	action = selectLigneBud;
+}
+
+RadioShouldRemplacerOui: WORadioButton {
+	value = SHOULD_REMPLACER_OUI;
+	name = "shouldRemplacer";
+	selection = shouldRemplacer;
+}
+
+RadioShouldRemplacerNon: WORadioButton {
+	value = SHOULD_REMPLACER_NON;
+	name = "shouldRemplacer";
+	selection = shouldRemplacer;
+}
+
+
+FormErrorRemplacer: DTFormErrorBox {
+	showError = errorRemplacer;
+}
+
+formErrorNom: DTFormErrorBox {
+	showError = errorLBud;
+}
+
+
+popServices: WOPopUpButton {
+	item = serviceItem;
+	displayString = serviceLibelle;
+	list = serviceList;
+	selection = serviceSelected;
+}
+
+SelectBatimentBureau: SelectBatimentBureau {
+	batimentSelected = batimentSelected;
+	bureauSelected = bureauSelected;
+	contact = parentPage.recContactDemandeur;
+}
+
+
+formErrorNom2: DTFormErrorBox {
+	showError = errorService;//VALID
+}
+
+formErrorNom3: DTFormErrorBox {
+	showError = errorBatiment;//VALID
+}
+
+formErrorNom4: DTFormErrorBox {
+	showError = errorBureau;
+}
+
+
+StrEoIndividuInterlocuteurNomEtPrenom: WOString {
+	value = eoIndividuInterlocuteur.nomEtPrenom;
+}
+
+BtnChangeInterlocuteur: WOSubmitButton {
+	action = changeInterlocuteur;
+	class = "bouton";
+	value = "Rechercher ...";
+}
+
+TipLogiciels: CktlToolTip {
+	htmlText = "Pour information sont intall&eacute;s en standard les logiciels antivirus,<br/>\
+	pare-feu et logiciels libres suivants : gravure, compression, lecteur de m&eacute;dia,<br/>\
+	lecture et cr&eacute;ation de PDF, traitement de texte et tableau d'open office, navigateur<br/>\
+	internet, messagerie, capture d'image ...&nbsp;Toutes autres demandes logicielles doivent<br/>\
+	imp&eacute;rativement &ecirc;tre pr&eacute;cis&eacute;es dans cette demande de travaux.";     
+}
+
+ImgAide: WOImage {
+	filename = "img/Aide.png";
+	framework = "app";
+	height = "16";
+	width = "16";
+	border = "0";
+}
+
+TextLogiciels: WOText {
+	class = "dtTextareaIntMotif";
+	value = logiciels;//VALID
+}
+
+TextRemarques: WOText {
+	class = "dtTextareaIntMotif";
+	value = intMotif;//VALID
+}
+
+CondShowProcedureInstallation: WOConditional {
+	condition = showProcedureInstallation;
+}
+
+FormErrorPriseConnaissance: DTFormErrorBox {
+	showError = errorPriseConnaissance;//VALID
+}
+
+CondErrorPriseConnaissance: WOConditional {
+	condition = errorPriseConnaissance;//VALID
+}
+
+StrEncartErrorPriseConnaissanceDebut: WOString {
+	value = "<table><tr><td style='border:2px dotted red'>";
+	escapeHTML = false;		
+}
+
+ChkIsPriseConnaissance: WOCheckBox {
+	checked = isPriseConnaissance;//VALID
+}
+
+LnkProcedureInstallation: WOHyperlink {
+	href = urlProcedureInstallation;
+	target = "_new";
+	title = "Ouvrir le document contenant la procedure dans une nouvelle fenetre";
+}
+
+StrEncartErrorPriseConnaissanceFin: WOString {
+	value = "</td></tr></table>";
+	escapeHTML = false;		
+}
+
+formErrorMotif: DTFormErrorBox {
+	showError = errorMotif;
+}
+
+fileUpload2: CktlFileUpload {
+	boxWidth = "300";
+	fileFieldSize = "50";
+	filePaths = filePaths;//VALID
+	resetFilePaths = clearFilePaths;//VALID
+	destDir = dtApp.appTempDir;
+}
+
+btEnregistrerDT: WOSubmitButton {
+	value = "Enregistrer";
+	action = validerDemande;
+        class = "bouton";
+	title = "Enregistrer la demande";
+}
+
+btNouvelleDT: WOSubmitButton {
+	action = nouvelleDemande;
+	value = "RAZ demande";
+    class = "bouton";
+	title = "Effacer le formulaire et recommencer la cr&eacute;ation d'une nouvelle demande";
+}
+
+ObserverDemandeurPoste: AjaxObserveField {
+	updateContainerID = containerDemandeurPosteId;
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+ContainerDemandeurPoste: AjaxUpdateContainer {
+	id = containerDemandeurPosteId;
+}
+
+CondIsDemandeurConnu: WOConditional {
+	condition = isDemandeurConnu;
+}
+
+CondNotIsDemandeurConnu: WOConditional {
+	condition = isDemandeurConnu;
+	negate = true;
+}
+
+ChkDemandeurConnu: WOCheckBox {
+	checked = isDemandeurConnu;
+}
+
+StrEoIndividuDemandeurConnuNomEtPrenom: WOString {
+	value = eoIndividuDemandeurConnu.nomEtPrenom;
+}
+
+TFNomPrenomDemandeurInconnu: WOTextField {
+	maxlength = 100;
+	size = 30;
+	value = nomPrenomDemandeurInconnu;
+}
+
+
+formErrorDemandeur: DTFormErrorBox {
+	showError = errorDemandeur;
+}
+
+BtnChangeDemandeur: WOSubmitButton {
+	action = changeDemandeur;
+	class = "bouton";
+	value = "Autre ...";
+}
+
+FooterSwap: FooterSwap {
+	ctrl = footerCtrl;
+}
+
+DestinationLolfCommande: ListeDestinationLolf {
+	ctrl = destinationCommandeCtrl;
+}

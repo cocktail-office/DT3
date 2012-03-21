@@ -1,0 +1,17 @@
+imgExit: WOImage {
+	border = 0;
+    vspace = 0;
+	filename = "img/Quitter.png";
+	framework = "app";
+}
+
+linkExit: WOHyperlink {
+	target = target;
+	title = linkToolTip;
+  class = linkStyleClass;
+	action = doExit;
+}
+
+strLinkExitText: WOString {
+	value = linkText;
+}

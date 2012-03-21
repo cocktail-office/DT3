@@ -1,0 +1,629 @@
+StringResultComment: WOString {
+	value = resultCountComment;
+	escapeHTML = false;
+}
+
+StrResultCommentPrefix: WOString {
+	value = listener.strResultCommentSuffix;
+}
+
+lnkRefresh: AjaxUpdateLink {
+  title = "Rafraichir la liste";
+  action = doForceRefreshAll;
+  class = "linkPage";
+	updateContainerID = containerListeID;
+
+}
+
+ImgRecharger: WOImage {
+	filename = "img/Recharger.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+   	height = "16px";
+	width = "16px";    
+}
+
+CondIsNotInterventionFound: WOConditional {
+	negate = true;
+	condition = listener.interventionDisplayGroup.allObjects.count;
+}
+
+CondIsInterventionFound: WOConditional {
+	condition = listener.interventionDisplayGroup.allObjects.count;
+}
+
+NavBarInterventionDG: CktlNavigationBar {
+	displayGroup = listener.interventionDisplayGroup;
+	longListLimit = 25;
+}
+
+DTFormErrorBox1: DTFormErrorBox {
+	showError = showWarnMessage;
+}
+
+StrListenerWarnMessage: WOString {
+	escapeHTML = true;
+	value = listener.warnMessage;
+}
+
+ToolTipInfosDemandeur: CktlToolTip {
+	htmlText = "Obtenir les informations pour contacter le demandeur";
+}
+
+CondShowColumnEtat: WOConditional {
+	condition = listener.showColumnEtat;
+}
+
+CondShowColumnIntervenants: WOConditional {
+	condition = listener.showColumnIntervenants;
+}
+
+ToolTipInfoIntervenants: CktlToolTip {
+	htmlText = "Indique le nombre de personnes affect&eacute;es sur la DT, suivit du nombre total de traitements r&eacute;alis&eacute;s.<br>Ce nombre apparait en <b>gras</b> si vous avez vous-meme saisit des traitements.<br>En <font color='red'>rouge</font> apparaissent les traitements consultables uniquement par le demandeur et les agents affect&eacute;s.";
+}
+
+CondShowColumnSupprimer: WOConditional {
+	condition = listener.showColumnSupprimer;
+}
+
+CondShowColumnValider: WOConditional {
+	condition = listener.showColumnValider;
+}
+
+ToolTipInfoValiderDT: CktlToolTip {
+	htmlText = "Valider la demande de travaux";
+}
+
+CondShowColumnAffecter: WOConditional {
+	condition = listener.showColumnAffecter;
+}
+
+ToolTipInfoAffecterDT: CktlToolTip {
+	htmlText = "Attribuer la demande a un ou plusieurs intervenants";
+}
+
+CondShowColunmViewTraitement: WOConditional {
+	condition = listener.showColumnTraiter;
+}
+
+ToolTipInfoVoirTraitementDT: CktlToolTip {
+	htmlText = "Consulter la liste des traitements r&eacute;alis&eacute;s sur cette demande";
+}
+
+CondShowColumnDiscussion: WOConditional {
+	condition = listener.showColumnDiscussion;
+}
+
+CondShowColumnAjoutTraitement: WOConditional {
+	condition = listener.showColumnAjoutTraitement;
+}
+
+ToolTipInfoAjoutTraitementDT: CktlToolTip {
+	htmlText = "Ajouter un traitement et/ou clore la demande de travaux";
+}
+
+ToolTipInfoDetailsDT: CktlToolTip {
+	htmlText = "D&eacute;tailler cette demande de travaux ...";
+}
+
+RepInterventions: WORepetition {
+	item = currentIntervention;
+	list = listener.interventionDisplayGroup.displayedObjects;
+}
+
+TrIntervention: WOGenericContainer {
+	elementName = "TR";
+	class = interventionItemClass;
+	bgColor = interventionItemBgColor;
+	style = interventionItemStyle;
+}
+
+LnkMasquerDT: AjaxUpdateLink {
+	action = masquerIntervention;
+	title = "Masquer cette demande";
+	updateContainerID = containerListeID;
+}
+
+LnkDeMasquerDT: AjaxUpdateLink {
+	action = deMasquerIntervention;
+	title = "Ré-afficher cette demande";
+	updateContainerID = containerListeID;
+}
+
+CondIsMasquee: WOConditional {
+	condition = isInterventionMasquee;
+}
+
+CondNotIsMasquee: WOConditional {
+	condition = isInterventionMasquee;
+	negate = true;
+}
+
+CondShowColumnInterventionMasquee: WOConditional {
+	condition = showColumnInterventionMasquee;
+}
+
+CondNotShowColumnInterventionMasquee: WOConditional {
+	condition = showColumnInterventionMasquee;
+	negate = true;
+}
+
+CondIsTheSelectedIntervention: WOConditional {
+	condition = isTheSelectedIntervention;
+}
+
+LnkInspecteurDTSelected: WOHyperlink {
+	action = afficherInspecteur;
+	title = "Detailler la demande (celle ci vient juste d'etre inspectee)";
+}
+
+CondNotIsTheSelectedIntervention: WOConditional {
+	condition = isTheSelectedIntervention;
+	negate = true;
+}
+
+LnkInspecteur: WOHyperlink {
+	action = afficherInspecteur;
+	title = "Detailler la demande";
+}
+
+StrIntCleService: WOString {
+	value = currentIntervention.intCleService;
+	numberformat = "#";
+	valueWhenEmpty = "&nbsp;";
+}
+
+CondIsInterventionInstallationPosteComplet2SurcoutNonSigne: WOConditional {
+	condition = currentIntervention.isInterventionInstallationPosteComplet2SurcoutNonSigne;
+}
+
+TemSurcoutNonSigne: TemSurcoutNonSigne {
+	
+}
+
+CondIsInterventionInstallationPosteComplet2RemplacementNonRestitue: WOConditional {
+	condition = currentIntervention.isInterventionInstallationPosteComplet2RemplacementNonRestitue;
+}
+
+TemRemplacementNonRestitue: TemRemplacementNonRestitue {
+	
+}
+
+ToolTipDate: CktlToolTip {
+	htmlText = toolTipHtmlDate;
+}
+
+StrIntDateCreation: WOString {
+	dateformat = "%d/%m/%Y";
+	value = currentIntervention.intDateCreation;
+}
+
+ToolTipContact: CktlToolTip {
+	htmlText = toolTipHtmlContact;
+}
+
+StrIntDemandeurCourt: WOString {
+	value = currentIntervention.toIndividuConcerne.nomCourt;
+}
+
+CondHasFichierAttache: WOConditional {
+	condition = currentIntervention.hasFichierAttache;
+}
+
+ImgFichierAttache: WOImage {
+	filename = "img/Fichier16.png";
+	framework = "app";
+	title = "La demande contient un fichier attache dans son motif";
+	height = "16px";
+	width = "16px";
+}
+
+ToolTopMotif: CktlToolTip {
+	htmlText = toolTipHtmlMotif;
+}
+
+StrMotifCourt: WOString {
+	value = currentIntervention.motifCourt;
+	escapeHTML = true; 
+}
+
+FontSmall: WOGenericContainer {
+	elementName = "font";
+	class = "textNote";
+	style = interventionItemStyle;
+}
+
+StrBatimentLibelle: WOString {
+	escapeHTML = false;
+	value = batimentLibelle;
+}
+
+StrNomService: WOString {
+	value = nomService;
+}
+
+ToolTipActivite: CktlToolTip {
+	htmlText = toolTipHtmlActivite;
+}
+
+StrActiviteLibelle: WOString {
+	value = currentIntervention.toActivites.actLibelle;
+}
+
+ToolTipEtat: CktlToolTip {
+	htmlText = toolTipHtmlEtat;
+}
+
+StrCodeEtat: WOString {
+	value = currentIntervention.intEtat;
+}
+
+ToolTipAffectes: CktlToolTip {
+	htmlText = toolTipHtmlAffectes;
+}
+
+StrNbAffectes: WOString {
+	value = nbAffectes;
+	escapeHTML = false;
+}
+
+ToolTipDiscussions: CktlToolTip {
+	htmlText = toolTipHtmlDiscussions;
+}
+
+StrNbDiscussions: WOString {
+	value = nbDiscussions;
+	escapeHTML = false;
+}
+
+CondCanSupprimerDT: WOConditional {
+	condition = canSupprimer;
+}
+
+LnkSupprimerDt: WOHyperlink {
+  title = "Supprimer cette demande de travaux";
+  action = supprimerDt;
+  class = "linkPage";
+}
+
+ImgSupprimer: WOImage {
+	border = 0;
+	class = "imgLink";
+	filename = "img/SmallError.png";
+	framework = "app";
+	hspace = "2";
+	height = "22px";
+	width = "22px";
+}
+
+CondNotCanSupprimerDT: WOConditional {
+	condition = canSupprimer;
+	negate = true;
+}
+
+CondCanValiderDT: WOConditional {
+	condition = canValider;
+}
+
+linkGoValider: WOHyperlink {
+  title = "Valider la demande";
+  action = afficherInspecteurValider;
+  class = "linkPage";
+}
+
+imgValider: WOImage {
+	filename = "img/Valider.png";
+    border = "0";
+    hspace = "2";
+	framework = "app";
+    class = "imgLink";
+	height = "22px";
+	width = "22px";
+}
+
+CondNotCanValiderDT: WOConditional {
+	condition = canValider;
+	negate = true;
+}
+
+CondCanAffecterDT: WOConditional {
+	condition = canAffecter;
+}
+
+linkGoAffecter: WOHyperlink {
+  title = "Affecter la demande";
+  action = afficherInspecteurAffecter;
+  class = "linkPage";
+}
+
+imgAffecter: WOImage {
+	filename = "img/Affecter.png";
+    border = "0";
+    hspace = "2";
+	framework = "app";
+    class = "imgLink";
+    height = "22px";
+	width = "22px";
+}
+
+CondNotCanAffecterDT: WOConditional {
+	condition = canAffecter;
+	negate = true;
+}
+
+CondCanTraiterDT: WOConditional {
+	condition = canTraiter;
+}
+
+CondHasTraitements: WOConditional {
+	condition = hasTraitements;
+}
+
+linkGoTraiter: WOHyperlink {
+  title = "Consulter les traitements realis&eacute;s sur cette demande";
+  action = afficherInspecteurTraiter;
+  class = "linkPage";
+  escapeHTML = false;
+}
+
+imgTraiter: WOImage {
+	filename = "img/Traiter.png";
+    border = "0";
+    hspace = "2";
+	framework = "app";
+    class = "imgLink";
+	height = "22px";
+	width = "22px";
+}
+
+CondHasNotTraitements: WOConditional {
+	condition = hasTraitements;
+	negate = true;
+}
+
+ImgNoTraitements: WOImage {
+	border = "0";
+	filename = "img/TraiterDisabled.png";
+	framework = "app";
+	hspace = 2;
+	title = "Il n'y a aucun traitement pour cette DT";
+	height = "22px";
+	width = "22px";
+}
+
+CondNotCanTraiterDT: WOConditional {
+	condition = canTraiter;
+	negate = true;
+}
+
+CondCanAjouterTraitementDT: WOConditional {
+	condition = canAjouterTraitement;
+}
+
+linkGoAjouterTraitement: WOHyperlink {
+  title = "Ajouter un traitement ou clore la DT directement";
+  action = afficherInspecteurAjouterTraitement;
+  class = "linkPage";
+}
+
+imgAjouterTraitement: WOImage {
+	filename = "img/AjouterTraitement.png";
+    border = "0";
+    hspace = "2";
+	framework = "app";
+    class = "imgLink";
+	height = "22px";
+	width = "22px";
+}
+
+CondNotCanAjouterTraitementDT: WOConditional {
+	condition = canAjouterTraitement;
+	negate = true;
+}
+
+LnkAfficherInspecteur: WOHyperlink {
+  title = "Detailler la DT";
+  action = afficherInspecteur;
+  class = "linkPage";
+}
+
+ImgDetailDT: WOImage {
+	filename = "img/Details.png";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+	height = "22px";
+	width = "22px";
+}
+
+ImgIntMasque: WOImage {
+	filename = "img/IntMasque.gif";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+	height = "19px";
+	width = "14px";}
+
+ImgIntVisible: WOImage {
+	filename = "img/IntVisible.gif";
+    border = 0;
+    hspace = 2;
+	framework = "app";
+    class = "imgLink";
+	height = "19px";
+	width = "14px";
+}
+
+ImgTriAsc: WOImage {
+	filename = "img/TriAsc.gif";
+    border = "0";
+	framework = "app";
+	height = "5px";
+	width = "9px";	
+}
+
+ImgTriDesc: WOImage {
+	filename = "img/TriDesc.gif";
+    border = 0;
+   	framework = "app";
+	height = "5px";
+	width = "9px";	
+}
+
+LnkTriNumAsc: AjaxUpdateLink {
+	action = classeNoAsc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriNumDesc: AjaxUpdateLink {
+	action = classeNoDesc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriDateAsc: AjaxUpdateLink {
+	action = classeDateAsc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriDateDesc: AjaxUpdateLink {
+	action = classeDateDesc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriNomAsc: AjaxUpdateLink {
+	action = classeNomAsc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriNomDesc: AjaxUpdateLink {
+	action = classeNomDesc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriBatAsc: AjaxUpdateLink {
+	action = classeBatAsc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriActDesc: AjaxUpdateLink {
+	action = classeActDesc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriActAsc: AjaxUpdateLink {
+	action = classeActAsc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriBatDesc: AjaxUpdateLink {
+	action = classeBatDesc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriSerAsc: AjaxUpdateLink {
+	action = classeServiceAsc;
+	updateContainerID = containerListeID;
+}
+
+LnkTriSerDesc: AjaxUpdateLink {
+	action = classeServiceDesc;
+	updateContainerID = containerListeID;
+}
+
+BtnDoFilter: WOSubmitButton {
+	action = doFilter;
+	name = "BtnDoFilter";
+	style = "display: none";
+}
+
+CondFalse: WOConditional {
+	condition = false;
+}
+
+PopUpDemandeur: WOPopUpButton {
+	list = demandeurList;
+	item = demandeurItem;
+	selection = demandeurSelected;
+	displayString = demandeurItem.nomCourt;
+	noSelectionString = "";
+	onChange = "this.form.BtnDoFilter.click();";
+}
+
+ObserverPopUpActivite: AjaxObserveField {
+	updateContainerID = containerListeID;
+	action = doFilter;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+PopUpActivite: WOPopUpButton {
+	list = activiteList;
+	item = activiteItem;
+	selection = activiteSelected;
+	displayString = activiteItem.actLibelle;
+	noSelectionString = "";
+	escapeHTML = false;
+	id = "PopUpActivite";
+}
+
+PopUpIntervenant: WOPopUpButton {
+	list = intervenantList;
+	item = intervenantItem;
+	selection = intervenantSelected;
+	displayString = intervenantItemCourt;
+	noSelectionString = "-- Intervenant --";
+	onChange = "this.form.BtnDoFilter.click();";
+	disabled = true;
+}
+
+ContainerDemandes: AjaxUpdateContainer {
+	id = containerListeID;
+}
+
+
+ObserverNombreDtParPage: AjaxObserveField {
+	updateContainerID = containerListeID;
+	action = neFaitRien;
+	onComplete = "function () {$('busy').hide();}"; // IE: forcer le masquage de l'indicateur de chargement
+	fullSubmit = true;
+}
+
+PopUpNombreDtParPage: WOPopUpButton {
+	list = nbList;
+	item = nbItem;
+	selection = listener.caller.numberOfObjectsPerBatch;
+	id = "PopUpNombreDtParPage";
+}
+
+CondShowColumnAjouterPanier: WOConditional {
+	condition = listener.showColumnAjouterPanier;
+}
+
+CondShowColumnSupprimerPanier: WOConditional {
+	condition = listener.showColumnSupprimerPanier
+}
+
+CondIdAfficherAjouterPanier: WOConditional {
+	condition = isAfficherAjouterPanier;
+}
+
+LnkAjouterPanier: AjaxUpdateLink {
+	action = doAjouterPanierCurrentIntervention;
+	string = "+";
+	title = "Ajouter cette DT à votre panier";
+	updateContainerID = containerAjoutPanierID;
+}
+
+ContainerAjoutPanier: AjaxUpdateContainer {
+	id = containerAjoutPanierID;
+}
+
+LnkSupprimerPanier: WOHyperlink {
+	action = doSupprimerPanierCurrentIntervention;
+	string = "-";
+	title = "Supprimer cette DT du panier";
+}

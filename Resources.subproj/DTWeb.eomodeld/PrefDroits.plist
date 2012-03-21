@@ -1,0 +1,122 @@
+{
+    attributes = (
+        {
+            columnName = "DRO_NIVEAU"; 
+            externalType = NUMBER; 
+            name = droNiveau; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "DRO_SERVICE"; 
+            externalType = VARCHAR2; 
+            name = droService; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 10; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toStructureUlr.lcStructure"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = lcStructure; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 20; 
+        }, 
+        {
+            columnName = "NO_INDIVIDU"; 
+            externalType = NUMBER; 
+            name = noIndividu; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toIndividuUlr.nomUsuel"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = nomUsuel; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 80; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toIndividuUlr.prenom"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = prenom; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }, 
+        {
+            columnName = "PRF_NO_IND_INTERVENANT"; 
+            externalType = VARCHAR2; 
+            internalInfo = {"_nameInObjectStore" = "DRO_NO_IND_INTERVENANT"; }; 
+            name = prfNoIndIntervenant; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 255; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        droNiveau, 
+        droService, 
+        lcStructure, 
+        noIndividu, 
+        nomUsuel, 
+        prenom, 
+        prfNoIndIntervenant
+    ); 
+    className = "org.cocktail.dt.server.metier.EOPrefDroits"; 
+    classProperties = (
+        droNiveau, 
+        droService, 
+        lcStructure, 
+        noIndividu, 
+        nomUsuel, 
+        prenom, 
+        prfNoIndIntervenant, 
+        toIndividuUlr, 
+        toStructureUlr
+    ); 
+    externalName = "PREF_DROITS"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            droNiveau, 
+            droService, 
+            lcStructure, 
+            noIndividu, 
+            nomUsuel, 
+            prenom, 
+            prfNoIndIntervenant, 
+            toIndividuUlr, 
+            toStructureUlr
+        ); 
+        "_nameInObjectStore" = "PREF_DROITS"; 
+    }; 
+    name = PrefDroits; 
+    primaryKeyAttributes = (droService, noIndividu); 
+    relationships = (
+        {
+            destination = DTIndividuUlr; 
+            internalInfo = {"_nameInObjectStore" = individuUlrHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = noIndividu; sourceAttribute = noIndividu; }); 
+            name = toIndividuUlr; 
+        }, 
+        {
+            destination = DTStructureUlr; 
+            internalInfo = {"_nameInObjectStore" = structureUlrHarp; }; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = cStructure; sourceAttribute = droService; }); 
+            name = toStructureUlr; 
+        }
+    ); 
+}

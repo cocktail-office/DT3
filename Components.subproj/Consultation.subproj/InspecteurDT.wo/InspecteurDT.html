@@ -1,0 +1,380 @@
+<webobject name = "pageInspecteur">
+  <webobject name = "taskBar" />
+  <br />
+  <webobject name = "Form1">
+    <table cellspacing = "0" border = "0" cellpadding = "2">
+      <tr>
+        <td class = "boxTitle" nowrap>
+          <font class = "subTitleInverse">&nbsp;Informations&nbsp;sur&nbsp;la&nbsp;demande&nbsp;de&nbsp;travaux:&nbsp; 
+            <span class = "boxContents">&nbsp;<webobject name = "LnkUrlPermanent">#<webobject name = "StrIntCleService" /></webobject>&nbsp;</span>
+          </font>
+        </td>
+        <td width = "90%">&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan = "2" class = "boxTitle">
+          <!-- Les tables des donnees -->
+          <table width = "100%" border = "0" cellpadding = "5" cellspacing = "0" class = "boxContents">
+            <tr>
+              <td align = "left" valign = "bottom">
+                <font class = "textEntry">Service destinaire&nbsp;: </font>
+                <webobject name = "StrLibelleService" />
+              </td>
+              <td align = "center" valign = "middle" rowspan = "4">
+                <webobject name = "CondIsAfficherPhoto"><webobject name = "ImgPhotoDemandeur" /></webobject>
+                <webobject name = "CondNotIsAfficherPhoto">&nbsp;</webobject>
+                <webobject name = "CondIsShowLnkShowConfInfo">
+                  <br />
+                  <webobject name = "LnkShowConfInfo"><webobject name = "ImgConfInfoShow" /></webobject>
+                </webobject>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <font class = "textEntry">Date de	cr&eacute;ation&nbsp;: </font>
+                <webobject name = "StrIntDateCreation" />&nbsp;&nbsp;&nbsp;&nbsp; 
+                <font class = "textEntry">Date de r&eacute;alisation souhait&eacute;e&nbsp;: </font>
+                <webobject name = "StrIntDateSouhaite" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <font class = "textEntry">Demandeur&nbsp;: </font>
+                <webobject name = "CondNotIsDTRepro">
+                  <webobject name = "CondCanChangerDemandeur">
+                    <webobject name = "LnkChangeDemandeur"> <webobject name = "ImgModifier" /> </webobject>
+                  </webobject>
+                </webobject>
+                <webobject name = "StrIndividuConcerneNomEtPrenom" />&nbsp;&nbsp; 
+                <webobject name = "LnkEnvoyerMailDemandeur">&lt;<webobject name = "StrMailDemandeur" />&gt;</webobject>
+                &nbsp;&nbsp;&nbsp;&nbsp; 
+                <font class = "textEntry">Login(s)&nbsp;:</font>
+                &nbsp;&nbsp; 
+                <webobject name = "StrCompteInformatique" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <font class = "textEntry">Informations de	contact&nbsp;:</font>
+                <br />
+                <webobject name = "strContactInfo" />
+              </td>
+            </tr>
+            
+            <webobject name = "CondNotIsDTRepro">
+            
+	            <webobject name = "CondIsAfficherLigneBudgedaire">
+						    <tr>
+						      <td align = "left">
+						        <font class = "textEntry">Ligne	budg&eacute;taire&nbsp;:</font>
+						        <webobject name = "StrLigneBudgetaire" />
+						      </td>
+						    </tr>
+					    </webobject>
+					    
+					    <webobject name = "CondIsAfficherDestination">
+					    <tr>
+					      <td align = "left">
+					        <font class = "textEntry">Action Lolf&nbsp;:</font>
+					      	<webobject name = "StrDestination" />
+					      </td>
+					    </tr>
+					    </webobject>
+					    
+				    </webobject>
+				    
+            <tr>
+              <td colspan = "2">
+                <webobject name = "ContainerMotif">
+                  <font class = "textEntry">Motif de la	demande&nbsp;:</font>
+                  <webobject name = "CondNotIsDTRepro">
+                    <table>
+                      <tr>
+                        <td>
+                          <webobject name = "CondCanChangerMotif">
+                            <webobject name = "CondNotIsMotifEnCoursDeModification">
+                              <webobject name = "LnkToModifier"> <webobject name = "ImgModifier" /> </webobject>
+                            </webobject>
+                            <webobject name = "CondIsMotifEnCoursDeModification">
+                              <webobject name = "BtnEnregistrerMotif" />
+                              <webobject name = "LnkAnnuler"> annuler </webobject>
+                            </webobject>
+                          </webobject>
+                        </td>
+                        <td width = "1%">
+                          <webobject name = "CondNotIsMotifEnCoursDeModification">
+                            <webobject name = "CondShowPopUpHisto">
+                              <webobject name = "ObserverPopUpHisto">
+                                <font class = "textEntry">R&eacute;visions :</font>
+                                <webobject name = "PopUpHisto" />
+                              </webobject>
+                            </webobject>
+                          </webobject>
+                        </td>
+                      </tr>
+                    </table>
+                  </webobject>
+                  <table width = "100%" border = "0" cellspacing = "0" cellpadding = "0">
+                    <tr>
+                      <td>
+                        <webobject name = "CondNotIsDTRepro">
+                          <center>
+                            <table cellpadding = "1" cellspacing = "0" border = "0" width = "95%" class = "textBoxBorder">
+                              <tr>
+                                <td>
+                                  <table width = "100%" class = "textBox">
+                                    <tr>
+                                      <td align = "left">
+                                        <webobject name = "CondNotIsMotifEnCoursDeModification">
+                                          <webobject name = "CondNotIsHistoSelected"> <webobject name = "StrMotif" /> </webobject>
+                                          <webobject name = "CondIsHistoSelected"> <webobject name = "StrMotifHistorique" /> </webobject>
+                                        </webobject>
+                                        <webobject name = "CondIsMotifEnCoursDeModification"> <webobject name = "TFMotif" /> </webobject>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </center>
+                        </webobject>
+                        <webobject name = "CondIsDTRepro">
+                          <center>
+                            <table cellpadding = "1" cellspacing = "0" border = "0" width = "95%" class = "textBoxBorder">
+                              <tr>
+                                <td>
+                                  <table class = "textBox" width = "100%">
+                                    <tr>
+                                      <td colspan = "2">
+                                        <font class = "textEntry">Format de	document&nbsp;:</font>
+                                        <webobject name = "StrIntMotsClefsFormat" />
+                                      </td>
+                                    </tr>
+                                    <webobject name = "CondIsLibelle">
+                                      <tr>
+                                        <td colspan = "2">
+                                          <font class = "textEntry">Titre&nbsp;:</font>&nbsp;<webobject name = "StrRecReproLibelle" />
+                                        </td>
+                                      </tr>
+                                    </webobject>
+                                    <tr>
+                                      <td rowspan = "2">
+                                        <font class = "textEntry">Document(s)	attach&eacute;(s)&nbsp;:</font>
+                                        <br />
+                                        <webobject name = "CondHasAttachements"><webobject name = "CktlFileUpload1" /></webobject>
+                                        <webobject name = "CondNotHasAttachements">[document	papier]</webobject>
+                                      </td>
+                                      <td>
+                                        <font class = "textEntry">Nombre de copies&nbsp;:</font>&nbsp;<webobject name = "StrNbCopies" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <font class = "textEntry">Nombre de pages&nbsp;:</font>&nbsp;<webobject name = "StrNbPages" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <font class = "textEntry">Couverture&nbsp;:</font>&nbsp;<webobject name = "StrCouverture" />
+                                      </td>
+                                      <td>
+                                        <font class = "textEntry">Reliure&nbsp;:</font>&nbsp;<webobject name = "StrReliureLibelle" />
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                        <font class = "textEntry">Plastification&nbsp;:</font>&nbsp;<webobject name = "StrPlastificationLibelle" />
+                                      </td>
+                                      <td>
+                                        <font class = "textEntry">Livret&nbsp;:</font>&nbsp;<webobject name = "StrLivretLibelle" />
+                                      </td>
+                                    </tr>
+                                    <webobject name = "CondIsRemarques">
+                                      <tr>
+                                        <td colspan = "2">
+                                          <font class = "textEntry">Remarques&nbsp;:</font>
+                                          <br />
+                                          <hr class = "subLine" />
+                                          <webobject name = "StrRemarques" />
+                                          <hr class = "subLine" />
+                                        </td>
+                                      </tr>
+                                    </webobject>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </center>
+                          <table>
+                            <tr>
+                              <td align = "right">
+                                <font class = "textEntry">Service Payeur&nbsp;:</font>
+                              </td>
+                              <td>
+                                <webobject name = "StrServicePayeur" />
+                                <webobject name = "CondNotIsServicePayeurFournisValidInterne">
+                                  <font class = "textError">- ERREUR : ce n'est pas un fournisseur valide interne !</font>
+                                </webobject>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align = "right">
+                                <font class = "textEntry">Ligne	budg&eacute;taire&nbsp;:</font>
+                              </td>
+                              <td><webobject name = "StrLigneBudgetaire" /></td>
+                            </tr>
+                            <tr>
+                              <td align = "right">
+                                <font class = "textEntry">Action Lolf&nbsp;:</font>
+                              </td>
+                              <td><webobject name = "StrDestination" /></td>
+                            </tr>
+                            <tr>
+                              <td align = "right">
+                                <font class = "textEntry">Devis&nbsp;:</font>
+                              </td>
+                              <td valign = "middle"><webobject name = "StrPrestNumero" /></td>
+                            </tr>
+                            <webobject name = "CondNotHasDevis">
+                              <tr>
+                                <td align = "right">
+                                  <font class = "textEntry">Maintenance&nbsp;:</font>
+                                </td>
+                                <td>
+                                  <webobject name = "CondNotHasInterventionInfin">
+                                    <font class = "textError">Impossible de recr&eacute;er le devis : informations budg&eacute;taires minimales non disponibles !</font>
+                                  </webobject>
+                                  <webobject name = "CondHasInterventionInfin">
+                                    <webobject name = "CondIsServicePayeurFournisValidInterne">
+                                      <b>
+                                        <webobject name = "CondNotIsPieTested">Tester si PIE fonctionne &raquo;</webobject>
+                                        <webobject name = "CondIsPieTested">
+                                          <webobject name = "CondIsPieOnline">
+                                            <font color = "green">PIE FONCTIONNE ! :-) </font>
+                                          </webobject>
+                                          <webobject name = "CondIsPieOffline">
+                                            <font class = "textError">PIE HS ! :-( </font>
+                                          </webobject>
+                                        </webobject>
+                                        <webobject name = "BtnTesterDisponibilitePie" />
+                                        <webobject name = "BtnRecreerDevis" />
+                                      </b>
+                                    </webobject>
+                                  </webobject>
+                                </td>
+                              </tr>
+                            </webobject>
+                          </table>
+                          <webobject name = "CondIsDTRepro">
+                            <hr class = "subLine" />
+                            <font class = "textEntry">Informations CFC : </font>
+                            <webobject name = "CondCanChangerCfc"><webobject name = "BtnModifierCFC" /></webobject>
+                            <br />
+                            <webobject name = "CondHasCFC">
+                              <table width = "95%" border = "0" cellspacing = "0" cellpadding = "1">
+                                <tr>
+                                  <td class = "listboxBorder">
+                                    <table width = "100%" border = "0" cellspacing = "1" cellpadding = "2">
+                                      <tr class = "listboxHeader">
+                                        <td width = "25%" align = "center">
+                                          <font class = "textEntry">Editeur(s)</font>
+                                        </td>
+                                        <td width = "25%" align = "center">
+                                          <font class = "textEntry">Auteur(s)</font>
+                                        </td>
+                                        <td width = "40%" align = "center">
+                                          <font class = "textEntry">Titre</font>
+                                        </td>
+                                        <td width = "5%" align = "center">
+                                          <font class = "textEntry">Pg.</font>
+                                        </td>
+                                        <td width = "5%" align = "center">
+                                          <font class = "textEntry">Ex.</font>
+                                        </td>
+                                      </tr>
+                                      <webobject name = "RepRecsReproCFC">
+                                        <tr valign = "top" class = "listboxLine">
+                                          <td><webobject name = "StrCfcEditeurs" /></td>
+                                          <td><webobject name = "StrCfcAuteurs" /></td>
+                                          <td><webobject name = "StrCfcTitre" /></td>
+                                          <td align = "center"><webobject name = "StrCfcNbPages" /></td>
+                                          <td align = "center"><webobject name = "StrCfcNbExemplaires" /></td>
+                                        </tr>
+                                      </webobject>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </webobject>
+                          </webobject>
+                        </webobject>
+                      </td>
+                      <webobject name = "CondShowCommentaireInterne">
+                        <td valign = "top" width = "1%">
+                          <center>
+                            <table cellpadding = "0" cellspacing = "1" border = "0" class = "previewTitleBox">
+                              <tr>
+                                <td><webobject name = "ImgCommentaireInterne" /></td>
+                                <td>
+                                  <font class = "previewTitleText">&nbsp;Commentaire	interne&nbsp;:&nbsp;</font>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan = "2" class = "previewContentBox">
+                                  <font class = "previewContentText"><webobject name = "StrCommentaireInterne" /></font>
+                                </td>
+                              </tr>
+                            </table>
+                          </center>
+                        </td>
+                      </webobject>
+                    </tr>
+                  </table>
+                </webobject>
+              </td>
+            </tr>
+            <tr>
+              <td colspan = "2">
+                <font class = "textEntry">Mots clefs&nbsp;:</font>
+                <webobject name = "CondCanChangerActivite">
+                  <webobject name = "LnkChangerActivite"> <webobject name = "ImgModifier" /> </webobject>
+                </webobject>
+                <webobject name = "StrIntMotsClefs" />
+              </td>
+            </tr>
+            <tr>
+              <webobject name = "CondNotIsDTRepro">
+                <webobject name = "CondHasAttachements">
+                  <td colspan = "2">
+                    <font class = "textEntry">Document(s) attach&eacute;(s) &agrave; la demande:</font>
+                    <br />
+                    <webobject name = "CktlFileUpload1" />
+                  </td>
+                </webobject>
+              </webobject>
+            </tr>
+            <tr>
+              <td colspan = "2"><hr class = "subLine" /></td>
+            </tr>
+            <tr>
+              <td colspan = "2">
+                <a name = "traitements"></a>
+                <font class = "textEntry">Etat	de la demande&nbsp;: </font>
+                <webobject name = "StrLibelleEtat" />
+              </td>
+            </tr>
+            <webobject name = "CondShowIntervenants">
+              <tr>
+                <td colspan = "2">
+                  <font class = "textEntry">Intervenants&nbsp;:</font>
+                  <webobject name = "StrStringIntervenants" />
+                </td>
+              </tr>
+            </webobject>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </webobject>
+  <webobject name = "CondIsAfficherErreur"> <webobject name = "JsErrMessage" /> </webobject>
+</webobject>

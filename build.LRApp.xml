@@ -1,0 +1,38 @@
+<!-- *************************************************************** -->
+<!-- Ce fichier contient les commandes ANT utilisees pour la gestion -->
+<!-- des projets Eclipse                                             -->
+<!-- *************************************************************** -->
+
+<project name="LRAppTasks" default="about" basedir=".">
+	<description>
+	    Les commandes de gestion du projet DT
+	</description>
+
+  <property name="lr.trace.uncommented" value="LRLog.trace("/>
+  <property name="lr.trace.commented" value="// [LRAppTasks] : @LRLog.trace(@"/>
+ 
+  <target name="about">
+    <echo
+      message="Les commandes Ant utilisees pour la gestion des projets Eclipse."/>
+  </target>
+	
+	<!-- Commente tous les appels a LRLog.trace() -->
+  <target name="lrlogTrace.comment">
+		<replace dir=".">
+		  <include name="**/*.java"/>
+			<replacefilter 
+			    token="${lr.trace.uncommented}" 
+			    value="${lr.trace.commented}"/>
+		</replace>
+  </target>
+
+	<!-- Decommente tous les appels a LRLog.trace() -->
+  <target name="lrlogTrace.uncomment">
+		<replace dir=".">
+		  <include name="**/*.java"/>
+			<replacefilter 
+			    token="${lr.trace.commented}" 
+			    value="${lr.trace.uncommented}"/>
+		</replace>
+  </target>
+</project>

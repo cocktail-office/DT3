@@ -1,0 +1,29 @@
+RepDate: WORepetition {
+	list = dateArray;
+	item = dateItem;
+	index = dateItemIndex;
+}
+
+StrAddRow: WOString {
+	value = addRow;
+}
+
+StrDateItemIndex: WOString {
+	value = dateItemIndex;
+}
+
+StrSetValue1: WOString {
+	value = setValue1;
+}
+
+StrSetValue2: WOString {
+	value = setValue2;
+}
+
+StrSetValue3: WOString {
+	value = setValue3;
+}
+
+StrNbJour: WOString {
+	value = nbJour;
+}

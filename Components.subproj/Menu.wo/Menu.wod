@@ -1,0 +1,10 @@
+WebMenu: CktlMenu {
+	listener = listener;
+	itemSet = menuItemSet;
+	useTopMenu = true;
+	keepLastSelection = true;
+	labelUserInfo = dtUserInfo.dtServiceLibelle;
+}
+
+ComponentContent1: WOComponentContent {
+}

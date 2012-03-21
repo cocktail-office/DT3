@@ -1,0 +1,139 @@
+{
+    attributes = (
+        {
+            definition = "toResaPlanning.toResaObjet.objeCle"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = objeCle; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            definition = "toResaPlanning.objeOrdre"; 
+            externalType = NUMBER; 
+            isReadOnly = Y; 
+            name = objeOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_DEBUT"; 
+            externalType = DATE; 
+            name = resaDebut; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toResaPlanning.resaEtat"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = resaEtat; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 1; 
+        }, 
+        {
+            columnName = "RESA_FIN"; 
+            externalType = DATE; 
+            name = resaFin; 
+            valueClassName = NSCalendarDate; 
+            valueType = T; 
+        }, 
+        {
+            allowsNull = Y; 
+            definition = "toResaPlanning.resaMotif"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = resaMotif; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 500; 
+        }, 
+        {
+            columnName = "RESA_ORDRE"; 
+            externalType = NUMBER; 
+            name = resaOrdre; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_POS_DEBUT"; 
+            externalType = NUMBER; 
+            name = resaPosDebut; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            columnName = "RESA_POS_FIN"; 
+            externalType = NUMBER; 
+            name = resaPosFin; 
+            valueClassName = NSNumber; 
+            valueType = i; 
+        }, 
+        {
+            definition = "toResaPlanning.toResaObjet.typeCode"; 
+            externalType = VARCHAR2; 
+            isReadOnly = Y; 
+            name = typeCode; 
+            valueClassName = NSString; 
+            valueType = S; 
+            width = 30; 
+        }
+    ); 
+    attributesUsedForLocking = (
+        objeCle, 
+        objeOrdre, 
+        resaDebut, 
+        resaEtat, 
+        resaFin, 
+        resaMotif, 
+        resaOrdre, 
+        resaPosDebut, 
+        resaPosFin, 
+        typeCode
+    ); 
+    className = "org.cocktail.dt.server.metier.EOResaDate"; 
+    classProperties = (
+        objeCle, 
+        objeOrdre, 
+        resaDebut, 
+        resaEtat, 
+        resaFin, 
+        resaMotif, 
+        resaOrdre, 
+        resaPosDebut, 
+        resaPosFin, 
+        toResaPlanning, 
+        typeCode
+    ); 
+    externalName = "RESERVATION.RESA_DATE"; 
+    fetchSpecificationDictionary = {}; 
+    internalInfo = {
+        "_clientClassPropertyNames" = (
+            objeCle, 
+            objeOrdre, 
+            resaDebut, 
+            resaEtat, 
+            resaFin, 
+            resaMotif, 
+            resaOrdre, 
+            resaPosDebut, 
+            resaPosFin, 
+            toResaPlanning, 
+            typeCode
+        ); 
+        "_nameInObjectStore" = "RESA_DATE"; 
+    }; 
+    name = ResaDate; 
+    primaryKeyAttributes = (resaDebut, resaFin, resaOrdre); 
+    relationships = (
+        {
+            destination = ResaPlanning; 
+            isToMany = N; 
+            joinSemantic = EOInnerJoin; 
+            joins = ({destinationAttribute = resaOrdre; sourceAttribute = resaOrdre; }); 
+            name = toResaPlanning; 
+        }
+    ); 
+}

@@ -1,0 +1,63 @@
+btAnnuler: WOSubmitButton {
+	class = "bouton";
+	title = "Annuler la selection d'une personne";
+	value = "Annuler";
+	action = annuler;
+}
+
+btRechercher: WOSubmitButton {
+	action = rechercher;
+	class = "bouton";
+	title = "Recherche la personne avec le nom et/ou prénom donné";
+	value = "Rechercher";
+}
+
+btSelect: WOSubmitButton {
+	action = selectionner;
+	class = "bouton";
+	title = "Selectionner la personne dans la liste";
+	value = "Selectionner";
+}
+
+formErrorNotFound: DTFormErrorBox {
+	showError = errNotFound;
+}
+
+formErrorTooMany: DTFormErrorBox {
+	showError = errTooManyObjects;
+}
+
+formSelectPersonne: WOForm {
+	multipleSubmit = true;
+}
+
+listPersonnes: WOBrowser {
+	multiple = "false";
+	item = personneItem;
+	list = personnesListe;
+	displayString = personneItemDisplay;
+	selections = personnesSelected;
+	size = 8;
+}
+
+pageSelectPersonne: DTDefaultPage {
+}
+
+siHasPersonnesListe: WOConditional {
+	condition = hasPersonnesListe;
+}
+
+strTitre: WOString {
+	value = titre;
+}
+
+txtNomPrenom: WOTextField {
+	maxlength = 80;
+	size = 50;
+	value = strRecherche;
+}
+
+StrRechercheTitle: WOString {
+	value = strRechercheTitle;
+	escapeHTML = true;
+}

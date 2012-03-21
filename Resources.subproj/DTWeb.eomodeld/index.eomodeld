@@ -1,0 +1,239 @@
+{
+    EOModelVersion = "2.1"; 
+    adaptorName = JDBC; 
+    connectionDictionary = {URL = ""; driver = ""; password = ""; plugin = ""; username = ""; }; 
+    entities = (
+        {className = "org.cocktail.dt.server.metier.EOActivites"; name = Activites; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOActivitesResponsables"; 
+            name = ActivitesResponsables; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOAffectation"; 
+            name = Affectation; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOBatiment"; name = Batiment; }, 
+        {className = "org.cocktail.dt.server.metier.EOContact"; name = Contact; }, 
+        {className = "org.cocktail.dt.server.metier.EODocumentDt"; name = DocumentDt; }, 
+        {className = "org.cocktail.dt.server.metier.EOEtatDt"; name = EtatDt; }, 
+        {className = "org.cocktail.dt.server.metier.EOGroupesDt"; name = GroupesDt; }, 
+        {className = "org.cocktail.dt.server.metier.EOHoraire"; name = Horaire; }, 
+        {className = "org.cocktail.dt.server.metier.EOImpParc"; name = ImpParc; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOImplantationGeo"; 
+            name = ImplantationGeo; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOIndividuPersId"; 
+            name = IndividuUlrPersId; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOIntervenant"; 
+            name = Intervenant; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOIntervention"; 
+            name = Intervention; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOInterventionInfin"; 
+            name = InterventionInfin; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOInterventionMasquee"; 
+            name = InterventionMasquee; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOInterventionRepro"; 
+            name = InterventionRepro; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOInterventionReproCfc"; 
+            name = InterventionReproCfc; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOModeAppel"; name = ModeAppel; }, 
+        {className = "org.cocktail.dt.server.metier.EOMotsCles"; name = MotsCles; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOOccupantPeriodicite"; 
+            name = OccupantPeriodicite; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOPersonneAlias"; 
+            name = PersonneAlias; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOPersonnel"; 
+            name = PersonnelUlr; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOPhotoEmployes"; 
+            name = PhotoEmployes; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOPrefAppli"; name = PrefAppli; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOPrefCouleurs"; 
+            name = PrefCouleurs; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOPrefCouleursAct"; 
+            name = PrefCouleursAct; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOPrefDefaut"; name = PrefDefaut; }, 
+        {className = "org.cocktail.dt.server.metier.EOPrefDroits"; name = PrefDroits; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOPrefRechBookmark"; 
+            name = PrefRechBookmark; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EORepartBatImpGeo"; 
+            name = RepartBatImpGeo; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EORepartBureau"; 
+            name = RepartBureau; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EORepartTypeGroupe"; 
+            name = RepartTypeGroupe; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOResaDate"; name = ResaDate; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOResaObjetHarp"; 
+            name = ResaObjet; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOResaPlanningHarp"; 
+            name = ResaPlanning; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EORne"; name = Rne; }, 
+        {className = "org.cocktail.dt.server.metier.EOSalles"; name = Salles; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOSecretariat"; 
+            name = Secretariat; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = SeqActivites; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = SeqContact; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = SeqTraitement; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOSharedInfo"; name = SharedInfo; }, 
+        {className = "org.cocktail.dt.server.metier.EOTraitement"; name = Traitement; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOTypeAdresse"; 
+            name = TypeAdresse; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOCategorieEmploi"; 
+            name = TypeCatEmploi; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOTypeContratTravail"; 
+            name = TypeContratTravail; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOTypeGroupe"; name = TypeGroupe; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOTypeStructure"; 
+            name = TypeStructure; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOVActivites"; name = VActivites; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVActivitesIntervenant"; 
+            name = VActivitesIntervenant; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOVAgendaDt"; name = VAgendaDt; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVContactIntervenant"; 
+            name = VContactIntervenant; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOVGroupe"; name = VGroupe; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVIntervenantDtCount"; 
+            name = VIntervenantDtCount; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVIntervenantTraCount"; 
+            name = VIntervenantTraCount; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVInterventionIntervenant"; 
+            name = VInterventionIntervenant; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVBudgetExecCredit"; 
+            name = VJefyBudgetExecCredit; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVJefyDestin"; 
+            name = VJefyDestin; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOVOrgan"; name = VJefyOrgan; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVTypeCredit"; 
+            name = VJefyTypeCredit; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOVPersonne"; name = VPersonne; }, 
+        {className = "org.cocktail.dt.server.metier.EOVService"; name = VService; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVTraitement"; 
+            name = VTraitement; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOVLans"; name = Vlans; }, 
+        {className = "org.cocktail.dt.server.metier.EOCompte"; name = DTCompte; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOGrhumParametres"; 
+            name = DTGrhumParametres; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOIndividu"; 
+            name = DTIndividuUlr; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOPersonneTelephone"; 
+            name = DTPersonneTelephone; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EORepartCompte"; 
+            name = DTRepartCompte; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EORepartStructure"; 
+            name = DTRepartStructure; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOStructure"; 
+            name = DTStructureUlr; 
+        }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = SeqInterventionReproCfc; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EODiscussion"; name = Discussion; }, 
+        {
+            className = "org.cocktail.fwkcktlwebapp.common.database.CktlRecord"; 
+            name = SeqDiscussion; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOTraitementType"; 
+            name = TraitementType; 
+        }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOHistoriqueMotif"; 
+            name = HistoriqueMotif; 
+        }, 
+        {className = "org.cocktail.dt.server.metier.EOEmail"; name = Email; }, 
+        {
+            className = "org.cocktail.dt.server.metier.EOVStatEnCours"; 
+            name = VStatEnCours; 
+        }
+    ); 
+    entitiesWithSharedObjects = (EtatDt); 
+    storedProcedures = (insIntervention); 
+    userInfo = {modelId = DT; }; 
+}
